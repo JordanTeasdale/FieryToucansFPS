@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/JeremysScene.unity
+- path: Assets/Scenes/JordansScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

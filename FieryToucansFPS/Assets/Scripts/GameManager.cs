@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     public GameObject player;
-    //public PlayerController playerScript;
+    public PlayerController playerScript;
 
     public GameObject pauseMenu;
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     void Start() {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
-        //playerScript = player.GetComponent<PlayerController>();
+        playerScript = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
