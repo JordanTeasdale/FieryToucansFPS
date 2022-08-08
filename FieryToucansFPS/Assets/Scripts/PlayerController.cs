@@ -24,14 +24,12 @@ public class PlayerController : MonoBehaviour
 
     bool isSpinting = false;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         playerSpeedOrignal = playerSpeed;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         PlayerMovement();
         Sprint();
     }

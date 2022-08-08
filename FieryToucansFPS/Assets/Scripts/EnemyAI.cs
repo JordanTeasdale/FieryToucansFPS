@@ -6,24 +6,19 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] int HP;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 
-    public void takeDamage(int _damage)
-    {
+    public void takeDamage(int _damage) {
         HP -= _damage;
-        if (HP <= 0)
-        {
+        if (HP <= 0) {
             Destroy(gameObject);
         }
-
     }
 }
