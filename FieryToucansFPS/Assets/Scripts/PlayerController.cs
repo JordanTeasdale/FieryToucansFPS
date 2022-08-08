@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     float playerSpeedOrignal;
     int timesJumped;
 
+    bool isSpinting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        Sprint();
     }
 
     void PlayerMovement() {
@@ -58,5 +60,18 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y -= gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    void Sprint() {
+
+        if (Input.GetButtonDown("Sprint")) {
+            isSpinting = true;
+            playerSpeed = playerSpeed * sprintMult;
+        }
+
+        if (Input.GetButtonUp("Sprint")) {
+            isSpinting = false;
+            playerSpeed = playerSpeedOrignal;
+        }
     }
 }
