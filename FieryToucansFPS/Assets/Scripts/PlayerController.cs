@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour
     Vector3 playerVelocity;
     Vector3 move = Vector3.zero;
 
+    [SerializeField] int shootDistance;
+    [SerializeField] int shootDamage;
+    [SerializeField] float shootRate;
+
+    [SerializeField] List<GunStats> gunstat = new List<GunStats>();
+
     float playerSpeedOrignal;
     int timesJumped;
 
@@ -71,5 +77,12 @@ public class PlayerController : MonoBehaviour
             isSpinting = false;
             playerSpeed = playerSpeedOrignal;
         }
+    }
+
+    public void GunPickup(float shootR, int shootD, int shootDmg, GunStats stats) {
+        shootRate = shootR;
+        shootDistance = shootD;
+        shootDamage = shootDmg;
+        gunstat.Add(stats);
     }
 }
