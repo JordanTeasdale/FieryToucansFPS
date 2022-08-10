@@ -21,7 +21,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject bulletSpawnPos;
 
     Vector3 playerDir;
-   
+    bool isShooting = false;
+    bool playerInRange = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,15 @@ public class EnemyAI : MonoBehaviour, IDamageable
             Destroy(gameObject);
         }
     }
+
+    IEnumerator Shoot()
+    { 
+        isShooting = true;
+        GameObject bulletClone = Instantiate(bullet, transform.position, bullet.transform.rotation);
+        yield return new WaitForSeconds(shootRate);
+        isShooting = false;
+    }
+        
 
    
 }
