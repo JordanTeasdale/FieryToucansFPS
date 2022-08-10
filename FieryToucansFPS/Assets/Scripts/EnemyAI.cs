@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         playerDir = GameManager.instance.player.transform.position - transform.position;
 
         facePlayer();
-        if(!isShooting)
+        if(playerInRange && !isShooting)
             StartCoroutine(Shoot());
 
     }
@@ -74,7 +74,21 @@ public class EnemyAI : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
-        
 
-   
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
+    }
+
 }

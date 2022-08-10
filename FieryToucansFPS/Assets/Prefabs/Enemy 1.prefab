@@ -780,7 +780,8 @@ GameObject:
   - component: {fileID: 154166453989607643}
   - component: {fileID: 154166453989607642}
   - component: {fileID: 154166453996911461}
-  m_Layer: 0
+  - component: {fileID: 1351734792}
+  m_Layer: 8
   m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +795,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154166453989607633}
-  m_LocalRotation: {x: -0, y: 0.9991977, z: -0, w: -0.04005033}
+  m_LocalRotation: {x: 0, y: 0.99919754, z: -0, w: -0.040053293}
   m_LocalPosition: {x: 5.415463, y: 0.11055529, z: 22.030155}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 0
@@ -894,6 +895,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &1351734792
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154166453989607633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 12
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &154166453989607635
 GameObject:
   m_ObjectHideFlags: 0
