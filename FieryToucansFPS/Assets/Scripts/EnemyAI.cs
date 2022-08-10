@@ -37,6 +37,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         playerDir = GameManager.instance.player.transform.position - transform.position;
 
         facePlayer();
+        if(!isShooting)
+        StartCoroutine(Shoot());
 
     }
 
