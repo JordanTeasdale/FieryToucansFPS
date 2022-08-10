@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     public PlayerController playerScript;
 
+    public GameObject RespawnPos;
+
     public GameObject pauseMenu;
 
     public GameObject menuCurrentlyOpen;
@@ -15,10 +17,13 @@ public class GameManager : MonoBehaviour {
     public bool isPaused = false;
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
+
+        RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
+        playerScript.Respawn();
     }
 
     // Update is called once per frame
