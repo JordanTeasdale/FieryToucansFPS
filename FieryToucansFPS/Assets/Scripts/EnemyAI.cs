@@ -38,7 +38,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
         facePlayer();
         if(!isShooting)
-        StartCoroutine(Shoot());
+            StartCoroutine(Shoot());
 
     }
 
@@ -54,6 +54,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     public void TakeDamage(int _damage) {
         HP -= _damage;
+
         if (HP <= 0) {
             Destroy(gameObject);
         }
@@ -62,10 +63,14 @@ public class EnemyAI : MonoBehaviour, IDamageable
     IEnumerator Shoot()
     { 
         isShooting = true;
-        GameObject bulletClone = Instantiate(bullet, transform.position, bullet.transform.rotation);
+
+
+        GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, bullet.transform.rotation);
         bulletClone.GetComponent<Bullet>().damage = damage;
         bulletClone.GetComponent<Bullet>().speed = speed;
         bulletClone.GetComponent<Bullet>().destroyTime = bulletDestroyTime;
+
+
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
