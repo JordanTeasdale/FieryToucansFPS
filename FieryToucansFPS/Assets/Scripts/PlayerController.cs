@@ -17,15 +17,17 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] int maxJumps;
     [Range(1,100)] [SerializeField] int HP;
 
-    Vector3 playerVelocity;
-    Vector3 move = Vector3.zero;
+    [Header("----- Weapon Attributes -----")]
 
     [SerializeField] int shootDistance;
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
-
     [SerializeField] List<GunStats> gunsList = new List<GunStats>();
 
+    Vector3 playerVelocity;
+    Vector3 move = Vector3.zero;
+
+   
     float playerSpeedOrignal;
     int timesJumped;
 
@@ -38,9 +40,15 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     // Update is called once per frame
     void Update() {
+        //debug code
+        if (Input.GetKeyDown(KeyCode.K))
+            TakeDamage(1);
+
         PlayerMovement();
         Sprint();
         StartCoroutine(Shoot());
+        
+        
     }
 
     void PlayerMovement() {
@@ -82,11 +90,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    public void GunPickup(float shootR, int shootD, int shootDmg, GunStats stats) {
-        shootRate = shootR;
-        shootDistance = shootD;
-        shootDamage = shootDmg;
-        gunsList.Add(stats);
+    public void GunPickup(float _shootR, int _shootD, int _shootDmg, GunStats _stats) {
+        shootRate = _shootR;
+        shootDistance = _shootD;
+        shootDamage = _shootDmg;
+        gunsList.Add(_stats);
     }
 
     public void TakeDamage(int _dmg)
@@ -97,7 +105,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (HP <= 0)
         {
             //player death state
-
+            Respawn();
            // death();
         }
     }
@@ -130,5 +138,12 @@ public class PlayerController : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(shootRate);
             isShooting = false;
         }
+    }
+
+    public void Respawn() {
+
+        controller.enabled = false;
+        transform.position = GameManager.instance.RespawnPos.transform.position;
+        controller.enabled = true;
     }
 }
