@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
+
         StartCoroutine(Shoot());
-        
         
     }
 
@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         //Player is currently on the ground and is not jumping
         if(controller.isGrounded && playerVelocity.y < 0) {
-
             playerVelocity.y = 0.0f;
             timesJumped = 0;
 
@@ -98,13 +97,18 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage(int _dmg) {
         HP -= _dmg;
-       // StartCoroutine(DamageFlash());
-
+       StartCoroutine(DamageFlash());
         if (HP <= 0) {
             //player death state
             Respawn();
            // Death();
         }
+    }
+
+    IEnumerator DamageFlash() {
+        GameManager.instance.playerDamageFlash.SetActive(true);
+        yield return new WaitForSeconds(0.15f);
+        GameManager.instance.playerDamageFlash.SetActive(false);
     }
 
     IEnumerator Shoot()

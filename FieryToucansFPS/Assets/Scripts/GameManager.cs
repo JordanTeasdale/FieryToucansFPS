@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour {
     public GameObject RespawnPos;
 
     public GameObject pauseMenu;
-
     public GameObject menuCurrentlyOpen;
+    public GameObject playerDamageFlash;
 
     public bool isPaused = false;
 
