@@ -2718,11 +2718,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 4493574830273808377}
-  HP: 10
+  HP: 100
   playerFaceSpeed: 1
   shootRate: 0.3
-  damage: 1
-  speed: 2
+  damage: 4
+  speed: 1
   bulletDestroyTime: 3
   bullet: {fileID: 6368969736046738713, guid: dde412c9d223726489d63a986478f91f, type: 3}
   bulletSpawnPos: {fileID: 4492996513240628057}
@@ -2796,7 +2796,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
