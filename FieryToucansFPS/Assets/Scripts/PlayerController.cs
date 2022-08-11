@@ -29,12 +29,14 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     float playerSpeedOrignal;
     int timesJumped;
+    int HPOrig;
 
     bool isSpinting = false;
     bool isShooting = false;
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
+        HPOrig = HP;
     }
 
     // Update is called once per frame
@@ -101,7 +103,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (HP <= 0) {
             //player death state
             Respawn();
-           // Death();
+            Death();
         }
     }
 
@@ -137,5 +139,16 @@ public class PlayerController : MonoBehaviour, IDamageable
         controller.enabled = false;
         transform.position = GameManager.instance.RespawnPos.transform.position;
         controller.enabled = true;
+    }
+
+    public void Death() {
+        GameManager.instance.CursorLockPause();
+        GameManager.instance.playerDeadMenu.SetActive(true);
+        GameManager.instance.menuCurrentlyOpen = GameManager.instance.playerDeadMenu;
+        GameManager.instance.isPaused = true;
+    }
+
+    public void ResetHP() {
+        HP = HPOrig;
     }
 }

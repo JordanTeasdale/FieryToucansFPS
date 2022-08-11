@@ -16,6 +16,14 @@ public class ButtonFunctions : MonoBehaviour {
         GameManager.instance.CursorUnlockUnpause();
     }
 
+    public void Respawn() {
+        GameManager.instance.playerScript.ResetHP();
+        GameManager.instance.playerScript.Respawn();
+        GameManager.instance.isPaused = false;
+        GameManager.instance.CursorUnlockUnpause();
+
+    }
+
     public void Quit() {
         Application.Quit();
     }
