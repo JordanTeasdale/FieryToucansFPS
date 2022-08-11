@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
+        //WeaponCycle();
 
         StartCoroutine(Shoot());
         
@@ -96,6 +97,46 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootDamage = _shootDmg;
         gunsList.Add(_stats);
     }
+
+    public void GunEquip(GunStats _gun)
+    {
+        shootDamage = _gun.shootDamage;
+        shootDistance = _gun.shootDistance;
+        shootRate = _gun.shootRate;
+    }
+
+    /*public void WeaponCycle()
+    {
+        for(int i = 0; ;)
+        {
+            if (Input.GetButtonDown("Next Weapon"))
+            {
+                if(i < gunsList.Count)
+                {
+                    ++i;
+                    GunEquip(gunsList[i]);
+                }
+                else
+                {
+                    i = 0;
+                    GunEquip(gunsList[i]);
+                }
+            }
+            if (Input.GetButtonDown("Previous Weapon"))
+            {
+                if(i > 0)
+                {
+                    --i;
+                    GunEquip(gunsList[i]);
+                }
+                else
+                {
+                    i = gunsList.Count;
+                    GunEquip(gunsList[i]);
+                }
+            }
+        }
+    }*/
 
     public void TakeDamage(int _dmg) {
         HP -= _dmg;

@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] NavMeshAgent agent;
 
     [Header("----- Enemy Stats -----")]
-    [Range(0, 10)] public int HP;
+    [Range(0, 100)] public int HP;
     [Range(0, 10)] [SerializeField] int playerFaceSpeed;
 
     [Header("----- Weapons Stats -----")]
