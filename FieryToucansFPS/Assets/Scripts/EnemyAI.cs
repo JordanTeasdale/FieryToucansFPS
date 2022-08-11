@@ -25,27 +25,23 @@ public class EnemyAI : MonoBehaviour, IDamageable
     bool playerInRange = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         agent.SetDestination(GameManager.instance.player.transform.position);
         playerDir = GameManager.instance.player.transform.position - transform.position;
 
-        facePlayer();
+        FacePlayer();
         if(playerInRange && !isShooting)
             StartCoroutine(Shoot());
 
     }
 
-    void facePlayer()
-    {
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
+    void FacePlayer() {
+        if (agent.remainingDistance <= agent.stoppingDistance) {
             playerDir.y = 0;
             Quaternion rotation = Quaternion.LookRotation(playerDir);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * playerFaceSpeed);
@@ -60,33 +56,26 @@ public class EnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator Shoot()
-    { 
+    IEnumerator Shoot() { 
         isShooting = true;
-
 
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, bullet.transform.rotation);
         bulletClone.GetComponent<Bullet>().damage = damage;
         bulletClone.GetComponent<Bullet>().speed = speed;
         bulletClone.GetComponent<Bullet>().destroyTime = bulletDestroyTime;
 
-
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
 
-     void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+     void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
             playerInRange = true;
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Player")) {
             playerInRange = false;
         }
     }

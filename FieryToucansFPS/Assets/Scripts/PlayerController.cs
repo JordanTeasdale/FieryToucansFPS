@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     Vector3 playerVelocity;
     Vector3 move = Vector3.zero;
 
-   
     float playerSpeedOrignal;
     int timesJumped;
 
@@ -97,16 +96,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         gunsList.Add(_stats);
     }
 
-    public void TakeDamage(int _dmg)
-    {
+    public void TakeDamage(int _dmg) {
         HP -= _dmg;
-       // StartCoroutine(damageFlash());
+       // StartCoroutine(DamageFlash());
 
-        if (HP <= 0)
-        {
+        if (HP <= 0) {
             //player death state
             Respawn();
-           // death();
+           // Death();
         }
     }
 
@@ -114,34 +111,25 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
-        if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0)
-        {
+        if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0) {
             isShooting = true;
 
             //does something
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDistance))
-            {
-                if (hit.collider.GetComponent<IDamageable>() != null)
-                {
-                    IDamageable isDamageable = hit.collider.GetComponent<IDamageable>();
-
-                    if (hit.collider is SphereCollider)
-                    {
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDistance)) {
+                if (hit.collider.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
+                    if (hit.collider is SphereCollider) {
                         isDamageable.TakeDamage(shootDamage * 2);
-                    }
-                    else
+                    }  else
                         isDamageable.TakeDamage(shootDamage);
                 }
             }
-
             yield return new WaitForSeconds(shootRate);
             isShooting = false;
         }
     }
 
     public void Respawn() {
-
         controller.enabled = false;
         transform.position = GameManager.instance.RespawnPos.transform.position;
         controller.enabled = true;
