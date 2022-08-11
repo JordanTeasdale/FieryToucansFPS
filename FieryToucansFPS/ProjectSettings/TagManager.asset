@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Respawn Pos
+  - Enemy3
+  - Enemy1
+  - Enemy2
   layers:
   - Default
   - TransparentFX
