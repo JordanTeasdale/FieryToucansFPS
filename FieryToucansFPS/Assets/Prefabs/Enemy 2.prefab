@@ -54,7 +54,7 @@ MonoBehaviour:
   playerFaceSpeed: 2
   shootRate: 0.5
   damage: 2
-  speed: 3
+  speed: 4
   bulletDestroyTime: 2
   bullet: {fileID: 5594914386056169330, guid: dd4126444289d064eada9ab9bef8ecde, type: 3}
   bulletSpawnPos: {fileID: 2183377734908532110}
@@ -67,9 +67,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 24509391605676063}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 5
