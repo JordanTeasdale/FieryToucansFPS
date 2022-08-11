@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     [SerializeField] int shootDistance;
     [SerializeField] int shootDamage;
+    [Range(0.1f, 5)][SerializeField] float switchRate;
     [SerializeField] float shootRate;
     [SerializeField] List<GunStats> gunsList = new List<GunStats>();
 
@@ -30,9 +31,11 @@ public class PlayerController : MonoBehaviour, IDamageable
     float playerSpeedOrignal;
     int timesJumped;
     int HPOrig;
+    int weaponIndex = 0;
 
     bool isSpinting = false;
     bool isShooting = false;
+    bool isSwitching = false;
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
@@ -50,7 +53,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         WeaponCycle();
 
         StartCoroutine(Shoot());
-        
+        StartCoroutine(WeaponCycle());
     }
 
     void PlayerMovement() {
@@ -105,36 +108,29 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootRate = _gun.shootRate;
     }
 
-    public void WeaponCycle()
-    {
-        for(int i = 0; ;)
-        {
-            if (Input.GetButtonDown("e"))
-            {
-                if(i < gunsList.Count)
-                {
-                    ++i;
-                    GunEquip(gunsList[i]);
-                }
-                else
-                {
-                    i = 0;
-                    GunEquip(gunsList[i]);
-                }
+    IEnumerator WeaponCycle() {
+        if (gunsList.Count > 0 && Input.mouseScrollDelta.y != 0 && !isSwitching) {
+            isSwitching = true;
+            Debug.Log(Input.mouseScrollDelta.y);
+            if (Input.mouseScrollDelta.y > 0) {
+                weaponIndex++;
+                if (weaponIndex == gunsList.Count)
+                    weaponIndex = 0;
+                GunStats currentGun = gunsList[weaponIndex];
+                shootRate = currentGun.shootRate;
+                shootDistance = currentGun.shootDistance;
+                shootDamage = currentGun.shootDamage;
+            } else if (Input.mouseScrollDelta.y < 0) {
+                weaponIndex--;
+                if (weaponIndex < 0)
+                    weaponIndex = gunsList.Count - 1;
+                GunStats currentGun = gunsList[weaponIndex];
+                shootRate = currentGun.shootRate;
+                shootDistance = currentGun.shootDistance;
+                shootDamage = currentGun.shootDamage;
             }
-            if (Input.GetButtonDown("q"))
-            {
-                if(i > 0)
-                {
-                    --i;
-                    GunEquip(gunsList[i]);
-                }
-                else
-                {
-                    i = gunsList.Count;
-                    GunEquip(gunsList[i]);
-                }
-            }
+            yield return new WaitForSeconds(switchRate);
+            isSwitching = false;
         }
     }
 
