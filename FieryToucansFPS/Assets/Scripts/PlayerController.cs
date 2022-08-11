@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     int timesJumped;
     int HPOrig;
 
-    bool isSpinting = false;
+    bool isSprinting = false;
     bool isShooting = false;
     // Start is called before the first frame update
     void Start() {
@@ -80,12 +80,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     void Sprint() {
 
         if (Input.GetButtonDown("Sprint")) {
-            isSpinting = true;
+            isSprinting = true;
             playerSpeed = playerSpeed * sprintMult;
         }
 
         if (Input.GetButtonUp("Sprint")) {
-            isSpinting = false;
+            isSprinting = false;
             playerSpeed = playerSpeedOrignal;
         }
     }
