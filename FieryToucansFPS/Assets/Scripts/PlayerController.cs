@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
-        WeaponCycle();
+        //WeaponCycle();
 
         StartCoroutine(Shoot());
         
@@ -105,11 +105,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootRate = _gun.shootRate;
     }
 
-    public void WeaponCycle()
+    /*public void WeaponCycle()
     {
         for(int i = 0; ;)
         {
-            if (Input.GetButtonDown("e"))
+            if (Input.GetButtonDown("Next Weapon"))
             {
                 if(i < gunsList.Count)
                 {
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour, IDamageable
                     GunEquip(gunsList[i]);
                 }
             }
-            if (Input.GetButtonDown("q"))
+            if (Input.GetButtonDown("Previous Weapon"))
             {
                 if(i > 0)
                 {
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour, IDamageable
                 }
             }
         }
-    }
+    }*/
 
     public void TakeDamage(int _dmg) {
         HP -= _dmg;
