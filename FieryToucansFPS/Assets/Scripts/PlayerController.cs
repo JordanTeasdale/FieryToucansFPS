@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     float playerSpeedOrignal;
     int timesJumped;
     int HPOrig;
+    int prevHP;
+    float healthSmoothTime = 0.5f;
+    float healthSmoothCount;
+    float healthFillAmount;
     int weaponIndex = 0;
 
     bool isSpinting = false;
@@ -40,6 +44,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     void Start() {
         playerSpeedOrignal = playerSpeed;
         HPOrig = HP;
+
+        ResetHP();
     }
 
     // Update is called once per frame
@@ -54,6 +60,14 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         StartCoroutine(Shoot());
         //StartCoroutine(WeaponCycle());
+    }
+
+    void FixedUpdate() {
+        healthSmoothCount = System.Math.Min(healthSmoothTime, healthSmoothCount + Time.fixedDeltaTime);
+        if (healthFillAmount != HP) {
+            healthFillAmount = Mathf.Lerp(prevHP, HP, healthSmoothCount / healthSmoothTime);
+            UpdateHP();
+        }
     }
 
     void PlayerMovement() {
@@ -134,25 +148,18 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     IEnumerator WeaponCycle() {
-        if (gunsList.Count > 0 && Input.mouseScrollDelta.y != 0 && !isSwitching) {
+        if (gunsList.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0 && !isSwitching) {
             isSwitching = true;
-            Debug.Log(Input.mouseScrollDelta.y);
-            if (Input.mouseScrollDelta.y > 0) {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0) {
                 weaponIndex++;
                 if (weaponIndex == gunsList.Count)
                     weaponIndex = 0;
-                GunStats currentGun = gunsList[weaponIndex];
-                shootRate = currentGun.shootRate;
-                shootDistance = currentGun.shootDistance;
-                shootDamage = currentGun.shootDamage;
-            } else if (Input.mouseScrollDelta.y < 0) {
+                GunEquip(gunsList[weaponIndex]);
+            } else if (Input.GetAxis("Mouse ScrollWheel") < 0) {
                 weaponIndex--;
                 if (weaponIndex < 0)
                     weaponIndex = gunsList.Count - 1;
-                GunStats currentGun = gunsList[weaponIndex];
-                shootRate = currentGun.shootRate;
-                shootDistance = currentGun.shootDistance;
-                shootDamage = currentGun.shootDamage;
+                GunEquip(gunsList[weaponIndex]);
             }
             yield return new WaitForSeconds(switchRate);
             isSwitching = false;
@@ -160,11 +167,16 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     public void TakeDamage(int _dmg) {
+        //healthSmoothCount = 0;
+        if (healthFillAmount == HP) {
+            healthSmoothCount = 0;
+            prevHP = HP;
+        }
         HP -= _dmg;
-       StartCoroutine(DamageFlash());
+        //UpdateHP();
+        StartCoroutine(DamageFlash());
         if (HP <= 0) {
-            //player death state
-            Respawn();
+            // Kill the player
             Death();
         }
     }
@@ -198,6 +210,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     public void Respawn() {
+        healthSmoothCount = 0;
         controller.enabled = false;
         transform.position = GameManager.instance.RespawnPos.transform.position;
         controller.enabled = true;
@@ -212,5 +225,9 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void ResetHP() {
         HP = HPOrig;
+    }
+
+    public void UpdateHP() {
+        GameManager.instance.playerHPBar.fillAmount = healthFillAmount / HPOrig;
     }
 }

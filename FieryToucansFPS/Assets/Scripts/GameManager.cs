@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public GameObject playerDeadMenu;
     public GameObject menuCurrentlyOpen;
     public GameObject playerDamageFlash;
+    public Image playerHPBar;
 
     public bool isPaused = false;
 

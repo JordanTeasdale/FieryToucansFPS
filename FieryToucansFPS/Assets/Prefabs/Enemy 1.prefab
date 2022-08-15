@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 154166453989607642}
   - component: {fileID: 154166453996911461}
   - component: {fileID: 1351734792}
-  - component: {fileID: 5781446449773187401}
+  - component: {fileID: 1048276070}
   m_Layer: 8
   m_Name: Enemy 1
   m_TagString: Enemy1
@@ -821,7 +821,7 @@ MonoBehaviour:
   agent: {fileID: 154166453989607638}
   HP: 20
   playerFaceSpeed: 1
-  shootRate: 0.2
+  shootRate: 0.9
   damage: 1
   speed: 10
   bulletDestroyTime: 3
@@ -909,7 +909,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 12
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5781446449773187401
+--- !u!54 &1048276070
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
