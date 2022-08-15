@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
-        WeaponCycle();
+        WeaponSelect();
 
         StartCoroutine(Shoot());
-        StartCoroutine(WeaponCycle());
+        //StartCoroutine(WeaponCycle());
     }
 
     void PlayerMovement() {
@@ -94,10 +94,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    public void GunPickup(float _shootR, int _shootD, int _shootDmg, GunStats _stats) {
-        shootRate = _shootR;
-        shootDistance = _shootD;
-        shootDamage = _shootDmg;
+    public void GunPickup( GunStats _stats) {
+        GunEquip(_stats);
         gunsList.Add(_stats);
     }
 
@@ -106,6 +104,33 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootDamage = _gun.shootDamage;
         shootDistance = _gun.shootDistance;
         shootRate = _gun.shootRate;
+    }
+
+    public void WeaponSelect()
+    {
+        if (gunsList.Count > 0)
+        {
+            if(Input.GetAxis("Mouse ScrollWheel") > 0 && weaponIndex < gunsList.Count -1)
+            {
+                ++weaponIndex;
+                GunEquip(gunsList[weaponIndex]);
+            }
+            if(Input.GetAxis("Mouse ScrollWheel") > 0 && weaponIndex == gunsList.Count)
+            {
+                weaponIndex = 0;
+                GunEquip(gunsList[weaponIndex]);
+            }
+            if(Input.GetAxis("Mouse ScrollWheel") < 0 && weaponIndex > 0)
+            {
+                --weaponIndex;
+                GunEquip(gunsList[weaponIndex]);
+            }
+            if(Input.GetAxis("Mouse ScrollWheel") < 0 && weaponIndex == 0)
+            {
+                weaponIndex = gunsList.Count;
+                GunEquip(gunsList[weaponIndex]);
+            }
+        }
     }
 
     IEnumerator WeaponCycle() {
