@@ -56,10 +56,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
-        WeaponSelect();
+        //WeaponSelect();
 
         StartCoroutine(Shoot());
-        //StartCoroutine(WeaponCycle());
+        StartCoroutine(WeaponCycle());
     }
 
     void FixedUpdate() {
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
             if(Input.GetAxis("Mouse ScrollWheel") < 0 && weaponIndex == 0)
             {
-                weaponIndex = gunsList.Count;
+                weaponIndex = gunsList.Count - 1;
                 GunEquip(gunsList[weaponIndex]);
             }
         }
