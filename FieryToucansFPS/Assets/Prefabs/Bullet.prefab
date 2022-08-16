@@ -125,7 +125,7 @@ TrailRenderer:
   m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.15
+    widthMultiplier: 0.04
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -152,7 +152,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.5590387, b: 0.015686274, a: 1}
+      key0: {r: 1, g: 0.47759512, b: 0.015686274, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

@@ -819,9 +819,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 154166453989607638}
-  HP: 20
+  HP: 5
   playerFaceSpeed: 1
-  shootRate: 0.9
+  shootRate: 0.8
   damage: 1
   speed: 10
   bulletDestroyTime: 3
@@ -837,7 +837,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 3
+  m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
