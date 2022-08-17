@@ -7,6 +7,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
 {
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] Renderer rend;
+    [SerializeField] Animator anim;
 
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] public int HP;
@@ -31,6 +33,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     // Update is called once per frame
     void Update() {
+        anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
+
         agent.SetDestination(GameManager.instance.player.transform.position);
         playerDir = GameManager.instance.player.transform.position - transform.position;
 
@@ -50,10 +54,16 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     public void TakeDamage(int _damage) {
         HP -= _damage;
+        StartCoroutine(FlashColor());
 
         if (HP <= 0) {
             Destroy(gameObject);
         }
+    }
+    IEnumerator FlashColor() {
+        rend.material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        rend.material.color = Color.white;
     }
 
     IEnumerator Shoot() { 
