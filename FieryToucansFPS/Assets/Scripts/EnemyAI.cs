@@ -69,6 +69,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     IEnumerator Shoot() { 
         isShooting = true;
 
+        anim.SetTrigger("Shoot");
+
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, bullet.transform.rotation);
         bulletClone.GetComponent<Bullet>().damage = damage;
         bulletClone.GetComponent<Bullet>().speed = speed;
