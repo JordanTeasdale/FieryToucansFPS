@@ -54,6 +54,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     public void TakeDamage(int _damage) {
         HP -= _damage;
+        anim.SetTrigger("Damage");
+
         StartCoroutine(FlashColor());
 
         if (HP <= 0) {
