@@ -64,7 +64,9 @@ public class EnemyAI : MonoBehaviour, IDamageable
     }
     IEnumerator FlashColor() {
         rend.material.color = Color.red;
+        agent.enabled = false;
         yield return new WaitForSeconds(0.1f);
+        agent.enabled = true;
         rend.material.color = Color.white;
     }
 
