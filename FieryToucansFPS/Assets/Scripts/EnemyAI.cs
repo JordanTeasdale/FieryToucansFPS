@@ -13,6 +13,11 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] public int HP;
     [Range(0, 10)] [SerializeField] int playerFaceSpeed;
+    [Range(1, 180)] [SerializeField] int fieldOfView;
+    [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
+    [Range(1, 180)] [SerializeField] int roamRadius;
+    [Range(1, 5)] [SerializeField] float speedRoam;
+    [Range(1, 5)] [SerializeField] float speedChase;
 
     [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)] [SerializeField] float shootRate;
@@ -26,51 +31,102 @@ public class EnemyAI : MonoBehaviour, IDamageable
     bool isShooting = false;
     bool playerInRange = false;
 
+    float stoppingDistanceOrig;
+    float speedOrig;
+    Vector3 startingPos;
+
+
+
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
+        stoppingDistanceOrig = agent.stoppingDistance;
+        speedOrig = agent.speed;
+        Roam();
 
     }
 
     // Update is called once per frame
-    void Update() {
-        anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
+    void Update()
+    {
+        if (agent.isActiveAndEnabled)
+        {
+            anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
+            playerDir = GameManager.instance.player.transform.position - transform.position;
 
-        agent.SetDestination(GameManager.instance.player.transform.position);
-        playerDir = GameManager.instance.player.transform.position - transform.position;
+            if (playerInRange)
+            {
 
-        FacePlayer();
-        if(playerInRange && !isShooting)
-            StartCoroutine(Shoot());
+                CanSeePlayer();
+            }
+            else if (agent.remainingDistance < 0.1f)
+                Roam();
+        }
+    }
+    void Roam()
+    {
+        agent.stoppingDistance = 0;
+        Vector3 randomDir = Random.insideUnitSphere * roamRadius;
+        randomDir += startingPos;
 
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDir, out hit, roamRadius, 1);
+        NavMeshPath path = new NavMeshPath();
+
+        agent.CalculatePath(hit.position, path);
+        agent.SetPath(path);
     }
 
-    void FacePlayer() {
-        if (agent.remainingDistance <= agent.stoppingDistance) {
+    void FacePlayer()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
             playerDir.y = 0;
             Quaternion rotation = Quaternion.LookRotation(playerDir);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * playerFaceSpeed);
         }
     }
 
-    public void TakeDamage(int _damage) {
-        HP -= _damage;
+    public void TakeDamage(int damage)
+    {
+
+
+        HP -= damage;
         anim.SetTrigger("Damage");
 
-        StartCoroutine(FlashColor());
+        if (HP < 1)
+        {
+            anim.SetBool("Dead", true);
+            agent.enabled = false;
 
-        if (HP <= 0) {
-            Destroy(gameObject);
+            foreach (Collider col in GetComponents<Collider>())
+                col.enabled = false;
+
         }
+        else
+        {
+            StartCoroutine(FlashColor());
+
+        }
+
+
+
     }
-    IEnumerator FlashColor() {
+
+    IEnumerator FlashColor()
+    {
         rend.material.color = Color.red;
         agent.enabled = false;
         yield return new WaitForSeconds(0.1f);
         agent.enabled = true;
+        agent.speed = speedOrig;
+        agent.SetDestination(GameManager.instance.player.transform.position);
+        agent.stoppingDistance = 0;
         rend.material.color = Color.white;
     }
 
-    IEnumerator Shoot() { 
+    IEnumerator shoot()
+    {
         isShooting = true;
 
         anim.SetTrigger("Shoot");
@@ -80,20 +136,51 @@ public class EnemyAI : MonoBehaviour, IDamageable
         bulletClone.GetComponent<Bullet>().speed = speed;
         bulletClone.GetComponent<Bullet>().destroyTime = bulletDestroyTime;
 
+
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
 
-     void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
-            playerInRange = true;
+    void CanSeePlayer()
+    {
+
+        float angle = Vector3.Angle(playerDir, transform.forward);
+        Debug.Log(angle);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, playerDir, out hit))
+        {
+            Debug.DrawRay(transform.position, playerDir);
+
+            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)
+            {
+                agent.SetDestination(GameManager.instance.player.transform.position);
+                agent.stoppingDistance = stoppingDistanceOrig;
+                FacePlayer();
+
+                if (!isShooting && angle <= fieldOfViewShoot)
+                {
+                    StartCoroutine(shoot());
+                }
+            }
+
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
 
-    void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player")) {
-            playerInRange = false;
         }
+
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
+        Roam();
     }
 
 }
