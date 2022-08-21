@@ -116,7 +116,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         rend.material.color = Color.white;
     }
 
-    IEnumerator shoot() {
+    IEnumerator Shoot() {
         isShooting = true;
 
         anim.SetTrigger("Shoot");
@@ -146,7 +146,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 FacePlayer();
 
                 if (!isShooting && angle <= fieldOfViewShoot) {
-                    StartCoroutine(shoot());
+                    StartCoroutine(Shoot());
                 }
             }
 
