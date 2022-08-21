@@ -38,8 +38,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         stoppingDistanceOrig = agent.stoppingDistance;
         speedOrig = agent.speed;
         Roam();
@@ -47,10 +46,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (agent.isActiveAndEnabled)
-        {
+    void Update() {
+        if (agent.isActiveAndEnabled) {
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
             playerDir = GameManager.instance.player.transform.position - transform.position;
 
@@ -63,8 +60,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 Roam();
         }
     }
-    void Roam()
-    {
+    void Roam() {
         agent.stoppingDistance = 0;
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;
         randomDir += startingPos;
@@ -77,8 +73,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         agent.SetPath(path);
     }
 
-    void FacePlayer()
-    {
+    void FacePlayer()  {
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
             playerDir.y = 0;
@@ -87,15 +82,13 @@ public class EnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
 
 
         HP -= damage;
         anim.SetTrigger("Damage");
 
-        if (HP < 1)
-        {
+        if (HP < 1) {
             anim.SetBool("Dead", true);
             agent.enabled = false;
 
@@ -103,8 +96,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 col.enabled = false;
 
         }
-        else
-        {
+        else {
             StartCoroutine(FlashColor());
 
         }
@@ -113,8 +105,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     }
 
-    IEnumerator FlashColor()
-    {
+    IEnumerator FlashColor() {
         rend.material.color = Color.red;
         agent.enabled = false;
         yield return new WaitForSeconds(0.1f);
@@ -125,8 +116,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         rend.material.color = Color.white;
     }
 
-    IEnumerator shoot()
-    {
+    IEnumerator shoot() {
         isShooting = true;
 
         anim.SetTrigger("Shoot");
@@ -141,43 +131,36 @@ public class EnemyAI : MonoBehaviour, IDamageable
         isShooting = false;
     }
 
-    void CanSeePlayer()
-    {
+    void CanSeePlayer() {
 
         float angle = Vector3.Angle(playerDir, transform.forward);
         Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, playerDir, out hit))
-        {
+        if (Physics.Raycast(transform.position, playerDir, out hit))  {
             Debug.DrawRay(transform.position, playerDir);
 
-            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)
-            {
+            if (hit.collider.CompareTag("Player") && angle <= fieldOfView) {
                 agent.SetDestination(GameManager.instance.player.transform.position);
                 agent.stoppingDistance = stoppingDistanceOrig;
                 FacePlayer();
 
-                if (!isShooting && angle <= fieldOfViewShoot)
-                {
+                if (!isShooting && angle <= fieldOfViewShoot) {
                     StartCoroutine(shoot());
                 }
             }
 
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player"))  {
             playerInRange = true;
 
         }
 
     }
 
-    void OnTriggerExit(Collider other)
-    {
+    void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player"))
             playerInRange = false;
         Roam();
