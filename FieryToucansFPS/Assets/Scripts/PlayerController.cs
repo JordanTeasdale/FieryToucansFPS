@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] float shootRate;
     [SerializeField] List<GunStats> gunsList = new List<GunStats>();
 
+    [Header("----- Effects -----")]
+    [SerializeField] GameObject hitEffect;
+
     Vector3 playerVelocity;
     Vector3 move = Vector3.zero;
 
@@ -193,10 +196,9 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0) {
             isShooting = true;
-
-            //does something
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDistance)) {
+                Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
                 if (hit.collider.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
                     if (hit.collider is SphereCollider) {
                         isDamageable.TakeDamage(shootDamage * 2);

@@ -157,11 +157,13 @@ MonoBehaviour:
   jumpHeight: 14
   gravityValue: 25
   maxJumps: 2
-  HP: 5
+  HP: 10
   shootDistance: 0
   shootDamage: 0
+  switchRate: 0
   shootRate: 0
   gunsList: []
+  hitEffect: {fileID: 6221651516144037186, guid: e6584e9ba20353f42b68051a2786c842, type: 3}
 --- !u!33 &82320173802793686
 MeshFilter:
   m_ObjectHideFlags: 0
