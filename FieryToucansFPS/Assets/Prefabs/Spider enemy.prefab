@@ -322,11 +322,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 20
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 6
+  m_AngularSpeed: 600
+  m_StoppingDistance: 7
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -354,10 +354,10 @@ MonoBehaviour:
   fieldOfView: 90
   fieldOfViewShoot: 20
   roamRadius: 10
-  speedRoam: 1
-  speedChase: 2
+  speedRoam: 0
+  speedChase: 0
   shootRate: 1
-  damage: 3
+  damage: 2
   speed: 10
   bulletDestroyTime: 2
   bullet: {fileID: 5594914386056169330, guid: dd4126444289d064eada9ab9bef8ecde, type: 3}

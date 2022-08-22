@@ -16,8 +16,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Range(1, 180)] [SerializeField] int fieldOfView;
     [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
     [Range(1, 180)] [SerializeField] int roamRadius;
-    [Range(1, 5)] [SerializeField] float speedRoam;
-    [Range(1, 5)] [SerializeField] float speedChase;
+    //[Range(1, 5)] [SerializeField] float speedRoam;
+    //[Range(1, 5)] [SerializeField] float speedChase;
 
     [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)] [SerializeField] float shootRate;
@@ -55,6 +55,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
             {
 
                 CanSeePlayer();
+
             }
             else if (agent.remainingDistance < 0.1f)
                 Roam();
