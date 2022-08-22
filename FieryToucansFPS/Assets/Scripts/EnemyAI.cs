@@ -86,7 +86,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
 
         HP -= damage;
-        anim.SetTrigger("Damage");
+        
 
         if (HP < 1) {
             anim.SetBool("Dead", true);
@@ -98,6 +98,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         }
         else {
             StartCoroutine(FlashColor());
+            anim.SetTrigger("Damage");
 
         }
 
