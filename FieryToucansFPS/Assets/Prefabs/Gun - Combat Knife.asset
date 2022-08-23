@@ -15,3 +15,8 @@ MonoBehaviour:
   shootDistance: 2
   shootDamage: 25
   shootRate: 2
+  gunAud: {fileID: 0}
+  shoot: {fileID: 0}
+  shootVol: 0.135
+  reload: {fileID: 0}
+  reloadVol: 0.144
