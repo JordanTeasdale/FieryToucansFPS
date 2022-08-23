@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         Sprint();
         //WeaponSelect();
 
+        StartCoroutine(footSteps());
         StartCoroutine(Shoot());
         StartCoroutine(WeaponCycle());
     }
@@ -202,6 +203,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             prevHP = HP;
         }
         HP -= _dmg;
+        aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
         //UpdateHP();
         StartCoroutine(DamageFlash());
         if (HP <= 0) {
@@ -223,6 +225,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0) {
             isShooting = true;
             RaycastHit hit;
+            aud.PlayOneShot(soundShoot[Random.Range(0, soundShoot.Length)], soundShootVol);
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDistance)) {
                 Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
                 if (hit.collider.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
