@@ -326,7 +326,7 @@ NavMeshAgent:
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 600
-  m_StoppingDistance: 7
+  m_StoppingDistance: 6
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -351,11 +351,11 @@ MonoBehaviour:
   anim: {fileID: 2113439257943142667}
   HP: 10
   playerFaceSpeed: 3
-  fieldOfView: 90
-  fieldOfViewShoot: 20
-  roamRadius: 10
-  speedRoam: 0
-  speedChase: 0
+  fieldOfView: 180
+  fieldOfViewShoot: 45
+  roamRadius: 5
+  speedRoam: 3
+  speedChase: 5
   shootRate: 1
   damage: 2
   speed: 10

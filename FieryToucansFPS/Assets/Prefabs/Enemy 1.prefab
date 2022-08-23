@@ -823,9 +823,11 @@ MonoBehaviour:
   anim: {fileID: 154166453996911461}
   HP: 5
   playerFaceSpeed: 1
-  fieldOfView: 90
-  fieldOfViewShoot: 15
-  roamRadius: 10
+  fieldOfView: 180
+  fieldOfViewShoot: 30
+  roamRadius: 5
+  speedRoam: 2
+  speedChase: 3.5
   shootRate: 0.8
   damage: 1
   speed: 10
