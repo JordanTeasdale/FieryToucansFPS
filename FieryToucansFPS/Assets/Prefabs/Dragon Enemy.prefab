@@ -1211,8 +1211,8 @@ MonoBehaviour:
   fieldOfView: 180
   fieldOfViewShoot: 45
   roamRadius: 6
-  speedRoam: 0
-  speedChase: 0
+  speedRoam: 2.5
+  speedChase: 5
   shootRate: 0.8
   damage: 3
   speed: 8
@@ -1278,7 +1278,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 12
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6562930143923346220
 Rigidbody:
