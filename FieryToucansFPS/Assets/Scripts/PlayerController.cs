@@ -28,6 +28,15 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("----- Effects -----")]
     [SerializeField] GameObject hitEffect;
 
+    [Header("------Audio------")]
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip[] soundDamage;
+    [Range(0, 1)][SerializeField] float soundDamageVol;
+    [SerializeField] AudioClip[] soundShoot;
+    [Range(0, 1)][SerializeField] float soundShootVol;
+    [SerializeField] AudioClip[] soundFootsteps;
+    [Range(0, 1)][SerializeField] float soundFootstepsVol;
+
     Vector3 playerVelocity;
     Vector3 move = Vector3.zero;
 
@@ -40,9 +49,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     float healthFillAmount;
     int weaponIndex = 0;
 
-    bool isSpinting = false;
+    bool isSprinting = false;
     bool isShooting = false;
     bool isSwitching = false;
+    bool playFootsteps = true;
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
@@ -98,15 +108,31 @@ public class PlayerController : MonoBehaviour, IDamageable
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
+    IEnumerator footSteps()
+    {
+        if (controller.isGrounded && move.normalized.magnitude > 0.3f && playFootsteps)
+        {
+            playFootsteps = false;
+            aud.PlayOneShot(soundFootsteps[Random.Range(0, soundFootsteps.Length)], soundFootstepsVol);
+            if (isSprinting)
+            {
+                yield return new WaitForSeconds(0.3f);
+            }
+            else
+                yield return new WaitForSeconds(0.4f);
+            playFootsteps = true;
+        }
+    }
+
     void Sprint() {
 
         if (Input.GetButtonDown("Sprint")) {
-            isSpinting = true;
+            isSprinting = true;
             playerSpeed = playerSpeed * sprintMult;
         }
 
         if (Input.GetButtonUp("Sprint")) {
-            isSpinting = false;
+            isSprinting = false;
             playerSpeed = playerSpeedOrignal;
         }
     }
