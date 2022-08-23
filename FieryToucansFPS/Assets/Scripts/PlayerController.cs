@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] float jumpHeight;
     [SerializeField] float gravityValue;
     [SerializeField] int maxJumps;
-    [Range(1,100)] [SerializeField] int HP;
+    [Range(1,100)] public int HP;
 
     [Header("----- Weapon Attributes -----")]
 

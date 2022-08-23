@@ -92,7 +92,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         if (HP < 1) {
             anim.SetBool("Dead", true);
             agent.enabled = false;
-
+            
             foreach (Collider col in GetComponents<Collider>())
                 col.enabled = false;
 

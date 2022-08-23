@@ -26,11 +26,11 @@ public class LevelSpawner : MonoBehaviour
 
 
     bool roomEntered = false;
-    bool roomCleared = false;
-    int enemiesAlive;
+    public bool roomCleared = false;
+    public int enemiesAlive;
 
     private void OnTriggerEnter(Collider other) {
-        if (!roomEntered && !roomCleared) {
+        if (other.CompareTag("Player") && !roomEntered && !roomCleared) {
             roomEntered = true;
             GameManager.instance.currentRoom = gameObject;
             for (int i = 0; i < doorLocations.Length; i++) {
@@ -57,8 +57,9 @@ public class LevelSpawner : MonoBehaviour
 
     public void EnemyKilled() {
         enemiesAlive--;
-        if (enemiesAlive <= 0) { 
+        if (enemiesAlive == 0) { 
             roomCleared = true;
+            StartCoroutine(GameManager.instance.ClearRoom());
             doors = GameObject.FindGameObjectsWithTag("Door");
             foreach(GameObject door in doors) {
                 Destroy(door);
