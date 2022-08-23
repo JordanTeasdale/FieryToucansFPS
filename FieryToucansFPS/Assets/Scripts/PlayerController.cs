@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootRate = _gun.shootRate;
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
+        hitEffect = _gun.hitEffect;
     }
 
     public void WeaponSelect()

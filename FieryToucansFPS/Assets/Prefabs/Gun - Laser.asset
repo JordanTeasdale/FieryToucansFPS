@@ -20,3 +20,4 @@ MonoBehaviour:
   shootVol: 0.621
   reloadSound: {fileID: 0}
   reloadVol: 0.139
+  hitEffect: {fileID: 5155270207639385090, guid: 5653d7134a3ebad438d744849a6fe319, type: 3}
