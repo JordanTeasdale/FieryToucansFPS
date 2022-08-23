@@ -9,11 +9,12 @@ TagManager:
   - Enemy1
   - Enemy2
   - Door
+  - Spawner
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Spawner
   - Water
   - UI
   - Player

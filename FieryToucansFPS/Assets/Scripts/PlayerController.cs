@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] AudioSource aud;
     [SerializeField] AudioClip[] soundDamage;
     [Range(0, 1)][SerializeField] float soundDamageVol;
-    [SerializeField] AudioClip[] soundShoot;
+    [SerializeField] AudioClip soundShoot;
     [Range(0, 1)][SerializeField] float soundShootVol;
     [SerializeField] AudioClip[] soundFootsteps;
     [Range(0, 1)][SerializeField] float soundFootstepsVol;
@@ -148,7 +148,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootDamage = _gun.shootDamage;
         shootDistance = _gun.shootDistance;
         shootRate = _gun.shootRate;
-        hitEffect = _gun.hitEffect;
+        soundShoot = _gun.shootSound;
+        soundShootVol = _gun.shootVol;
     }
 
     public void WeaponSelect()
@@ -226,7 +227,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0) {
             isShooting = true;
             RaycastHit hit;
-            aud.PlayOneShot(soundShoot[Random.Range(0, soundShoot.Length)], soundShootVol);
+            //aud.PlayOneShot(soundShoot[Random.Range(0, soundShoot.Length)], soundShootVol);
+            aud.PlayOneShot(soundShoot, soundShootVol);
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDistance)) {
                 Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
                 if (hit.collider.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {

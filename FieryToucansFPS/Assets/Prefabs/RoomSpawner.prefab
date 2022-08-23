@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7800019132084277194}
   - component: {fileID: 7800019132084277193}
   - component: {fileID: 7800019132084277192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RoomSpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.598545, y: 8.23827, z: 15.566357}
-  m_Center: {x: 3.3198533, y: 3.619135, z: 7.2831783}
+  m_Size: {x: 21.064608, y: 8.23827, z: 24.866343}
+  m_Center: {x: 3.1130562, y: 3.619135, z: 2.6331854}
 --- !u!114 &7800019132084277192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,20 +62,17 @@ MonoBehaviour:
   skeleton: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
   spider: {fileID: 1266945392910353016, guid: a709782658062904ca75f119e64ae383, type: 3}
   dragonBoss: {fileID: 6562930143932835471, guid: 02ffbf420ec7a744898affcb77e08246, type: 3}
-  numOfDoors: 2
   doorLocations:
   - {x: 10, y: 10}
   - {x: -7, y: -5}
   doorFaceNorthSouth: 0001
-  numOfSkeletons: 3
   skeletonLocations:
   - {x: 0, y: 0}
   - {x: 2, y: 2}
   - {x: 4, y: 4}
-  numOfSpiders: 2
   spiderLocations:
   - {x: -5, y: -5}
   - {x: -7, y: 0}
-  numOfDragonBosses: 1
-  dragonBossLocations:
-  - {x: 0, y: -15}
+  dragonBossLocations: []
+  roomCleared: 0
+  enemiesAlive: 0
