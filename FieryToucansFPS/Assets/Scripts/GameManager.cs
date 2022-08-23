@@ -8,12 +8,6 @@ public class GameManager : MonoBehaviour {
 
     public GameObject player;
     public PlayerController playerScript;
-    public GameObject enemy1;
-    public EnemyAI enemy1Script;
-    public GameObject enemy2;
-    public EnemyAI enemy2Script;
-    public GameObject enemy3;
-    public EnemyAI enemy3Script;
 
     public GameObject currentRoom;
     public int clearedRooms = 0;
@@ -35,15 +29,6 @@ public class GameManager : MonoBehaviour {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
-
-        if (enemy1 && enemy2 && enemy3) {
-            enemy1 = GameObject.FindGameObjectWithTag("Enemy1");
-            enemy1Script = enemy1.GetComponent<EnemyAI>();
-            enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
-            enemy2Script = enemy2.GetComponent<EnemyAI>();
-            enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
-            enemy3Script = enemy2.GetComponent<EnemyAI>();
-        }
 
         RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
         playerScript.Respawn();
@@ -78,7 +63,7 @@ public class GameManager : MonoBehaviour {
     public IEnumerator ClearRoom() {
         clearedRooms++;
 
-        if (clearedRooms == 0) {
+        if (clearedRooms == 1) {
             yield return new WaitForSeconds(1f);
             playerWinMenu.SetActive(true);
             menuCurrentlyOpen = playerWinMenu;
