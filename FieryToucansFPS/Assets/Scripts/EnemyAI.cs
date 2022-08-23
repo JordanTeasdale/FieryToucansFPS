@@ -16,8 +16,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Range(1, 180)] [SerializeField] int fieldOfView;
     [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
     [Range(1, 180)] [SerializeField] int roamRadius;
-    //[Range(1, 5)] [SerializeField] float speedRoam;
-    //[Range(1, 5)] [SerializeField] float speedChase;
+    [Range(1, 5)] [SerializeField] float speedRoam;
+    [Range(1, 5)] [SerializeField] float speedChase;
 
     [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)] [SerializeField] float shootRate;
@@ -32,15 +32,13 @@ public class EnemyAI : MonoBehaviour, IDamageable
     bool playerInRange = false;
 
     float stoppingDistanceOrig;
-    float speedOrig;
     Vector3 startingPos;
-
 
 
     // Start is called before the first frame update
     void Start() {
         stoppingDistanceOrig = agent.stoppingDistance;
-        speedOrig = agent.speed;
+        startingPos = transform.position;
         Roam();
 
     }
@@ -63,6 +61,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     }
     void Roam() {
         agent.stoppingDistance = 0;
+        agent.speed = speedRoam;
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;
         randomDir += startingPos;
 
@@ -85,34 +84,34 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage) {
 
+        if (anim.GetBool("Dead") == false)  {
+            HP -= damage;
 
-        HP -= damage;
-        
+            if (HP > 0)
+            {
+                anim.SetTrigger("Damage");
+                StartCoroutine(FlashColor());
+            }
+            else
+            {
+                GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+                anim.SetBool("Dead", true);
+                agent.enabled = false;
 
-        if (HP < 1) {
-            anim.SetBool("Dead", true);
-            agent.enabled = false;
-            
-            foreach (Collider col in GetComponents<Collider>())
-                col.enabled = false;
+                foreach (Collider col in GetComponents<Collider>())
+                    col.enabled = false;
+            }
 
         }
-        else {
-            StartCoroutine(FlashColor());
-            anim.SetTrigger("Damage");
-
-        }
-
 
 
     }
 
     IEnumerator FlashColor() {
         rend.material.color = Color.red;
-        agent.enabled = false;
+        agent.speed = 0;
         yield return new WaitForSeconds(0.1f);
-        agent.enabled = true;
-        agent.speed = speedOrig;
+        agent.speed = speedChase;
         agent.SetDestination(GameManager.instance.player.transform.position);
         agent.stoppingDistance = 0;
         rend.material.color = Color.white;
@@ -139,12 +138,13 @@ public class EnemyAI : MonoBehaviour, IDamageable
         Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, playerDir, out hit))  {
+        if (Physics.Raycast(transform.position, playerDir, out hit)) {
             Debug.DrawRay(transform.position, playerDir);
 
             if (hit.collider.CompareTag("Player") && angle <= fieldOfView) {
                 agent.SetDestination(GameManager.instance.player.transform.position);
                 agent.stoppingDistance = stoppingDistanceOrig;
+                agent.speed = speedChase;
                 FacePlayer();
 
                 if (!isShooting && angle <= fieldOfViewShoot) {
