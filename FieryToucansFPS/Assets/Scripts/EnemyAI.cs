@@ -30,6 +30,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     Vector3 playerDir;
     bool isShooting = false;
     bool playerInRange = false;
+   
 
     float stoppingDistanceOrig;
     Vector3 startingPos;
@@ -158,6 +159,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
         if (other.CompareTag("Player"))  {
             playerInRange = true;
 
+        }
+        if (other.CompareTag("Player"))
+        {
+            
         }
 
     }
