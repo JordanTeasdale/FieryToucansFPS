@@ -15,3 +15,9 @@ MonoBehaviour:
   shootDistance: 15
   shootDamage: 5
   shootRate: 1.2
+  gunAud: {fileID: 0}
+  shoot: {fileID: 0}
+  shootVol: 0
+  reload: {fileID: 0}
+  reloadVol: 0
+  hitEffect: {fileID: 6221651516144037186, guid: 3de810d3560377c4b8aa313536aaa347, type: 3}

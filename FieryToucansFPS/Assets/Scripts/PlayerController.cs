@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootDamage = _gun.shootDamage;
         shootDistance = _gun.shootDistance;
         shootRate = _gun.shootRate;
+        hitEffect = _gun.hitEffect;
     }
 
     public void WeaponSelect()

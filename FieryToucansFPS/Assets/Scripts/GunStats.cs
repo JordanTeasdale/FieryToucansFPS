@@ -14,5 +14,7 @@ public class GunStats : ScriptableObject {
     [Range(0, 1)][SerializeField] float shootVol;
     [SerializeField] AudioClip reload;
     [Range(0, 1)][SerializeField] float reloadVol;
+    [Header("----- Effects -----")]
+    [SerializeField] public GameObject hitEffect;
 
 }
