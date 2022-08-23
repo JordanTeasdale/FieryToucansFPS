@@ -16,7 +16,7 @@ MonoBehaviour:
   shootDamage: 20
   shootRate: 2.5
   gunAud: {fileID: 6610029257671506302, guid: e58022db7a769e84ca4e42a9e3a567d0, type: 3}
-  shoot: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
-  shootVol: 0.135
-  reload: {fileID: 0}
-  reloadVol: 0.135
+  shootSound: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
+  shootVol: 0.611
+  reloadSound: {fileID: 8300000, guid: b19e324c1d4b8f3418cbf2db22181695, type: 3}
+  reloadVol: 0.717
