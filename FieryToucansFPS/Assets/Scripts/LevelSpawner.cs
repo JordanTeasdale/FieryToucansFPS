@@ -30,7 +30,7 @@ public class LevelSpawner : MonoBehaviour
     int enemiesAlive;
 
     private void OnTriggerEnter(Collider other) {
-        if (!roomEntered && !roomCleared) {
+        if (other.CompareTag("Player") && !roomEntered && !roomCleared) {
             roomEntered = true;
             GameManager.instance.currentRoom = gameObject;
             for (int i = 0; i < doorLocations.Length; i++) {

@@ -16,16 +16,19 @@ public class GameManager : MonoBehaviour {
     public EnemyAI enemy3Script;
 
     public GameObject currentRoom;
+    public int clearedRooms = 0;
 
     public GameObject RespawnPos;
 
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
+    public GameObject playerWinMenu;
     public GameObject menuCurrentlyOpen;
     public GameObject playerDamageFlash;
     public Image playerHPBar;
 
     public bool isPaused = false;
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Awake() {
@@ -48,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetButtonDown("Cancel")) {
+        if (Input.GetButtonDown("Cancel") && playerScript.HP > 0 && !gameOver) {
             isPaused = !isPaused;
             menuCurrentlyOpen = pauseMenu;
             menuCurrentlyOpen.SetActive(isPaused);
@@ -70,5 +73,17 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         menuCurrentlyOpen.SetActive(isPaused);
+    }
+
+    public IEnumerator ClearRoom() {
+        clearedRooms++;
+
+        if (clearedRooms == 0) {
+            yield return new WaitForSeconds(1f);
+            playerWinMenu.SetActive(true);
+            menuCurrentlyOpen = playerWinMenu;
+            CursorLockPause();
+            gameOver = true;
+        }
     }
 }
