@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     public GameObject enemy3;
     public EnemyAI enemy3Script;
 
+    public GameObject currentRoom;
+
     public GameObject RespawnPos;
 
     public GameObject pauseMenu;
