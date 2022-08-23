@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject currentRoom;
     public int clearedRooms = 0;
+    [SerializeField] int clearedRoomsRequired;
 
     public GameObject RespawnPos;
 
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour {
     public IEnumerator ClearRoom() {
         clearedRooms++;
 
-        if (clearedRooms == 1) {
+        if (clearedRooms == clearedRoomsRequired) {
             yield return new WaitForSeconds(1f);
             playerWinMenu.SetActive(true);
             menuCurrentlyOpen = playerWinMenu;
