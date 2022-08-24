@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
         hitEffect = _gun.hitEffect;
+        _gun.currentAmmo = _gun.maxAmmo;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
         UpdatedAmmoGUI();
@@ -271,6 +272,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         controller.enabled = false;
         transform.position = GameManager.instance.RespawnPos.transform.position;
         controller.enabled = true;
+        if (weaponIndex != -1) {
+            currentAmmo = maxAmmo;
+            gunsList[weaponIndex].currentAmmo = maxAmmo;
+            UpdatedAmmoGUI();
+        }
     }
 
     public void Death() {
