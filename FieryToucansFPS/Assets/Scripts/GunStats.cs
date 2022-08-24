@@ -6,15 +6,17 @@ using UnityEngine;
 [CreateAssetMenu]
 
 public class GunStats : ScriptableObject {
-    [SerializeField] public int shootDistance;
-    [SerializeField] public int shootDamage;
-    [SerializeField] public float shootRate;
+    public int shootDistance;
+    public int shootDamage;
+    public float shootRate;
     [SerializeField] AudioSource gunAud;
-    [SerializeField] public AudioClip shootSound;
+    public AudioClip shootSound;
     [Range(0, 1)][SerializeField] public float shootVol;
-    [SerializeField] public AudioClip reloadSound;
+    public AudioClip reloadSound;
     [Range(0, 1)][SerializeField] public float reloadVol;
-    [SerializeField] public GameObject hitEffect;
+    public GameObject hitEffect;
+    public int maxAmmo;
+    public int currentAmmo;
 
 
 }

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     public GameObject playerWinMenu;
     public GameObject menuCurrentlyOpen;
     public GameObject playerDamageFlash;
+    public GameObject ammoMagGUI;
+    public GameObject ammoStockGUI;
     public Image playerHPBar;
 
     public bool isPaused = false;

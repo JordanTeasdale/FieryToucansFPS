@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] int shootDamage;
     [Range(0.1f, 5)][SerializeField] float switchRate;
     [SerializeField] float shootRate;
+    [SerializeField] int currentAmmo;
     [SerializeField] List<GunStats> gunsList = new List<GunStats>();
 
     [Header("----- Effects -----")]
@@ -47,7 +48,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     float healthSmoothTime = 0.5f;
     float healthSmoothCount;
     float healthFillAmount;
-    int weaponIndex = 0;
+    int weaponIndex = -1;
+    int maxAmmo;
 
     bool isSprinting = false;
     bool isShooting = false;
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
-        //WeaponSelect();
+        Reload();
 
         StartCoroutine(footSteps());
         StartCoroutine(Shoot());
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void GunPickup( GunStats _stats) {
         GunEquip(_stats);
         gunsList.Add(_stats);
+        weaponIndex++;
     }
 
     public void GunEquip(GunStats _gun)
@@ -151,6 +154,9 @@ public class PlayerController : MonoBehaviour, IDamageable
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
         hitEffect = _gun.hitEffect;
+        maxAmmo = _gun.maxAmmo;
+        currentAmmo = _gun.currentAmmo;
+        UpdatedAmmoGUI();
     }
 
     public void WeaponSelect()
@@ -225,8 +231,11 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
-        if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0) {
+        if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             isShooting = true;
+            gunsList[weaponIndex].currentAmmo--;
+            currentAmmo--;
+            UpdatedAmmoGUI();
             RaycastHit hit;
             //aud.PlayOneShot(soundShoot[Random.Range(0, soundShoot.Length)], soundShootVol);
             aud.PlayOneShot(soundShoot, soundShootVol);
@@ -242,6 +251,19 @@ public class PlayerController : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(shootRate);
             isShooting = false;
         }
+    }
+
+    void Reload() {
+        if (Input.GetButtonDown("Reload")) {
+            currentAmmo = maxAmmo;
+            gunsList[weaponIndex].currentAmmo = maxAmmo;
+            UpdatedAmmoGUI();
+        }
+    }
+
+    private void UpdatedAmmoGUI() {
+        GameManager.instance.ammoStockGUI.GetComponent<TMPro.TMP_Text>().text = maxAmmo.ToString();
+        GameManager.instance.ammoMagGUI.GetComponent<TMPro.TMP_Text>().text = currentAmmo.ToString();
     }
 
     public void Respawn() {
