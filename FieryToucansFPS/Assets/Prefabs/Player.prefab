@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5694355021704120082}
   m_Father: {fileID: 82320173802793680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -163,6 +164,7 @@ MonoBehaviour:
   shootDamage: 0
   switchRate: 0
   shootRate: 0
+  currentAmmo: 0
   gunsList: []
   hitEffect: {fileID: 6221651516144037186, guid: e6584e9ba20353f42b68051a2786c842, type: 3}
   aud: {fileID: 7174589972155203629}
@@ -174,8 +176,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ced92f14b553baf4da3d74d1a89c4ed1, type: 3}
   - {fileID: 8300000, guid: 4e78a362ac28e0547ba5aaa378faf96d, type: 3}
   soundDamageVol: 0.1
-  soundShoot:
-  - {fileID: 8300000, guid: bc74d71cff5e7d746a89735282ce7544, type: 3}
+  soundShoot: {fileID: 0}
   soundShootVol: 0.1
   soundFootsteps:
   - {fileID: 8300000, guid: 22c270705053d01479411622ce5a3774, type: 3}
@@ -366,3 +367,34 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7373636952009012665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5694355021704120082}
+  m_Layer: 0
+  m_Name: GunPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5694355021704120082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373636952009012665}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.261, y: -0.93, z: 0.608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709202072}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
