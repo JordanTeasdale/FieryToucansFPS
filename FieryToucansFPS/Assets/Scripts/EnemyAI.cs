@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,8 +15,9 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Range(1, 180)] [SerializeField] int fieldOfView;
     [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
     [Range(1, 180)] [SerializeField] int roamRadius;
-    [Range(1, 5)] [SerializeField] float speedRoam;
-    [Range(1, 5)] [SerializeField] float speedChase;
+    [Range(1, 20)] [SerializeField] float speedRoam;
+    [Range(1, 20)] [SerializeField] float speedChase;
+ 
 
     [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)] [SerializeField] float shootRate;
@@ -30,9 +30,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
     Vector3 playerDir;
     bool isShooting = false;
     bool playerInRange = false;
-   
+
 
     float stoppingDistanceOrig;
+
     Vector3 startingPos;
 
 
@@ -46,19 +47,19 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     // Update is called once per frame
     void Update() {
+
         if (agent.isActiveAndEnabled) {
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
             playerDir = GameManager.instance.player.transform.position - transform.position;
 
-            if (playerInRange)
-            {
-
+            if (playerInRange) {
                 CanSeePlayer();
-
             }
             else if (agent.remainingDistance < 0.1f)
                 Roam();
         }
+
+
     }
     void Roam() {
         agent.stoppingDistance = 0;
@@ -74,9 +75,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         agent.SetPath(path);
     }
 
-    void FacePlayer()  {
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
+    void FacePlayer() {
+        if (agent.remainingDistance <= agent.stoppingDistance) {
             playerDir.y = 0;
             Quaternion rotation = Quaternion.LookRotation(playerDir);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * playerFaceSpeed);
@@ -88,13 +88,11 @@ public class EnemyAI : MonoBehaviour, IDamageable
         if (anim.GetBool("Dead") == false)  {
             HP -= damage;
 
-            if (HP > 0)
-            {
+            if (HP > 0)  {
                 anim.SetTrigger("Damage");
                 StartCoroutine(FlashColor());
             }
-            else
-            {
+            else  {
                 GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
                 anim.SetBool("Dead", true);
                 agent.enabled = false;
@@ -135,39 +133,41 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     void CanSeePlayer() {
 
+
         float angle = Vector3.Angle(playerDir, transform.forward);
         Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, playerDir, out hit)) {
+        if (Physics.Raycast(transform.position, playerDir, out hit))  {
             Debug.DrawRay(transform.position, playerDir);
 
-            if (hit.collider.CompareTag("Player") && angle <= fieldOfView) {
+            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)   {
                 agent.SetDestination(GameManager.instance.player.transform.position);
                 agent.stoppingDistance = stoppingDistanceOrig;
                 agent.speed = speedChase;
                 FacePlayer();
 
-                if (!isShooting && angle <= fieldOfViewShoot) {
+                if (!isShooting && angle <= fieldOfViewShoot)
+                {
                     StartCoroutine(Shoot());
                 }
             }
 
         }
     }
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)  {
+
         if (other.CompareTag("Player"))  {
             playerInRange = true;
+        }
 
-        }
-        if (other.CompareTag("Player"))
-        {
-            
-        }
+
+
+
 
     }
 
-    void OnTriggerExit(Collider other) {
+    void OnTriggerExit(Collider other)  {
         if (other.CompareTag("Player"))
             playerInRange = false;
         Roam();
