@@ -21,5 +21,10 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: cef0fa03af5b747f0abe82cde0b2bccc, type: 3}
   reloadVol: 0.462
   hitEffect: {fileID: 6221651516144037186, guid: 7993fccd5b5eaf14e842aeab2e37b233, type: 3}
+<<<<<<< HEAD
   maxAmmo: 2
   currentAmmo: 1
+=======
+  maxAmmo: 8
+  currentAmmo: 4
+>>>>>>> 1b9998bbdb205ebcd72f9a68d94e206caa045bf4

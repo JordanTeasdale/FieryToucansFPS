@@ -8,6 +8,7 @@ public class LevelSpawner : MonoBehaviour
     [SerializeField] GameObject door;
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject spider;
+    [SerializeField] GameObject dragonWelp;
     [SerializeField] GameObject dragonBoss;
 
     [Header("----- Door Spawn Settings -----")]
@@ -20,6 +21,9 @@ public class LevelSpawner : MonoBehaviour
 
     [Header("----- Spider Spawn Settings -----")]
     [SerializeField] Vector2[] spiderLocations;
+
+    [Header("----- DragonWelp Spawn Settings -----")]
+    [SerializeField] Vector2[] dragonWelpLocations;
 
     [Header("----- DragonBoss Spawn Settings -----")]
     [SerializeField] Vector2[] dragonBossLocations;
@@ -45,6 +49,10 @@ public class LevelSpawner : MonoBehaviour
             }
             for (int i = 0; i < spiderLocations.Length; i++) {
                 Instantiate(spider, new Vector3(transform.position.x + spiderLocations[i].x, spider.transform.position.y, transform.position.z + spiderLocations[i].y), spider.transform.rotation);
+                enemiesAlive++;
+            }
+            for (int i = 0; i < dragonWelpLocations.Length; i++) {
+                Instantiate(dragonWelp, new Vector3(transform.position.x + dragonWelpLocations[i].x, dragonBoss.transform.position.y, transform.position.z + dragonWelpLocations[i].y), dragonWelp.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < dragonBossLocations.Length; i++) {

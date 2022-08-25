@@ -3,26 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Respawn Pos
-  - Enemy3
-  - Enemy1
-  - Enemy2
-  - Door
-  - Spawner
-  - Ammo Mag GUI
-  - Ammo Stock GUI
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Spawner
+  - 
   - Water
   - UI
-  - Player
-  - Player Bullet
-  - Enemy
-  - Enemy Bullet
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

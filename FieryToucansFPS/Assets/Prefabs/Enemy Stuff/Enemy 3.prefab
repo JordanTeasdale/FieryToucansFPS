@@ -2718,8 +2718,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 4493574830273808377}
+  rend: {fileID: 0}
+  anim: {fileID: 0}
   HP: 100
   playerFaceSpeed: 1
+  fieldOfView: 0
+  fieldOfViewShoot: 0
+  roamRadius: 0
+  speedRoam: 0
+  speedChase: 0
   shootRate: 0.3
   damage: 4
   speed: 1
@@ -2736,7 +2743,7 @@ Animator:
   m_GameObject: {fileID: 4494551085740801401}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 535511bb156e7f54f83f305d96a1c4ce, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e439da896015fe140b8a5a30bdca340d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

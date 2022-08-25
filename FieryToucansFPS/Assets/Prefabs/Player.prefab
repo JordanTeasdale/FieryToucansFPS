@@ -154,12 +154,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 82320173802793707}
-  playerSpeed: 4
-  sprintMult: 3
-  jumpHeight: 14
-  gravityValue: 25
+  playerSpeed: 6
+  sprintMult: 2.5
+  jumpHeight: 12
+  gravityValue: 35
   maxJumps: 2
-  HP: 10
+  HP: 30
   shootDistance: 0
   shootDamage: 0
   switchRate: 0
@@ -178,6 +178,8 @@ MonoBehaviour:
   soundDamageVol: 0.1
   soundShoot: {fileID: 0}
   soundShootVol: 0.1
+  soundReload: {fileID: 0}
+  soundReloadVol: 0
   soundFootsteps:
   - {fileID: 8300000, guid: 22c270705053d01479411622ce5a3774, type: 3}
   - {fileID: 8300000, guid: 19f595e2d184d874cab0ffbf5cd238d4, type: 3}

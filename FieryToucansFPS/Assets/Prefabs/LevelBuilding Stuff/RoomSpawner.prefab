@@ -61,6 +61,7 @@ MonoBehaviour:
   door: {fileID: 4868437316466673861, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
   skeleton: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
   spider: {fileID: 1266945392910353016, guid: a709782658062904ca75f119e64ae383, type: 3}
+  dragonWelp: {fileID: 8784616573599632970, guid: cb89c931e3ecf674a821a80784d84f95, type: 3}
   dragonBoss: {fileID: 6562930143932835471, guid: 02ffbf420ec7a744898affcb77e08246, type: 3}
   doorLocations:
   - {x: 10, y: 10}
@@ -73,6 +74,7 @@ MonoBehaviour:
   spiderLocations:
   - {x: -5, y: -5}
   - {x: -7, y: 0}
+  dragonWelpLocations: []
   dragonBossLocations: []
   roomCleared: 0
   enemiesAlive: 0

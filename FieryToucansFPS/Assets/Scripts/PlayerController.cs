@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;
     [Range(0, 1)][SerializeField] float soundShootVol;
+    public AudioClip soundReload;
+    [Range(0, 1)][SerializeField] public float soundReloadVol;
     [SerializeField] AudioClip[] soundFootsteps;
     [Range(0, 1)][SerializeField] float soundFootstepsVol;
 
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     public void GunPickup( GunStats _stats) {
+        _stats.currentAmmo = _stats.maxAmmo;
         GunEquip(_stats);
         gunsList.Add(_stats);
         weaponIndex++;
@@ -153,8 +156,9 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootRate = _gun.shootRate;
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
+        soundReload = _gun.reloadSound;
+        soundReloadVol = _gun.reloadVol;
         hitEffect = _gun.hitEffect;
-        _gun.currentAmmo = _gun.maxAmmo;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
         UpdatedAmmoGUI();
@@ -258,6 +262,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (Input.GetButtonDown("Reload")) {
             currentAmmo = maxAmmo;
             gunsList[weaponIndex].currentAmmo = maxAmmo;
+            aud.PlayOneShot(soundReload, soundReloadVol);
             UpdatedAmmoGUI();
         }
     }
