@@ -1662,7 +1662,7 @@ Transform:
   m_GameObject: {fileID: 8784616573599632970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.776934, y: -0.046, z: -11.82}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8784616573599923980}
@@ -1692,7 +1692,7 @@ MonoBehaviour:
   roamRadius: 5
   speedRoam: 2.5
   speedChase: 5
-  shootRate: 0.85
+  shootRate: 0.5
   damage: 1
   speed: 10
   bulletDestroyTime: 3
@@ -1777,7 +1777,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 40
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8784616573599942447
 Rigidbody:

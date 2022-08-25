@@ -262,8 +262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1936205564506609858}
   - component: {fileID: 2113439257943142667}
-  - component: {fileID: 1266945392910352998}
   - component: {fileID: 1266945392910352997}
+  - component: {fileID: 1266945392910352998}
   - component: {fileID: 1266945392910352999}
   - component: {fileID: 1266945392910353019}
   - component: {fileID: 1266945392910353018}
@@ -312,28 +312,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &1266945392910352998
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266945392910353016}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 20
-  avoidancePriority: 50
-  m_AngularSpeed: 600
-  m_StoppingDistance: 6
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &1266945392910352997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +340,28 @@ MonoBehaviour:
   bulletDestroyTime: 2
   bullet: {fileID: 5594914386056169330, guid: dd4126444289d064eada9ab9bef8ecde, type: 3}
   bulletSpawnPos: {fileID: 4522384897265381877}
+--- !u!195 &1266945392910352998
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266945392910353016}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 600
+  m_StoppingDistance: 6
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!65 &1266945392910352999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1266945392910353017
 Rigidbody:

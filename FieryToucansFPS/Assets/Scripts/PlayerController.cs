@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void GunPickup( GunStats _stats) {
         GunEquip(_stats);
         gunsList.Add(_stats);
+        _stats.currentAmmo = _stats.maxAmmo;
         weaponIndex++;
     }
 
@@ -154,7 +155,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
         hitEffect = _gun.hitEffect;
-        _gun.currentAmmo = _gun.maxAmmo;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
         UpdatedAmmoGUI();

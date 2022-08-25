@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     public PlayerController playerScript;
 
+    public GameObject bossDoor;
     public GameObject currentRoom;
     public int clearedRooms = 0;
     [SerializeField] int clearedRoomsRequired;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public GameObject playerDamageFlash;
     public GameObject ammoMagGUI;
     public GameObject ammoStockGUI;
+    public GameObject reticle;
     public Image playerHPBar;
 
     public bool isPaused = false;
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour {
 
         RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
         playerScript.Respawn();
+
+        bossDoor = GameObject.FindGameObjectWithTag("BossDoor");
     }
 
     // Update is called once per frame
@@ -54,18 +58,21 @@ public class GameManager : MonoBehaviour {
     public void CursorLockPause() {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+        reticle.SetActive(false);
         Time.timeScale = 0;
     }
     public void CursorUnlockUnpause() {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        reticle.SetActive(true);
         Time.timeScale = 1;
         menuCurrentlyOpen.SetActive(isPaused);
     }
 
     public IEnumerator ClearRoom() {
         clearedRooms++;
-
+        if (clearedRooms == clearedRoomsRequired - 1)
+            Destroy(bossDoor);
         if (clearedRooms == clearedRoomsRequired) {
             yield return new WaitForSeconds(1f);
             playerWinMenu.SetActive(true);
