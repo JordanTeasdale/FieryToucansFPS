@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;
     [Range(0, 1)][SerializeField] float soundShootVol;
+    public AudioClip soundReload;
+    [Range(0, 1)][SerializeField] public float soundReloadVol;
     [SerializeField] AudioClip[] soundFootsteps;
     [Range(0, 1)][SerializeField] float soundFootstepsVol;
 
@@ -258,6 +260,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (Input.GetButtonDown("Reload")) {
             currentAmmo = maxAmmo;
             gunsList[weaponIndex].currentAmmo = maxAmmo;
+            aud.PlayOneShot(soundReload, soundReloadVol);
             UpdatedAmmoGUI();
         }
     }
