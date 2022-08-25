@@ -156,6 +156,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         shootRate = _gun.shootRate;
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
+        soundReload = _gun.reloadSound;
+        soundReloadVol = _gun.reloadVol;
         hitEffect = _gun.hitEffect;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
