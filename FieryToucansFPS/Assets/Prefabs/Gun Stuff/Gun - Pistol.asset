@@ -22,4 +22,5 @@ MonoBehaviour:
   reloadVol: 0.308
   hitEffect: {fileID: 6221651516144037186, guid: c7bf5d5f5b0d79b49b48f4640dcec1d1, type: 3}
   maxAmmo: 12
-  currentAmmo: 10
+  currentAmmo: 12
+  gun: {fileID: 4673460951707491628, guid: a0062aa729fc1374e8d5cb72050993fe, type: 3}

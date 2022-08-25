@@ -2935,7 +2935,7 @@ MonoBehaviour:
   playerDamageFlash: {fileID: 1877249279}
   ammoMagGUI: {fileID: 756250728}
   ammoStockGUI: {fileID: 1344688799}
-  reticle: {fileID: 0}
+  reticle: {fileID: 5080206982351568251}
   playerHPBar: {fileID: 724634619}
   isPaused: 0
 --- !u!1 &6034647699243192491

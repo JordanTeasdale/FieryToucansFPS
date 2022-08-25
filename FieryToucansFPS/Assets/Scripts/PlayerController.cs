@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] float shootRate;
     [SerializeField] int currentAmmo;
     [SerializeField] List<GunStats> gunsList = new List<GunStats>();
+    [SerializeField] Transform gunPostion;
 
     [Header("----- Effects -----")]
     [SerializeField] GameObject hitEffect;
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     bool isShooting = false;
     bool isSwitching = false;
     bool playFootsteps = true;
+
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
@@ -162,6 +164,9 @@ public class PlayerController : MonoBehaviour, IDamageable
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
         UpdatedAmmoGUI();
+        Destroy(GameObject.FindGameObjectWithTag("Gun Model"));
+        Instantiate(_gun.gun, gunPostion.position, gunPostion.rotation, gunPostion);
+        
     }
 
     public void WeaponSelect()
@@ -253,7 +258,12 @@ public class PlayerController : MonoBehaviour, IDamageable
                         isDamageable.TakeDamage(shootDamage);
                 }
             }
+            if (gunsList[weaponIndex].maxAmmo == 8)
+                yield return new WaitForSeconds(0.7f);
+            gunPostion.GetChild(0).GetComponent<Animation>().Play();
             yield return new WaitForSeconds(shootRate);
+
+
             isShooting = false;
         }
     }

@@ -17,6 +17,7 @@ public class GunStats : ScriptableObject {
     public GameObject hitEffect;
     public int maxAmmo;
     public int currentAmmo;
+    public GameObject gun;
 
 
 }

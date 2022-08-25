@@ -166,6 +166,7 @@ MonoBehaviour:
   shootRate: 0
   currentAmmo: 0
   gunsList: []
+  gunPostion: {fileID: 5694355021704120082}
   hitEffect: {fileID: 6221651516144037186, guid: e6584e9ba20353f42b68051a2786c842, type: 3}
   aud: {fileID: 7174589972155203629}
   soundDamage:
@@ -393,8 +394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7373636952009012665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.261, y: -0.93, z: 0.608}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.49999994, y: -0.39, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1709202072}

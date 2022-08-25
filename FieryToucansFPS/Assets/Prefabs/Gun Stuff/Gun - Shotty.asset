@@ -23,3 +23,4 @@ MonoBehaviour:
   hitEffect: {fileID: 6221651516144037186, guid: 7993fccd5b5eaf14e842aeab2e37b233, type: 3}
   maxAmmo: 8
   currentAmmo: 4
+  gun: {fileID: 6255555918143130547, guid: 103d7fcc31bf9394c945ae08c99f89fa, type: 3}

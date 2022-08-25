@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Respawn Pos
+  - Spawner
+  - Door
+  - BossDoor
+  - Undefined
+  - Gun Model
   layers:
   - Default
   - TransparentFX
