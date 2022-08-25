@@ -141,9 +141,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     public void GunPickup( GunStats _stats) {
+        _stats.currentAmmo = _stats.maxAmmo;
         GunEquip(_stats);
         gunsList.Add(_stats);
-        _stats.currentAmmo = _stats.maxAmmo;
         weaponIndex++;
     }
 
