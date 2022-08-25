@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
         if (clearedRooms == clearedRoomsRequired - 1)
             Destroy(bossDoor);
         if (clearedRooms == clearedRoomsRequired) {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             playerWinMenu.SetActive(true);
             menuCurrentlyOpen = playerWinMenu;
             CursorLockPause();

@@ -1217,7 +1217,7 @@ MonoBehaviour:
   damage: 3
   speed: 10
   bulletDestroyTime: 3
-  bullet: {fileID: 1754623834730887423, guid: f7854689e247aef40927908d88fdac63, type: 3}
+  bullet: {fileID: 1754623834730887423, guid: 8df79727167a56444bb7fd97b096241c, type: 3}
   bulletSpawnPos: {fileID: 6562930143932799991}
 --- !u!195 &6562930143923346216
 NavMeshAgent:
