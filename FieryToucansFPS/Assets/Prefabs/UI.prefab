@@ -2926,7 +2926,7 @@ MonoBehaviour:
   bossDoor: {fileID: 0}
   currentRoom: {fileID: 0}
   clearedRooms: 0
-  clearedRoomsRequired: 0
+  clearedRoomsRequired: 6
   RespawnPos: {fileID: 0}
   pauseMenu: {fileID: 1710289894045964844}
   playerDeadMenu: {fileID: 5217102614422580346}

@@ -35,6 +35,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     float stoppingDistanceOrig;
 
     Vector3 startingPos;
+    Vector3 raycastPos;
 
 
     // Start is called before the first frame update
@@ -47,10 +48,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     // Update is called once per frame
     void Update() {
-
+        raycastPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         if (agent.isActiveAndEnabled && !anim.GetBool("Dead")) {
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
-            playerDir = GameManager.instance.player.transform.position - transform.position;
+            playerDir = GameManager.instance.player.transform.position - raycastPos;
 
             if (playerInRange) {
                 CanSeePlayer();
@@ -140,8 +141,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, playerDir, out hit))  {
-            Debug.DrawRay(transform.position, playerDir);
+        if (Physics.Raycast(raycastPos, playerDir, out hit))  {
+            Debug.DrawRay(raycastPos, playerDir);
 
             if (hit.collider.CompareTag("Player") && angle <= fieldOfView)   {
                 agent.SetDestination(GameManager.instance.player.transform.position);
