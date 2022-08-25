@@ -10,6 +10,8 @@ TagManager:
   - Enemy2
   - Door
   - Spawner
+  - Ammo Mag GUI
+  - Ammo Stock GUI
   layers:
   - Default
   - TransparentFX
