@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update() {
 
-        if (agent.isActiveAndEnabled) {
+        if (agent.isActiveAndEnabled && !anim.GetBool("Dead")) {
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
             playerDir = GameManager.instance.player.transform.position - transform.position;
 
@@ -69,10 +69,12 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDir, out hit, roamRadius, 1);
-        NavMeshPath path = new NavMeshPath();
+        if (!hit.hit) {
+            NavMeshPath path = new NavMeshPath();
 
-        agent.CalculatePath(hit.position, path);
-        agent.SetPath(path);
+            agent.CalculatePath(hit.position, path);
+            agent.SetPath(path); 
+        }
     }
 
     void FacePlayer() {
