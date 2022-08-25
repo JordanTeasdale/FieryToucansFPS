@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
 
-        ammoMagGUI = GameObject.FindGameObjectWithTag("Ammo Mag GUI");
-        ammoStockGUI = GameObject.FindGameObjectWithTag("Ammo Stock GUI");
+/*        ammoMagGUI = GameObject.FindGameObjectWithTag("Ammo Mag GUI");
+        ammoStockGUI = GameObject.FindGameObjectWithTag("Ammo Stock GUI");*/
 
         RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
         playerScript.Respawn();

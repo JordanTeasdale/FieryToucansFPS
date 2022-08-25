@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b510ec1450b5a4983c1ec327ee90ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunStat: {fileID: 11400000, guid: 8bb95f36481ea754bba1588b157606d7, type: 2}
+  gunStat: {fileID: 11400000, guid: 4c70fdb92a97b1e4a99dc5d5b2ab6d50, type: 2}
 --- !u!54 &5155270207639385089
 Rigidbody:
   m_ObjectHideFlags: 0
