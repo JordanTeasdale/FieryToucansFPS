@@ -9236,10 +9236,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8787473892999126916, guid: 26dd9c101ea555142b9f5f0f721a14bb, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 8787473892999126916, guid: 26dd9c101ea555142b9f5f0f721a14bb, type: 3}
       propertyPath: m_Name
       value: RespawnPos
       objectReference: {fileID: 0}
@@ -10018,11 +10014,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1131669463942923171, guid: 68e0a07348ef66742a79afb7004c8507, type: 3}
   m_PrefabInstance: {fileID: 670943413}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &671218008 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5080206982351568251, guid: f4b484e2f9a67fb4495e89b923d54f6e, type: 3}
-  m_PrefabInstance: {fileID: 1212377492}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &673617771
 PrefabInstance:
@@ -18196,14 +18187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2110411129, guid: f4b484e2f9a67fb4495e89b923d54f6e, type: 3}
-      propertyPath: reticle
-      value: 
-      objectReference: {fileID: 671218008}
-    - target: {fileID: 2110411129, guid: f4b484e2f9a67fb4495e89b923d54f6e, type: 3}
-      propertyPath: clearedRoomsRequired
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5389749397660072744, guid: f4b484e2f9a67fb4495e89b923d54f6e, type: 3}
       propertyPath: m_Name
       value: UI
@@ -31657,26 +31640,6 @@ PrefabInstance:
     - target: {fileID: 82320173802793680, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: HP
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: jumpHeight
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: sprintMult
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: playerSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: gravityValue
-      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 82320173802793706, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: m_Name

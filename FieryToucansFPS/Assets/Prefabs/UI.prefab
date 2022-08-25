@@ -2923,9 +2923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerScript: {fileID: 0}
+  bossDoor: {fileID: 0}
   currentRoom: {fileID: 0}
   clearedRooms: 0
-  clearedRoomsRequired: 0
+  clearedRoomsRequired: 6
   RespawnPos: {fileID: 0}
   pauseMenu: {fileID: 1710289894045964844}
   playerDeadMenu: {fileID: 5217102614422580346}
@@ -2934,6 +2935,7 @@ MonoBehaviour:
   playerDamageFlash: {fileID: 1877249279}
   ammoMagGUI: {fileID: 756250728}
   ammoStockGUI: {fileID: 1344688799}
+  reticle: {fileID: 5080206982351568251}
   playerHPBar: {fileID: 724634619}
   isPaused: 0
 --- !u!1 &6034647699243192491
