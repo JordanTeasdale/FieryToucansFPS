@@ -1536,7 +1536,7 @@ MonoBehaviour:
   playerFaceSpeed: 3
   fieldOfView: 180
   fieldOfViewShoot: 32
-  roamRadius: 5
+  roamRadius: 10
   speedRoam: 2
   speedChase: 4
   shootRate: 0.75

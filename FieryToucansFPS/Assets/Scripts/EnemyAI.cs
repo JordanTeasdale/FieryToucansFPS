@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     void Start() {
         stoppingDistanceOrig = agent.stoppingDistance;
         startingPos = transform.position;
-        Roam();
+        //Roam();
 
     }
 
@@ -56,10 +56,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
             if (playerInRange) {
                 CanSeePlayer();
             }
-            else if (agent.remainingDistance < 0.1f)
+            if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
         }
-
+        Debug.Log(agent.remainingDistance);
 
     }
     void Roam() {
@@ -70,11 +70,13 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDir, out hit, roamRadius, 1);
-        if (!hit.hit) {
+        if (hit.hit) {
             NavMeshPath path = new NavMeshPath();
 
+            agent.SetDestination(hit.position);
             agent.CalculatePath(hit.position, path);
-            agent.SetPath(path); 
+            agent.SetPath(path);
+
         }
     }
 
@@ -138,7 +140,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
 
         float angle = Vector3.Angle(playerDir, transform.forward);
-        Debug.Log(angle);
+        //Debug.Log(angle);
 
         RaycastHit hit;
         if (Physics.Raycast(raycastPos, playerDir, out hit))  {
