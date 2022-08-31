@@ -20,12 +20,9 @@ public class Melee : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy")) {
-            Debug.Log(other.name);
-            if (other.TryGetComponent<IDamageable>(out IDamageable obj)) {
-                obj.TakeDamage(damage);
-            }
+        if (other.TryGetComponent<IDamageable>(out IDamageable obj) && other.CompareTag(this.tag))
+        {
+            obj.TakeDamage(damage);
         }
-            
     }
 }
