@@ -10,6 +10,7 @@ TagManager:
   - BossDoor
   - Undefined
   - Gun Model
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Enemy Bullet
+  - Test
   - 
   - 
   - 
