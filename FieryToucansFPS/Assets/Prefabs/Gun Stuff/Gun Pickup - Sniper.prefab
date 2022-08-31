@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5155270207639385088}
   - component: {fileID: 5155270207639385089}
   - component: {fileID: 6610029257671506302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun Pickup - Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,9 +289,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3464016403078171248, guid: 26a963cab73c0fd43be4227df0f72230, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 26a963cab73c0fd43be4227df0f72230, type: 3}
       propertyPath: m_Name
       value: BarrettM107
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 26a963cab73c0fd43be4227df0f72230, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695118174392169218, guid: 26a963cab73c0fd43be4227df0f72230, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445594721288636040, guid: 26a963cab73c0fd43be4227df0f72230, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a963cab73c0fd43be4227df0f72230, type: 3}

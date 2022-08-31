@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5155270207639385088}
   - component: {fileID: 5155270207639385089}
   - component: {fileID: 6814652050488694999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun Pickup - Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +181,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5155270207639385092}
     m_Modifications:
+    - target: {fileID: 250081280736124083, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967563783673127657, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4488481042166887349, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -248,6 +256,14 @@ PrefabInstance:
     - target: {fileID: 9061770823708425277, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}
       propertyPath: m_Name
       value: Handgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061770823708425277, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078793042677978444, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81adcbb1f2877a48a5475bee0a8731a, type: 3}

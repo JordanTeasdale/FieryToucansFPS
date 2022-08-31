@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5155270207639385088}
   - component: {fileID: 5155270207639385089}
   - component: {fileID: 2657857406003679304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun Pickup - Combat Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,6 +184,10 @@ PrefabInstance:
     - target: {fileID: 1000010995592560, guid: f9b1bd39a30fb93448737f5c3254252c, type: 3}
       propertyPath: m_Name
       value: Steel_Dagger_512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010995592560, guid: f9b1bd39a30fb93448737f5c3254252c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000010543512150, guid: f9b1bd39a30fb93448737f5c3254252c, type: 3}
       propertyPath: m_RootOrder

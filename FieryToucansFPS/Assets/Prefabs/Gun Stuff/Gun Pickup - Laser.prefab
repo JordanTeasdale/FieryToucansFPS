@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6231445231726068029}
   - component: {fileID: 379994549283356100}
   - component: {fileID: 6841385907690489488}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gatling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6494201909275980992}
   - component: {fileID: 7145227474980615829}
   - component: {fileID: 2548739663536847177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gatling_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 4200026340855041157}
   - component: {fileID: 4739603309289917945}
   - component: {fileID: 6843484055247552051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 5155270207639385088}
   - component: {fileID: 5155270207639385089}
   - component: {fileID: 4430597477846930453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun Pickup - Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         if(other.GetComponent<IDamageable>() != null) {
             other.GetComponent<IDamageable>().TakeDamage(damage);
         }
-
+        //Debug.Log(other.transform.name);
         Destroy(gameObject);
     }
 }

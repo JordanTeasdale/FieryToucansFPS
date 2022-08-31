@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5155270207639385088}
   - component: {fileID: 5155270207639385089}
   - component: {fileID: 7554878211014542222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun Pickup - Shotty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,6 +292,18 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: d63c91e11d9ebb6469488f1040be7d41, type: 3}
       propertyPath: m_Name
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d63c91e11d9ebb6469488f1040be7d41, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534660097499726212, guid: d63c91e11d9ebb6469488f1040be7d41, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917973441904997053, guid: d63c91e11d9ebb6469488f1040be7d41, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d63c91e11d9ebb6469488f1040be7d41, type: 3}
