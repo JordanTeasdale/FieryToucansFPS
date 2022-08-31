@@ -1464,8 +1464,6 @@ GameObject:
   - component: {fileID: 291243740042557293}
   - component: {fileID: 291243740042557292}
   - component: {fileID: 291243740042557291}
-  - component: {fileID: 291243740042557290}
-  - component: {fileID: 291243740042557289}
   - component: {fileID: 291243740042557288}
   m_Layer: 6
   m_Name: Skeleton Enemy
@@ -1581,32 +1579,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1.15, z: 0}
---- !u!135 &291243740042557290
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296788235326708141}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.35
-  m_Center: {x: 0, y: 2.32, z: 0}
---- !u!135 &291243740042557289
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296788235326708141}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &291243740042557288
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2115,6 +2087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294084163849252215}
   - component: {fileID: 431708417729601319}
+  - component: {fileID: 5455378}
   m_Layer: 6
   m_Name: SheathAndBelt
   m_TagString: Untagged
@@ -2247,6 +2220,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0029791594, y: -0.06974128, z: 0.083774626}
     m_Extent: {x: 0.52572966, y: 0.46245924, z: 0.38689107}
   m_DirtyAABB: 0
+--- !u!135 &5455378
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296933122075991359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &296961904857696613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291271418030962385}
   - component: {fileID: 431299975582330401}
+  - component: {fileID: 1291168541}
   m_Layer: 6
   m_Name: SkeletonHair
   m_TagString: Untagged
@@ -3393,3 +3380,16 @@ SkinnedMeshRenderer:
     m_Center: {x: -1.5516305, y: -0.00040187314, z: 0.08230996}
     m_Extent: {x: 0.29447412, y: 0.04757209, z: 0.41171438}
   m_DirtyAABB: 0
+--- !u!135 &1291168541
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297210620754935107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Center: {x: 0, y: 1.83, z: 0}

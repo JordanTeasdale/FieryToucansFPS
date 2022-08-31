@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3066778141097765165}
   - component: {fileID: 8629869526158090107}
   - component: {fileID: 2062182772172069810}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Acid Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
