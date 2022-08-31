@@ -161,6 +161,9 @@ MonoBehaviour:
   gravityValue: 35
   maxJumps: 2
   HP: 30
+  meleeHitbox: {fileID: 6627562012560487157}
+  meleeDamage: 5
+  meleeSpeed: 1
   shootDistance: 0
   shootDamage: 0
   switchRate: 0
@@ -383,9 +386,10 @@ GameObject:
   - component: {fileID: 6520177298741632725}
   - component: {fileID: 7618764129028184263}
   - component: {fileID: 4208486097754674017}
+  - component: {fileID: 1062107328}
   m_Layer: 0
   m_Name: MeleeHitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,11 +467,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6627562012560487157}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1062107328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627562012560487157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f3339ac5b123149ac2ca273295c2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &7373636952009012665
 GameObject:
   m_ObjectHideFlags: 0
