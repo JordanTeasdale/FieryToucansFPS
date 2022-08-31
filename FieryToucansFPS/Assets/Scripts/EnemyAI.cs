@@ -58,8 +58,9 @@ public class EnemyAI : MonoBehaviour, IDamageable
             }
             if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
+            //Debug.Log(agent.remainingDistance);
         }
-        Debug.Log(agent.remainingDistance);
+        
 
     }
     void Roam() {
@@ -98,7 +99,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 StartCoroutine(FlashColor());
             }
             else  {
-                GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+                //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
                 anim.SetBool("Dead", true);
                 agent.enabled = false;
 
@@ -133,6 +134,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
 
         yield return new WaitForSeconds(shootRate);
+        
         isShooting = false;
     }
 

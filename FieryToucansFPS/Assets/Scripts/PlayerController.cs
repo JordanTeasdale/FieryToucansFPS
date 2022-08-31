@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] float gravityValue;
     [SerializeField] int maxJumps;
     [Range(1,100)] public int HP;
+    [SerializeField] GameObject meleeHitbox;
+    [SerializeField] int meleeDamage;
+    [SerializeField] float meleeSpeed;
 
     [Header("----- Weapon Attributes -----")]
 
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     bool isSprinting = false;
     bool isShooting = false;
     bool isSwitching = false;
+    bool isMeleeing = false;
     bool playFootsteps = true;
 
     // Start is called before the first frame update
@@ -80,6 +84,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         StartCoroutine(footSteps());
         StartCoroutine(Shoot());
         StartCoroutine(WeaponCycle());
+        StartCoroutine(Melee());
     }
 
     void FixedUpdate() {
@@ -235,6 +240,18 @@ public class PlayerController : MonoBehaviour, IDamageable
         GameManager.instance.playerDamageFlash.SetActive(true);
         yield return new WaitForSeconds(0.15f);
         GameManager.instance.playerDamageFlash.SetActive(false);
+    }
+
+    IEnumerator Melee()
+    {
+        if(Input.GetButton("Melee") && !isMeleeing)
+        {
+            isMeleeing = true;
+            meleeHitbox.SetActive(true);
+            yield return new WaitForSeconds(meleeSpeed);
+            meleeHitbox.SetActive(false);
+            isMeleeing = false;
+        }
     }
 
     IEnumerator Shoot()
