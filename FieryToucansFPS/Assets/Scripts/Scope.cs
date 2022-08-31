@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Scope : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+  public Animator animator;
+
+    private bool isScoped = false;
+
+     void Update() {
+
+        if (Input.GetButton("Fire2")) {
+            isScoped = !isScoped;
+            animator.SetBool("Scope", isScoped );
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
