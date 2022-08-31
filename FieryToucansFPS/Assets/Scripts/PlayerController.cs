@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         PlayerMovement();
         Sprint();
-        Reload();
+        //Reload();
 
         StartCoroutine(footSteps());
         StartCoroutine(Shoot());
@@ -268,14 +268,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    void Reload() {
-        if (Input.GetButtonDown("Reload")) {
-            currentAmmo = maxAmmo;
-            gunsList[weaponIndex].currentAmmo = maxAmmo;
-            aud.PlayOneShot(soundReload, soundReloadVol);
-            UpdatedAmmoGUI();
-        }
-    }
+    //void Reload() {
+    //    if (Input.GetButtonDown("Reload")) {
+    //        currentAmmo = maxAmmo;
+    //        gunsList[weaponIndex].currentAmmo = maxAmmo;
+    //        aud.PlayOneShot(soundReload, soundReloadVol);
+    //        UpdatedAmmoGUI();
+    //    }
+    //}
 
     private void UpdatedAmmoGUI() {
         GameManager.instance.ammoStockGUI.GetComponent<TMPro.TMP_Text>().text = maxAmmo.ToString();

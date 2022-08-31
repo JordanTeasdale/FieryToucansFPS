@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c557555cec955804bbeb44f3d3b5a262
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Unna
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 132a7b0f8faba2044b2722c76b60c13b, type: 3}
+  - {fileID: 12800000, guid: a0f70e57c421e8645a7cfc66eeed2fd1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
