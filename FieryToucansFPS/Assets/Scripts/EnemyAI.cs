@@ -58,8 +58,9 @@ public class EnemyAI : MonoBehaviour, IDamageable
             }
             if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
+            Debug.Log(agent.remainingDistance);
         }
-        Debug.Log(agent.remainingDistance);
+        
 
     }
     void Roam() {
