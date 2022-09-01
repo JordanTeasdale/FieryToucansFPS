@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     public GameObject ammoMagGUI;
     public GameObject ammoStockGUI;
     public GameObject reticle;
+    public GameObject radialMenu;
     public Image playerHPBar;
 
     public bool isPaused = false;
@@ -56,6 +57,17 @@ public class GameManager : MonoBehaviour {
             else
                 CursorUnlockUnpause();
         }
+        if (Time.timeScale > 0 && Input.GetButton("Open Radial")) {
+            radialMenu.SetActive(true);
+            CursorLockSlowed();
+        }
+        if (Input.GetButtonUp("Open Radial")) {
+            /*playerScript.weaponIndex = radialMenu.GetComponent<RadialMenuScript>().selection;
+            playerScript.GunEquip(gunsList[weaponIndex]);*/
+            radialMenu.SetActive(false);
+            CursorUnlockUnslowed();
+        }
+
     }
 
     public void CursorLockPause() {
@@ -63,6 +75,20 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Confined;
         reticle.SetActive(false);
         Time.timeScale = 0;
+    }
+    public void CursorLockSlowed() {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        reticle.SetActive(false);
+        player.GetComponentInChildren<CameraController>().enabled = false;
+        Time.timeScale = 0.25f;
+    }
+    public void CursorUnlockUnslowed() {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        reticle.SetActive(true);
+        player.GetComponentInChildren<CameraController>().enabled = true;
+        Time.timeScale = 1;
     }
     public void CursorUnlockUnpause() {
         Cursor.visible = false;
