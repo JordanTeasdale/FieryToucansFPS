@@ -572,5 +572,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 918288413}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1709202071}
   scopedFOV: 15
