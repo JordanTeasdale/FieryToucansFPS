@@ -153,6 +153,42 @@ public class PlayerController : MonoBehaviour, IDamageable {
             playerSpeed = playerSpeedOrignal;
         }
     }
+    public void AmmoPickup(int index = -1, int ammo = 0) {
+        if (ammo == 0) {
+            if (index == -1) {
+                for (int i = 0; i < gunsList.Count; ++i) {
+                    if (gunsList[i].name != "Gun - Empty") {
+                        gunsList[i].currentAmmo += (gunsList[i].maxAmmo / 10);
+                        if (gunsList[i].currentAmmo > gunsList[i].maxAmmo) {
+                            gunsList[i].currentAmmo = gunsList[i].maxAmmo;
+                        }
+                    }
+                }
+            } else {
+                gunsList[index].currentAmmo += (gunsList[index].maxAmmo / 10);
+                if (gunsList[index].currentAmmo > gunsList[index].maxAmmo) {
+                    gunsList[index].currentAmmo = gunsList[index].maxAmmo;
+                }
+            }
+        } else {
+            if (index == -1) {
+                for (int i = 0; i < gunsList.Count; ++i) {
+                    if (gunsList[i].name != "Gun - Empty") {
+                        gunsList[i].currentAmmo += ammo;
+                        if (gunsList[i].currentAmmo > gunsList[i].maxAmmo) {
+                            gunsList[i].currentAmmo = gunsList[i].maxAmmo;
+                        }
+                    }
+                }
+            } else {
+                gunsList[index].currentAmmo += ammo;
+                if (gunsList[index].currentAmmo > gunsList[index].maxAmmo) {
+                    gunsList[index].currentAmmo = gunsList[index].maxAmmo;
+                }
+            }
+        }
+        GunEquip(gunsList[weaponIndex]);
+    }
 
     public void GunPickup(GunStats _stats) {
         _stats.currentAmmo = _stats.maxAmmo;
