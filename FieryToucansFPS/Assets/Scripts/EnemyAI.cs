@@ -141,7 +141,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     void CanSeePlayer() {
 
 
-        float angle = Vector3.Angle(playerDir, transform.forward);
+        float angle = Vector3.Angle(new Vector3(playerDir.x, 0, playerDir.z), new Vector3(transform.forward.x, 0, transform.forward.z));
         //Debug.Log(angle);
 
         RaycastHit hit;
@@ -159,7 +159,6 @@ public class EnemyAI : MonoBehaviour, IDamageable
                     StartCoroutine(Shoot());
                 }
             }
-
         }
     }
     void OnTriggerEnter(Collider other)  {
