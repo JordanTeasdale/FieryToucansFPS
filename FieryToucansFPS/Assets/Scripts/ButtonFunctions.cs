@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour {
+
+
+    public GameObject menuFirstButton, OptionsFirstButton, OptionsClosedButton, pauseFirstButton;
+
     public void Resume() {
         if (GameManager.instance.isPaused) {
             GameManager.instance.isPaused = false;

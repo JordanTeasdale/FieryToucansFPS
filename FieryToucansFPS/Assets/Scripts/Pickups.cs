@@ -6,7 +6,8 @@ public class Pickups : MonoBehaviour
 {
     [SerializeField] GameObject pickUp;
 
-    public int ammo;
+    public int ammo = 0;
+    public int ammoIndex = -1;
     public int health;
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class Pickups : MonoBehaviour
         {
             Destroy(pickUp);
             GameManager.instance.playerScript.TakeDamage(-health);
+            GameManager.instance.playerScript.AmmoPickup(ammoIndex, ammo);
             
         }
     }
