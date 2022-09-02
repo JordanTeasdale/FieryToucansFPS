@@ -18,6 +18,7 @@ public class GunStats : ScriptableObject {
     public int maxAmmo;
     public int currentAmmo;
     public GameObject gun;
+    public int gunIndex;
 
 
 }

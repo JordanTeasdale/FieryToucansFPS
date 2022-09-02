@@ -62,8 +62,10 @@ public class GameManager : MonoBehaviour {
             CursorLockSlowed();
         }
         if (Input.GetButtonUp("Open Radial")) {
-            /*playerScript.weaponIndex = radialMenu.GetComponent<RadialMenuScript>().selection;
-            playerScript.GunEquip(gunsList[weaponIndex]);*/
+            if (playerScript.gunsList[radialMenu.GetComponent<RadialMenuScript>().selection].name != "Gun - Empty") {
+                playerScript.weaponIndex = radialMenu.GetComponent<RadialMenuScript>().selection;
+                playerScript.GunEquip(playerScript.gunsList[playerScript.weaponIndex]);
+            }
             radialMenu.SetActive(false);
             CursorUnlockUnslowed();
         }

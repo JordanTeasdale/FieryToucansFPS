@@ -24,3 +24,4 @@ MonoBehaviour:
   maxAmmo: 150
   currentAmmo: 150
   gun: {fileID: 6282184274420714273, guid: a367cd97fd71a9341b141b7b97b6c83f, type: 3}
+  gunIndex: 4
