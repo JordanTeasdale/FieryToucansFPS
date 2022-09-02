@@ -63,12 +63,13 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool isMeleeing = false;
     bool playFootsteps = true;
     //bool isScoped = false;
+    public CameraShake cameraShake;
 
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
         HPOrig = HP;
-
+        cameraShake = gameObject.GetComponentInChildren<CameraShake>();
         ResetHP();
         for (int i = 0; i < 6; ++i) {
             gunsList.Add(empty);
@@ -78,8 +79,12 @@ public class PlayerController : MonoBehaviour, IDamageable {
     // Update is called once per frame
     void Update() {
         //debug code
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)) {
             TakeDamage(1);
+            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+
+        }
+
 
         PlayerMovement();
         Sprint();
@@ -251,6 +256,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
             prevHP = HP;
         }
         HP -= _dmg;
+        StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+
+        //StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
         aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
         //UpdateHP();
         StartCoroutine(DamageFlash());

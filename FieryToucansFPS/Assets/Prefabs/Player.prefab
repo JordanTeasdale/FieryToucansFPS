@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1709202070}
   - component: {fileID: 1709202074}
   - component: {fileID: 562128651}
+  - component: {fileID: 2424722163632776295}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -125,6 +126,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2424722163632776295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709202069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21bea1e259614b458344af2549fa78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &82320173802793706
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,11 +200,11 @@ MonoBehaviour:
   meleeSpeed: 1
   shootDistance: 0
   shootDamage: 0
-  switchRate: 0
+  switchRate: 0.5
   shootRate: 0
   currentAmmo: 0
   gunsList: []
-  empty: {fileID: 0}
+  empty: {fileID: 11400000, guid: fb7e7038d0b7fc440a612f6ef8ddf586, type: 2}
   gunPostion: {fileID: 5694355021704120082}
   hitEffect: {fileID: 0}
   aud: {fileID: 7174589972155203629}
