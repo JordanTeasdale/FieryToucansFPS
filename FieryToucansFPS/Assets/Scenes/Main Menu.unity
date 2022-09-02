@@ -434,6 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 536110546}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &772819907
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &1150297781
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &1188359369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1436,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &1795185988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &3805702778539261196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4794,6 +4814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &6484062767188965773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,6 +5055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!114 &8319043617885975276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5099,6 +5127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!114 &8747134810024437280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5167,6 +5199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdf91282074e94c8add1bf9ca48903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFirstButton: {fileID: 0}
+  OptionsFirstButton: {fileID: 0}
+  OptionsClosedButton: {fileID: 0}
+  pauseFirstButton: {fileID: 0}
 --- !u!114 &8795308304835074190
 MonoBehaviour:
   m_ObjectHideFlags: 0
