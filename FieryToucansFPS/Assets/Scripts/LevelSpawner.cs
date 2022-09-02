@@ -5,16 +5,13 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour
 {
     [Header("----- GameObject Prefabs -----")]
-    [SerializeField] GameObject door;
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject spider;
     [SerializeField] GameObject dragonWelp;
     [SerializeField] GameObject dragonBoss;
 
     [Header("----- Door Spawn Settings -----")]
-    [SerializeField] Vector2[] doorLocations;
-    [SerializeField] bool[] doorFaceNorthSouth;
-    GameObject[] doors;
+    [SerializeField] GameObject[] doors;
 
     [Header("----- Skeleton Spawn Settings -----")]
     [SerializeField] Vector2[] skeletonLocations;
@@ -37,11 +34,8 @@ public class LevelSpawner : MonoBehaviour
         if (other.CompareTag("Player") && !roomEntered && !roomCleared) {
             roomEntered = true;
             GameManager.instance.currentRoom = gameObject;
-            for (int i = 0; i < doorLocations.Length; i++) {
-                if (doorFaceNorthSouth[i])
-                    GameObject.Instantiate(door, new Vector3(transform.position.x + doorLocations[i].x, door.transform.position.y, transform.position.z + doorLocations[i].y), door.transform.rotation);
-                else
-                    GameObject.Instantiate(door, new Vector3(transform.position.x + doorLocations[i].x, door.transform.position.y, transform.position.z + doorLocations[i].y), Quaternion.Euler(new Vector3(0, 90, 0)));
+            foreach (GameObject door in doors) {
+                door.GetComponent<DoorScript>().isUnlocked = false;
             }
             for (int i = 0; i < skeletonLocations.Length; i++) {
                 Instantiate(skeleton, new Vector3(transform.position.x + skeletonLocations[i].x, skeleton.transform.position.y, transform.position.z + skeletonLocations[i].y), skeleton.transform.rotation);
@@ -70,7 +64,7 @@ public class LevelSpawner : MonoBehaviour
             StartCoroutine(GameManager.instance.ClearRoom());
             doors = GameObject.FindGameObjectsWithTag("Door");
             foreach(GameObject door in doors) {
-                Destroy(door);
+                door.GetComponent<DoorScript>().isUnlocked = true;
             }
         }
     }
