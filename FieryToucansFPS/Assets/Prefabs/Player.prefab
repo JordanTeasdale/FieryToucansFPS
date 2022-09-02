@@ -191,6 +191,7 @@ MonoBehaviour:
   shootRate: 0
   currentAmmo: 0
   gunsList: []
+  empty: {fileID: 0}
   gunPostion: {fileID: 5694355021704120082}
   hitEffect: {fileID: 0}
   aud: {fileID: 7174589972155203629}
@@ -217,6 +218,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3920a484fcfd526479d6f271161c8197, type: 3}
   - {fileID: 8300000, guid: ae31465cb32c8e34bb13719485a67917, type: 3}
   soundFootstepsVol: 0.1
+  weaponIndex: -1
 --- !u!82 &7174589972155203629
 AudioSource:
   m_ObjectHideFlags: 0

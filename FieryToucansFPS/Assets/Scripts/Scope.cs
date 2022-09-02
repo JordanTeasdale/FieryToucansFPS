@@ -14,7 +14,7 @@ public class Scope : MonoBehaviour
 
      void Update() {
        
-        if (Input.GetButton("Fire2")) {
+        if (Input.GetButtonDown("Fire2")) {
             isScoped = !isScoped;
             animator.SetBool("Scope", isScoped );
 
