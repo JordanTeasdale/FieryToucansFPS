@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36464
+  m_Name: pb_Mesh39706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -371,7 +371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 536110549}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536110551}
+        m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
+        m_MethodName: PlaysGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &536110549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4486,6 +4498,7 @@ MonoBehaviour:
   ammoMagGUI: {fileID: 0}
   ammoStockGUI: {fileID: 0}
   reticle: {fileID: 0}
+  radialMenu: {fileID: 0}
   playerHPBar: {fileID: 0}
   isPaused: 0
 --- !u!1 &4907034863970698455
