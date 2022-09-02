@@ -1646,7 +1646,7 @@ GameObject:
   - component: {fileID: 8784616573599942433}
   - component: {fileID: 8784616573599942432}
   - component: {fileID: 8784616573599942447}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Dragon Welp Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
