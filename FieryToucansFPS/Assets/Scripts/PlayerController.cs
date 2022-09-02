@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool isSwitching = false;
     bool isMeleeing = false;
     bool playFootsteps = true;
+    //bool isScoped = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -345,4 +346,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public void UpdateHP() {
         GameManager.instance.playerHPBar.fillAmount = healthFillAmount / HPOrig;
     }
+
+
+
 }
