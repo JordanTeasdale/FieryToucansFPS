@@ -63,12 +63,13 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool isMeleeing = false;
     bool playFootsteps = true;
     //bool isScoped = false;
+    public CameraShake cameraShake;
 
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
         HPOrig = HP;
-
+        cameraShake = gameObject.GetComponentInChildren<CameraShake>();
         ResetHP();
         for (int i = 0; i < 6; ++i) {
             gunsList.Add(empty);
@@ -78,8 +79,12 @@ public class PlayerController : MonoBehaviour, IDamageable {
     // Update is called once per frame
     void Update() {
         //debug code
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)) {
             TakeDamage(1);
+            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+
+        }
+
 
         PlayerMovement();
         Sprint();
@@ -148,55 +153,36 @@ public class PlayerController : MonoBehaviour, IDamageable {
             playerSpeed = playerSpeedOrignal;
         }
     }
-
-    public void AmmoPickup(int index = -1, int ammo = 0)
-    {
-        if(ammo == 0)
-        {
-            if (index == -1)
-            {
-                for (int i = 0; i < gunsList.Count; ++i)
-                {
-                    if(gunsList[i].name != "Gun - Empty")
-                    {
+    public void AmmoPickup(int index = -1, int ammo = 0) {
+        if (ammo == 0) {
+            if (index == -1) {
+                for (int i = 0; i < gunsList.Count; ++i) {
+                    if (gunsList[i].name != "Gun - Empty") {
                         gunsList[i].currentAmmo += (gunsList[i].maxAmmo / 10);
-                        if(gunsList[i].currentAmmo > gunsList[i].maxAmmo)
-                        {
+                        if (gunsList[i].currentAmmo > gunsList[i].maxAmmo) {
                             gunsList[i].currentAmmo = gunsList[i].maxAmmo;
                         }
                     }
                 }
-            }
-            else
-            {
+            } else {
                 gunsList[index].currentAmmo += (gunsList[index].maxAmmo / 10);
-                if (gunsList[index].currentAmmo > gunsList[index].maxAmmo)
-                {
+                if (gunsList[index].currentAmmo > gunsList[index].maxAmmo) {
                     gunsList[index].currentAmmo = gunsList[index].maxAmmo;
                 }
             }
-        }
-        else
-        {
-            if (index == -1)
-            {
-                for (int i = 0; i < gunsList.Count; ++i)
-                {
-                    if (gunsList[i].name != "Gun - Empty")
-                    {
+        } else {
+            if (index == -1) {
+                for (int i = 0; i < gunsList.Count; ++i) {
+                    if (gunsList[i].name != "Gun - Empty") {
                         gunsList[i].currentAmmo += ammo;
-                        if (gunsList[i].currentAmmo > gunsList[i].maxAmmo)
-                        {
+                        if (gunsList[i].currentAmmo > gunsList[i].maxAmmo) {
                             gunsList[i].currentAmmo = gunsList[i].maxAmmo;
                         }
                     }
                 }
-            }
-            else
-            {
+            } else {
                 gunsList[index].currentAmmo += ammo;
-                if (gunsList[index].currentAmmo > gunsList[index].maxAmmo)
-                {
+                if (gunsList[index].currentAmmo > gunsList[index].maxAmmo) {
                     gunsList[index].currentAmmo = gunsList[index].maxAmmo;
                 }
             }
@@ -206,9 +192,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     public void GunPickup(GunStats _stats) {
         _stats.currentAmmo = _stats.maxAmmo;
-        gunsList[_stats.gunIndex] = _stats;
-        weaponIndex = _stats.gunIndex;
         GunEquip(_stats);
+        gunsList[_stats.gunIndex] = _stats;
+        weaponIndex++;
     }
 
     public void GunEquip(GunStats _gun) {
@@ -306,22 +292,15 @@ public class PlayerController : MonoBehaviour, IDamageable {
             prevHP = HP;
         }
         HP -= _dmg;
-        if(_dmg > 0)
-        {
-            aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
-            //UpdateHP();
-            StartCoroutine(DamageFlash());
-            if (HP <= 0) {
-                // Kill the player
-                Death();
-            }
-        }
-        else
-        {
-            if(HP > HPOrig)
-            {
-                HP = HPOrig;
-            }
+        StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+
+        //StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+        aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
+        //UpdateHP();
+        StartCoroutine(DamageFlash());
+        if (HP <= 0) {
+            // Kill the player
+            Death();
         }
     }
 
@@ -381,8 +360,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
     //}
 
     private void UpdatedAmmoGUI() {
-        GameManager.instance.ammoStockGUI.GetComponent<TMPro.TMP_Text>().text = gunsList[weaponIndex].maxAmmo.ToString();
-        GameManager.instance.ammoMagGUI.GetComponent<TMPro.TMP_Text>().text = gunsList[weaponIndex].currentAmmo.ToString();
+        GameManager.instance.ammoStockGUI.GetComponent<TMPro.TMP_Text>().text = maxAmmo.ToString();
+        GameManager.instance.ammoMagGUI.GetComponent<TMPro.TMP_Text>().text = currentAmmo.ToString();
     }
 
     public void Respawn() {
