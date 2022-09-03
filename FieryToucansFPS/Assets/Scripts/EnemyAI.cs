@@ -126,14 +126,11 @@ public class EnemyAI : MonoBehaviour, IDamageable
         isShooting = true;
 
         anim.SetTrigger("Shoot");
-
+        Debug.Log(bullet);
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, bullet.transform.rotation);
-        bulletClone.GetComponent<Bullet>().damage = damage;
-        bulletClone.GetComponent<Bullet>().speed = speed;
-        bulletClone.GetComponent<Bullet>().destroyTime = bulletDestroyTime;
-
-
+        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * speed;
         yield return new WaitForSeconds(shootRate);
+        
         
         isShooting = false;
     }

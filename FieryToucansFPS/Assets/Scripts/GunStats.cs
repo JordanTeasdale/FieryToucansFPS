@@ -22,6 +22,7 @@ public class GunStats : ScriptableObject {
     public int currentAmmo;
     public GameObject gun;
     public int gunIndex;
+    public GameObject bullet;
 
 
 }
