@@ -34,8 +34,12 @@ public class Bullet : MonoBehaviour {
     public void Update() {
         //When bullet explodes due to collisions or time
         maxLifetime -= Time.deltaTime;
-        if (collisions > maxCollisions || maxLifetime <= 0)
+        Debug.Log(maxLifetime);
+        if (collisions > maxCollisions)
             Explode();
+        if(maxLifetime == 0) {
+            Explode();
+        }
 
 
     }
@@ -67,13 +71,12 @@ public class Bullet : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnCollisionEnter(Collision collision) {
 
-        if (other.GetComponent<IDamageable>() != null)
-            other.GetComponent<IDamageable>().TakeDamage(damage);
+        collisions++;
 
-        //Debug.Log(other.transform.name);
-        Destroy(gameObject);
+        if (explodeOnTouch)
+            Explode();
     }
 
     private void Setup() {

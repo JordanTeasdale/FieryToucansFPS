@@ -53,12 +53,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   damage: 2
-  damageRange: 1
-  bounciness: 0.085
+  damageRange: 1.87
+  bounciness: 1.878
   usesGravity: 1
   speed: 3
-  maxCollisions: 1
-  maxLifetime: 5
+  maxCollisions: 5
+  maxLifetime: 19.56
   explodeOnTouch: 1
 --- !u!135 &3066778141097765165
 SphereCollider:
