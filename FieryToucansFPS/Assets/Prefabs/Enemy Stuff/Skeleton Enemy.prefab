@@ -1537,11 +1537,11 @@ MonoBehaviour:
   roamRadius: 10
   speedRoam: 2
   speedChase: 4
-  shootRate: 0.75
+  shootRate: 2
   damage: 1
   speed: 10
   bulletDestroyTime: 3
-  bullet: {fileID: 3697047046485239036, guid: d4164df360cfd804c8d38c49da6209bc, type: 3}
+  bullet: {fileID: 8632138228147884554, guid: 76042057a23cd1444a50da9c0ad04343, type: 3}
   bulletSpawnPos: {fileID: 296556089879653189}
 --- !u!195 &291243740042557292
 NavMeshAgent:

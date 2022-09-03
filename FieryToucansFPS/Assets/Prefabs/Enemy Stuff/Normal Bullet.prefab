@@ -117,13 +117,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   damage: 1
-  damageRange: 0.25
-  bounciness: 1.407
-  usesGravity: 0
+  damageRange: 0.53
+  bounciness: 2
+  usesGravity: 1
   speed: 35
   maxCollisions: 5
-  maxLifetime: 5
-  explodeOnTouch: 1
+  maxLifetime: 20
+  explodeOnTouch: 0
 --- !u!54 &8632138228147884556
 Rigidbody:
   m_ObjectHideFlags: 0

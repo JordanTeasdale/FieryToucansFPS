@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour {
     public Rigidbody rb;
     public GameObject explosion;
     [SerializeField] public LayerMask target;
+    
+
+
+
 
     //Damage 
     public int damage;
@@ -34,7 +38,7 @@ public class Bullet : MonoBehaviour {
     public void Update() {
         //When bullet explodes due to collisions or time
         maxLifetime -= Time.deltaTime;
-        Debug.Log(maxLifetime);
+        
         if (collisions > maxCollisions)
             Explode();
         if(maxLifetime == 0) {
@@ -45,7 +49,7 @@ public class Bullet : MonoBehaviour {
     }
 
     void Explode() {
-
+        
         //Instantiate explosion 
         if (explosion != null)
             Instantiate(explosion, transform.position, Quaternion.identity);
@@ -71,10 +75,17 @@ public class Bullet : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    private void OnCollisionEnter(Collision _collision) {
+
+        string collidedInto = _collision.gameObject.tag;
+        string explodeEnemy = LayerMask.LayerToName(12);
+        
 
         collisions++;
-
+        Debug.Log(collidedInto);
+       Debug.Log(explodeEnemy);
+        if (collidedInto == explodeEnemy)
+            Explode();
         if (explodeOnTouch)
             Explode();
     }

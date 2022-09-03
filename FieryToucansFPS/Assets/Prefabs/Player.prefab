@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1709202074}
   - component: {fileID: 562128651}
   - component: {fileID: 2424722163632776295}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 82320173802793685}
   - component: {fileID: 82320173802793684}
   - component: {fileID: 82320173802793707}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -232,6 +232,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ae31465cb32c8e34bb13719485a67917, type: 3}
   soundFootstepsVol: 0.1
   weaponIndex: -1
+  cameraShake: {fileID: 0}
 --- !u!82 &7174589972155203629
 AudioSource:
   m_ObjectHideFlags: 0
@@ -423,7 +424,7 @@ GameObject:
   - component: {fileID: 7618764129028184263}
   - component: {fileID: 4208486097754674017}
   - component: {fileID: 1062107328}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MeleeHitbox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -532,7 +533,7 @@ GameObject:
   - component: {fileID: 5694355021704120082}
   - component: {fileID: 918288413}
   - component: {fileID: 918288415}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
