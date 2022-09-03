@@ -131,7 +131,6 @@ public class EnemyAI : MonoBehaviour, IDamageable
         bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * speed;
         yield return new WaitForSeconds(shootRate);
         
-        
         isShooting = false;
     }
 
