@@ -195,6 +195,7 @@ MonoBehaviour:
   gravityValue: 35
   maxJumps: 2
   HP: 30
+  invincibilityTimer: 0.5
   meleeHitbox: {fileID: 6627562012560487157}
   meleeDamage: 5
   meleeSpeed: 1
@@ -424,7 +425,7 @@ GameObject:
   - component: {fileID: 7618764129028184263}
   - component: {fileID: 4208486097754674017}
   - component: {fileID: 1062107328}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: MeleeHitbox
   m_TagString: Player
   m_Icon: {fileID: 0}

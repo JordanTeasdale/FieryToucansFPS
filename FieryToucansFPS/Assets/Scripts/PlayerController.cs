@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] float gravityValue;
     [SerializeField] int maxJumps;
     [Range(1, 100)] public int HP;
+    [SerializeField] float invincibilityTimer;
     [SerializeField] GameObject meleeHitbox;
     [SerializeField] int meleeDamage;
     [SerializeField] float meleeSpeed;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     float healthFillAmount;
     public int weaponIndex = -1;
     int maxAmmo;
+    float damageTimer;
 
     bool isSprinting = false;
     bool isShooting = false;
@@ -79,6 +81,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
     // Update is called once per frame
     void Update() {
         //debug code
+        if (damageTimer > 0)
+            damageTimer -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.K)) {
             TakeDamage(1);
             StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
@@ -292,21 +296,24 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void TakeDamage(int _dmg) {
-        //healthSmoothCount = 0;
-        if (healthFillAmount == HP) {
-            healthSmoothCount = 0;
-            prevHP = HP;
-        }
-        HP -= _dmg;
-        StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+        if (damageTimer <= 0) {
+            damageTimer = invincibilityTimer;
+            //healthSmoothCount = 0;
+            if (healthFillAmount == HP) {
+                healthSmoothCount = 0;
+                prevHP = HP;
+            }
+            HP -= _dmg;
+            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
 
-        //StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
-        aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
-        //UpdateHP();
-        StartCoroutine(DamageFlash());
-        if (HP <= 0) {
-            // Kill the player
-            Death();
+            //StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+            aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
+            //UpdateHP();
+            StartCoroutine(DamageFlash());
+            if (HP <= 0) {
+                // Kill the player
+                Death();
+            }
         }
     }
 
