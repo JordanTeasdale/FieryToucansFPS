@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Confined;
         reticle.SetActive(false);
         Time.timeScale = 0;
+        player.SetActive(false);
     }
     public void CursorLockSlowed() {
         Cursor.visible = true;
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour {
         reticle.SetActive(true);
         Time.timeScale = 1;
         menuCurrentlyOpen.SetActive(isPaused);
+        player.SetActive(true);
     }
 
     public IEnumerator ClearRoom() {

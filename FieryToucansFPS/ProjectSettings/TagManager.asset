@@ -11,6 +11,7 @@ TagManager:
   - Undefined
   - Gun Model
   - Enemy
+  - Enemy1
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Checkpoint
   - GunPickup
   - Melee
-  - 
+  - Player
   - 
   - 
   - 
