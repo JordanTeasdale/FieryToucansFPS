@@ -157,8 +157,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
             playerSpeed = playerSpeedOrignal;
         }
     }
-    public void AmmoPickup(int index = -1, int ammo = 0) {
-        if (ammo == 0) {
+    public void AmmoPickup(int index = -1, int ammo = -1) {
+        if (ammo == -1) {
             if (index == -1) {
                 for (int i = 0; i < gunsList.Count; ++i) {
                     if (gunsList[i].name != "Gun - Empty") {

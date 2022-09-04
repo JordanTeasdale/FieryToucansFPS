@@ -1531,6 +1531,8 @@ MonoBehaviour:
   agent: {fileID: 291243740042557292}
   rend: {fileID: 428625527942675879}
   anim: {fileID: 380584161512731251}
+  healthDrop: {fileID: 6885192584979482336, guid: a11254ed5deae8a48bd94f3e0a96e51e, type: 3}
+  ammoDrop: {fileID: 3424306197889905558, guid: 0e410bc930d953c43868cf5213f86d8d, type: 3}
   HP: 50
   playerFaceSpeed: 3
   fieldOfView: 180

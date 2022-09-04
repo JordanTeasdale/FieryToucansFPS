@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3424306197889905513}
   - component: {fileID: 3424306197889905514}
   - component: {fileID: 3424306197889905515}
-  - component: {fileID: 3424306197889905556}
   - component: {fileID: 3424306197889905519}
+  - component: {fileID: 3424306197889905556}
   - component: {fileID: 3424306197889905557}
   - component: {fileID: 3424306197889905512}
   m_Layer: 0
@@ -87,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3424306197889905556
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3424306197889905558}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &3424306197889905519
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -110,6 +96,20 @@ CapsuleCollider:
   m_GameObject: {fileID: 3424306197889905558}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &3424306197889905556
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424306197889905558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUp: {fileID: 3424306197889905558}
-  ammo: 0
+  ammo: -1
   ammoIndex: -1
   health: 0
 --- !u!54 &3424306197889905512

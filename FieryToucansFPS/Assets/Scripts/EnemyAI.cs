@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
     [SerializeField] Animator anim;
+    [SerializeField] GameObject healthDrop;
+    [SerializeField] GameObject ammoDrop;
 
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] public int HP;
@@ -129,6 +131,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     {
         //add code for health and amo drops
         Instantiate(executeEffect, gameObject.transform.position, gameObject.transform.rotation);
+        Instantiate(healthDrop, gameObject.transform.position, gameObject.transform.rotation);
+        Instantiate(ammoDrop, gameObject.transform.position, gameObject.transform.rotation);
         enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
         Destroy(gameObject);
     }
