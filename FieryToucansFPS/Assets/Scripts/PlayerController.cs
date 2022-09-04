@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;
     [Range(0, 1)][SerializeField] float soundShootVol;
-    public AudioClip soundReload;
-    [Range(0, 1)][SerializeField] public float soundReloadVol;
+    //public AudioClip soundReload;
+    //[Range(0, 1)][SerializeField] public float soundReloadVol;
     [SerializeField] AudioClip[] soundFootsteps;
     [Range(0, 1)][SerializeField] float soundFootstepsVol;
 
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool isSprinting = false;
     bool isShooting = false;
     bool isSwitching = false;
-    bool isMeleeing = false;
+    public bool isMeleeing = false;
     bool playFootsteps = true;
     //bool isScoped = false;
     public CameraShake cameraShake;
@@ -207,8 +207,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
         shootRate = _gun.shootRate;
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
-        soundReload = _gun.reloadSound;
-        soundReloadVol = _gun.reloadVol;
+        //soundReload = _gun.reloadSound;
+        //soundReloadVol = _gun.reloadVol;
         hitEffect = _gun.hitEffect;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;

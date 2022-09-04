@@ -27,13 +27,18 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletSpawnPos;
 
+    [Header("----- Audio -----")]
+    [SerializeField] AudioSource enemyAud;
+    public AudioClip soundExecute;
+    [Range(0,1)] [SerializeField] float soundExecuteVol;
+
     [Header("----- Effects -----")]
     [SerializeField] GameObject executeEffect;
 
     Vector3 playerDir;
     bool isShooting = false;
     bool playerInRange = false;
-    bool isExecutable = false;
+    public bool isExecutable = false;
     private int HPOrig;
     
 
@@ -96,26 +101,41 @@ public class EnemyAI : MonoBehaviour, IDamageable
     public void TakeDamage(int damage) {
 
         if (anim.GetBool("Dead") == false)  {
-            HP -= damage;
-
-            if (HP > 0)  {
-                anim.SetTrigger("Damage");
-                StartCoroutine(FlashColor());
+            if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
+            {
+                Execute();
             }
-            else  {
-                GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
-                anim.SetBool("Dead", true);
-                agent.enabled = false;
+            else
+            {
+                HP -= damage;
+                if (HP > 0)  {
+                    anim.SetTrigger("Damage");
+                    StartCoroutine(FlashColor());
+                    StartCoroutine(Executable());
+                }
+                else  {
+                    GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+                    anim.SetBool("Dead", true);
+                    agent.enabled = false;
 
-                foreach (Collider col in GetComponents<Collider>())
-                    col.enabled = false;
+                    foreach (Collider col in GetComponents<Collider>())
+                        col.enabled = false;
+                }
             }
         }
     }
 
+    private void Execute()
+    {
+        //add code for health and amo drops
+        Instantiate(executeEffect, gameObject.transform.position, gameObject.transform.rotation);
+        enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
+        Destroy(gameObject);
+    }
+
     IEnumerator Executable()
     {
-        while(HPOrig <= HP/5)
+        while(HP <= HPOrig/4)
         {
             isExecutable = true;
             rend.material.color = Color.yellow;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun - Sniper
   m_EditorClassIdentifier: 
   shootDistance: 70
-  shootDamage: 20
+  shootDamage: 25
   shootRate: 2.5
   gunAud: {fileID: 6610029257671506302, guid: e58022db7a769e84ca4e42a9e3a567d0, type: 3}
   shootSound: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
@@ -22,6 +22,7 @@ MonoBehaviour:
   reloadVol: 0.717
   hitEffect: {fileID: 6221651516144037186, guid: e6584e9ba20353f42b68051a2786c842, type: 3}
   maxAmmo: 4
-  currentAmmo: 2
+  currentAmmo: 4
   gun: {fileID: 3588078862138672548, guid: 67fe012ae4d5d3f4aa0ed60ee1c2c85b, type: 3}
   gunIndex: 3
+  bullet: {fileID: 0}

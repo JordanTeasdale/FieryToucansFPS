@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun - Pistol
   m_EditorClassIdentifier: 
   shootDistance: 8
-  shootDamage: 1
+  shootDamage: 5
   shootRate: 0.5
   gunAud: {fileID: 6814652050488694999, guid: 66ba444acd60e0f44a4209fd1389f69e, type: 3}
   shootSound: {fileID: 8300000, guid: bc74d71cff5e7d746a89735282ce7544, type: 3}
@@ -22,5 +22,7 @@ MonoBehaviour:
   reloadVol: 0.308
   hitEffect: {fileID: 6221651516144037186, guid: c7bf5d5f5b0d79b49b48f4640dcec1d1, type: 3}
   maxAmmo: 12
-  currentAmmo: 1
+  currentAmmo: 4
   gun: {fileID: 4673460951707491628, guid: a0062aa729fc1374e8d5cb72050993fe, type: 3}
+  gunIndex: 0
+  bullet: {fileID: 0}
