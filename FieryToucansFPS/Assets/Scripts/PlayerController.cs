@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         Sprint();
         //Reload();
 
-        StartCoroutine(footSteps());
+        StartCoroutine(FootSteps());
         StartCoroutine(Shoot());
         StartCoroutine(WeaponCycle());
         StartCoroutine(Melee());
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
-    IEnumerator footSteps() {
+    IEnumerator FootSteps() {
         if (controller.isGrounded && move.normalized.magnitude > 0.3f && playFootsteps) {
             playFootsteps = false;
             aud.PlayOneShot(soundFootsteps[Random.Range(0, soundFootsteps.Length)], soundFootstepsVol);
@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         _stats.currentAmmo = _stats.maxAmmo;
         GunEquip(_stats);
         gunsList[_stats.gunIndex] = _stats;
-        weaponIndex++;
+        weaponIndex = _stats.gunIndex;
     }
 
     public void GunEquip(GunStats _gun) {
@@ -269,7 +269,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
     void RotateUp() {
         ++weaponIndex;
-        while (gunsList[weaponIndex].name == "Gun - Empty") {
+        if (weaponIndex == gunsList.Count) {
+            weaponIndex = 0;
+        }
+        while (gunsList[weaponIndex].name == empty.name) {
             ++weaponIndex;
             if (weaponIndex == gunsList.Count)
                 weaponIndex = 0;
@@ -278,7 +281,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     void RotateDown() {
         --weaponIndex;
-        while (gunsList[weaponIndex].name == "Gun - Empty") {
+        if (weaponIndex < 0) {
+            weaponIndex = gunsList.Count - 1;
+        }
+        while (gunsList[weaponIndex].name == empty.name) {
             weaponIndex--;
             if (weaponIndex < 0)
                 weaponIndex = gunsList.Count - 1;
