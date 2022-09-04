@@ -71,7 +71,7 @@ public class DamageIndicator : MonoBehaviour
 
             if (Target) {
                 tPos = Target.position;
-                tRot = Target.rotation;
+                //tRot = Target.rotation;
             }
             Vector3 direction = player.position - tPos;
 

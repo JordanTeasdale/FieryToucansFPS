@@ -20,12 +20,12 @@ public class DI_system : MonoBehaviour
 
     private void OnEnable() {
         CreateIndicator += Create;
-      //CheckIfObjectInSight += InSight;
+        CheckIfObjectInSight += InSight;
 
     }
     private void OnDisable() {
         CreateIndicator -= Create;
-      //  CheckIfObjectInSight -= InSight;
+        CheckIfObjectInSight -= InSight;
     }
 
     void Create(Transform target)  {
@@ -40,9 +40,9 @@ public class DI_system : MonoBehaviour
 
     }
 
-    //bool InSight(Transform t) {
-    //    Vector3 screenPoint = GameManager.instance.player.GetC.WorldToViewportPoint(t.position);
-    //    return screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
-    //}
+    bool InSight(Transform t) {
+        float angle = Vector3.Angle(new Vector3(GameManager.instance.player.transform.position.x, 0, GameManager.instance.player.transform.position.z), new Vector3(t.forward.x, 0, t.forward.z));
+        return angle < 60;
+    }
 
 }

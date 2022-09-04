@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject player;
     public PlayerController playerScript;
+    public GameObject gunPosition;
 
     public GameObject bossDoor;
     public GameObject currentRoom;
@@ -36,8 +37,7 @@ public class GameManager : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
 
-/*        ammoMagGUI = GameObject.FindGameObjectWithTag("Ammo Mag GUI");
-        ammoStockGUI = GameObject.FindGameObjectWithTag("Ammo Stock GUI");*/
+        gunPosition = GameObject.FindGameObjectWithTag("Gun Position");
 
         RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
         playerScript.Respawn();
@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         reticle.SetActive(true);
         player.GetComponentInChildren<CameraController>().enabled = true;
+        
         Time.timeScale = 1;
     }
     public void CursorUnlockUnpause() {

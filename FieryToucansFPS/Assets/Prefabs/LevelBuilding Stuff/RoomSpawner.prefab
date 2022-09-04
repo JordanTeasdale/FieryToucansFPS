@@ -58,15 +58,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a507aa06b902a643963454335baff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 4868437316466673861, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
   skeleton: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
   spider: {fileID: 1266945392910353016, guid: a709782658062904ca75f119e64ae383, type: 3}
   dragonWelp: {fileID: 8784616573599632970, guid: cb89c931e3ecf674a821a80784d84f95, type: 3}
   dragonBoss: {fileID: 6562930143932835471, guid: 02ffbf420ec7a744898affcb77e08246, type: 3}
-  doorLocations:
-  - {x: 10, y: 10}
-  - {x: -7, y: -5}
-  doorFaceNorthSouth: 0001
+  doors:
+  - {fileID: 0}
   skeletonLocations:
   - {x: 0, y: 0}
   - {x: 2, y: 2}

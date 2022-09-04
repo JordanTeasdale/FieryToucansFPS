@@ -116,9 +116,9 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 4096
-  damage: 1
+  damage: 5
   damageRange: 0.25
-  bounciness: 1.407
+  bounciness: 0.699
   usesGravity: 0
   speed: 35
   maxCollisions: 5

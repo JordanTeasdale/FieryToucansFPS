@@ -11,7 +11,7 @@ TagManager:
   - Undefined
   - Gun Model
   - Enemy
-  - Enemy1
+  - Gun Position
   layers:
   - Default
   - TransparentFX

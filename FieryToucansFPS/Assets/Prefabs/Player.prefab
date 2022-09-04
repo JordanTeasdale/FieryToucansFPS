@@ -219,8 +219,6 @@ MonoBehaviour:
   soundDamageVol: 0.1
   soundShoot: {fileID: 0}
   soundShootVol: 0.1
-  soundReload: {fileID: 0}
-  soundReloadVol: 0
   soundFootsteps:
   - {fileID: 8300000, guid: 22c270705053d01479411622ce5a3774, type: 3}
   - {fileID: 8300000, guid: 19f595e2d184d874cab0ffbf5cd238d4, type: 3}
@@ -233,6 +231,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ae31465cb32c8e34bb13719485a67917, type: 3}
   soundFootstepsVol: 0.1
   weaponIndex: -1
+  isMeleeing: 0
   cameraShake: {fileID: 0}
 --- !u!82 &7174589972155203629
 AudioSource:
@@ -536,7 +535,7 @@ GameObject:
   - component: {fileID: 918288415}
   m_Layer: 12
   m_Name: GunPosition
-  m_TagString: Untagged
+  m_TagString: Gun Position
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

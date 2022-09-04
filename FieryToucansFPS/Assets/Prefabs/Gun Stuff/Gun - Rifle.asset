@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e211f1ba08af1f444a7b849ae37659f8, type: 3}
   m_Name: Gun - Rifle
   m_EditorClassIdentifier: 
-  shootDistance: 15
-  shootDamage: 3
-  shootRate: 0.1
+  shootDistancePrimary: 0
+  shootSpeedPrimary: 0
+  shootDamagePrimary: 0
+  shootRatePrimary: 0
+  shootDistanceSecondary: 0
+  shootSpeedSecondary: 0
+  shootDamageSecondary: 0
+  shootRateSecondary: 0
   gunAud: {fileID: -6401865289743886553, guid: 7063296ac0f76464c9bb37e65005bbbb, type: 3}
   shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
   shootVol: 0.664
@@ -25,4 +30,6 @@ MonoBehaviour:
   currentAmmo: 13
   gun: {fileID: 6774588837608523791, guid: 0628e30174156e145876ddce14347706, type: 3}
   gunIndex: 2
-  bullet: {fileID: 0}
+  bulletPrimary: {fileID: 8632138228147884554, guid: aed5411b4dc59cf439effdc562163295, type: 3}
+  bulletSecondary: {fileID: 0}
+  secondaryFireActive: 0

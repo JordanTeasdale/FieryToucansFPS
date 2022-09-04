@@ -12,9 +12,9 @@ public class TestIndicatorResgister : MonoBehaviour
     }
     void Register()
     {
-       // if (DI_system.CheckIfObjectInSight(this.transform)) {
+       if (DI_system.CheckIfObjectInSight(this.transform)) {
             DI_system.CreateIndicator(this.transform);
-       // }
+       }
         Destroy(this.gameObject, destroyTimer);
     }
  

@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     // Update is called once per frame
     void Update() {
-        //debug code
         if (damageTimer > 0)
             damageTimer -= Time.deltaTime;
+        //debug code
         if (Input.GetKeyDown(KeyCode.K)) {
             TakeDamage(1);
             StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
         PlayerMovement();
         Sprint();
-        //Reload();
 
         StartCoroutine(FootSteps());
         StartCoroutine(Shoot());
@@ -196,19 +195,14 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     public void GunPickup(GunStats _stats) {
         _stats.currentAmmo = _stats.maxAmmo;
-        GunEquip(_stats);
         gunsList[_stats.gunIndex] = _stats;
         weaponIndex = _stats.gunIndex;
+        GunEquip(_stats);
     }
 
     public void GunEquip(GunStats _gun) {
-        shootDamage = _gun.shootDamage;
-        shootDistance = _gun.shootDistance;
-        shootRate = _gun.shootRate;
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
-        //soundReload = _gun.reloadSound;
-        //soundReloadVol = _gun.reloadVol;
         hitEffect = _gun.hitEffect;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
@@ -218,53 +212,14 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     }
 
-    /*public void WeaponSelect() {
-        if (gunsList.Count > 0) {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0 && weaponIndex < gunsList.Count - 1) {
-                ++weaponIndex;
-                if (gunsList[weaponIndex].maxAmmo == 0)
-                    ++weaponIndex;
-                else
-                    GunEquip(gunsList[weaponIndex]);
-            }
-            if (Input.GetAxis("Mouse ScrollWheel") > 0 && weaponIndex == gunsList.Count) {
-                weaponIndex = 0;
-                if (gunsList[weaponIndex].maxAmmo == 0)
-                    ++weaponIndex;
-                else
-                    GunEquip(gunsList[weaponIndex]);
-            }
-            if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponIndex > 0) {
-                --weaponIndex;
-                if (gunsList[weaponIndex].maxAmmo == 0)
-                    --weaponIndex;
-                else
-                    GunEquip(gunsList[weaponIndex]);
-            }
-            if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponIndex == 0) {
-                weaponIndex = gunsList.Count - 1;
-                if (gunsList[weaponIndex].maxAmmo == 0)
-                    --weaponIndex;
-                else
-                    GunEquip(gunsList[weaponIndex]);
-            }
-        }
-    }*/
-
     IEnumerator WeaponCycle() {
         if (gunsList.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0 && !isSwitching) {
             isSwitching = true;
             if (Input.GetAxis("Mouse ScrollWheel") > 0) {
                 RotateUp();
-                /*weaponIndex++;
-                if (weaponIndex == gunsList.Count)
-                    weaponIndex = 0;*/
                 GunEquip(gunsList[weaponIndex]);
             } else if (Input.GetAxis("Mouse ScrollWheel") < 0) {
                 RotateDown();
-                /*weaponIndex--;
-                if (weaponIndex < 0)
-                    weaponIndex = gunsList.Count - 1;*/
                 GunEquip(gunsList[weaponIndex]);
             }
             yield return new WaitForSeconds(switchRate);
@@ -298,15 +253,12 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public void TakeDamage(int _dmg) {
         if (damageTimer <= 0) {
             damageTimer = invincibilityTimer;
-            //healthSmoothCount = 0;
             if (healthFillAmount == HP) {
                 healthSmoothCount = 0;
                 prevHP = HP;
             }
             HP -= _dmg;
             StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
-
-            //StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
             aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
             //UpdateHP();
             StartCoroutine(DamageFlash());
@@ -338,21 +290,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             isShooting = true;
-            gunsList[weaponIndex].currentAmmo--;
-            currentAmmo--;
             UpdatedAmmoGUI();
-            RaycastHit hit;
-            //aud.PlayOneShot(soundShoot[Random.Range(0, soundShoot.Length)], soundShootVol);
             aud.PlayOneShot(soundShoot, soundShootVol);
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDistance)) {
-                Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
-                if (hit.collider.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
-                    if (hit.collider is SphereCollider) {
-                        isDamageable.TakeDamage(shootDamage * 2);
-                    } else
-                        isDamageable.TakeDamage(shootDamage);
-                }
-            }
+            gunsList[weaponIndex].ShootPrimary();
             if (gunsList[weaponIndex].maxAmmo == 8)
                 yield return new WaitForSeconds(0.7f);
             gunPostion.GetChild(0).GetComponent<Animation>().Play();
@@ -363,16 +303,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
         }
     }
 
-    //void Reload() {
-    //    if (Input.GetButtonDown("Reload")) {
-    //        currentAmmo = maxAmmo;
-    //        gunsList[weaponIndex].currentAmmo = maxAmmo;
-    //        aud.PlayOneShot(soundReload, soundReloadVol);
-    //        UpdatedAmmoGUI();
-    //    }
-    //}
-
     private void UpdatedAmmoGUI() {
+        maxAmmo = gunsList[weaponIndex].maxAmmo;
+        currentAmmo = gunsList[weaponIndex].currentAmmo;
         GameManager.instance.ammoStockGUI.GetComponent<TMPro.TMP_Text>().text = maxAmmo.ToString();
         GameManager.instance.ammoMagGUI.GetComponent<TMPro.TMP_Text>().text = currentAmmo.ToString();
     }
