@@ -27,10 +27,15 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletSpawnPos;
 
+    [Header("----- Effects -----")]
+    [SerializeField] GameObject executeEffect;
+
     Vector3 playerDir;
     bool isShooting = false;
     bool playerInRange = false;
-
+    bool isExecutable = false;
+    private int HPOrig;
+    
 
     float stoppingDistanceOrig;
 
@@ -42,8 +47,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     void Start() {
         stoppingDistanceOrig = agent.stoppingDistance;
         startingPos = transform.position;
+        HPOrig = HP;
         //Roam();
-
     }
 
     // Update is called once per frame
@@ -59,10 +64,9 @@ public class EnemyAI : MonoBehaviour, IDamageable
             if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
             //Debug.Log(agent.remainingDistance);
-        }
-        
-
+        }     
     }
+
     void Roam() {
         agent.stoppingDistance = 0;
         agent.speed = speedRoam;
@@ -106,10 +110,20 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 foreach (Collider col in GetComponents<Collider>())
                     col.enabled = false;
             }
-
         }
+    }
 
-
+    IEnumerator Executable()
+    {
+        while(HPOrig <= HP/5)
+        {
+            isExecutable = true;
+            rend.material.color = Color.yellow;
+            yield return new WaitForSeconds(1);
+            rend.material.color = Color.cyan;
+            yield return new WaitForSeconds(1);
+        }
+        isExecutable = false;
     }
 
     IEnumerator FlashColor() {
@@ -162,11 +176,6 @@ public class EnemyAI : MonoBehaviour, IDamageable
         if (other.CompareTag("Player"))  {
             playerInRange = true;
         }
-
-
-
-
-
     }
 
     void OnTriggerExit(Collider other)  {
@@ -174,5 +183,4 @@ public class EnemyAI : MonoBehaviour, IDamageable
             playerInRange = false;
         Roam();
     }
-
 }
