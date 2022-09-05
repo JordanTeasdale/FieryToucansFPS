@@ -17,12 +17,13 @@ public class Bullet : MonoBehaviour {
     public int damage;
     public float damageRange;
 
-    [Range(0, 2f)] [SerializeField] float bounciness;
-    [SerializeField] public bool usesGravity;
+  
 
     [Header("------ Projectile Behaviors -----")]
     // Behaviors 
 
+    [Range(0, 1f)] [SerializeField] float bounciness;
+    [SerializeField] public bool usesGravity;
     public int speed;
     public int maxCollisions;
     public float maxLifetime;
