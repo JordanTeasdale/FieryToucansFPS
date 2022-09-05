@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class ButtonFunctions : MonoBehaviour {
 
-
     public GameObject menuFirstButton, OptionsFirstButton, OptionsClosedButton, pauseFirstButton;
+
+
+    public void Start()
+    {
+        //clearing the currently selected menu choice
+        EventSystem.current.SetSelectedGameObject(null);
+
+        //set a new menu choice
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+
+    }
 
     public void Resume() {
         if (GameManager.instance.isPaused) {
@@ -37,4 +48,6 @@ public class ButtonFunctions : MonoBehaviour {
     {
         SceneManager.LoadScene("Level 1");
     }
+
+
 }
