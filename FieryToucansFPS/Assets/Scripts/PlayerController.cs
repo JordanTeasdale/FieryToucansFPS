@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] GunStats empty;
     [SerializeField] Transform gunPostion;
 
+
     [Header("----- Effects -----")]
     [SerializeField] GameObject hitEffect;
 
@@ -258,13 +259,17 @@ public class PlayerController : MonoBehaviour, IDamageable {
                 prevHP = HP;
             }
             HP -= _dmg;
-            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
-            aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
-            //UpdateHP();
-            StartCoroutine(DamageFlash());
-            if (HP <= 0) {
-                // Kill the player
-                Death();
+
+            if (_dmg > 0)
+            {
+                StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+                aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
+                //UpdateHP();
+                StartCoroutine(DamageFlash());
+                if (HP <= 0) {
+                    // Kill the player
+                    Death();
+                }
             }
         }
     }

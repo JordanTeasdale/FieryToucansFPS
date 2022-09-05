@@ -12,22 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e211f1ba08af1f444a7b849ae37659f8, type: 3}
   m_Name: Gun - Shotty
   m_EditorClassIdentifier: 
-  shootDistancePrimary: 0
   shootSpeedPrimary: 5
-  shootDamagePrimary: 1
   shootRatePrimary: 0.5
-  shootDistanceSecondary: 0
   shootSpeedSecondary: 0
-  shootDamageSecondary: 0
   shootRateSecondary: 0
+  secondaryCooldown: 0
+  spreadFactor: 0
   gunAud: {fileID: 7554878211014542222, guid: 367c3236d8c17ce4392fe755b43a0641, type: 3}
   shootSound: {fileID: 8300000, guid: 1e76e50d97952fc44a3d281b2282a5aa, type: 3}
   shootVol: 0.601
   reloadSound: {fileID: 8300000, guid: cef0fa03af5b747f0abe82cde0b2bccc, type: 3}
   reloadVol: 0.462
   hitEffect: {fileID: 6221651516144037186, guid: 7993fccd5b5eaf14e842aeab2e37b233, type: 3}
-  maxAmmo: 8
-  currentAmmo: -1
+  maxAmmo: 40
+  currentAmmo: 34
   gun: {fileID: 6255555918143130547, guid: 103d7fcc31bf9394c945ae08c99f89fa, type: 3}
   gunIndex: 1
   bulletPrimary: {fileID: 8632138228147884554, guid: aed5411b4dc59cf439effdc562163295, type: 3}
