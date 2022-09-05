@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
+    [Header("------ Assignables -----")]
     //Assignables
+
     public Rigidbody rb;
     public GameObject explosion;
     [SerializeField] public LayerMask target;
-    
+    [SerializeField] public int targetLayerValue;
 
-
-
-
+    [Header("------ Damage -----")]
     //Damage 
+
     public int damage;
     public float damageRange;
 
     [Range(0, 2f)] [SerializeField] float bounciness;
     [SerializeField] public bool usesGravity;
 
+    [Header("------ Projectile Behaviors -----")]
     // Behaviors 
+
     public int speed;
     public int maxCollisions;
     public float maxLifetime;
@@ -76,16 +79,12 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision _collision) {
-
-        string collidedInto = _collision.gameObject.tag;
-        string explodeEnemy = LayerMask.LayerToName(12);
-        
-
+       
         collisions++;
-        Debug.Log(collidedInto);
-       Debug.Log(explodeEnemy);
-        if (collidedInto == explodeEnemy)
+
+        if (_collision.gameObject.layer == targetLayerValue)
             Explode();
+
         if (explodeOnTouch)
             Explode();
     }

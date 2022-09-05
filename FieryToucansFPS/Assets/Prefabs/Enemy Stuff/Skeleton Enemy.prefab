@@ -1540,11 +1540,11 @@ MonoBehaviour:
   roamRadius: 10
   speedRoam: 2
   speedChase: 4
-  shootRate: 2
+  shootRate: 0.26
   damage: 1
   speed: 10
   bulletDestroyTime: 3
-  bullet: {fileID: 8632138228147884554, guid: 76042057a23cd1444a50da9c0ad04343, type: 3}
+  bullet: {fileID: 8632138228147884554, guid: a80bf7fd7abcc204c8ed886541e1038a, type: 3}
   bulletSpawnPos: {fileID: 296556089879653189}
   enemyAud: {fileID: 2246530930837742390}
   soundExecute: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
