@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Confined;
         reticle.SetActive(false);
         Time.timeScale = 0;
-        player.SetActive(false);
+        playerScript.enabled = false;
     }
     public void CursorLockSlowed() {
         Cursor.visible = true;
@@ -91,7 +91,6 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         reticle.SetActive(true);
         player.GetComponentInChildren<CameraController>().enabled = true;
-        
         Time.timeScale = 1;
     }
     public void CursorUnlockUnpause() {
@@ -100,7 +99,7 @@ public class GameManager : MonoBehaviour {
         reticle.SetActive(true);
         Time.timeScale = 1;
         menuCurrentlyOpen.SetActive(isPaused);
-        player.SetActive(true);
+        playerScript.enabled = true;
     }
 
     public IEnumerator ClearRoom() {
