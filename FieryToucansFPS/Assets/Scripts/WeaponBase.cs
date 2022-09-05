@@ -10,7 +10,7 @@ public abstract class WeaponBase : ScriptableObject {
     public float shootRateSecondary;
     public float secondaryCooldown;
 
-    public float spreadFactor;
+    [Range(0, .5f)] public float spreadFactor;
 
     [SerializeField] AudioSource gunAud;
     public AudioClip shootSound;
@@ -42,7 +42,7 @@ public abstract class WeaponBase : ScriptableObject {
         currentAmmo--;
 
         GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, bulletPrimary.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (BulletSpread()).normalized * shootSpeedPrimary;
+        bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedPrimary;
         yield return new WaitForSeconds(shootRatePrimary);
         GameManager.instance.playerScript.isShooting = false;
     }
@@ -52,7 +52,7 @@ public abstract class WeaponBase : ScriptableObject {
         currentAmmo--;
 
         GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.player.transform.position, bulletSecondary.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (BulletSpread()).normalized * shootSpeedSecondary;
+        bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedSecondary;
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;
     }
