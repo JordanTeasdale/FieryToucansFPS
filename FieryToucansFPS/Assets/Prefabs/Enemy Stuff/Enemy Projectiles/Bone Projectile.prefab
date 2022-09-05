@@ -120,7 +120,7 @@ MonoBehaviour:
   targetLayerValue: 12
   damage: 1
   damageRange: 0.26
-  bounciness: 2
+  bounciness: 1
   usesGravity: 0
   speed: 150
   maxCollisions: 5
