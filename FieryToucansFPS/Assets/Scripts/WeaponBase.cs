@@ -4,14 +4,10 @@ using UnityEngine;
 
 public abstract class WeaponBase : ScriptableObject
 {
-    public int shootDistancePrimary;
     public int shootSpeedPrimary;
-    public int shootDamagePrimary;
     public float shootRatePrimary;
 
-    public int shootDistanceSecondary;
-    public int shootSpeedSecondary;
-    public int shootDamageSecondary;
+    public int shootSpeedSecondary; 
     public float shootRateSecondary;
 
     [SerializeField] AudioSource gunAud;

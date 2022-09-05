@@ -290,17 +290,17 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             isShooting = true;
-            UpdatedAmmoGUI();
             aud.PlayOneShot(soundShoot, soundShootVol);
             if (Input.GetButton("mouse 1"))
                 gunsList[weaponIndex].ShootSecondary();
             else
                 gunsList[weaponIndex].ShootPrimary();
+            UpdatedAmmoGUI();
+
             if (gunsList[weaponIndex].maxAmmo == 8)
                 yield return new WaitForSeconds(0.7f);
             gunPostion.GetChild(0).GetComponent<Animation>().Play();
             yield return new WaitForSeconds(shootRate);
-
 
             isShooting = false;
         }
