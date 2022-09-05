@@ -10,6 +10,8 @@ public abstract class WeaponBase : ScriptableObject {
     public float shootRateSecondary;
     public float secondaryCooldown;
 
+    public float spreadFactor;
+
     [SerializeField] AudioSource gunAud;
     public AudioClip shootSound;
 
@@ -26,12 +28,21 @@ public abstract class WeaponBase : ScriptableObject {
     public GameObject bulletSecondary;
     public bool secondaryFireActive;
 
+
+    public Vector3 BulletSpread()
+    {
+        Vector3 shootDirection = GameManager.instance.gunPosition.transform.forward;
+        shootDirection.x += Random.Range(-spreadFactor, spreadFactor);
+        shootDirection.y += Random.Range(-spreadFactor, spreadFactor);
+        return shootDirection;
+    }
+
     public virtual IEnumerator ShootPrimary() {
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo--;
 
         GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, bulletPrimary.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedPrimary;
+        bulletClone.GetComponent<Rigidbody>().velocity = (BulletSpread()).normalized * shootSpeedPrimary;
         yield return new WaitForSeconds(shootRatePrimary);
         GameManager.instance.playerScript.isShooting = false;
     }
@@ -41,7 +52,7 @@ public abstract class WeaponBase : ScriptableObject {
         currentAmmo--;
 
         GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.player.transform.position, bulletSecondary.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedSecondary;
+        bulletClone.GetComponent<Rigidbody>().velocity = (BulletSpread()).normalized * shootSpeedSecondary;
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;
     }
