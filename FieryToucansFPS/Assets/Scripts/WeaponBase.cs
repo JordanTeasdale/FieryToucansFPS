@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WeaponBase : ScriptableObject
-{
+public abstract class WeaponBase : ScriptableObject {
     public int shootSpeedPrimary;
     public float shootRatePrimary;
 
-    public int shootSpeedSecondary; 
+    public int shootSpeedSecondary;
     public float shootRateSecondary;
+    public float secondaryCooldown;
 
     [SerializeField] AudioSource gunAud;
     public AudioClip shootSound;
@@ -26,18 +26,23 @@ public abstract class WeaponBase : ScriptableObject
     public GameObject bulletSecondary;
     public bool secondaryFireActive;
 
-    public void ShootPrimary() {
-            currentAmmo--;
+    public virtual IEnumerator ShootPrimary() {
+        GameManager.instance.playerScript.isShooting = true;
+        currentAmmo--;
 
-            GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, bulletPrimary.transform.rotation);
-            bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedPrimary;
+        GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, bulletPrimary.transform.rotation);
+        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedPrimary;
+        yield return new WaitForSeconds(shootRatePrimary);
+        GameManager.instance.playerScript.isShooting = false;
     }
 
-    public void ShootSecondary() {
-            currentAmmo--;
+    public IEnumerator ShootSecondary() {
+        GameManager.instance.playerScript.isShooting = true;
+        currentAmmo--;
 
-            GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.player.transform.position, bulletSecondary.transform.rotation);
-            bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedSecondary;
-
+        GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.player.transform.position, bulletSecondary.transform.rotation);
+        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedSecondary;
+        yield return new WaitForSeconds(shootRateSecondary);
+        GameManager.instance.playerScript.isShooting = false;
     }
 }

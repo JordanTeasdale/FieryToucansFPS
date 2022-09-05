@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [Range(0.1f, 5)][SerializeField] float switchRate;
     [SerializeField] float shootRate;
     [SerializeField] int currentAmmo;
-    public List<GunStats> gunsList = new List<GunStats>();
+    public List<WeaponBase> gunsList = new List<WeaponBase>();
     [SerializeField] GunStats empty;
     [SerializeField] Transform gunPostion;
 
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     float damageTimer;
 
     bool isSprinting = false;
-    bool isShooting = false;
+    public bool isShooting = false;
     bool isSwitching = false;
     public bool isMeleeing = false;
     bool playFootsteps = true;
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         Sprint();
 
         StartCoroutine(FootSteps());
-        StartCoroutine(Shoot());
+        Shoot();
         StartCoroutine(WeaponCycle());
         StartCoroutine(Melee());
     }
@@ -193,14 +193,14 @@ public class PlayerController : MonoBehaviour, IDamageable {
         GunEquip(gunsList[weaponIndex]);
     }
 
-    public void GunPickup(GunStats _stats) {
+    public void GunPickup(WeaponBase _stats) {
         _stats.currentAmmo = _stats.maxAmmo;
         gunsList[_stats.gunIndex] = _stats;
         weaponIndex = _stats.gunIndex;
         GunEquip(_stats);
     }
 
-    public void GunEquip(GunStats _gun) {
+    public void GunEquip(WeaponBase _gun) {
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
         hitEffect = _gun.hitEffect;
@@ -285,24 +285,17 @@ public class PlayerController : MonoBehaviour, IDamageable {
         }
     }
 
-    IEnumerator Shoot() {
+    void Shoot() {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
-            isShooting = true;
             aud.PlayOneShot(soundShoot, soundShootVol);
-            if (Input.GetButton("mouse 1"))
-                gunsList[weaponIndex].ShootSecondary();
+            if (Input.GetButton("Fire2"))
+                StartCoroutine(gunsList[weaponIndex].ShootSecondary());
             else
-                gunsList[weaponIndex].ShootPrimary();
+                StartCoroutine(gunsList[weaponIndex].ShootPrimary());
             UpdatedAmmoGUI();
-
-            if (gunsList[weaponIndex].maxAmmo == 8)
-                yield return new WaitForSeconds(0.7f);
             gunPostion.GetChild(0).GetComponent<Animation>().Play();
-            yield return new WaitForSeconds(shootRate);
-
-            isShooting = false;
         }
     }
 
