@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1129726653177413030}
   - component: {fileID: 3819633008176717068}
   - component: {fileID: 3591733024601075292}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pump_Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5490994292986017070}
   - component: {fileID: 4973481639847410732}
   - component: {fileID: 1678184871885579191}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shotgun_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 2148337492545913750}
   - component: {fileID: 5687172193466826607}
   - component: {fileID: 1538994952012203067}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model - Shotty
   m_TagString: Gun Model
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1514462645147811882}
   - component: {fileID: 5060069794660334803}
   - component: {fileID: 2130068002705934215}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model - AK-47
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6103141260279105412}
   - component: {fileID: 4744686057141382049}
   - component: {fileID: 6655006213837655108}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AK_47_Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 8930591552446191948}
   - component: {fileID: 6665241538879912816}
   - component: {fileID: 3131713938023798630}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ak_47_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}

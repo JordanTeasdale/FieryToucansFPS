@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7652391770843881670}
   - component: {fileID: 6247748716182389109}
   - component: {fileID: 8483999557743982319}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handgun_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1124633394640338896}
   - component: {fileID: 1410084257115551700}
   - component: {fileID: 8077997636977307678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 854321215592387849}
   - component: {fileID: 6406267072082160112}
   - component: {fileID: 238935760594670244}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model - Handgun
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 4495759511999836266}
   - component: {fileID: 2390076915333610720}
   - component: {fileID: 3109245522993711538}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

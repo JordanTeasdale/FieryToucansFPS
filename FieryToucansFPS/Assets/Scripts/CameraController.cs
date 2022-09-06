@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour {
         while (elapsed < duration) {
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
-            Debug.Log("hello");
+            //Debug.Log("hello");
             gameObject.transform.position = new Vector3(x, y, originalPos.z);
 
             elapsed += Time.deltaTime;
@@ -67,10 +67,12 @@ public class CameraController : MonoBehaviour {
 
 
     void Update() {
-        if (GameManager.instance.playerScript.HP <= 0)
+        /*
+         if (GameManager.instance.playerScript.HP <= 0)
             animator.SetBool("isDead", true);
         else if (GameManager.instance.playerScript.HP > 0)
             animator.SetBool("isDead", false);
+        */
 
     }
 }

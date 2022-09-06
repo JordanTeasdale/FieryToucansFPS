@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7488054646929786855}
   - component: {fileID: 8536436451575018454}
   - component: {fileID: 3970607326000751309}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8848225064840383873}
   - component: {fileID: 3024093183032111480}
   - component: {fileID: 8232795079388957228}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model - BarrettM107
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4890684882676119590}
   - component: {fileID: 5182416432628020425}
   - component: {fileID: 8761339993215095598}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M107_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 408722108188349773}
   - component: {fileID: 2639335110665511710}
   - component: {fileID: 3043649694716763341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barrett_Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8078725386639953596}
   - component: {fileID: 833847915147808704}
   - component: {fileID: 1489820828982606858}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1185592811595429625}
   - component: {fileID: 2989522448602150060}
   - component: {fileID: 7569118738371836784}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gatling_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 2030721250455552772}
   - component: {fileID: 5697646563211771901}
   - component: {fileID: 1487705648650601641}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model - Gatling
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
