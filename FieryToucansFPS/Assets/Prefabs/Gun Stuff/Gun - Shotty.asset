@@ -24,8 +24,9 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: cef0fa03af5b747f0abe82cde0b2bccc, type: 3}
   reloadVol: 0.462
   hitEffect: {fileID: 6221651516144037186, guid: 7993fccd5b5eaf14e842aeab2e37b233, type: 3}
+  Crosshair: {fileID: 21300000, guid: 022074091120f664e8242eff2dab1335, type: 3}
   maxAmmo: 40
-  currentAmmo: 34
+  currentAmmo: 37
   gun: {fileID: 6255555918143130547, guid: 103d7fcc31bf9394c945ae08c99f89fa, type: 3}
   gunIndex: 1
   bulletPrimary: {fileID: 8632138228147884554, guid: aed5411b4dc59cf439effdc562163295, type: 3}

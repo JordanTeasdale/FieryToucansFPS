@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] int clearedRoomsRequired;
 
     public GameObject RespawnPos;
+    public GameObject checkpointFeedback;
 
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
     public GameObject radialMenu;
     public Image playerHPBar;
     public GameObject lowHealthIndicator;
+
 
     public bool isPaused = false;
     bool gameOver = false;
