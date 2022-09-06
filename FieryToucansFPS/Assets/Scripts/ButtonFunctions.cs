@@ -11,6 +11,8 @@ public class ButtonFunctions : MonoBehaviour
     LevelLoader levelLoader;
     public GameObject menuFirstButton, OptionsFirstButton, OptionsClosedButton, pauseFirstButton;
 
+    [SerializeField] AudioSource menuAudio;
+    [SerializeField] AudioClip menuAudioC;
 
     public void Start()
     {
@@ -29,6 +31,7 @@ public class ButtonFunctions : MonoBehaviour
     {
         if (GameManager.instance.isPaused)
         {
+            MenuSoundTrigger();
             GameManager.instance.isPaused = false;
             GameManager.instance.CursorUnlockUnpause();
         }
@@ -36,6 +39,7 @@ public class ButtonFunctions : MonoBehaviour
 
     public void Restart()
     {
+        MenuSoundTrigger();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameManager.instance.CursorUnlockUnpause();
         levelLoader.CoRoutRun();
@@ -53,19 +57,34 @@ public class ButtonFunctions : MonoBehaviour
 
     public void Quit()
     {
+        MenuSoundTrigger();
         levelLoader.CoRoutRun();
         Application.Quit();
     }
 
     public void PlaysGame()
     {
+        MenuSoundTrigger();
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Level 1");
     }
 
     public void QCreditScene()
     {
+        MenuSoundTrigger();
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Credits");
+    }
+
+    public void BackButton()
+    {
+        MenuSoundTrigger();
+        levelLoader.CoRoutRun();
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void MenuSoundTrigger()
+    {
+        menuAudio.PlayOneShot(menuAudioC, 1);
     }
 }

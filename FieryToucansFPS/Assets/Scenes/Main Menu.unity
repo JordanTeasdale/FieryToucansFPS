@@ -438,6 +438,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
 --- !u!1 &572398038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4055417949046354725, guid: c6d32bb1b66a4044fa0dcffb17fac662, type: 3}
@@ -864,6 +866,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
 --- !u!1 &1150297781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1019,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
 --- !u!1 &1188359369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1475,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
 --- !u!1 &1795185988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4343,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 0}
 --- !u!1 &3805702778539261196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4641,6 +4651,7 @@ MonoBehaviour:
   clearedRooms: 0
   clearedRoomsRequired: 6
   RespawnPos: {fileID: 0}
+  checkpointFeedback: {fileID: 0}
   pauseMenu: {fileID: 6172273429898058525}
   playerDeadMenu: {fileID: 0}
   playerWinMenu: {fileID: 9169731180917251291}
@@ -4651,6 +4662,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   radialMenu: {fileID: 0}
   playerHPBar: {fileID: 0}
+  lowHealthIndicator: {fileID: 0}
   isPaused: 0
 --- !u!1001 &4825216383136131598
 PrefabInstance:
@@ -5062,6 +5074,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 0}
 --- !u!1 &6484062767188965773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,6 +5317,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 0}
 --- !u!114 &8319043617885975276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5375,6 +5391,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 0}
 --- !u!114 &8747134810024437280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5447,6 +5465,8 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioC: {fileID: 0}
 --- !u!114 &8795308304835074190
 MonoBehaviour:
   m_ObjectHideFlags: 0
