@@ -106,6 +106,7 @@ MonoBehaviour:
   lockVertMin: -70
   lockVertMax: 70
   invert: 0
+  animator: {fileID: 0}
 --- !u!95 &562128651
 Animator:
   serializedVersion: 4
@@ -189,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 82320173802793707}
-  playerSpeed: 6
+  playerSpeed: 10
   sprintMult: 2.5
   jumpHeight: 12
   gravityValue: 35
@@ -199,6 +200,9 @@ MonoBehaviour:
   meleeHitbox: {fileID: 6627562012560487157}
   meleeDamage: 5
   meleeSpeed: 1
+  dashDuration: 0.3
+  dashSpeed: 30
+  dashCooldown: 0
   shootDistance: 0
   shootDamage: 0
   switchRate: 0.5
@@ -231,8 +235,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ae31465cb32c8e34bb13719485a67917, type: 3}
   soundFootstepsVol: 0.1
   weaponIndex: -1
+  isDashing: 0
+  isShooting: 0
   isMeleeing: 0
-  cameraShake: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!82 &7174589972155203629
 AudioSource:
   m_ObjectHideFlags: 0
