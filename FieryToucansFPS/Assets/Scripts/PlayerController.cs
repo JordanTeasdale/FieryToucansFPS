@@ -149,26 +149,24 @@ public class PlayerController : MonoBehaviour, IDamageable {
         {
             float startTime = Time.time;
             while(Time.time < startTime + dashDuration)
-            {                
+            {
+                isDashing = true;
                 if (move.x == 0 && move.z == 0) //checking to see if the player is curently moving
                 {
-                    isDashing = true;
                     //move.x = 1;
                     move = GameManager.instance.player.transform.forward; 
                     move.y = 0f;
                     //move.z = 0; //setting all but the forward player movement direction to 0
                     controller.Move(move * dashSpeed * Time.deltaTime);
-                    isDashing = false;
                 }
                 else
                 {
-                    isDashing = true;
                     move.y = 0f; //makes it so the player doesn't move vertically during a dash
                     controller.Move(move * dashSpeed * Time.deltaTime);
-                    isDashing = false;
                 }
                 yield return null;
             }
+            isDashing = false;
         }
     }
 
