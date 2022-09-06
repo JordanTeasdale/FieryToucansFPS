@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-
+    [SerializeField] float TempAudCVol;
     [SerializeField] AudioSource TempAudio;
     [SerializeField] AudioClip TempAudioC;
     float timer;
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            TempAudio.PlayOneShot(TempAudioC, 12);
             GameManager.instance.RespawnPos.transform.position = transform.position;           
             Destroy(gameObject);
             StartCoroutine(CheckpointFeedbackTimer());
@@ -20,6 +19,7 @@ public class Checkpoint : MonoBehaviour
     }
 
     IEnumerator CheckpointFeedbackTimer() {
+        TempAudio.PlayOneShot(TempAudioC, TempAudCVol);
         GameManager.instance.checkpointFeedback.SetActive(true);       
         yield return new WaitForSeconds(0.5f);       
         GameManager.instance.checkpointFeedback.SetActive(false);
