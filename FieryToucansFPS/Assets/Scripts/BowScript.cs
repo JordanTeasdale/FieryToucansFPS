@@ -24,11 +24,14 @@ public class BowScript : WeaponBase {
     }
 
     public override IEnumerator ShootSecondary() {
-        for (int i = 0; i < 4; i++) {
+        currentAmmo -= 3;
+        GameManager.instance.playerScript.isShooting = true;
+        for (int i = 0; i < 3; i++) {
             GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.gunPosition.transform.position, GameManager.instance.player.transform.rotation);
             bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.forward).normalized * shootSpeedSecondary; 
             yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(shootRateSecondary);
+        GameManager.instance.playerScript.isShooting = false;
     }
 }
