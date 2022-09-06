@@ -8055,7 +8055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3132133208060466694, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8866380927012251413, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
       propertyPath: m_RootOrder
@@ -29568,10 +29568,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 372176366}
     m_Modifications:
-    - target: {fileID: -4214001399111671956, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6795979163684340102, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
       propertyPath: m_Name
       value: Checkpoint (1)
@@ -32144,6 +32140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7174589972155203629, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 587aedb20bbaf494eb496195f38a8ab6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
 --- !u!1001 &2019306626
