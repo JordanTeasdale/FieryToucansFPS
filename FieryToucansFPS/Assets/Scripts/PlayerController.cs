@@ -325,7 +325,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     public void Death() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of fee468dc (Death animation added)
 =======
 >>>>>>> parent of fee468dc (Death animation added)
         GameManager.instance.CursorLockPause();
