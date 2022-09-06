@@ -66,13 +66,17 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public bool isMeleeing = false;
     bool playFootsteps = true;
     //bool isScoped = false;
-    public CameraShake cameraShake;
+    public GameObject camera;
+    CameraController cameraController;
+
 
     // Start is called before the first frame update
     void Start() {
         playerSpeedOrignal = playerSpeed;
         HPOrig = HP;
-        cameraShake = gameObject.GetComponentInChildren<CameraShake>();
+        cameraController = camera.GetComponent<CameraController>();
+        
+
         ResetHP();
         for (int i = 0; i < 6; ++i) {
             gunsList.Add(empty);
@@ -86,7 +90,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
         //debug code
         if (Input.GetKeyDown(KeyCode.K)) {
             TakeDamage(1);
-            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
 
         }
 
@@ -260,15 +263,14 @@ public class PlayerController : MonoBehaviour, IDamageable {
             }
             HP -= _dmg;
 
-            if (_dmg > 0)
-            {
-                StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
+            if (_dmg > 0) {
+                StartCoroutine(cameraController.Shake(0.50f, 2.0f));
                 aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
                 //UpdateHP();
                 StartCoroutine(DamageFlash());
                 if (HP <= 0) {
                     // Kill the player
-                    Death();
+                    StartCoroutine(Death());
                 }
             }
         }
@@ -323,7 +325,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
         }
     }
 
-    public void Death() {
+    public IEnumerator Death() {
+        
+        yield return new WaitForSeconds(1.98f);
 
         GameManager.instance.CursorLockPause();
         GameManager.instance.playerDeadMenu.SetActive(true);
@@ -338,6 +342,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public void UpdateHP() {
         GameManager.instance.playerHPBar.fillAmount = healthFillAmount / HPOrig;
     }
+
 
 
 
