@@ -29047,6 +29047,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 372176366}
     m_Modifications:
+    - target: {fileID: -4214001399111671956, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4214001399111671956, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6795979163684340102, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
       propertyPath: m_Name
       value: Checkpoint (2)
