@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e211f1ba08af1f444a7b849ae37659f8, type: 3}
   m_Name: Gun - Rifle
   m_EditorClassIdentifier: 
-  shootSpeedPrimary: 0
-  shootRatePrimary: 0
+  shootSpeedPrimary: 50
+  shootRatePrimary: 0.2
   shootSpeedSecondary: 0
   shootRateSecondary: 0
   secondaryCooldown: 0
-  spreadFactor: 0
+  spreadFactor: 0.03
   gunAud: {fileID: -6401865289743886553, guid: 7063296ac0f76464c9bb37e65005bbbb, type: 3}
   shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
   shootVol: 0.664

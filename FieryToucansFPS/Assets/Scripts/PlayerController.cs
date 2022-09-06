@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] GameObject meleeHitbox;
     [SerializeField] int meleeDamage;
     [SerializeField] float meleeSpeed;
+    [SerializeField] float dashDuration;
+    [SerializeField] float dashSpeed;
+    [SerializeField] float dashCooldown;
+
 
     [Header("----- Weapon Attributes -----")]
 
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     float damageTimer;
 
     bool isSprinting = false;
+    public bool isDashing = false;
     public bool isShooting = false;
     bool isSwitching = false;
     public bool isMeleeing = false;
@@ -90,15 +95,14 @@ public class PlayerController : MonoBehaviour, IDamageable {
         //debug code
         if (Input.GetKeyDown(KeyCode.K)) {
             TakeDamage(1);
-
         }
 
-
         PlayerMovement();
-        Sprint();
-
-        StartCoroutine(FootSteps());
+        //Sprint();
         Shoot();
+
+        StartCoroutine(Dash());
+        StartCoroutine(FootSteps());
         StartCoroutine(WeaponCycle());
         StartCoroutine(Melee());
     }
@@ -113,27 +117,57 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     void PlayerMovement() {
 
-        //Player is currently on the ground and is not jumping
-        if (controller.isGrounded && playerVelocity.y < 0) {
-            playerVelocity.y = 0.0f;
-            timesJumped = 0;
+        if(!isDashing) //disables player movement during a dash
+        {
+            //Player is currently on the ground and is not jumping
+            if (controller.isGrounded && playerVelocity.y < 0) {
+                playerVelocity.y = 0.0f;
+                timesJumped = 0;
 
+            }
+
+            //Getting input from Unity Input Manager
+            move = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical"));
+
+            //Adding the move vector to the character controller
+            controller.Move(move * playerSpeed * Time.deltaTime);
+
+            //Jumping functionallity
+            if (Input.GetButtonDown("Jump") && timesJumped < maxJumps) {
+                playerVelocity.y = jumpHeight;
+                timesJumped++;
+            }
+
+            playerVelocity.y -= gravityValue * Time.deltaTime;
+            controller.Move(playerVelocity * Time.deltaTime);
         }
+    }
 
-        //Getting input from Unity Input Manager
-        move = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical"));
-
-        //Adding the move vector to the character controller
-        controller.Move(move * playerSpeed * Time.deltaTime);
-
-        //Jumping functionallity
-        if (Input.GetButtonDown("Jump") && timesJumped < maxJumps) {
-            playerVelocity.y = jumpHeight;
-            timesJumped++;
+    IEnumerator Dash()
+    {
+        if(Input.GetButtonDown("Dash"))
+        {
+            float startTime = Time.time;
+            while(Time.time < startTime + dashDuration)
+            {
+                isDashing = true;
+                if (move.x == 0 && move.z == 0) //checking to see if the player is curently moving
+                {
+                    //move.x = 1;
+                    move = GameManager.instance.player.transform.forward; 
+                    move.y = 0f;
+                    //move.z = 0; //setting all but the forward player movement direction to 0
+                    controller.Move(move * dashSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    move.y = 0f; //makes it so the player doesn't move vertically during a dash
+                    controller.Move(move * dashSpeed * Time.deltaTime);
+                }
+                yield return null;
+            }
+            isDashing = false;
         }
-
-        playerVelocity.y -= gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
     }
 
     IEnumerator FootSteps() {
@@ -148,7 +182,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         }
     }
 
-    void Sprint() {
+    /*void Sprint() {
 
         if (Input.GetButtonDown("Sprint")) {
             isSprinting = true;
@@ -159,7 +193,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
             isSprinting = false;
             playerSpeed = playerSpeedOrignal;
         }
-    }
+    }*/
     public void AmmoPickup(int index = -1, int ammo = -1) {
         if (ammo == -1) {
             if (index == -1) {
