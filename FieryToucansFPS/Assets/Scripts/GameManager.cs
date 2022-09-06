@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
     public GameObject reticle;
     public GameObject radialMenu;
     public Image playerHPBar;
+    public GameObject lowHealthIndicator;
 
     public bool isPaused = false;
     bool gameOver = false;
@@ -69,7 +70,10 @@ public class GameManager : MonoBehaviour {
             radialMenu.SetActive(false);
             CursorUnlockUnslowed();
         }
-
+        if (playerScript.HP <= playerScript.HPOrig * 0.25)
+            lowHealthIndicator.SetActive(true);
+        else if (playerScript.HP > playerScript.HPOrig * 0.25)
+            lowHealthIndicator.SetActive(false);
     }
 
     public void CursorLockPause() {
