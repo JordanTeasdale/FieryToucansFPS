@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eefcf6e6c10982a40a5ffbb3b8a012ce, type: 3}
+  m_Name: Gun - HandCannon
+  m_EditorClassIdentifier: 
+  shootSpeedPrimary: 50
+  shootRatePrimary: 1
+  shootSpeedSecondary: 50
+  shootRateSecondary: 0.2
+  secondaryCooldown: 0
+  spreadFactor: 0.01
+  gunAud: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: bb2e2714f962491428dcb0b38598b251, type: 3}
+  shootVol: 0.295
+  hitEffect: {fileID: 6221651516144037186, guid: c7bf5d5f5b0d79b49b48f4640dcec1d1, type: 3}
+  Crosshair: {fileID: 21300000, guid: 022074091120f664e8242eff2dab1335, type: 3}
+  maxAmmo: 50
+  currentAmmo: 0
+  gun: {fileID: 4673460951707491628, guid: a0062aa729fc1374e8d5cb72050993fe, type: 3}
+  gunIndex: 0
+  bulletPrimary: {fileID: 0}
+  bulletSecondary: {fileID: 0}
+  secondaryFireActive: 0
+  secondarySpread: 0
+  secondaryFireAmmount: 5
