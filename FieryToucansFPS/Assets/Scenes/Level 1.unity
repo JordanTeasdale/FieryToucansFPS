@@ -21332,9 +21332,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2110411129, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: clearedRoomsRequired
-      value: 6
+    - target: {fileID: 2886660062613606644, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228315954298744479, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228315954298744479, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 5389749397660072744, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_Name

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class WeaponBase : ScriptableObject {
     public int shootSpeedPrimary;
@@ -19,7 +20,7 @@ public abstract class WeaponBase : ScriptableObject {
     public AudioClip reloadSound;
     [Range(0, 1)][SerializeField] public float reloadVol;
     public GameObject hitEffect;
-
+    public Sprite Crosshair;
     public int maxAmmo;
     public int currentAmmo;
     public GameObject gun;

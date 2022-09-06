@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, IDamageable {
     [Header("----- Componets -----")]
@@ -247,6 +248,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         UpdatedAmmoGUI();
         Destroy(GameObject.FindGameObjectWithTag("Gun Model"));
         Instantiate(_gun.gun, gunPostion.position, gunPostion.rotation, gunPostion);
+        GameManager.instance.reticle.GetComponent<Image>().sprite = _gun.Crosshair;
 
     }
 
