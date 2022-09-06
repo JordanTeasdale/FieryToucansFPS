@@ -58,7 +58,7 @@ public class CameraController : MonoBehaviour {
         while (elapsed < duration) {
             float z = Random.Range(-2f, 2f) * magnitude;
             float x = Random.Range(-1f, 1f) * magnitude;
-            Debug.Log("hello");
+            //Debug.Log("hello");
             transform.localRotation = Quaternion.Euler((Vector3.forward * z) + (new Vector3(xRotation + x, 0, 0)));
 
             elapsed += Time.deltaTime;

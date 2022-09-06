@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1377049172140100885}
   - component: {fileID: -6440849825102723671}
   m_Layer: 0
-  m_Name: Particle Hit Effect - Pistol
+  m_Name: Particle Hit Effect - HandCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

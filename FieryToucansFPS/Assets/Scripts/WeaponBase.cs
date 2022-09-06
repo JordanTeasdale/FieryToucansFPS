@@ -17,8 +17,6 @@ public abstract class WeaponBase : ScriptableObject {
     public AudioClip shootSound;
 
     [Range(0, 1)][SerializeField] public float shootVol;
-    public AudioClip reloadSound;
-    [Range(0, 1)][SerializeField] public float reloadVol;
     public GameObject hitEffect;
     public Sprite Crosshair;
     public int maxAmmo;

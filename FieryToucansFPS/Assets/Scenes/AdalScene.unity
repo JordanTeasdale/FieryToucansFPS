@@ -951,12 +951,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 66118061717101770, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
-      propertyPath: m_Size.z
-      value: 6.5645113
-      objectReference: {fileID: 0}
-    - target: {fileID: 66118061717101770, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
-      propertyPath: m_Center.z
-      value: 0.23600459
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 66118061717101771, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
       propertyPath: RocketTarget

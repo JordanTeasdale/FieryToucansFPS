@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5155270207639385089}
   - component: {fileID: 6814652050488694999}
   m_Layer: 10
-  m_Name: Gun Pickup - Pistol
+  m_Name: Gun Pickup - HandCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b510ec1450b5a4983c1ec327ee90ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunStat: {fileID: 11400000, guid: 846bd1dfd987f32489a2b082727496bf, type: 2}
+  gunStat: {fileID: 11400000, guid: c768bf79cb5f8c9469cc642513ed0b6f, type: 2}
 --- !u!54 &5155270207639385089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.060704
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
