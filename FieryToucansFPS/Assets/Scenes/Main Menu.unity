@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh149602
+  m_Name: pb_Mesh310346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -438,8 +438,9 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
+  menuAudio: {fileID: 637337304214305312}
   menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
+  MainAudCVol: 50
 --- !u!1 &572398038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4055417949046354725, guid: c6d32bb1b66a4044fa0dcffb17fac662, type: 3}
@@ -866,8 +867,9 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
+  menuAudio: {fileID: 637337304214305312}
   menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
+  MainAudCVol: 50
 --- !u!1 &1150297781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,8 +1021,9 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
+  menuAudio: {fileID: 637337304214305312}
   menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
+  MainAudCVol: 50
 --- !u!1 &1188359369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1412,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1781984292}
+        m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
+        m_MethodName: MenuSoundTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 637337304214305305}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1475,8 +1490,9 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
+  menuAudio: {fileID: 637337304214305312}
   menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
+  MainAudCVol: 50
 --- !u!1 &1795185988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3516,6 +3532,7 @@ GameObject:
   - component: {fileID: 637337304214305308}
   - component: {fileID: 637337304214305311}
   - component: {fileID: 637337304214305310}
+  - component: {fileID: 637337304214305312}
   m_Layer: 5
   m_Name: Main Menu UI
   m_TagString: Untagged
@@ -3613,6 +3630,102 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!82 &637337304214305312
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637337304214305305}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &637337304652564828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4345,6 +4458,7 @@ MonoBehaviour:
   pauseFirstButton: {fileID: 0}
   menuAudio: {fileID: 0}
   menuAudioC: {fileID: 0}
+  MainAudCVol: 0
 --- !u!1 &3805702778539261196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,6 +4544,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 637337304214305305}
+    - target: {fileID: 4055417948378238715, guid: c6d32bb1b66a4044fa0dcffb17fac662, type: 3}
+      propertyPath: menuAudio
+      value: 
+      objectReference: {fileID: 637337304214305312}
+    - target: {fileID: 4055417948378238715, guid: c6d32bb1b66a4044fa0dcffb17fac662, type: 3}
+      propertyPath: menuAudioC
+      value: 
+      objectReference: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
+    - target: {fileID: 4055417948378238715, guid: c6d32bb1b66a4044fa0dcffb17fac662, type: 3}
+      propertyPath: MainAudCVol
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4055417949046354725, guid: c6d32bb1b66a4044fa0dcffb17fac662, type: 3}
       propertyPath: m_Name
       value: Options Menu
@@ -5076,6 +5202,7 @@ MonoBehaviour:
   pauseFirstButton: {fileID: 0}
   menuAudio: {fileID: 0}
   menuAudioC: {fileID: 0}
+  MainAudCVol: 0
 --- !u!1 &6484062767188965773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5319,6 +5446,7 @@ MonoBehaviour:
   pauseFirstButton: {fileID: 0}
   menuAudio: {fileID: 0}
   menuAudioC: {fileID: 0}
+  MainAudCVol: 0
 --- !u!114 &8319043617885975276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5393,6 +5521,7 @@ MonoBehaviour:
   pauseFirstButton: {fileID: 0}
   menuAudio: {fileID: 0}
   menuAudioC: {fileID: 0}
+  MainAudCVol: 0
 --- !u!114 &8747134810024437280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5467,6 +5596,7 @@ MonoBehaviour:
   pauseFirstButton: {fileID: 0}
   menuAudio: {fileID: 0}
   menuAudioC: {fileID: 0}
+  MainAudCVol: 0
 --- !u!114 &8795308304835074190
 MonoBehaviour:
   m_ObjectHideFlags: 0

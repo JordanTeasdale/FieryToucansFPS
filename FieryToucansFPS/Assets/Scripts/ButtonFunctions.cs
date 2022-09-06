@@ -13,6 +13,7 @@ public class ButtonFunctions : MonoBehaviour
 
     [SerializeField] AudioSource menuAudio;
     [SerializeField] AudioClip menuAudioC;
+    [SerializeField] float MainAudCVol;
 
     public void Start()
     {
@@ -85,6 +86,7 @@ public class ButtonFunctions : MonoBehaviour
 
     public void MenuSoundTrigger()
     {
-        menuAudio.PlayOneShot(menuAudioC, 1);
+        menuAudio.PlayOneShot(menuAudioC, MainAudCVol);
+
     }
 }
