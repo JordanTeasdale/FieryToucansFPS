@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82320173802793680, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 82320173802793680, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -749,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7700279987241974176, guid: 26dd9c101ea555142b9f5f0f721a14bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7700279987241974176, guid: 26dd9c101ea555142b9f5f0f721a14bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -911,18 +911,6 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 66118061717101768, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 66118061717101768, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 66118061717101768, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 66118061717101768, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.5
       objectReference: {fileID: 0}
@@ -962,9 +950,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 66118061717101771, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
-      propertyPath: turnSpeed
-      value: 2
+    - target: {fileID: 66118061717101770, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
+      propertyPath: m_Size.z
+      value: 6.5645113
+      objectReference: {fileID: 0}
+    - target: {fileID: 66118061717101770, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
+      propertyPath: m_Center.z
+      value: 0.23600459
       objectReference: {fileID: 0}
     - target: {fileID: 66118061717101771, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
       propertyPath: RocketTarget

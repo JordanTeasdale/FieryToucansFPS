@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 66118061717101769}
   - component: {fileID: 66118061717101770}
   - component: {fileID: 66118061717101771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Seeking proyectile '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,8 +62,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.61125755, y: 0.50276756, z: 6.3645735}
-  m_Center: {x: -0.021424294, y: -0.0016641617, z: 0.1360364}
+  m_Size: {x: 0.61125755, y: 0.50276756, z: 6.5645113}
+  m_Center: {x: -0.021424294, y: -0.0016641617, z: 0.23600459}
 --- !u!114 &66118061717101771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,10 +79,10 @@ MonoBehaviour:
   RocketTarget: {fileID: 0}
   RocketBody: {fileID: 66118061717101769}
   explosion: {fileID: 173984, guid: ba719c5f4986c8e49a49e802e78a896d, type: 3}
-  targetLayerValue: 0
+  targetLayerValue: 12
   target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   damage: 1
   damageRange: 1
   turnSpeed: 2
@@ -96,6 +96,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 66118061717101768}
     m_Modifications:
+    - target: {fileID: 2900683151636530783, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3669557367380565722, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -143,6 +147,26 @@ PrefabInstance:
     - target: {fileID: 3956545706807500900, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
       propertyPath: m_Name
       value: PfCruiseMissileOld
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956545706807500900, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062500582303192236, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384559830350647515, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026480591303422566, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194706773887526855, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3181a48d12a70cb409b2c719233799ab, type: 3}
