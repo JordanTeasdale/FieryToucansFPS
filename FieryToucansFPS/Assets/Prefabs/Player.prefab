@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1709202074}
   - component: {fileID: 562128651}
   - component: {fileID: 2424722163632776295}
+  - component: {fileID: 1477419755}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -182,7 +183,8 @@ MonoBehaviour:
   lockVertMin: -70
   lockVertMax: 70
   invert: 0
-  animator: {fileID: 0}
+  animator: {fileID: 562128651}
+  animationClip: {fileID: 1477419755}
 --- !u!95 &562128651
 Animator:
   serializedVersion: 4
@@ -215,6 +217,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21bea1e259614b458344af2549fa78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &1477419755
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709202069}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c8eaf20d660112a4a90b222ba1e2cdab, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c8eaf20d660112a4a90b222ba1e2cdab, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &82320173802793706
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,11 +328,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3920a484fcfd526479d6f271161c8197, type: 3}
   - {fileID: 8300000, guid: ae31465cb32c8e34bb13719485a67917, type: 3}
   soundFootstepsVol: 0.1
+  HPOrig: 0
   weaponIndex: -1
   isDashing: 0
   isShooting: 0
   isMeleeing: 0
-  camera: {fileID: 1709202069}
+  cameraMain: {fileID: 1709202069}
 --- !u!82 &7174589972155203629
 AudioSource:
   m_ObjectHideFlags: 0

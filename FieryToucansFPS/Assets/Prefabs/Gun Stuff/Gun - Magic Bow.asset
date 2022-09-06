@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootSpeedPrimary: 50
   shootRatePrimary: 0.5
-  shootSpeedSecondary: 0
-  shootRateSecondary: 0
-  secondaryCooldown: 0
+  shootSpeedSecondary: 40
+  shootRateSecondary: 0.5
+  secondaryCooldown: 5
   spreadFactor: 0
   gunAud: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
