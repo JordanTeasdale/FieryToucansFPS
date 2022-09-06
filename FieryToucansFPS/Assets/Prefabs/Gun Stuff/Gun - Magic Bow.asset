@@ -12,21 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b074425efe56ca24595142b05ca584ee, type: 3}
   m_Name: Gun - Magic Bow
   m_EditorClassIdentifier: 
-  shootSpeedPrimary: 10
+  shootSpeedPrimary: 50
   shootRatePrimary: 0.5
   shootSpeedSecondary: 0
   shootRateSecondary: 0
   secondaryCooldown: 0
+  spreadFactor: 0
   gunAud: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
   shootVol: 0.51
   reloadSound: {fileID: 0}
   reloadVol: 0
   hitEffect: {fileID: 0}
+  Crosshair: {fileID: 0}
   maxAmmo: 15
-  currentAmmo: 15
+  currentAmmo: 12
   gun: {fileID: 9113208783278353824, guid: 9731d011b595f994b84d7bd3fbdff029, type: 3}
   gunIndex: 0
-  bulletPrimary: {fileID: 0}
+  bulletPrimary: {fileID: 8632138228147884554, guid: 05d8a9841b6b0da4cada191e9b5bf599, type: 3}
   bulletSecondary: {fileID: 0}
   secondaryFireActive: 0

@@ -48,7 +48,7 @@ public abstract class WeaponBase : ScriptableObject {
         GameManager.instance.playerScript.isShooting = false;
     }
 
-    public IEnumerator ShootSecondary() {
+    public virtual IEnumerator ShootSecondary() {
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo--;
 

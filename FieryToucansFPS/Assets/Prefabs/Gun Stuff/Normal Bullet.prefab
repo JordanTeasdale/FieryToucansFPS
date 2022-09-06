@@ -125,6 +125,7 @@ MonoBehaviour:
   maxCollisions: 5
   maxLifetime: 5
   explodeOnTouch: 1
+  isOrdenance: 0
 --- !u!54 &8632138228147884556
 Rigidbody:
   m_ObjectHideFlags: 0

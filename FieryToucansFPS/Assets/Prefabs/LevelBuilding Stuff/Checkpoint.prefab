@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06533b23043a2ac45b21f8fe04d3e368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TempAudCVol: 1
   TempAudio: {fileID: -4214001399111671956}
   TempAudioC: {fileID: 8300000, guid: 9da046f4e8f80114f8638f345d5a9ad4, type: 3}
 --- !u!82 &-4214001399111671956
@@ -71,9 +72,9 @@ AudioSource:
   m_GameObject: {fileID: 6795979163684340102}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 587aedb20bbaf494eb496195f38a8ab6, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9da046f4e8f80114f8638f345d5a9ad4, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

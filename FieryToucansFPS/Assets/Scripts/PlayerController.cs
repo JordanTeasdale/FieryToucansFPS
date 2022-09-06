@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     float playerSpeedOrignal;
     int timesJumped;
-    int HPOrig;
+    public int HPOrig;
     int prevHP;
     float healthSmoothTime = 0.5f;
     float healthSmoothCount;
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public bool isMeleeing = false;
     bool playFootsteps = true;
     //bool isScoped = false;
-    public GameObject camera;
+    public GameObject cameraMain;
     CameraController cameraController;
 
 
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     void Start() {
         playerSpeedOrignal = playerSpeed;
         HPOrig = HP;
-        cameraController = camera.GetComponent<CameraController>();
+        cameraController = cameraMain.GetComponent<CameraController>();
         
 
         ResetHP();
@@ -300,7 +300,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
             HP -= _dmg;
 
             if (_dmg > 0) {
-                StartCoroutine(cameraController.Shake(0.50f, 2.0f));
+                StartCoroutine(cameraController.Shake(0.15f, 1f));
                 aud.PlayOneShot(soundDamage[Random.Range(0, soundDamage.Length)], soundDamageVol);
                 //UpdateHP();
                 StartCoroutine(DamageFlash());
@@ -359,10 +359,11 @@ public class PlayerController : MonoBehaviour, IDamageable {
             gunsList[weaponIndex].currentAmmo = maxAmmo;
             UpdatedAmmoGUI();
         }
+        cameraMain.GetComponent<Animator>().enabled = false;
     }
 
     public IEnumerator Death() {
-        
+        cameraMain.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(1.98f);
 
         GameManager.instance.CursorLockPause();
