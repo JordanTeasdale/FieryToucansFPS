@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BowScript : WeaponBase
 {
-    float power = 1;
+    float power = 1; 
     public override IEnumerator ShootPrimary() {
         currentAmmo--;
         GameManager.instance.playerScript.isShooting = true;
