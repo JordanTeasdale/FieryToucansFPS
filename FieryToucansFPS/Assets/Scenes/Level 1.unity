@@ -21336,6 +21336,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2886660062613606644, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3228315954298744479, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -14
@@ -21431,6 +21435,14 @@ PrefabInstance:
     - target: {fileID: 5389749397660072748, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401460370057221337, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401460370057221337, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
@@ -29556,6 +29568,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 372176366}
     m_Modifications:
+    - target: {fileID: -4214001399111671956, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6795979163684340102, guid: 1907116288c4d1d46820e76eb6f054a2, type: 3}
       propertyPath: m_Name
       value: Checkpoint (1)

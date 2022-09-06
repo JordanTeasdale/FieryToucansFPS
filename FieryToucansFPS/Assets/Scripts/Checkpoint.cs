@@ -11,19 +11,17 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            TempAudio.PlayOneShot(TempAudioC, 1);
+            TempAudio.PlayOneShot(TempAudioC, 12);
             GameManager.instance.RespawnPos.transform.position = transform.position;           
             Destroy(gameObject);
             StartCoroutine(CheckpointFeedbackTimer());
+            
         }
     }
 
-    IEnumerator CheckpointFeedbackTimer()
-    {
-        GameManager.instance.checkpointFeedback.SetActive(true);
-        Debug.Log("Into IEnum");
-        yield return new WaitForSeconds(0.5f);
-        Debug.Log("Sucess?");
+    IEnumerator CheckpointFeedbackTimer() {
+        GameManager.instance.checkpointFeedback.SetActive(true);       
+        yield return new WaitForSeconds(0.5f);       
         GameManager.instance.checkpointFeedback.SetActive(false);
     }
 
