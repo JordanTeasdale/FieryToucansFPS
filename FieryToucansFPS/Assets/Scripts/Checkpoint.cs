@@ -22,7 +22,7 @@ public class Checkpoint : MonoBehaviour
         GameManager.instance.checkpointFeedback.SetActive(true);       
         yield return new WaitForSeconds(2.5f);
         GameManager.instance.checkpointFeedback.SetActive(false);
-        Destroy(this);
+        Destroy(gameObject);
         gameObject.SetActive(false);
     }
 

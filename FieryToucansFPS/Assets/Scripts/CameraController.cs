@@ -70,13 +70,13 @@ public class CameraController : MonoBehaviour {
 
 
 
-    void Update() {
+    //void Update() {
 
-        if (GameManager.instance.playerScript.HP <= 0)
-            animator.SetBool("isDead", true);
-        else if (GameManager.instance.playerScript.HP > 0)
-            animator.SetBool("isDead", false);
+    //    if (GameManager.instance.playerScript.HP <= 0)
+    //        animator.SetBool("isDead", true);
+    //    else if (GameManager.instance.playerScript.HP > 0)
+    //        animator.SetBool("isDead", false);
 
 
-    }
+    //}
 }
