@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour {
     public GameObject explosion;
     [SerializeField] public LayerMask target;
     [SerializeField] public int targetLayerValue;
+    [SerializeField] public LayerMask isKnockbackable;
 
     [Header("------ Damage -----")]
     //Damage 
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour {
     // Behaviors 
 
     [Range(0, 1f)] [SerializeField] float bounciness;
+    [Range(0, 35)] [SerializeField] float knockbackForce;
     [SerializeField] public bool usesGravity;
     public int speed;
     public int maxCollisions;
@@ -59,7 +61,7 @@ public class Bullet : MonoBehaviour {
 
     }
 
-    void Explode() {
+    void Explode(Collision _collision = null) {
         
         //Instantiate explosion 
         if (explosion != null)
@@ -75,6 +77,10 @@ public class Bullet : MonoBehaviour {
                 else
                     isDamageable.TakeDamage(damage);
             }
+            if (enemy.TryGetComponent<KnockbackScript>(out KnockbackScript knockback)){
+                StartCoroutine(knockback.Knockback(knockbackForce, enemy.gameObject, _collision));
+            }
+                
         }
 
         Invoke("Delay", 0.05f);
@@ -89,9 +95,9 @@ public class Bullet : MonoBehaviour {
     private void OnCollisionEnter(Collision _collision) {
        
         collisions++;
-
+        
         if (_collision.gameObject.layer == targetLayerValue)
-            Explode();
+            Explode(_collision);
 
         if (explodeOnTouch)
             Explode();
