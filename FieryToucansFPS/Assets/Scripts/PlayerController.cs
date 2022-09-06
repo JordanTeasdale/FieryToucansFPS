@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool playFootsteps = true;
     //bool isScoped = false;
     public CameraShake cameraShake;
-    public DeathAnim deathAnim;
 
     // Start is called before the first frame update
     void Start() {
@@ -325,14 +324,11 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void Death() {
-        StartCoroutine(WaitSeconds());
-        deathAnim = gameObject.GetComponentInChildren<DeathAnim>();
-        StartCoroutine(WaitSeconds());
+
         GameManager.instance.CursorLockPause();
         GameManager.instance.playerDeadMenu.SetActive(true);
         GameManager.instance.menuCurrentlyOpen = GameManager.instance.playerDeadMenu;
         GameManager.instance.isPaused = true;
-        
     }
 
     public void ResetHP() {
@@ -343,11 +339,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
         GameManager.instance.playerHPBar.fillAmount = healthFillAmount / HPOrig;
     }
 
-    IEnumerator WaitSeconds() {
-        
-        yield return new WaitForSeconds(2.30f);
-        
-    }
 
 
 }
