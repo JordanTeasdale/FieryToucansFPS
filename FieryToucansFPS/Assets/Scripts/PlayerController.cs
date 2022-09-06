@@ -324,7 +324,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void Death() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of fee468dc (Death animation added)
         GameManager.instance.CursorLockPause();
         GameManager.instance.playerDeadMenu.SetActive(true);
         GameManager.instance.menuCurrentlyOpen = GameManager.instance.playerDeadMenu;
