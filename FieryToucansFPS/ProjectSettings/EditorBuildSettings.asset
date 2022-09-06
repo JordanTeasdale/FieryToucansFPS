@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LogansScene.unity
     guid: ff0639dc34481b747bf501c12748df5b
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: bbb8cfd5199de374cbdb64fc98086c1c
   m_configObjects: {}
