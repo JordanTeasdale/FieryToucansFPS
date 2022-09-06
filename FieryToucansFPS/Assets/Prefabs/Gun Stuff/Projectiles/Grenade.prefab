@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8632138228147884557}
   - component: {fileID: 8632138228147884556}
   m_Layer: 6
-  m_Name: Normal Bullet
+  m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,15 +117,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   targetLayerValue: 12
-  damage: 5
-  damageRange: 0.25
-  bounciness: 0.699
-  usesGravity: 0
-  speed: 35
+  damage: 12
+  damageRange: 2.77
+  bounciness: 0.48
+  usesGravity: 1
+  speed: 55
   maxCollisions: 5
-  maxLifetime: 5
-  explodeOnTouch: 1
-  isOrdenance: 0
+  maxLifetime: 15
+  explodeOnTouch: 0
+  isOrdenance: 1
 --- !u!54 &8632138228147884556
 Rigidbody:
   m_ObjectHideFlags: 0
