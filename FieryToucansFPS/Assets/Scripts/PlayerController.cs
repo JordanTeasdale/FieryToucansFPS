@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] float dashDuration;
     [SerializeField] float dashSpeed;
     [SerializeField] float dashCooldown;
+    [SerializeField] int maxDashes;
 
 
     [Header("----- Weapon Attributes -----")]
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     float playerSpeedOrignal;
     int timesJumped;
+    int timesDashed;
     public int HPOrig;
     int prevHP;
     float healthSmoothTime = 0.5f;
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     bool isSprinting = false;
     public bool isDashing = false;
+    bool isDashCDing = false;
     public bool isShooting = false;
     bool isSwitching = false;
     public bool isMeleeing = false;
@@ -106,6 +109,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         StartCoroutine(FootSteps());
         StartCoroutine(WeaponCycle());
         StartCoroutine(Melee());
+        StartCoroutine(DashCooldown());
     }
 
     void FixedUpdate() {
@@ -146,9 +150,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     IEnumerator Dash()
     {
-        if(Input.GetButtonDown("Dash"))
+        if(Input.GetButtonDown("Dash") && timesDashed < maxDashes)
         {
             float startTime = Time.time;
+            timesDashed++;
             while(Time.time < startTime + dashDuration)
             {
                 isDashing = true;
@@ -168,6 +173,17 @@ public class PlayerController : MonoBehaviour, IDamageable {
                 yield return null;
             }
             isDashing = false;
+        }
+    }
+
+    IEnumerator DashCooldown()
+    {
+        if (timesDashed > 0 && isDashCDing == false)
+        {
+            isDashCDing = true;
+            yield return new WaitForSeconds(dashCooldown);
+            timesDashed--;
+            isDashCDing = false;
         }
     }
 
