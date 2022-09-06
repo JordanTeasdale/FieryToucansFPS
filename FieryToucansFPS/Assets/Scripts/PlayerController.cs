@@ -325,7 +325,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void Death() {
-
+        StartCoroutine(WaitSeconds());
         deathAnim = gameObject.GetComponentInChildren<DeathAnim>();
         StartCoroutine(WaitSeconds());
         GameManager.instance.CursorLockPause();
