@@ -59,7 +59,10 @@ public class SeekingMissile : MonoBehaviour {
         if (explodeOnTouch)
             Explode();
     }
+    void Delay() {
 
+        Destroy(gameObject);
+    }
     void Explode() {
 
         //Instantiate explosion 
@@ -77,6 +80,8 @@ public class SeekingMissile : MonoBehaviour {
                     isDamageable.TakeDamage(damage);
             }
         }
+        Invoke("Delay", 0.05f);
+
     }
 }
 
