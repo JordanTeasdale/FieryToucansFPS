@@ -117,6 +117,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 4096
+  targetLayerValue: 0
   damage: 1
   damageRange: 0.25
   bounciness: 0.376
@@ -125,6 +126,7 @@ MonoBehaviour:
   maxCollisions: 1
   maxLifetime: 6
   explodeOnTouch: 1
+  isOrdenance: 0
 --- !u!54 &3681713722133964541
 Rigidbody:
   m_ObjectHideFlags: 0
