@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour {
     public int maxCollisions;
     public float maxLifetime;
     public bool explodeOnTouch = true;
+    [SerializeField] bool isOrdenance = false;
 
     int collisions;
     PhysicMaterial physicsMaterial;
@@ -42,13 +43,19 @@ public class Bullet : MonoBehaviour {
     public void Update() {
         //When bullet explodes due to collisions or time
         maxLifetime -= Time.deltaTime;
-        
-        if (collisions > maxCollisions)
+
+        if (isOrdenance && maxLifetime <= 0) 
             Explode();
-        if(maxLifetime == 0) {
-            Explode();
+        else {
+
+            if (collisions > maxCollisions)
+                Explode();
+
+            if (maxLifetime <= 0)
+                Explode();
         }
 
+       
 
     }
 

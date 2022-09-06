@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8632138228147884558}
   - component: {fileID: 8632138228147884557}
   - component: {fileID: 8632138228147884556}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Normal Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,8 +115,8 @@ MonoBehaviour:
   explosion: {fileID: 103990, guid: 1217dbe974e5c354fb4cd2495c6602fa, type: 3}
   target:
     serializedVersion: 2
-    m_Bits: 64
-  targetLayerValue: 0
+    m_Bits: 0
+  targetLayerValue: 12
   damage: 5
   damageRange: 0.25
   bounciness: 0.699
@@ -125,6 +125,7 @@ MonoBehaviour:
   maxCollisions: 5
   maxLifetime: 5
   explodeOnTouch: 1
+  isOrdenance: 0
 --- !u!54 &8632138228147884556
 Rigidbody:
   m_ObjectHideFlags: 0
