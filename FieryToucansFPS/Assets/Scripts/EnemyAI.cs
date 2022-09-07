@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Range(0, 100)] public int HP;
     [Range(0, 10)] [SerializeField] int playerFaceSpeed;
     [Range(1, 180)] [SerializeField] int fieldOfView;
+    [Range(1, 180)][SerializeField] int fieldOfViewMelee;
     [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
     [Range(1, 180)] [SerializeField] int roamRadius;
     [Range(1, 20)] [SerializeField] float speedRoam;
@@ -45,8 +46,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject executeEffect;
 
     Vector3 playerDir;
+    bool isMeleee = false;
     bool isShooting = false;
     bool playerInRange = false;
+    public bool inMeleeRange = false;
     public bool isExecutable = false;
     private int HPOrig;
     
@@ -166,7 +169,17 @@ public class EnemyAI : MonoBehaviour, IDamageable
         agent.stoppingDistance = 0;
         rend.material.color = Color.white;
     }
+    IEnumerator Melee() {
+        isMeleee = true;
 
+        anim.SetTrigger("Melee");
+
+        GameObject meleeClone = Instantiate(invisHit, hitSpawnPos.transform.position, invisHit.transform.rotation);
+        meleeClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * meelespeed;
+        yield return new WaitForSeconds(meleeRate);
+
+        isMeleee = false;
+    }
     IEnumerator Shoot() {
         isShooting = true;
 
@@ -198,6 +211,11 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 if (!isShooting && angle <= fieldOfViewShoot)
                 {
                     StartCoroutine(Shoot());
+                }
+
+                if (!isMeleee && angle <= fieldOfViewMelee && Vector3.Distance(GameManager.instance.player.transform.position, agent.transform.position) <= agent.stoppingDistance) {
+                    inMeleeRange = true;
+                    StartCoroutine(Melee());
                 }
             }
         }
