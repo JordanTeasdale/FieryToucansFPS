@@ -185,14 +185,13 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
                 agent.stoppingDistance = stoppingDistanceOrig;
                 agent.speed = speedChase;
                 FacePlayer();
-
                 if (!isMelee && angle <= fieldOfViewMelee && Vector3.Distance(GameManager.instance.player.transform.position, agent.transform.position) <= agent.stoppingDistance)
                 {
-                    inMeleeRange = true;
+                    //inMeleeRange = true;
                     StartCoroutine(Melee());
                 }
-                
-            }
+            }   
+            
         }
     }
     void OnTriggerEnter(Collider other)
