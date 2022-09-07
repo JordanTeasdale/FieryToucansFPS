@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8632138228147884558}
   - component: {fileID: 8632138228147884557}
   - component: {fileID: 8632138228147884556}
-  m_Layer: 7
-  m_Name: Bullet - Bow
+  m_Layer: 13
+  m_Name: Rifle Primary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632138228147884554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.168, y: 2.807, z: -14.901}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.65}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8632138228147884544
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632138228147884554}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: afa71343d9c04b54097871198c4ab40b, type: 3}
 --- !u!23 &8632138228147884559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.39, z: 0}
 --- !u!114 &8632138228147884557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,15 +115,19 @@ MonoBehaviour:
   explosion: {fileID: 103990, guid: 1217dbe974e5c354fb4cd2495c6602fa, type: 3}
   target:
     serializedVersion: 2
-    m_Bits: 4096
-  targetLayerValue: 0
-  damage: 15
-  damageRange: 0.25
+    m_Bits: 64
+  targetLayerValue: 6
+  isKnockbackable:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 2
+  damageRange: 0.5
   bounciness: 0
-  usesGravity: 1
-  speed: 35
-  maxCollisions: 5
-  maxLifetime: 5
+  knockbackForce: 4.8
+  usesGravity: 0
+  speed: 47
+  maxCollisions: 1
+  maxLifetime: 6
   explodeOnTouch: 1
   isOrdenance: 0
 --- !u!54 &8632138228147884556

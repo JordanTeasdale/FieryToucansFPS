@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour {
     public int maxCollisions;
     public float maxLifetime;
     public bool explodeOnTouch = true;
-    [SerializeField] bool isOrdenance = false;
+    [SerializeField] bool isOrdenance;
     
 
     int collisions;
@@ -41,13 +41,13 @@ public class Bullet : MonoBehaviour {
     void Start() {
         Setup();
         Destroy(gameObject, maxLifetime);
+        weaponFiredFrom = GameManager.instance.playerScript.weaponIndex;
     }
 
     public void Update() {
         //When bullet explodes due to collisions or time
         maxLifetime -= Time.deltaTime;
-        weaponFiredFrom = GameManager.instance.playerScript.weaponIndex;
-
+        
         if (isOrdenance && maxLifetime <= 0) 
             Explode();
         else {
