@@ -289,7 +289,7 @@ MonoBehaviour:
   jumpHeight: 12
   gravityValue: 35
   maxJumps: 2
-  HP: 30
+  HP: 15
   invincibilityTimer: 0.5
   meleeHitbox: {fileID: 6627562012560487157}
   meleeDamage: 5
@@ -689,6 +689,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5dd946d2adb1a543b8985c8f1dccdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 918288413}
   mainCamera: {fileID: 1709202071}
   scopedFOV: 15

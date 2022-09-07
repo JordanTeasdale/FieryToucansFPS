@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8632138228147884558}
   - component: {fileID: 8632138228147884556}
   - component: {fileID: -2170305648300044371}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bullet - MagicBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,8 +131,8 @@ MonoBehaviour:
   explosion: {fileID: 103990, guid: 1217dbe974e5c354fb4cd2495c6602fa, type: 3}
   target:
     serializedVersion: 2
-    m_Bits: 0
-  targetLayerValue: 0
+    m_Bits: 64
+  targetLayerValue: 6
   damage: 5
   damageRange: 0
   bounciness: 0
