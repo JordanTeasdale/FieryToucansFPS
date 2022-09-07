@@ -8,19 +8,18 @@ public class ShottyScript : WeaponBase
 {
     [Range(6, 15)] public int numShottyProjectiles;
     [Range(0, .5f)] public float primaryPelletSpread;
-
-    GameObject[] projectiles;
+    List<GameObject> projectiles;
 
     public override IEnumerator ShootPrimary() {
-
+        
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo--;
-
+        projectiles.Clear();
         for (int i = 0; i < numShottyProjectiles; i++) {
 
             GameObject pellet = Instantiate(bulletSecondary, GameManager.instance.gunPosition.transform.position, bulletSecondary.transform.rotation);
             pellet.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            projectiles[i] = pellet;
+            projectiles.Add(pellet);
 
         }
 
