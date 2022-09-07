@@ -118,14 +118,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   targetLayerValue: 12
+  isKnockbackable:
+    serializedVersion: 2
+    m_Bits: 4096
   damage: 1
   damageRange: 0.26
   bounciness: 1
+  knockbackForce: 5.3
   usesGravity: 0
   speed: 150
   maxCollisions: 5
   maxLifetime: 20
   explodeOnTouch: 0
+  isOrdenance: 0
 --- !u!54 &8632138228147884556
 Rigidbody:
   m_ObjectHideFlags: 0

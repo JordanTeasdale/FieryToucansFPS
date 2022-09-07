@@ -296,7 +296,8 @@ MonoBehaviour:
   meleeSpeed: 1
   dashDuration: 0.3
   dashSpeed: 30
-  dashCooldown: 0
+  dashCooldown: 2
+  maxDashes: 3
   shootDistance: 0
   shootDamage: 0
   switchRate: 0.5

@@ -1462,6 +1462,7 @@ GameObject:
   - component: {fileID: 291243740042557287}
   - component: {fileID: 380584161512731251}
   - component: {fileID: 291243740042557293}
+  - component: {fileID: -2987253253621766519}
   - component: {fileID: 291243740042557292}
   - component: {fileID: 291243740042557291}
   - component: {fileID: 291243740042557288}
@@ -1551,6 +1552,23 @@ MonoBehaviour:
   soundExecuteVol: 0.143
   executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
   isExecutable: 0
+--- !u!114 &-2987253253621766519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296788235326708141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a055ed6cad824ea4ea1102a04bfe9787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackTime: 215.89
+  IFramesKnockback: 2
+  YDirectionScalar: 0.1
+  XDirectionScalar: 0.064
+  ZDirectionScalar: 0.019
 --- !u!195 &291243740042557292
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -27,6 +27,9 @@ public abstract class WeaponBase : ScriptableObject {
     public GameObject bulletSecondary;
     public bool secondaryFireActive;
 
+    [Range(0, 1)] [SerializeField] public float experienceScaler;
+    public int experience;
+    public int currentLevel;
 
     public Vector3 BulletSpread()
     {
@@ -54,5 +57,9 @@ public abstract class WeaponBase : ScriptableObject {
         bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedSecondary;
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;
+    }
+
+    public void GainExperience(int _damage) {
+        experience += (int)(_damage * experienceScaler);
     }
 }

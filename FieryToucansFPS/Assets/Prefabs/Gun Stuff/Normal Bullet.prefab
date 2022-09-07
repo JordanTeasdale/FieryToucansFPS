@@ -97,7 +97,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.63
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8632138228147884557
 MonoBehaviour:
@@ -116,10 +116,14 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 64
-  targetLayerValue: 0
+  targetLayerValue: 6
+  isKnockbackable:
+    serializedVersion: 2
+    m_Bits: 64
   damage: 5
-  damageRange: 0.25
+  damageRange: 1.04
   bounciness: 0.699
+  knockbackForce: 9.6
   usesGravity: 0
   speed: 35
   maxCollisions: 5
