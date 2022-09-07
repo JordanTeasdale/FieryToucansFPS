@@ -19,12 +19,19 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Range(1, 180)] [SerializeField] int roamRadius;
     [Range(1, 20)] [SerializeField] float speedRoam;
     [Range(1, 20)] [SerializeField] float speedChase;
- 
+    [Header("----- Enemy melee Stats -----")]
+    [Range(0, 10)][SerializeField] int meeledamage;
+    [Range(0.1f, 5)][SerializeField] float meleeRate;
+    [Range(0, 10)][SerializeField] int meelespeed;
+    [Range(0, 10)][SerializeField] int meleeDestroyTime;
+    [SerializeField] GameObject invisHit;
+    [SerializeField] GameObject hitSpawnPos;
+
 
     [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)] [SerializeField] float shootRate;
     [Range(1, 10)] [SerializeField] int damage;
-    [Range(1, 10)] [SerializeField] int speed;
+    [Range(1, 10)] [SerializeField] int RateOfFire;
     [Range(1, 5)] [SerializeField] int bulletDestroyTime;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletSpawnPos;
@@ -166,7 +173,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         anim.SetTrigger("Shoot");
         
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, bullet.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * speed;
+        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * RateOfFire;
         yield return new WaitForSeconds(shootRate);
         
         isShooting = false;
