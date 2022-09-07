@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class RifileScript : WeaponBase {
-    [SerializeField] public Animator animator;
+   /* [SerializeField] public Animator animator;
 
     
     private bool isScoped = false;
@@ -49,7 +49,7 @@ public class RifileScript : WeaponBase {
 
         }
     }
-
+   */
 
 
   

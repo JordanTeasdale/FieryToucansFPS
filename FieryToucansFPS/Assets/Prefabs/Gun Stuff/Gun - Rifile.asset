@@ -24,13 +24,12 @@ MonoBehaviour:
   hitEffect: {fileID: 6221651516144037186, guid: 3de810d3560377c4b8aa313536aaa347, type: 3}
   Crosshair: {fileID: 0}
   maxAmmo: 120
-  currentAmmo: 119
+  currentAmmo: 87
   gun: {fileID: 6774588837608523791, guid: 0628e30174156e145876ddce14347706, type: 3}
-  gunIndex: 0
+  gunIndex: 2
   bulletPrimary: {fileID: 8632138228147884554, guid: b893a739fb677a54295aec7cc95f9812, type: 3}
   bulletSecondary: {fileID: 8632138228147884554, guid: 2108ba06ea956cb4ca1bbeb2f322f727, type: 3}
   secondaryFireActive: 0
   experienceScaler: 0.163
   experience: 0
   currentLevel: 0
-  animator: {fileID: 0}
