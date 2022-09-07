@@ -1024,6 +1024,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
+      propertyPath: shootRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: RateOfFire
       value: 6
       objectReference: {fileID: 0}
