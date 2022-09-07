@@ -249,6 +249,11 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void GunPickup(WeaponBase _stats) {
+        if (_stats.gunIndex == 5)
+        {
+            MagicSMGSript smg = (MagicSMGSript)_stats;
+            smg.ClearList();
+        }
         _stats.currentAmmo = _stats.maxAmmo;
         gunsList[_stats.gunIndex] = _stats;
         weaponIndex = _stats.gunIndex;
@@ -265,7 +270,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
         Destroy(GameObject.FindGameObjectWithTag("Gun Model"));
         Instantiate(_gun.gun, gunPostion.position, gunPostion.rotation, gunPostion);
         GameManager.instance.reticle.GetComponent<Image>().sprite = _gun.Crosshair;
-
     }
 
     IEnumerator WeaponCycle() {

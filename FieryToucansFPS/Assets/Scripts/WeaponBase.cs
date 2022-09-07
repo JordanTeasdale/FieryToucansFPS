@@ -25,7 +25,7 @@ public abstract class WeaponBase : ScriptableObject {
     public int gunIndex;
     public GameObject bulletPrimary;
     public GameObject bulletSecondary;
-    public bool secondaryFireActive;
+    [HideInInspector] public bool secondaryFireActive;
 
     [Range(0, 1)] [SerializeField] public float experienceScaler;
     public int experience;

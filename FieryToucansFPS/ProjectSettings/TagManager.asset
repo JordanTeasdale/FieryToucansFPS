@@ -12,6 +12,7 @@ TagManager:
   - Gun Model
   - Enemy
   - Gun Position
+  - Magic SMG Bullet
   layers:
   - Default
   - TransparentFX

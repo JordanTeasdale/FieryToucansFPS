@@ -87,6 +87,5 @@ public class ButtonFunctions : MonoBehaviour
     public void MenuSoundTrigger()
     {
         menuAudio.PlayOneShot(menuAudioC, MainAudCVol);
-
     }
 }

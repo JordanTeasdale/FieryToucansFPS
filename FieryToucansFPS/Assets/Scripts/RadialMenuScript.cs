@@ -32,6 +32,6 @@ public class RadialMenuScript : MonoBehaviour
             previousElement = elements[previousSelection].GetComponent<RadialElementFunctions>();
             previousElement.Deselect();
         }
-        Debug.Log(selection);
+        //Debug.Log(selection);
     }
 }
