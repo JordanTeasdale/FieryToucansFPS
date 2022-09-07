@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
 --- !u!1 &8632138228147884554
-=======
---- !u!1 &3697047046485239036
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,85 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   - component: {fileID: 8632138228147884545}
   - component: {fileID: 8632138228147884544}
   - component: {fileID: 8632138228147884559}
   - component: {fileID: 8632138228147884558}
   - component: {fileID: 8632138228147884557}
   - component: {fileID: 8632138228147884556}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Bullet - HandCannon
-=======
-  - component: {fileID: 3693962326207046952}
-  - component: {fileID: 3691274980460793292}
-  - component: {fileID: 3681713722133964538}
-  - component: {fileID: 3681713722133964539}
-  - component: {fileID: 3681713722133964542}
-  - component: {fileID: 3681713722133964541}
-  m_Layer: 7
-  m_Name: Melee Hit
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
 --- !u!4 &8632138228147884545
-=======
---- !u!4 &3693962326207046952
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   m_GameObject: {fileID: 8632138228147884554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.168, y: 2.807, z: -14.901}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-=======
-  m_GameObject: {fileID: 3697047046485239036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.36, y: 2.496, z: -5.667}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
 --- !u!33 &8632138228147884544
-=======
---- !u!33 &3691274980460793292
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   m_GameObject: {fileID: 8632138228147884554}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8632138228147884559
-=======
-  m_GameObject: {fileID: 3697047046485239036}
-  m_Mesh: {fileID: 0}
---- !u!23 &3681713722133964538
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   m_GameObject: {fileID: 8632138228147884554}
-=======
-  m_GameObject: {fileID: 3697047046485239036}
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -104,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1ea9f06a678176f4e8a48fed8bdefde5, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,94 +86,57 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
 --- !u!135 &8632138228147884558
-=======
---- !u!135 &3681713722133964539
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   m_GameObject: {fileID: 8632138228147884554}
-=======
-  m_GameObject: {fileID: 3697047046485239036}
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
-  m_Radius: 0.5
+  m_Radius: 0.63
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8632138228147884557
-=======
-  m_Radius: 0.604
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3681713722133964542
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   m_GameObject: {fileID: 8632138228147884554}
-=======
-  m_GameObject: {fileID: 3697047046485239036}
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9cdc679f2a781478bb8874921e7b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   rb: {fileID: 8632138228147884556}
   explosion: {fileID: 103990, guid: 1217dbe974e5c354fb4cd2495c6602fa, type: 3}
   target:
     serializedVersion: 2
     m_Bits: 64
   targetLayerValue: 6
-  damage: 5
-  damageRange: 0.25
+  isKnockbackable:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 15
+  damageRange: 1.04
   bounciness: 0.699
+  knockbackForce: 9.6
   usesGravity: 0
-  speed: 35
+  speed: 50
   maxCollisions: 5
   maxLifetime: 5
   explodeOnTouch: 1
   isOrdenance: 0
 --- !u!54 &8632138228147884556
-=======
-  rb: {fileID: 3681713722133964541}
-  explosion: {fileID: 0}
-  target:
-    serializedVersion: 2
-    m_Bits: 4096
-  targetLayerValue: 0
-  damage: 1
-  damageRange: 0.25
-  bounciness: 0.376
-  usesGravity: 1
-  speed: 35
-  maxCollisions: 1
-  maxLifetime: 6
-  explodeOnTouch: 1
-  isOrdenance: 0
---- !u!54 &3681713722133964541
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:FieryToucansFPS/Assets/Prefabs/Gun Stuff/Bullet - HandCannon.prefab
   m_GameObject: {fileID: 8632138228147884554}
-=======
-  m_GameObject: {fileID: 3697047046485239036}
->>>>>>> Stashed changes:FieryToucansFPS/Assets/Prefabs/Enemy Stuff/Melee Hit.prefab
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
