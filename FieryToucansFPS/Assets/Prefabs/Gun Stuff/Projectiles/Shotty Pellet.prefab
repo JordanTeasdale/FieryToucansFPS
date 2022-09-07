@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8632138228147884558}
   - component: {fileID: 8632138228147884557}
   - component: {fileID: 8632138228147884556}
-  - component: {fileID: 8651478749420306851}
+  - component: {fileID: 3141302364961514527}
   m_Layer: 13
-  m_Name: Rifle Secondary
+  m_Name: Shotty Pellet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632138228147884554}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.168, y: 2.807, z: -14.901}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8632138228147884544
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632138228147884554}
-  m_Mesh: {fileID: 4300000, guid: afa71343d9c04b54097871198c4ab40b, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8632138228147884559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98,8 +98,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.39, z: 0}
+  m_Radius: 1.05
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8632138228147884557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,14 +121,14 @@ MonoBehaviour:
   isKnockbackable:
     serializedVersion: 2
     m_Bits: 64
-  damage: 21
-  damageRange: 0.3
-  bounciness: 0
-  knockbackForce: 14
+  damage: 2
+  damageRange: 0.4
+  bounciness: 0.48
+  knockbackForce: 7.6
   usesGravity: 0
-  speed: 90
+  speed: 55
   maxCollisions: 1
-  maxLifetime: 6
+  maxLifetime: 15
   explodeOnTouch: 1
   isOrdenance: 0
 --- !u!54 &8632138228147884556
@@ -147,7 +147,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!96 &8651478749420306851
+--- !u!96 &3141302364961514527
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0

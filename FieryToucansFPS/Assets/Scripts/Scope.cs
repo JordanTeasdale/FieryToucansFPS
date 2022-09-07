@@ -18,6 +18,7 @@ public class Scope : MonoBehaviour {
     // IEnumerator OnScoped() { 
     //yield return new WaitForSeconds(0.5f);
     public void OnScoped() {
+        
         if(mainCamera.TryGetComponent<Camera>(out Camera _camera))
         normalFOV = _camera.fieldOfView;
         _camera.fieldOfView = scopedFOV;
