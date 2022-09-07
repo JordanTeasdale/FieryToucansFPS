@@ -394,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: HP
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: empty
@@ -1020,31 +1020,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: meleeRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: shootRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: RateOfFire
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: meelespeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: meeledamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: fieldOfViewMelee
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
-      propertyPath: meleeDestroyTime
+      propertyPath: inMeleeRange
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601981, guid: d822913338d66a44db3f074de032b96a, type: 3}
