@@ -15,8 +15,8 @@ public class Bullet : MonoBehaviour {
     [Header("------ Damage -----")]
     //Damage 
 
-    public int damage;
-    public float damageRange;
+    [Range(0, 35)] public int damage;
+    [Range(0, 35)] public float damageRange;
 
   
 
@@ -31,10 +31,11 @@ public class Bullet : MonoBehaviour {
     public float maxLifetime;
     public bool explodeOnTouch = true;
     [SerializeField] bool isOrdenance = false;
+    
 
     int collisions;
     PhysicMaterial physicsMaterial;
-
+    int weaponFiredFrom;
 
     // Start is called before the first frame update
     void Start() {
@@ -45,6 +46,7 @@ public class Bullet : MonoBehaviour {
     public void Update() {
         //When bullet explodes due to collisions or time
         maxLifetime -= Time.deltaTime;
+        weaponFiredFrom = GameManager.instance.playerScript.weaponIndex;
 
         if (isOrdenance && maxLifetime <= 0) 
             Explode();
@@ -72,10 +74,17 @@ public class Bullet : MonoBehaviour {
 
         foreach (Collider enemy in enemiesHit) {
             if (enemy.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
-                if (enemy.GetComponent<SphereCollider>())
+                if (enemy.GetComponent<SphereCollider>()) {
                     isDamageable.TakeDamage(damage * 2);
-                else
+                    WeaponBase weaponGainingExperience = GameManager.instance.playerScript.gunsList[weaponFiredFrom];
+                    weaponGainingExperience.GainExperience(damage * 2);
+
+                } else {
                     isDamageable.TakeDamage(damage);
+                    WeaponBase weaponGainingExperience = GameManager.instance.playerScript.gunsList[weaponFiredFrom];
+                    weaponGainingExperience.GainExperience(damage * 2);
+                }
+                    
             }
             if (enemy.TryGetComponent<KnockbackScript>(out KnockbackScript knockback)){
                 StartCoroutine(knockback.Knockback(knockbackForce, enemy.gameObject, _collision));
