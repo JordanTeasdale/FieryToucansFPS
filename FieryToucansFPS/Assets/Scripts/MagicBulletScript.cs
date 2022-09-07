@@ -54,7 +54,7 @@ public class MagicBulletScript : MonoBehaviour {
 
     void Explode() {
 
-        parentScript.Remove(myID);
+        //parentScript.Remove(myID);
 
         //Instantiate explosion 
         if (explosion != null)
@@ -76,7 +76,7 @@ public class MagicBulletScript : MonoBehaviour {
     }
 
     void Delay() {
-
+        parentScript.Remove(myID);
         Destroy(gameObject);
     }
 

@@ -39,15 +39,19 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Awake() {
         instance = this;
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerScript = player.GetComponent<PlayerController>();
+        if (GameObject.FindGameObjectWithTag("Player") != null) { 
+            player = GameObject.FindGameObjectWithTag("Player");
+            playerScript = player.GetComponent<PlayerController>();
 
-        gunPosition = GameObject.FindGameObjectWithTag("Gun Position");
+            gunPosition = GameObject.FindGameObjectWithTag("Gun Position");
 
-        RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
-        playerScript.Respawn();
+            RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
+            playerScript.Respawn();
 
-        bossDoor = GameObject.FindGameObjectWithTag("BossDoor");
+            bossDoor = GameObject.FindGameObjectWithTag("BossDoor"); 
+        }
+        else
+            gameObject.SetActive(false);
     }
 
     // Update is called once per frame
