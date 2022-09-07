@@ -18,12 +18,12 @@ public class DoorScript : MonoBehaviour
     void Update()
     {
         if (isUnlocked && playerInRange) {
-            doorPort.transform.eulerAngles = Vector3.Lerp(doorPort.transform.eulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
-            doorStarboard.transform.eulerAngles = Vector3.Lerp(doorStarboard.transform.eulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
+            doorPort.transform.localEulerAngles = Vector3.Lerp(doorPort.transform.localEulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
+            doorStarboard.transform.localEulerAngles = Vector3.Lerp(doorStarboard.transform.localEulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
         }
         if (isUnlocked && !playerInRange) {
-            doorPort.transform.eulerAngles = Vector3.Lerp(doorPort.transform.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 2);
-            doorStarboard.transform.eulerAngles = Vector3.Lerp(doorStarboard.transform.eulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 2);
+            doorPort.transform.localEulerAngles = Vector3.Lerp(doorPort.transform.localEulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 2);
+            doorStarboard.transform.localEulerAngles = Vector3.Lerp(doorStarboard.transform.localEulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 2);
         }
     }
     private void OnTriggerEnter(Collider other) {
