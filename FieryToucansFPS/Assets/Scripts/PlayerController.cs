@@ -364,6 +364,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
     public IEnumerator Death() {
         cameraMain.GetComponent<Animator>().enabled = true;
+        cameraMain.GetComponent<Animator>().SetTrigger("isDead");
         yield return new WaitForSeconds(1.98f);
 
         GameManager.instance.CursorLockPause();
