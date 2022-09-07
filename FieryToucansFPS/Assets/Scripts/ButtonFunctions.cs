@@ -52,7 +52,7 @@ public class ButtonFunctions : MonoBehaviour
         GameManager.instance.playerScript.Respawn();
         GameManager.instance.isPaused = false;
         GameManager.instance.CursorUnlockUnpause();
-        levelLoader.CoRoutRun();
+        //levelLoader.CoRoutRun();
 
     }
 

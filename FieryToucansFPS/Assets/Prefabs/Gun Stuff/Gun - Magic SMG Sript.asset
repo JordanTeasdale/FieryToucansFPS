@@ -26,7 +26,7 @@ MonoBehaviour:
   maxAmmo: 120
   currentAmmo: 114
   gun: {fileID: 4979265627362845669, guid: f4190e2709b6cac46aac940b35c0a6aa, type: 3}
-  gunIndex: 5
+  gunIndex: 4
   bulletPrimary: {fileID: 8632138228147884554, guid: 60cd78553ab0f884c9a11f8ca2c268cd, type: 3}
   bulletSecondary: {fileID: 0}
   secondaryFireActive: 0

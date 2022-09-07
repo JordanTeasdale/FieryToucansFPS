@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
@@ -76,6 +78,16 @@ public class GameManager : MonoBehaviour {
             lowHealthIndicator.SetActive(true);
         else if (playerScript.HP > playerScript.HPOrig * 0.25)
             lowHealthIndicator.SetActive(false);
+
+        AccessShowcase();
+    }
+
+    private void AccessShowcase()
+    {
+        if (Input.GetButton("AccessShow"))
+        {
+            SceneManager.LoadScene("Showcase Level");
+        }
     }
 
     public void CursorLockPause() {

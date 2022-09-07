@@ -1537,20 +1537,28 @@ MonoBehaviour:
   HP: 50
   playerFaceSpeed: 3
   fieldOfView: 180
+  fieldOfViewMelee: 0
   fieldOfViewShoot: 32
   roamRadius: 10
   speedRoam: 2
   speedChase: 4
-  shootRate: 0.26
+  meeledamage: 0
+  meleeRate: 0
+  meelespeed: 0
+  meleeDestroyTime: 0
+  invisHit: {fileID: 0}
+  hitSpawnPos: {fileID: 0}
+  shootRate: 1
   damage: 1
-  speed: 10
+  RateOfFire: 0
   bulletDestroyTime: 3
-  bullet: {fileID: 8632138228147884554, guid: a80bf7fd7abcc204c8ed886541e1038a, type: 3}
+  bullet: {fileID: 66118061717101772, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
   bulletSpawnPos: {fileID: 296556089879653189}
   enemyAud: {fileID: 2246530930837742390}
   soundExecute: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
   soundExecuteVol: 0.143
   executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
+  inMeleeRange: 0
   isExecutable: 0
 --- !u!114 &-2987253253621766519
 MonoBehaviour:
@@ -1566,6 +1574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackTime: 215.89
   IFramesKnockback: 2
+  changeInX: 0
+  changeInY: 0
+  changeInZ: 0
   YDirectionScalar: 0.1
   XDirectionScalar: 0.064
   ZDirectionScalar: 0.019

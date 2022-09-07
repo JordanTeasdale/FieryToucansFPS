@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SeekingMissile : MonoBehaviour {
     [Header("Setup")]
-    public Transform RocketTarget;
     public Rigidbody RocketBody;
     public GameObject explosion;
     [SerializeField] public int targetLayerValue;
@@ -30,8 +29,6 @@ public class SeekingMissile : MonoBehaviour {
 
     //start is called before the the first frame update
     void Start() {
-        if (!RocketTarget)
-            Debug.Log("Please set the rocket target (In this case the player)");
         rocketLocalTrans = GetComponent<Transform>();
 
 
@@ -45,7 +42,7 @@ public class SeekingMissile : MonoBehaviour {
         RocketBody.velocity = rocketLocalTrans.forward * rocketFlySpeed;
 
         //turning the rocket towards the target (player)
-        var rocketTargetRot = Quaternion.LookRotation(RocketTarget.position - rocketLocalTrans.position);
+        var rocketTargetRot = Quaternion.LookRotation(GameManager.instance.player.transform.position - rocketLocalTrans.position);
         RocketBody.MoveRotation(Quaternion.RotateTowards(rocketLocalTrans.rotation, rocketTargetRot, turnSpeed));
     }
 
