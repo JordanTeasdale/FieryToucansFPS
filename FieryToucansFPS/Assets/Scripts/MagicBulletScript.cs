@@ -17,7 +17,7 @@ public class MagicBulletScript : MonoBehaviour {
 
     [Header("------ Projectile Behaviors -----")]
     // Behaviors 
-    [Range(0, 1f)] [SerializeField] float bounciness;
+    [Range(0, 1f)][SerializeField] float bounciness;
     [SerializeField] public bool usesGravity;
     public int speed;
     //public int maxCollisions;
@@ -32,6 +32,7 @@ public class MagicBulletScript : MonoBehaviour {
 
     //int collisions;
     PhysicMaterial physicsMaterial;
+    bool hitsPlayer = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -45,10 +46,9 @@ public class MagicBulletScript : MonoBehaviour {
 
         if (maxLifetime <= 0)
             Explode();
-        else
-        {
-            if (returning)           
-                transform.position = Vector3.MoveTowards(transform.position, GameManager.instance.player.transform.position, speed * Time.deltaTime);           
+        else {
+            if (returning)
+                transform.position = Vector3.MoveTowards(transform.position, GameManager.instance.player.transform.position, speed * Time.deltaTime);
         }
     }
 
@@ -71,8 +71,8 @@ public class MagicBulletScript : MonoBehaviour {
                     isDamageable.TakeDamage(damage);
             }
         }
-
-        Invoke("Delay", 0.05f);
+        if (!hitsPlayer)
+            Delay();
     }
 
     void Delay() {
@@ -81,18 +81,16 @@ public class MagicBulletScript : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision _collision) {
-
         GameObject hit = _collision.gameObject;
-        if (!hit.CompareTag("Player"))
-        {
+        if (!hit.CompareTag("Player")) {
             if (hit.GetComponent<IDamageable>() != null)
                 hit.GetComponent<IDamageable>().TakeDamage(damage);
-            else            
-                rb.velocity = Vector3.zero;         
-        }
-        else if (hit.CompareTag("Player"))
-        {
-            Destroy(gameObject);
+            else
+                rb.velocity = Vector3.zero;
+        } else if (hit.CompareTag("Player") && !hitsPlayer) {
+            hitsPlayer = true;
+            Debug.Log("Delay on collision");
+            Delay();
         }
         #region oldstuff
         //collisions++;
@@ -103,6 +101,7 @@ public class MagicBulletScript : MonoBehaviour {
         //if (explodeOnTouch)
         //Explode();
         #endregion
+
     }
 
     private void Setup() {
@@ -128,14 +127,12 @@ public class MagicBulletScript : MonoBehaviour {
         returning = true;
     }
 
-    public void Gimmy(MagicSMGSript skr, int id)
-    {
+    public void Gimmy(MagicSMGSript skr, int id) {
         parentScript = skr;
         myID = id;
     }
 
-    public void UpdateID()
-    {
+    public void UpdateID() {
         myID--;
     }
 }
