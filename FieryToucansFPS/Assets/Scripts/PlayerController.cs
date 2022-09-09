@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void GunPickup(WeaponBase _stats) {
-        if (_stats.gunIndex == 4)
+        if (_stats.gunIndex == 5)
         {
             MagicSMGSript smg = (MagicSMGSript)_stats;
             smg.ClearList();
