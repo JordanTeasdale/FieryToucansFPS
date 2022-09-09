@@ -21,7 +21,7 @@ public class DoorScript : MonoBehaviour
             doorPort.transform.localEulerAngles = Vector3.Lerp(doorPort.transform.localEulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
             doorStarboard.transform.localEulerAngles = Vector3.Lerp(doorStarboard.transform.localEulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
         }
-        if (isUnlocked && !playerInRange) {
+        if (!playerInRange) {
             doorPort.transform.localEulerAngles = Vector3.Lerp(doorPort.transform.localEulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 2);
             doorStarboard.transform.localEulerAngles = Vector3.Lerp(doorStarboard.transform.localEulerAngles, new Vector3(0, 0, 0), Time.deltaTime * 2);
         }
