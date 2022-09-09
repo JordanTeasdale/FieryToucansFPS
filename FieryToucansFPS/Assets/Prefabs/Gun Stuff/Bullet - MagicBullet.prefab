@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8632138228147884558}
   - component: {fileID: 8632138228147884556}
   - component: {fileID: -2170305648300044371}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bullet - MagicBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,6 +138,6 @@ MonoBehaviour:
   bounciness: 0
   usesGravity: 0
   speed: 60
-  maxLifetime: 20
+  maxLifetime: 5
   explodeOnTouch: 0
   isOrdenance: 0
