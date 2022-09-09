@@ -17,14 +17,16 @@ MonoBehaviour:
   shootSpeedSecondary: 50
   shootRateSecondary: 1
   secondaryCooldown: 2
-  spreadFactor: 0.077
+  spreadFactor: 0.242
   gunAud: {fileID: 7554878211014542222, guid: 367c3236d8c17ce4392fe755b43a0641, type: 3}
   shootSound: {fileID: 8300000, guid: 1e76e50d97952fc44a3d281b2282a5aa, type: 3}
   shootVol: 0.52
+  shootSoundSecondary: {fileID: 0}
+  shootVolSecondary: 0
   hitEffect: {fileID: 6221651516144037186, guid: 7993fccd5b5eaf14e842aeab2e37b233, type: 3}
   Crosshair: {fileID: 21300000, guid: 022074091120f664e8242eff2dab1335, type: 3}
   maxAmmo: 120
-  currentAmmo: 119
+  currentAmmo: 120
   gun: {fileID: 6255555918143130547, guid: 103d7fcc31bf9394c945ae08c99f89fa, type: 3}
   gunIndex: 1
   bulletPrimary: {fileID: 8632138228147884554, guid: 370e5ff1ad43be448aeef69e488c6962, type: 3}
