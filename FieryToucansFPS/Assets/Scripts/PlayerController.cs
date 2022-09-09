@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool isSwitching = false;
     public bool isMeleeing = false;
     bool playFootsteps = true;
+    bool secondaryFireMode = false;
+
     //bool isScoped = false;
     public GameObject cameraMain;
     CameraController cameraController;
@@ -351,6 +353,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
     void Shoot() {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
+        if(Input.GetButton("Fire2"))
+        {
+            secondaryFireMode = true;
+        }
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             aud.PlayOneShot(soundShoot, soundShootVol);
             if (Input.GetButton("Fire2"))
