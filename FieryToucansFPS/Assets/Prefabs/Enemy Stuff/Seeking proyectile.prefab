@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a5d61e9a17bff48bdb9348eb707501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketTarget: {fileID: 82320173802793680, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
   RocketBody: {fileID: 66118061717101769}
   explosion: {fileID: 173984, guid: ba719c5f4986c8e49a49e802e78a896d, type: 3}
   targetLayerValue: 12
@@ -85,8 +84,8 @@ MonoBehaviour:
     m_Bits: 4096
   damage: 2
   damageRange: 1
-  turnSpeed: 3
-  rocketFlySpeed: 5
+  turnSpeed: 2
+  rocketFlySpeed: 15
   explodeOnTouch: 1
   maxLifetime: 20
 --- !u!1001 &66118061880987316
