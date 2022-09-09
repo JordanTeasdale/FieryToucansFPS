@@ -15,8 +15,10 @@ public abstract class WeaponBase : ScriptableObject {
 
     [SerializeField] AudioSource gunAud;
     public AudioClip shootSound;
-
     [Range(0, 1)][SerializeField] public float shootVol;
+    public AudioClip shootSoundSecondary;
+    [Range(0, 1)][SerializeField] public float shootVolSecondary;
+
     public GameObject hitEffect;
     public Sprite Crosshair;
     public int maxAmmo;
@@ -49,7 +51,13 @@ public abstract class WeaponBase : ScriptableObject {
         GameManager.instance.playerScript.isShooting = false;
     }
 
-    public virtual IEnumerator ShootSecondary() {
+    public virtual void SecondaryFireMode()
+    {
+
+    }
+
+    public virtual IEnumerator ShootSecondary()
+    {
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo--;
 

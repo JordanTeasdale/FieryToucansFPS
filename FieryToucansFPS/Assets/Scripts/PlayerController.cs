@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;
     [Range(0, 1)][SerializeField] float soundShootVol;
+    [SerializeField] AudioClip soundShootSecondary;
+    [Range(0, 1)][SerializeField] float soundShootSecondaryVol;
+
+
+
     //public AudioClip soundReload;
     //[Range(0, 1)][SerializeField] public float soundReloadVol;
     [SerializeField] AudioClip[] soundFootsteps;
@@ -265,6 +270,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public void GunEquip(WeaponBase _gun) {
         soundShoot = _gun.shootSound;
         soundShootVol = _gun.shootVol;
+        soundShootSecondary = _gun.shootSoundSecondary;
+        soundShootSecondaryVol = _gun.shootVolSecondary;
         hitEffect = _gun.hitEffect;
         maxAmmo = _gun.maxAmmo;
         currentAmmo = _gun.currentAmmo;
@@ -353,16 +360,18 @@ public class PlayerController : MonoBehaviour, IDamageable {
     void Shoot() {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
-        if(Input.GetButton("Fire2"))
+        if(Input.GetButton("Fire2") && !isShooting && gunsList.Count > 0 && currentAmmo > 0)
         {
-            secondaryFireMode = true;
-        }
+            gunsList[weaponIndex].SecondaryFireMode();
+            if (Input.GetButton("Shoot"))
+            {
+                aud.PlayOneShot(soundShootSecondary, soundShootSecondaryVol);
+                StartCoroutine(gunsList[weaponIndex].ShootSecondary());
+            }
+        }        
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             aud.PlayOneShot(soundShoot, soundShootVol);
-            if (Input.GetButton("Fire2"))
-                StartCoroutine(gunsList[weaponIndex].ShootSecondary());
-            else
-                StartCoroutine(gunsList[weaponIndex].ShootPrimary());
+            StartCoroutine(gunsList[weaponIndex].ShootPrimary());
             UpdatedAmmoGUI();
             gunPostion.GetChild(0).GetComponent<Animation>().Play();
         }
