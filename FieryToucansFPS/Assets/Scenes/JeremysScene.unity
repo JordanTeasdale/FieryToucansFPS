@@ -18568,6 +18568,10 @@ PrefabInstance:
       propertyPath: ZDirectionScalar
       value: 0.155
       objectReference: {fileID: 0}
+    - target: {fileID: 1709202071, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16375
+      objectReference: {fileID: 0}
     - target: {fileID: 82320173802793680, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -18616,6 +18620,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7174589972155203629, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174589972155203629, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     m_RemovedComponents:
     - {fileID: -81243807212020859, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
@@ -21317,9 +21329,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 472211953, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123421150, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138908038, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1166466104, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_AnchorMax.y
