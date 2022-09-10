@@ -6,17 +6,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 
-public class ButtonFunctions : MonoBehaviour
-{
+public class ButtonFunctions : MonoBehaviour {
     LevelLoader levelLoader;
     public GameObject menuFirstButton, OptionsFirstButton, OptionsClosedButton, pauseFirstButton;
 
     [SerializeField] AudioSource menuAudio;
     [SerializeField] AudioClip menuAudioC;
     [SerializeField] float MainAudCVol;
+    float timer;
 
-    public void Start()
-    {
+    public void Start() {
         //clearing the currently selected menu choice
         EventSystem.current.SetSelectedGameObject(null);
 
@@ -26,28 +25,27 @@ public class ButtonFunctions : MonoBehaviour
         //Going through the Heirarchy to find levelloader and gets crossfade object to call coroutine
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
 
+
+
     }
 
-    public void Resume()
-    {
-        if (GameManager.instance.isPaused)
-        {
+
+    public void Resume() {
+        if (GameManager.instance.isPaused) {
             MenuSoundTrigger();
             GameManager.instance.isPaused = false;
             GameManager.instance.CursorUnlockUnpause();
         }
     }
 
-    public void Restart()
-    {
+    public void Restart() {
         MenuSoundTrigger();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameManager.instance.CursorUnlockUnpause();
         levelLoader.CoRoutRun();
     }
 
-    public void Respawn()
-    {
+    public void Respawn() {
         GameManager.instance.playerScript.ResetHP();
         GameManager.instance.playerScript.Respawn();
         GameManager.instance.isPaused = false;
@@ -56,36 +54,32 @@ public class ButtonFunctions : MonoBehaviour
 
     }
 
-    public void Quit()
-    {
+    public void Quit() {
         MenuSoundTrigger();
         levelLoader.CoRoutRun();
         Application.Quit();
     }
 
-    public void PlaysGame()
-    {
+    public void PlaysGame() {
         MenuSoundTrigger();
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Level 1");
     }
 
-    public void QCreditScene()
-    {
+    public void QCreditScene() {
         MenuSoundTrigger();
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Credits");
     }
 
-    public void BackButton()
-    {
+    public void BackButton() {
         MenuSoundTrigger();
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void MenuSoundTrigger()
-    {
+    public void MenuSoundTrigger() {
+
         menuAudio.PlayOneShot(menuAudioC, MainAudCVol);
     }
 }
