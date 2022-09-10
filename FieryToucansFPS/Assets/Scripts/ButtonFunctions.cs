@@ -72,7 +72,7 @@ public class ButtonFunctions : MonoBehaviour {
         SceneManager.LoadScene("Credits");
     }
 
-    public void BackButton() {
+    public void ReturnToMainMenu() {
         MenuSoundTrigger();
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Main Menu");
