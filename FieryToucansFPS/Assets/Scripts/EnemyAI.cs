@@ -39,7 +39,6 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject executeEffect;
 
     Vector3 playerDir;
-    bool isMeleee = false;
     bool isShooting = false;
     bool playerInRange = false;
     public bool inMeleeRange = false;

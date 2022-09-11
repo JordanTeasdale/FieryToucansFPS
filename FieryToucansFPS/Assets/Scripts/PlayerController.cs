@@ -395,12 +395,13 @@ public class PlayerController : MonoBehaviour, IDamageable {
             UpdatedAmmoGUI();
         }
         cameraMain.GetComponent<Animator>().enabled = false;
+
     }
 
     public IEnumerator Death() {
         cameraMain.GetComponent<Animator>().enabled = true;
         cameraMain.GetComponent<Animator>().SetTrigger("isDead");
-        yield return new WaitForSeconds(1.98f);
+        yield return new WaitForSeconds(1.728f);
         GameManager.instance.CursorLockPause();
         GameManager.instance.playerDeadMenu.SetActive(true);
         GameManager.instance.menuCurrentlyOpen = GameManager.instance.playerDeadMenu;
