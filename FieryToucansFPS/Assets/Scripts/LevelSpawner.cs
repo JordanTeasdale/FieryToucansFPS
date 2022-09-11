@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSpawner : MonoBehaviour
-{
+public class LevelSpawner : MonoBehaviour {
     [Header("----- GameObject Prefabs -----")]
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject spider;
@@ -36,6 +35,7 @@ public class LevelSpawner : MonoBehaviour
             GameManager.instance.currentRoom = gameObject;
             foreach (GameObject door in doors) {
                 door.GetComponent<DoorScript>().isUnlocked = false;
+                door.GetComponent<DoorScript>().DoorLocking();
             }
             for (int i = 0; i < skeletonLocations.Length; i++) {
                 Instantiate(skeleton, new Vector3(transform.position.x + skeletonLocations[i].x, skeleton.transform.position.y, transform.position.z + skeletonLocations[i].y), skeleton.transform.rotation);
@@ -59,14 +59,22 @@ public class LevelSpawner : MonoBehaviour
 
     public void EnemyKilled() {
         enemiesAlive--;
-        if (enemiesAlive == 0) { 
+        if (enemiesAlive == 0) {
             roomCleared = true;
             StartCoroutine(GameManager.instance.ClearRoom());
             doors = GameObject.FindGameObjectsWithTag("Door");
-            foreach(GameObject door in doors) {
+            foreach (GameObject door in doors) {
                 door.GetComponent<DoorScript>().isUnlocked = true;
+                door.GetComponent<DoorScript>().DoorUnlocking();
             }
+            StartCoroutine(RoomClearedFeedback());
         }
+    }
+
+    IEnumerator RoomClearedFeedback() {
+        GameManager.instance.roomClearedFeedback.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        GameManager.instance.roomClearedFeedback.SetActive(false);
     }
 
 }

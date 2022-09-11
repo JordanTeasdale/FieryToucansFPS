@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
-{
+public class DoorScript : MonoBehaviour {
     [SerializeField] GameObject doorPort;
     [SerializeField] GameObject doorStarboard;
     public bool isUnlocked = false;
     bool playerInRange = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Range(0,1)][SerializeField] float doorAudCVol;
+    [SerializeField] AudioSource doorAudio;
+    [SerializeField] AudioClip doorLockingAudioC;
+    [SerializeField] AudioClip doorUnlockingAudioC;
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (isUnlocked && playerInRange) {
             doorPort.transform.localEulerAngles = Vector3.Lerp(doorPort.transform.localEulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
             doorStarboard.transform.localEulerAngles = Vector3.Lerp(doorStarboard.transform.localEulerAngles, new Vector3(0, 80, 0), Time.deltaTime * 2);
@@ -36,5 +33,13 @@ public class DoorScript : MonoBehaviour
         if (other.CompareTag("Player")) {
             playerInRange = false;
         }
+    }
+
+    public void DoorLocking() {
+        doorAudio.PlayOneShot(doorLockingAudioC, doorAudCVol);
+    }
+
+    public void DoorUnlocking() {
+        doorAudio.PlayOneShot(doorUnlockingAudioC, doorAudCVol);
     }
 }
