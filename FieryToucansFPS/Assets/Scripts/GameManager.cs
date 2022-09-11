@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
     public GameObject radialMenu;
     public Image playerHPBar;
     public GameObject lowHealthIndicator;
+    public GameObject roomClearedFeedback;
 
 
     public bool isPaused = false;

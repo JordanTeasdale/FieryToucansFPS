@@ -25,5 +25,4 @@ public class Checkpoint : MonoBehaviour
         Destroy(gameObject);
         gameObject.SetActive(false);
     }
-
 }
