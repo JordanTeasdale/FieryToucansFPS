@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 291243740042557292, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 291243740042557293, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: HP
@@ -96,6 +96,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 291243740042557293, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
+      propertyPath: inMeleeRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 291243740042557293, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: fieldOfViewMelee
       value: 90
       objectReference: {fileID: 0}
@@ -105,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: m_Name
-      value: Skeleton Enemy Meele-Range Variant
+      value: Skeleton Enemy Meele-Range
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}

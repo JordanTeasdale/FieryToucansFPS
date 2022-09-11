@@ -88,8 +88,8 @@ GameObject:
   - component: {fileID: 1709202070}
   - component: {fileID: 1709202074}
   - component: {fileID: 562128651}
-  - component: {fileID: 2424722163632776295}
   - component: {fileID: 1477419755}
+  - component: {fileID: 1515044251}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,18 +205,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2424722163632776295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709202069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21bea1e259614b458344af2549fa78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!111 &1477419755
 Animation:
   m_ObjectHideFlags: 0
@@ -233,6 +221,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1515044251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709202069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21bea1e259614b458344af2549fa78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &82320173802793706
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   jumpHeight: 12
   gravityValue: 35
   maxJumps: 2
-  HP: 15
+  HP: 30
   invincibilityTimer: 0.5
   meleeHitbox: {fileID: 6627562012560487157}
   meleeDamage: 5
@@ -318,6 +318,8 @@ MonoBehaviour:
   soundDamageVol: 0.1
   soundShoot: {fileID: 0}
   soundShootVol: 0.1
+  soundShootSecondary: {fileID: 0}
+  soundShootSecondaryVol: 0
   soundFootsteps:
   - {fileID: 8300000, guid: 22c270705053d01479411622ce5a3774, type: 3}
   - {fileID: 8300000, guid: 19f595e2d184d874cab0ffbf5cd238d4, type: 3}

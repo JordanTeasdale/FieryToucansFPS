@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Bits: 4096
   damage: 2
   damageRange: 1
-  turnSpeed: 2
+  turnSpeed: 1
   rocketFlySpeed: 15
   explodeOnTouch: 1
   maxLifetime: 20
