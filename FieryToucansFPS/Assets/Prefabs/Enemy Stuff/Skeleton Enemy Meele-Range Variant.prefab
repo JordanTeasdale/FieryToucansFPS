@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 291243740042557292, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 291243740042557293, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: HP
