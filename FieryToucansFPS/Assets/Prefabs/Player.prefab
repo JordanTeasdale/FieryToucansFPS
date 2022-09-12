@@ -100,8 +100,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875974506}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: -0.2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,12 +146,12 @@ MonoBehaviour:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7400000, guid: c8eaf20d660112a4a90b222ba1e2cdab, type: 2}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 1709202070}
   - component: {fileID: 1709202074}
   - component: {fileID: 562128651}
-  - component: {fileID: 1477419755}
   - component: {fileID: 1515044251}
   m_Layer: 0
   m_Name: Main Camera
@@ -267,7 +266,7 @@ MonoBehaviour:
   lockVertMax: 70
   invert: 0
   animator: {fileID: 562128651}
-  animationClip: {fileID: 1477419755}
+  animationClip: {fileID: 0}
 --- !u!95 &562128651
 Animator:
   serializedVersion: 4
@@ -288,21 +287,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1477419755
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709202069}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c8eaf20d660112a4a90b222ba1e2cdab, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &1515044251
 MonoBehaviour:
   m_ObjectHideFlags: 0
