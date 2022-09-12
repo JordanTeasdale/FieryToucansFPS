@@ -79,8 +79,7 @@ public class ButtonFunctions : MonoBehaviour {
     }
     
     public void OptionsMenuVisable() {
-        GameManager.instance.isConfigOptions = true;
-        GameManager.instance.menuCurrentlyOpen = pauseFirstButton;
+        if(Input.Get)
     }
 
     public void MenuSoundTrigger() {
