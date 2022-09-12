@@ -136,7 +136,12 @@ public class EnemyAI : MonoBehaviour, IDamageable
         Instantiate(healthDrop, gameObject.transform.position, gameObject.transform.rotation);
         Instantiate(ammoDrop, gameObject.transform.position, gameObject.transform.rotation);
         enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        GetComponent<Animator>().enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
+        
+
+
     }
 
     IEnumerator Executable()
