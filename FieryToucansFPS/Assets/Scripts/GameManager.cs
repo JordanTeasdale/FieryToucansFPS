@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
 
 
     public bool isPaused = false;
+    public bool isConfigOptions = false;
     bool gameOver = false;
 
     // Start is called before the first frame update
@@ -59,7 +60,10 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (Input.GetButtonDown("Cancel") && playerScript.HP > 0 && !gameOver) {
             isPaused = !isPaused;
+
+            if(!isConfigOptions)
             menuCurrentlyOpen = pauseMenu;
+
             menuCurrentlyOpen.SetActive(isPaused);
 
             if (isPaused)

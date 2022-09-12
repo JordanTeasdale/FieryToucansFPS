@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbeaad4fc78e284aac9ed13c30dfe11, type: 3}
   m_Name: Gun - Rifile
   m_EditorClassIdentifier: 
-  shootSpeedPrimary: 30
+  shootSpeedPrimary: 50
   shootRatePrimary: 0.2
   shootSpeedSecondary: 90
   shootRateSecondary: 2
   secondaryCooldown: 0
-  secondaryAmmoConsumption: 0
   spreadFactor: 0.03
   gunAud: {fileID: -6401865289743886553, guid: 7063296ac0f76464c9bb37e65005bbbb, type: 3}
   shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
@@ -27,11 +26,13 @@ MonoBehaviour:
   hitEffect: {fileID: 6221651516144037186, guid: 3de810d3560377c4b8aa313536aaa347, type: 3}
   Crosshair: {fileID: 0}
   maxAmmo: 120
-  currentAmmo: 116
-  gun: {fileID: 6774588837608523791, guid: 0628e30174156e145876ddce14347706, type: 3}
+  currentAmmo: 120
+  gun: {fileID: 7779174790924642571, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}
   gunIndex: 2
   bulletPrimary: {fileID: 8632138228147884554, guid: b893a739fb677a54295aec7cc95f9812, type: 3}
   bulletSecondary: {fileID: 8632138228147884554, guid: 2108ba06ea956cb4ca1bbeb2f322f727, type: 3}
   secondaryFireActive: 0
+  experienceScaler: 0.163
+  experience: 0
+  currentLevel: 0
   animator: {fileID: 0}
-  scopedFOV: 0

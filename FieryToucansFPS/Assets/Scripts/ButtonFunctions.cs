@@ -77,6 +77,10 @@ public class ButtonFunctions : MonoBehaviour {
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Main Menu");
     }
+    
+    public void OptionsMenuVisable() {
+       
+    }
 
     public void MenuSoundTrigger() {
 

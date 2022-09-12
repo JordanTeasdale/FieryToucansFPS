@@ -26,8 +26,8 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   Crosshair: {fileID: 0}
   maxAmmo: 15
-  currentAmmo: 11
-  gun: {fileID: 6605916465847376073, guid: 19c385e89f380a047a131e3c814b98b8, type: 3}
+  currentAmmo: 15
+  gun: {fileID: 9179815319806921901, guid: 89b355ff45e3c5741b6f5fe90a31aa8b, type: 3}
   gunIndex: 3
   bulletPrimary: {fileID: 8632138228147884554, guid: 05d8a9841b6b0da4cada191e9b5bf599, type: 3}
   bulletSecondary: {fileID: 8632138228147884554, guid: 8ab5851156fb2bc468e21c4d559fc105, type: 3}
