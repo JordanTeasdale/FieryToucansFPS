@@ -591,10 +591,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7451365089407643613, guid: ecdd3a007cc105547b7d46c8fa96daea, type: 3}
-      propertyPath: m_BaseOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7456908619125129500, guid: ecdd3a007cc105547b7d46c8fa96daea, type: 3}
       propertyPath: m_Name
       value: Skeleton Missile Ragdoll Enemy Variant
