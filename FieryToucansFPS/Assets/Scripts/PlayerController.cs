@@ -367,8 +367,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
             {
                 aud.PlayOneShot(soundShootSecondary, soundShootSecondaryVol);
                 StartCoroutine(gunsList[weaponIndex].ShootSecondary());
+                UpdatedAmmoGUI();
             }
-            
+
         }        
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             aud.PlayOneShot(soundShoot, soundShootVol);

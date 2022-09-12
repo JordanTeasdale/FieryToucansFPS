@@ -8,7 +8,7 @@ public class RifileScript : WeaponBase
     public Animator animator;
     //public GameObject mainCamera = GameManager.instance.playerScript.cameraMain.GetComponent<Camera>();
     private float normalFOV = 60f; //needs to be set to play fov pref once implemented
-    public float scopedFOV = 20f;
+    public float scopedFOV;
 
     public void OnUnscoped()
     {
