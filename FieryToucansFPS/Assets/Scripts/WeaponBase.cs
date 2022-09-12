@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class WeaponBase : ScriptableObject {
+public abstract class WeaponBase : ScriptableObject
+{
     public int shootSpeedPrimary;
     public float shootRatePrimary;
 
     public int shootSpeedSecondary;
     public float shootRateSecondary;
-    public float secondaryCooldown;
     public int secondaryAmmoConsumption;
 
-    [Range(0, .5f)] public float spreadFactor;
+    [Range(0, .35f)] public float spreadFactor;
 
     [SerializeField] AudioSource gunAud;
     public AudioClip shootSound;
@@ -22,13 +22,13 @@ public abstract class WeaponBase : ScriptableObject {
 
     public GameObject hitEffect;
     public Sprite Crosshair;
+    public Sprite CrosshairSecondary;
     public int maxAmmo;
     public int currentAmmo;
     public GameObject gun;
     public int gunIndex;
     public GameObject bulletPrimary;
     public GameObject bulletSecondary;
-    [HideInInspector] public bool secondaryFireActive;
 
     public Vector3 BulletSpread()
     {
@@ -36,6 +36,8 @@ public abstract class WeaponBase : ScriptableObject {
         Vector3 shootDirection = ShootDirection();
         shootDirection.x += Random.Range(-spreadFactor, spreadFactor);
         shootDirection.y += Random.Range(-spreadFactor, spreadFactor);
+        shootDirection.z += Random.Range(-spreadFactor, spreadFactor);
+
         return shootDirection;
     }
 
@@ -44,7 +46,7 @@ public abstract class WeaponBase : ScriptableObject {
         Vector3 shootDestination; //where the cursor is pointing at
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //a ray from the center of the player camera
         RaycastHit hit; //the point along the ray that connects with an object
-        if(Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
             shootDestination = hit.point;
         else
             shootDestination = ray.GetPoint(1000);
@@ -53,7 +55,8 @@ public abstract class WeaponBase : ScriptableObject {
         return shootDirection;
     }
 
-    public virtual IEnumerator ShootPrimary() {
+    public virtual IEnumerator ShootPrimary()
+    {
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo--;
 

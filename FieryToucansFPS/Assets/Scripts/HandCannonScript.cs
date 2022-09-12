@@ -29,6 +29,7 @@ public class HandCannonScript : WeaponBase
         Vector3 shootDirection = GameManager.instance.gunPosition.transform.forward;
         shootDirection.x += Random.Range(-secondarySpread, secondarySpread);
         shootDirection.y += Random.Range(-secondarySpread, secondarySpread);
+        shootDirection.z += Random.Range(-secondarySpread, secondarySpread);
         return shootDirection;
     }
 }
