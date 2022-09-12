@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         currentAmmo = _gun.currentAmmo;
         UpdatedAmmoGUI();
         Destroy(GameObject.FindGameObjectWithTag("Gun Model"));
-        Instantiate(_gun.gun, gunPostion.position, gunPostion.rotation, gunPostion);
+        Instantiate(_gun.gun, gunPostion.position,gunPostion.rotation, gunPostion);
         GameManager.instance.reticle.GetComponent<Image>().sprite = _gun.Crosshair;
     }
 
