@@ -79,7 +79,7 @@ public class ButtonFunctions : MonoBehaviour {
     }
     
     public void OptionsMenuVisable() {
-        if(Input.Get)
+       
     }
 
     public void MenuSoundTrigger() {
