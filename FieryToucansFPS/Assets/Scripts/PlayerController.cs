@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,7 +80,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
     bool isSwitching = false;
     public bool isMeleeing = false;
     bool playFootsteps = true;
-    bool secondaryFireMode = false;
 
     //bool isScoped = false;
     public GameObject cameraMain;
@@ -368,12 +368,18 @@ public class PlayerController : MonoBehaviour, IDamageable {
                 aud.PlayOneShot(soundShootSecondary, soundShootSecondaryVol);
                 StartCoroutine(gunsList[weaponIndex].ShootSecondary());
             }
+            
         }        
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             aud.PlayOneShot(soundShoot, soundShootVol);
             StartCoroutine(gunsList[weaponIndex].ShootPrimary());
             UpdatedAmmoGUI();
             gunPostion.GetChild(0).GetComponent<Animation>().Play();
+        }
+        if (weaponIndex == 2 && Input.GetButtonUp("Fire2"))
+        {
+            RifileScript rifle = (RifileScript)gunsList[weaponIndex];
+            rifle.OnUnscoped();
         }
     }
 
