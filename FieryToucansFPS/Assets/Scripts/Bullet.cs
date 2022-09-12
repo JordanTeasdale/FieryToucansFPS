@@ -76,13 +76,8 @@ public class Bullet : MonoBehaviour {
             if (enemy.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
                 if (enemy.GetComponent<SphereCollider>()) {
                     isDamageable.TakeDamage(damage * 2);
-                    WeaponBase weaponGainingExperience = GameManager.instance.playerScript.gunsList[weaponFiredFrom];
-                    weaponGainingExperience.GainExperience(damage * 2);
-
                 } else {
                     isDamageable.TakeDamage(damage);
-                    WeaponBase weaponGainingExperience = GameManager.instance.playerScript.gunsList[weaponFiredFrom];
-                    weaponGainingExperience.GainExperience(damage * 2);
                 }
                     
             }

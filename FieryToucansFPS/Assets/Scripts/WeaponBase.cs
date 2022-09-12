@@ -35,9 +35,24 @@ public abstract class WeaponBase : ScriptableObject {
 
     public Vector3 BulletSpread()
     {
-        Vector3 shootDirection = GameManager.instance.gunPosition.transform.forward;
+        //Vector3 shootDirection = GameManager.instance.gunPosition.transform.forward;
+        Vector3 shootDirection = ShootDirection();
         shootDirection.x += Random.Range(-spreadFactor, spreadFactor);
         shootDirection.y += Random.Range(-spreadFactor, spreadFactor);
+        return shootDirection;
+    }
+
+    public Vector3 ShootDirection()
+    {
+        Vector3 shootDestination; //where the cursor is pointing at
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //a ray from the center of the player camera
+        RaycastHit hit; //the point along the ray that connects with an object
+        if(Physics.Raycast(ray, out hit))
+            shootDestination = hit.point;
+        else
+            shootDestination = ray.GetPoint(1000);
+
+        Vector3 shootDirection = (shootDestination - GameManager.instance.gunPosition.transform.position).normalized;
         return shootDirection;
     }
 
@@ -65,9 +80,5 @@ public abstract class WeaponBase : ScriptableObject {
         bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedSecondary;
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;
-    }
-
-    public void GainExperience(int _damage) {
-        experience += (int)(_damage * experienceScaler);
     }
 }
