@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scope : MonoBehaviour {
     
-    public GameObject mainCamera;
+    /*public GameObject mainCamera;
     public float scopedFOV = 50f;
     private float normalFOV;
     int gunIndex = 2;
@@ -23,5 +23,5 @@ public class Scope : MonoBehaviour {
         normalFOV = _camera.fieldOfView;
         _camera.fieldOfView = scopedFOV;
     }
-
+*/
 }

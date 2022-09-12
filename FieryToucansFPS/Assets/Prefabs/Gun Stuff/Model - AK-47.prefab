@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1514462645147811882}
   - component: {fileID: 5060069794660334803}
   - component: {fileID: 2130068002705934215}
+  - component: {fileID: -4045517074544011401}
   m_Layer: 3
   m_Name: Model - AK-47
   m_TagString: Gun Model
@@ -102,6 +103,26 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &-4045517074544011401
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774588837608523791}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae7464f92d4f29c438ed3933e6940d74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8697440253937679145
 GameObject:
   m_ObjectHideFlags: 0

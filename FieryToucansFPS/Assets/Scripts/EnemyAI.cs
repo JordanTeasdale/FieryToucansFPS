@@ -124,6 +124,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
                     foreach (Collider col in GetComponents<Collider>())
                         col.enabled = false;
+
+                    GetComponent<Animator>().enabled = false;
+                    GetComponent<EnemyAI>().enabled = false;
+        
                 }
             }
         }
@@ -162,7 +166,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         agent.speed = 0;
         yield return new WaitForSeconds(0.1f);
         agent.speed = speedChase;
-        agent.SetDestination(GameManager.instance.player.transform.position);
+        //agent.SetDestination(GameManager.instance.player.transform.position);
+        //agent.SetDestination(GameManager.instance.player.transform.position);
         agent.stoppingDistance = 0;
         rend.material.color = Color.white;
     }

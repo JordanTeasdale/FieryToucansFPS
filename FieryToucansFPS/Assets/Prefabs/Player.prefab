@@ -228,7 +228,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8183
+    m_Bits: 16375
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -758,8 +758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5dd946d2adb1a543b8985c8f1dccdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1709202071}
-  scopedFOV: 15
 --- !u!1001 &1198391098604139817
 PrefabInstance:
   m_ObjectHideFlags: 0

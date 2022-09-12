@@ -10,6 +10,7 @@ public abstract class WeaponBase : ScriptableObject {
     public int shootSpeedSecondary;
     public float shootRateSecondary;
     public float secondaryCooldown;
+    public int secondaryAmmoConsumption;
 
     [Range(0, .5f)] public float spreadFactor;
 
@@ -28,10 +29,6 @@ public abstract class WeaponBase : ScriptableObject {
     public GameObject bulletPrimary;
     public GameObject bulletSecondary;
     [HideInInspector] public bool secondaryFireActive;
-
-    [Range(0, 1)] [SerializeField] public float experienceScaler;
-    public int experience;
-    public int currentLevel;
 
     public Vector3 BulletSpread()
     {
@@ -74,9 +71,9 @@ public abstract class WeaponBase : ScriptableObject {
     public virtual IEnumerator ShootSecondary()
     {
         GameManager.instance.playerScript.isShooting = true;
-        currentAmmo--;
+        currentAmmo -= secondaryAmmoConsumption;
 
-        GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.player.transform.position, bulletSecondary.transform.rotation);
+        GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.gunPosition.transform.position, bulletSecondary.transform.rotation);
         bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedSecondary;
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;

@@ -109,9 +109,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
       propertyPath: m_Name
-      value: Skeleton Enemy Meele-Range
+      value: Skeleton Enemy Meele-Range Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2987253253621766519, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
 --- !u!1 &5097374132285555487 stripped
 GameObject:
