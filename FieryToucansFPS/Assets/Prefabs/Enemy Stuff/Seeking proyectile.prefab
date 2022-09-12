@@ -82,7 +82,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 4096
-  damage: 2
+  damage: 1
   damageRange: 1
   turnSpeed: 1
   rocketFlySpeed: 15

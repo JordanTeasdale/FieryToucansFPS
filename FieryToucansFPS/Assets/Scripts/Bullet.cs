@@ -81,9 +81,6 @@ public class Bullet : MonoBehaviour {
                 }
                     
             }
-            if (enemy.TryGetComponent<KnockbackScript>(out KnockbackScript knockback)){
-                StartCoroutine(knockback.Knockback(knockbackForce, enemy.gameObject, _collision));
-            }
                 
         }
 

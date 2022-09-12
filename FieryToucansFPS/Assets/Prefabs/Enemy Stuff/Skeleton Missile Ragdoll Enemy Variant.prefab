@@ -25,15 +25,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601969, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601974, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092060819335601974, guid: d822913338d66a44db3f074de032b96a, type: 3}
+      propertyPath: m_BaseOffset
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092060819335601975, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601981, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_RootOrder
@@ -41,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601981, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.500002
+      value: -32.073097
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601981, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601981, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.480168
+      value: 44.81949
       objectReference: {fileID: 0}
     - target: {fileID: 5092060819335601981, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -79,13 +87,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5092326091995424937, guid: d822913338d66a44db3f074de032b96a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99
+      objectReference: {fileID: 0}
     - target: {fileID: 5097636789218046455, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_Name
-      value: Skeleton Missile Ragdoll Enemy
+      value: Skeleton Missile Ragdoll Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5181406430141291049, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5181406430141291049, guid: d822913338d66a44db3f074de032b96a, type: 3}
       propertyPath: m_CullingMode
@@ -99,7 +111,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1453310328939646675, guid: d822913338d66a44db3f074de032b96a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d822913338d66a44db3f074de032b96a, type: 3}
 --- !u!1 &7456585945239337544 stripped
 GameObject:
@@ -389,7 +402,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.06975255, y: -0.22086456, z: 0.00062038755}
+  m_ConnectedAnchor: {x: 0.069752686, y: -0.22086456, z: 0.0006188006}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
