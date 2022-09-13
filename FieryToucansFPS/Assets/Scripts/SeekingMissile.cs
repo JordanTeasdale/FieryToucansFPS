@@ -21,6 +21,7 @@ public class SeekingMissile : EnemyBulletBase {
 
     [Header("------ Projectile Behaviors -----")]
     public bool explodeOnTouch = true;
+    bool isColliding = false;
     public float maxLifetime;
 
 
@@ -47,16 +48,22 @@ public class SeekingMissile : EnemyBulletBase {
     }
 
     private void OnCollisionEnter(Collision _collision) {
-        collisions++;
+        if (!isColliding) {
+            isColliding = true;
+            collisions++;
 
-        if (_collision.gameObject.layer == targetLayerValue)
-            Explode();
-
-        if (explodeOnTouch)
-            Explode();
+            if (_collision.gameObject.layer == targetLayerValue)
+                Explode();
+            else if (explodeOnTouch)
+                Explode();
+        }
     }
-    void Delay() {
 
+    private void OnCollisionExit(Collision collision) {
+        isColliding = false;
+    }
+
+    void Delay() {
         Destroy(gameObject);
     }
     void Explode() {
@@ -67,18 +74,17 @@ public class SeekingMissile : EnemyBulletBase {
 
         //Check for enemies 
         Collider[] enemiesHit = Physics.OverlapSphere(transform.position, damageRange, target);
-
+        if (enemiesHit.Length > 0)
+            GameManager.instance.Create(shooter);
         foreach (Collider enemy in enemiesHit) {
             if (enemy.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
                 if (enemy.GetComponent<SphereCollider>())
                     isDamageable.TakeDamage(damage * 2);
                 else
                     isDamageable.TakeDamage(damage);
-                GameManager.instance.Create(shooter);
-                Debug.Log("Created Indicator");
             }
         }
-        Invoke("Delay", 0.05f);
+        Delay();
 
     }
 }

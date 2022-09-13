@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : EnemyBulletBase {
     [Header("------ Assignables -----")]
     //Assignables
 
@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour {
     int collisions;
     PhysicMaterial physicsMaterial;
     int weaponFiredFrom;
+    bool isColliding;
 
     // Start is called before the first frame update
     void Start() {
@@ -72,7 +73,8 @@ public class Bullet : MonoBehaviour {
 
         //Check for enemies 
         Collider[] enemiesHit = Physics.OverlapSphere(transform.position, damageRange, target);
-
+        if (enemiesHit.Length > 0 && target == GameManager.instance.player.layer)
+            GameManager.instance.Create(shooter);
         foreach (Collider enemy in enemiesHit) {
             if (enemy.TryGetComponent<IDamageable>(out IDamageable isDamageable)) {
                 if (enemy.GetComponent<SphereCollider>()) {
@@ -108,16 +110,23 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision _collision) {
-       
-        collisions++;
-        if (collisions > maxCollisions)
-            Explode(_collision);
 
-        if (_collision.gameObject.layer == targetLayerValue)
-            Explode(_collision);
+        if (!isColliding) {
+            isColliding = true;
+            collisions++;
+            if (collisions > maxCollisions)
+                Explode(_collision);
 
-        if (explodeOnTouch)
-            Explode(_collision);
+            if (_collision.gameObject.layer == targetLayerValue)
+                Explode(_collision);
+
+            if (explodeOnTouch)
+                Explode(_collision); 
+        }
+    }
+
+    private void OnCollisionExit(Collision collision) {
+        isColliding = false;
     }
 
     private void Setup() {

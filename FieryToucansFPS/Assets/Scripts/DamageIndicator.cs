@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageIndicator : MonoBehaviour
-{
+public class DamageIndicator : MonoBehaviour {
 
     Transform targetPos;
     Vector3 targetDir;
@@ -23,25 +22,18 @@ public class DamageIndicator : MonoBehaviour
 
     IEnumerator RotateToTheTarget() {
         while (enabled) {
-            Debug.Log("Rotate");
-            if (targetPos) {
-                targetDir = targetPos.position - GameManager.instance.player.transform.position;
-            }
-            Quaternion tRot;
-            tRot = Quaternion.LookRotation(GameManager.instance.player.transform.position - targetPos.position);
-            tRot.z = targetPos.position.y + 180;
-            tRot.x = 0;
-            tRot.y = 0;
-
-            Vector3 northDirection = new Vector3(0, 0, GameManager.instance.player.transform.eulerAngles.y);
-            gameObject.transform.localRotation = tRot * Quaternion.Euler(northDirection);
+            targetDir = GameManager.instance.player.transform.position - targetPos.position;
+            targetDir.y = 0;
+            float angleToRotateOverlay = Vector3.SignedAngle(targetDir, GameManager.instance.player.transform.forward, new Vector3 (0, 1, 0));
+            Debug.Log(angleToRotateOverlay);
+            gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angleToRotateOverlay));
             yield return null;
         }
     }
 
     public void Register(Transform target) {
         SetTarget(target);
-        timer = 8;
+        timer = 100;
 
     }
 
