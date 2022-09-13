@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour {
     public GameObject roomClearedFeedback;
     public AudioMixer mainMixer;
 
+    public bool isMainOptionsMenu;
     public bool isPaused = false;
     public bool onPauseMenu = true;
     public bool isConfigOptions = false;
@@ -183,7 +184,7 @@ public class GameManager : MonoBehaviour {
 
     public void CurrentPlayerPrefValue() {
 
-        if (PlayerPrefs.HasKey("FOV")) {
+        if (PlayerPrefs.HasKey("FOV") && !isMainOptionsMenu) {
 
             if (PlayerPrefs.GetFloat("FOV") < 60)
                 PlayerPrefs.SetFloat("FOV", 60f);

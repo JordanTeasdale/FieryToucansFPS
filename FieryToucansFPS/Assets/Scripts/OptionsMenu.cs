@@ -16,9 +16,10 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] public TMP_Text FOVLable, masterVolLable, musicVolLable, SFXVolLable;
     [SerializeField] public Slider FOVSlider, masterVolSlider, musicVolSlider, SFXVolSlider;
 
+    [SerializeField] bool isOptionsMainMenu = false;
 
     public void SetFOV(float _FOV) {
-
+        GameManager.instance.isMainOptionsMenu = isOptionsMainMenu;
         FOV = _FOV;
         GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = FOV;
         FOVLable.text = Mathf.RoundToInt(FOV).ToString();
@@ -52,6 +53,7 @@ public class OptionsMenu : MonoBehaviour
         GameManager.instance.isConfigOptions = false;
     }
     public void Save() {
+        GameManager.instance.isMainOptionsMenu = isOptionsMainMenu;
         PlayerPrefs.SetFloat("FOV", FOV);
         PlayerPrefs.SetFloat("MasterVol", masterVol);
         PlayerPrefs.SetFloat("MusicVol", musicVol);
@@ -60,6 +62,7 @@ public class OptionsMenu : MonoBehaviour
         GameManager.instance.isConfigOptions = false;
     }
     public void SetSliders() {
+        GameManager.instance.isMainOptionsMenu = isOptionsMainMenu;
         float value = 0f;
 
         mainMixer.GetFloat("MasterVol", out value);
@@ -74,8 +77,10 @@ public class OptionsMenu : MonoBehaviour
         SFXVolSlider.value = value;
         SFXVolLable.text = Mathf.RoundToInt(((value + 80) / 80) * 100).ToString();
 
-        FOVSlider.value = GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView;
-        FOVLable.text = Mathf.RoundToInt(GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView).ToString();
+        if (!isOptionsMainMenu) {
+            FOVSlider.value = GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView;
+            FOVLable.text = Mathf.RoundToInt(GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView).ToString(); 
+        }
 
     }
     public void OptionsMenuVisable() {
