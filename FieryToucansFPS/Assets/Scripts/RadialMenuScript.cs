@@ -24,14 +24,14 @@ public class RadialMenuScript : MonoBehaviour
         previousSelection = selection;
         normalisecMousePosition = new Vector2(Input.mousePosition.x - Screen.width/2, Input.mousePosition.y - Screen.height/2);
         currentAngle = Mathf.Atan2(normalisecMousePosition.x, normalisecMousePosition.y)*Mathf.Rad2Deg;
-        currentAngle = (currentAngle + 360) % 360;
-        selection = (int)currentAngle / 60;
+        currentAngle = (currentAngle + 396) % 360;
+        selection = (int)currentAngle / 72;
         currentElement = elements[selection].GetComponent<RadialElementFunctions>();
         currentElement.Select();
         if (previousSelection != selection) {
             previousElement = elements[previousSelection].GetComponent<RadialElementFunctions>();
             previousElement.Deselect();
         }
-        //Debug.Log(selection);
+        Debug.Log(selection);
     }
 }

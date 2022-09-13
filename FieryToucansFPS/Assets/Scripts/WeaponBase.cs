@@ -60,7 +60,7 @@ public abstract class WeaponBase : ScriptableObject
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo--;
 
-        GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, bulletPrimary.transform.rotation);
+        GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, GameManager.instance.playerScript.cameraMain.transform.rotation);
         bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedPrimary;
         yield return new WaitForSeconds(shootRatePrimary);
         GameManager.instance.playerScript.isShooting = false;
@@ -76,7 +76,7 @@ public abstract class WeaponBase : ScriptableObject
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo -= secondaryAmmoConsumption;
 
-        GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.gunPosition.transform.position, bulletSecondary.transform.rotation);
+        GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.gunPosition.transform.position, GameManager.instance.playerScript.cameraMain.transform.rotation);
         bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedSecondary;
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;

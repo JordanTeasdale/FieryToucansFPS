@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8091721860264935011}
   m_Layer: 0
   m_Name: Equipped-Shotgun
-  m_TagString: Untagged
+  m_TagString: Gun Model
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
