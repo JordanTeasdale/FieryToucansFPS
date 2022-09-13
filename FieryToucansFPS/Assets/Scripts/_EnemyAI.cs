@@ -11,6 +11,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     public Renderer rend;
     public int HP;
     public GameObject player;
+    public GameObject[] itemDrop;
 
     [Header("-----Field of View-----")]
     public LayerMask playerMask, obstuctionMask;
@@ -26,7 +27,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     [Header("-----Attack Stats-----")]
     public float timeBetweenAttacks;
     public int damage;
-    bool alreadyAttacked;
+    bool isAttacking;
     public int chaseSpeed;
     [SerializeField] GameObject attackBox;
 
@@ -168,10 +169,10 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-        alreadyAttacked = true;
+        isAttacking = true;
         anim.SetTrigger("Melee");
         yield return new WaitForSeconds(timeBetweenAttacks);
-        alreadyAttacked = false;
+        isAttacking = false;
         
     }
     private void HitBoxOn()
@@ -185,7 +186,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     }
     private void ResetAttack()
     {
-        alreadyAttacked = false;
+        isAttacking = false;
     }
 
     public void TakeDamage(int dmg)
@@ -204,6 +205,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
             {
                 anim.SetBool("Dead", true);
                 agent.enabled = false;
+                Instantiate(itemDrop[Random.Range(0, itemDrop.Length)], gameObject.transform.position, gameObject.transform.rotation);
 
                 foreach (Collider col in GetComponents<Collider>())
                     col.enabled = false;

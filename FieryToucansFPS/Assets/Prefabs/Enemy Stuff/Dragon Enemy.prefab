@@ -1206,19 +1206,28 @@ MonoBehaviour:
   agent: {fileID: 6562930143923346216}
   rend: {fileID: 6562930143919177063}
   anim: {fileID: 6562930143923346221}
+  healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
+  ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
   HP: 80
   playerFaceSpeed: 4
   fieldOfView: 180
+  fieldOfViewMelee: 0
   fieldOfViewShoot: 45
   roamRadius: 6
   speedRoam: 3
   speedChase: 5
   shootRate: 0.8
   damage: 3
-  speed: 10
+  RateOfFire: 2
   bulletDestroyTime: 3
   bullet: {fileID: 1754623834730887423, guid: 8df79727167a56444bb7fd97b096241c, type: 3}
   bulletSpawnPos: {fileID: 6562930143932799991}
+  enemyAud: {fileID: 0}
+  soundExecute: {fileID: 0}
+  soundExecuteVol: 0
+  executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
+  inMeleeRange: 0
+  isExecutable: 0
 --- !u!195 &6562930143923346216
 NavMeshAgent:
   m_ObjectHideFlags: 0
