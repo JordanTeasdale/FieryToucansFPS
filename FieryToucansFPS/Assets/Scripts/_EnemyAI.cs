@@ -30,6 +30,14 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     public int chaseSpeed;
     [SerializeField] GameObject attackBox;
 
+    [Header("----- Audio -----")]
+    [SerializeField] AudioSource enemyAud;
+    public AudioClip soundClip;
+    [Range(0, 1)] [SerializeField] float soundVol;
+
+    [SerializeField] AudioSource enemyAud2;
+    public AudioClip[] soundClips;
+    [Range(0, 1)] [SerializeField] float soundVol2;
 
     [Header("-----States------")]
 
@@ -53,9 +61,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        //Check for sight and attack range
-        //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        
         if (anim.GetBool("Dead") == false)
         {
             StartCoroutine(FOVRoutine());
@@ -73,10 +79,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
                 ChasePlayer();
             }
         }
-        //if (playerInSightRange && playerInAttackRange && agent.remainingDistance == attackRange)
-        //{
-        //    StartCoroutine(AttackPlayer());
-        //}
+        
     }
 
     private IEnumerator FOVRoutine()
@@ -124,7 +127,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
                     {
                         playerInSightRange = false;
                         playerInAttackRange = false;
-                    }   //Patrolling();
+                    }   
                 }
                 else
                 {
@@ -221,6 +224,16 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         ChasePlayer();
         rend.material.color = Color.white;
     }
+
+    private void PlayHurtSound()
+    {
+        enemyAud.PlayOneShot(soundClip, soundVol);
+    }
+
+    private void PlayAttackSound()
+    {
+        enemyAud.PlayOneShot(soundClips[Random.Range(0, soundClips.Length)], soundVol2);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -230,13 +243,6 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-
-    //    }
-    //}
-
+    
 
 }
