@@ -134,7 +134,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   targetLayerValue: 6
-  damage: 5
+  damage: 8
   damageRange: 0
   bounciness: 0
   usesGravity: 0

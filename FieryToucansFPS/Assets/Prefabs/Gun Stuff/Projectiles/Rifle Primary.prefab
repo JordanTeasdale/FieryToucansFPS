@@ -150,7 +150,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   targetLayerValue: 6
-  damage: 2
+  damage: 4
   damageRange: 0.5
   bounciness: 0
   knockbackForce: 4.8
