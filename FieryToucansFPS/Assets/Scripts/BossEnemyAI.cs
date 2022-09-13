@@ -242,6 +242,7 @@ public class BossEnemyAI : MonoBehaviour
             }
             else
             {
+                GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
                 anim.SetBool("Dead", true);
                 agent.enabled = false;
 
