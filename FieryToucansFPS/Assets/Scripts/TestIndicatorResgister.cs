@@ -10,11 +10,7 @@ public class TestIndicatorResgister : MonoBehaviour
     {
         Invoke("Register", Random.Range(1, 5));
     }
-    void Register()
-    {
-       if (DI_system.CheckIfObjectInSight(this.transform)) {
-            DI_system.CreateIndicator(this.transform);
-       }
+    void Register() { 
         Destroy(this.gameObject, destroyTimer);
     }
  

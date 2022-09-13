@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeekingMissile : MonoBehaviour {
+public class SeekingMissile : EnemyBulletBase {
     [Header("Setup")]
     public Rigidbody RocketBody;
     public GameObject explosion;
@@ -47,7 +47,6 @@ public class SeekingMissile : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision _collision) {
-
         collisions++;
 
         if (_collision.gameObject.layer == targetLayerValue)
@@ -75,6 +74,8 @@ public class SeekingMissile : MonoBehaviour {
                     isDamageable.TakeDamage(damage * 2);
                 else
                     isDamageable.TakeDamage(damage);
+                GameManager.instance.Create(shooter);
+                Debug.Log("Created Indicator");
             }
         }
         Invoke("Delay", 0.05f);

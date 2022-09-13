@@ -424,8 +424,4 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public void UpdateHP() {
         GameManager.instance.playerHPBar.fillAmount = healthFillAmount / HPOrig;
     }
-
-
-
-
 }

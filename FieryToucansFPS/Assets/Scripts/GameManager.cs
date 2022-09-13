@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 using System;
 
 public class GameManager : MonoBehaviour {
+    [SerializeField] DamageIndicator indicatorPrefab;
+    [SerializeField] RectTransform holder;
+
     public static GameManager instance;
 
     public GameObject player;
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour {
     public GameObject roomClearedFeedback;
     public AudioMixer mainMixer;
 
+    public bool isMainOptionsMenu;
     public bool isPaused = false;
     public bool onPauseMenu = true;
     public bool isConfigOptions = false;
@@ -160,6 +164,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void Create(Transform target) {
+        DamageIndicator newIndicator = Instantiate(indicatorPrefab, holder);
+        newIndicator.Register(target);
+    }
+
     public void TransitionFromOptionstoPause() {
         onPauseMenu = true;
         previousMenu = menuCurrentlyOpen;
@@ -183,7 +192,7 @@ public class GameManager : MonoBehaviour {
 
     public void CurrentPlayerPrefValue() {
 
-        if (PlayerPrefs.HasKey("FOV")) {
+        if (PlayerPrefs.HasKey("FOV") && !isMainOptionsMenu) {
 
             if (PlayerPrefs.GetFloat("FOV") < 60)
                 PlayerPrefs.SetFloat("FOV", 60f);
