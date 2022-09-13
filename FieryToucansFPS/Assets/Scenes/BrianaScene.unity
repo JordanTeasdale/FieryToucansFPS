@@ -3364,8 +3364,8 @@ GameObject:
   - component: {fileID: 4409459603884741640}
   - component: {fileID: 4409459603884741638}
   - component: {fileID: 4409459603884741639}
-  m_Layer: 0
-  m_Name: Green
+  m_Layer: 6
+  m_Name: Terror Bringer Dragon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
