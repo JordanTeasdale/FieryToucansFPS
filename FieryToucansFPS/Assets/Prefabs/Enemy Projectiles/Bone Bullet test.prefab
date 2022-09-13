@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7468530972427390439}
-  - component: {fileID: 7469385733591944242}
-  - component: {fileID: 8461376671434367583}
   - component: {fileID: 7483875900292965635}
+  - component: {fileID: -4623387096729408036}
   - component: {fileID: 7493437192989003317}
   - component: {fileID: 7493437192989003316}
   - component: {fileID: 7493437192989003314}
@@ -38,61 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7469385733591944242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469385733591944243}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a5d61e9a17bff48bdb9348eb707501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shooter: {fileID: 0}
-  RocketBody: {fileID: 7493437192989003314}
-  explosion: {fileID: 173984, guid: ba719c5f4986c8e49a49e802e78a896d, type: 3}
-  targetLayerValue: 12
-  target:
-    serializedVersion: 2
-    m_Bits: 4096
-  damage: 1
-  damageRange: 1
-  turnSpeed: 2
-  rocketFlySpeed: 20
-  explodeOnTouch: 1
-  maxLifetime: 15
---- !u!114 &8461376671434367583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469385733591944243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9cdc679f2a781478bb8874921e7b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shooter: {fileID: 0}
-  rb: {fileID: 7493437192989003314}
-  explosion: {fileID: 173984, guid: ba719c5f4986c8e49a49e802e78a896d, type: 3}
-  target:
-    serializedVersion: 2
-    m_Bits: 4096
-  targetLayerValue: 12
-  damage: 1
-  damageRange: 1
-  bounciness: 0
-  knockbackForce: 0
-  knockbackForceInYDirection: 0
-  usesGravity: 0
-  speed: 30
-  maxCollisions: 1
-  maxLifetime: 10
-  explodeOnTouch: 1
-  isOrdenance: 0
 --- !u!33 &7483875900292965635
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -101,6 +45,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7469385733591944243}
   m_Mesh: {fileID: 4300018, guid: 5f3a7deba91ee3341b2266db1be8c0a0, type: 3}
+--- !u!114 &-4623387096729408036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469385733591944243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb104167bc6bb4a8ea268b61ee523e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
+  rb: {fileID: 7493437192989003314}
+  damage: 1
+  speed: 20
+  destroyTime: 3
 --- !u!23 &7493437192989003317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +112,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7469385733591944243}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.604
@@ -167,7 +128,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0

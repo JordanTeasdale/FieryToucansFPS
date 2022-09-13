@@ -1542,20 +1542,17 @@ MonoBehaviour:
   roamRadius: 10
   speedRoam: 2
   speedChase: 4
-  meeledamage: 0
-  meleeRate: 0
-  meelespeed: 0
-  meleeDestroyTime: 0
-  invisHit: {fileID: 0}
-  hitSpawnPos: {fileID: 0}
   shootRate: 1
   damage: 1
   RateOfFire: 0
   bulletDestroyTime: 3
-  bullet: {fileID: 66118061717101772, guid: 481a223ee4df3004ea97629c2e8ab151, type: 3}
+  bullet: {fileID: 7469385733591944243, guid: 51918aa8844acf64e86938eaf35b0138, type: 3}
   bulletSpawnPos: {fileID: 296556089879653189}
   enemyAud: {fileID: 2246530930837742390}
   soundExecute: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
+  hurtSoundClip: {fileID: 0}
+  deathSoundClip: {fileID: 0}
+  attackSoundClips: []
   soundExecuteVol: 0.143
   executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
   inMeleeRange: 0
