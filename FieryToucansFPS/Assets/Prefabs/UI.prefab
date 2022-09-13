@@ -1046,6 +1046,7 @@ MonoBehaviour:
   masterVolSlider: {fileID: 256920543}
   musicVolSlider: {fileID: 1506290483}
   SFXVolSlider: {fileID: 440459094}
+  isOptionsMainMenu: 0
 --- !u!1 &538702704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,6 +4943,7 @@ MonoBehaviour:
   masterVolSlider: {fileID: 256920543}
   musicVolSlider: {fileID: 1506290483}
   SFXVolSlider: {fileID: 440459094}
+  isOptionsMainMenu: 0
 --- !u!1 &2077953383
 GameObject:
   m_ObjectHideFlags: 0
@@ -5912,6 +5914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f27a712418a404c9379549aa1c37ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indicatorPrefab: {fileID: 1549854707127684416, guid: a5a25a39246c73c4291f84f2fdbe04aa, type: 3}
+  holder: {fileID: 5228144933469637456}
   player: {fileID: 0}
   playerScript: {fileID: 0}
   gunPosition: {fileID: 0}
@@ -5936,6 +5940,7 @@ MonoBehaviour:
   lowHealthIndicator: {fileID: 5228144932418510419}
   roomClearedFeedback: {fileID: 6895326289500442547}
   mainMixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+  isMainOptionsMenu: 0
   isPaused: 0
   onPauseMenu: 0
   isConfigOptions: 0
@@ -10550,7 +10555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5228144933469637456
 RectTransform:
   m_ObjectHideFlags: 0

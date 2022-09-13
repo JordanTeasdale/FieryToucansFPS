@@ -14,7 +14,6 @@ public class DamageIndicator : MonoBehaviour {
     }
 
     private void Update() {
-        StartCoroutine(RotateToTheTarget());
         timer -= Time.deltaTime;
         if (timer <= 0)
             Destroy(gameObject);
@@ -33,7 +32,8 @@ public class DamageIndicator : MonoBehaviour {
 
     public void Register(Transform target) {
         SetTarget(target);
-        timer = 100;
+        StartCoroutine(RotateToTheTarget());
+        timer = 8;
 
     }
 
