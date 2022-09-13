@@ -11,7 +11,8 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1f;
 
     private void Start() {
-        GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
     }
 
 
