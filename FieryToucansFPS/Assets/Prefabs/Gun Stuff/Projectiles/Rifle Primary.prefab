@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 8632138228147884554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.168, y: 2.807, z: -14.901}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4718675920790549857}
@@ -150,13 +150,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   targetLayerValue: 6
-  isKnockbackable:
-    serializedVersion: 2
-    m_Bits: 64
   damage: 2
   damageRange: 0.5
   bounciness: 0
   knockbackForce: 4.8
+  knockbackForceInYDirection: 0
   usesGravity: 0
   speed: 47
   maxCollisions: 1
@@ -230,7 +228,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.6744194
         inSlope: 0
         outSlope: 0
         tangentMode: 0
