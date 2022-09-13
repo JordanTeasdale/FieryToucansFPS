@@ -24,7 +24,6 @@ public class DamageIndicator : MonoBehaviour {
             targetDir = GameManager.instance.player.transform.position - targetPos.position;
             targetDir.y = 0;
             float angleToRotateOverlay = Vector3.SignedAngle(targetDir, GameManager.instance.player.transform.forward, new Vector3 (0, 1, 0));
-            Debug.Log(angleToRotateOverlay);
             gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angleToRotateOverlay));
             yield return null;
         }
