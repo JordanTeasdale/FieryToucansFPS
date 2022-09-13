@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
 
@@ -11,6 +12,7 @@ public class OptionsMenu : MonoBehaviour
 
     float FOV, masterVol, musicVol, SFXVol;
     [SerializeField] public TMP_Text FOVLable, masterVolLable, musicVolLable, SFXVolLable;
+    [SerializeField] public Slider FOVSlider, masterVolSlider, musicVolSlider, SFXVolSlider;
 
 
     public void SetFOV(float _FOV) {
@@ -44,19 +46,8 @@ public class OptionsMenu : MonoBehaviour
 
     }
     public void Back() {
-        if (PlayerPrefs.HasKey("FOV")) 
-            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
-        else
-            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = 60f;
-
-        if (PlayerPrefs.HasKey("MasterVol"))
-            mainMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
-
-        if (PlayerPrefs.HasKey("MusicVol"))
-            mainMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
-
-        if (PlayerPrefs.HasKey("SFXVol"))
-            mainMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+        GameManager.instance.CurrentPlayerPrefValue();
+        GameManager.instance.isConfigOptions = false;
     }
     public void Save() {
         PlayerPrefs.SetFloat("FOV", FOV);
@@ -64,5 +55,25 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVol", musicVol);
         PlayerPrefs.SetFloat("SFXVol", SFXVol);
         PlayerPrefs.Save();
+        GameManager.instance.isConfigOptions = false;
+    }
+    public void SetSliders() {
+        float value = 0f;
+
+        mainMixer.GetFloat("MasterVol", out value);
+        masterVolSlider.value = value;
+        musicVolLable.text = Mathf.RoundToInt(((value + 80) / 80) * 100).ToString();
+
+        mainMixer.GetFloat("MusicVol", out value);
+        musicVolSlider.value = value;
+        musicVolLable.text = Mathf.RoundToInt(((value + 80) / 80) * 100).ToString();
+
+        mainMixer.GetFloat("SFXVol", out value);
+        SFXVolSlider.value = value;
+        SFXVolLable.text = Mathf.RoundToInt(((value + 80) / 80) * 100).ToString();
+
+        FOVSlider.value = GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView;
+        FOVLable.text = Mathf.RoundToInt(GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView).ToString();
+
     }
 }

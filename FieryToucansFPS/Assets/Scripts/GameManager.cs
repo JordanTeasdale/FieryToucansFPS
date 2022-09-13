@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
     public GameObject playerWinMenu;
     public GameObject previousMenu = null;
     public GameObject menuCurrentlyOpen;
+    public GameObject optionsMenu;
     public GameObject playerDamageFlash;
     public GameObject ammoMagGUI;
     public GameObject ammoStockGUI;
@@ -62,23 +63,8 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
-       
-        if (PlayerPrefs.HasKey("FOV")) {
 
-            if(PlayerPrefs.GetFloat("FOV") < 60)
-                PlayerPrefs.SetFloat("FOV", 60f);
-
-            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
-        }
-
-        if (PlayerPrefs.HasKey("MasterVol"))
-            mainMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
-
-        if (PlayerPrefs.HasKey("MusicVol"))
-            mainMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
-
-        if (PlayerPrefs.HasKey("SFXVol"))
-            mainMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+        CurrentPlayerPrefValue();
     }
 
     // Update is called once per frame
@@ -89,6 +75,7 @@ public class GameManager : MonoBehaviour {
 
             if (isPaused == false) {
                 UnPause();
+                CurrentPlayerPrefValue();
                 return;
             }
 
@@ -192,5 +179,25 @@ public class GameManager : MonoBehaviour {
         previousMenu = null;
         menuCurrentlyOpen = null;
         CursorUnlockUnpause();
+    }
+
+    public void CurrentPlayerPrefValue() {
+
+        if (PlayerPrefs.HasKey("FOV")) {
+
+            if (PlayerPrefs.GetFloat("FOV") < 60)
+                PlayerPrefs.SetFloat("FOV", 60f);
+
+            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+        }
+
+        if (PlayerPrefs.HasKey("MasterVol"))
+            mainMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
+
+        if (PlayerPrefs.HasKey("MusicVol"))
+            mainMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
+
+        if (PlayerPrefs.HasKey("SFXVol"))
+            mainMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
     }
 }

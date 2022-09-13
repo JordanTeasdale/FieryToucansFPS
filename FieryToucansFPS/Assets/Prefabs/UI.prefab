@@ -611,6 +611,10 @@ MonoBehaviour:
   masterVolLable: {fileID: 1591326649}
   musicVolLable: {fileID: 1944592291}
   SFXVolLable: {fileID: 1649228114}
+  FOVSlider: {fileID: 1138908040}
+  masterVolSlider: {fileID: 256920543}
+  musicVolSlider: {fileID: 1506290483}
+  SFXVolSlider: {fileID: 440459094}
 --- !u!1 &550984137
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +764,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5228144933320548349}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: TransitionFromOptionstoPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5747259287563719418}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3589,6 +3605,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5747259287563719418}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: SetSliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2041074276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4383,6 +4411,7 @@ MonoBehaviour:
   playerWinMenu: {fileID: 8492396446565290862}
   previousMenu: {fileID: 0}
   menuCurrentlyOpen: {fileID: 0}
+  optionsMenu: {fileID: 472211953}
   playerDamageFlash: {fileID: 5228144933088166523}
   ammoMagGUI: {fileID: 5228144931965335276}
   ammoStockGUI: {fileID: 5228144932991556635}
@@ -4391,6 +4420,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 5228144932068197759}
   lowHealthIndicator: {fileID: 5228144932418510419}
   roomClearedFeedback: {fileID: 6895326289500442547}
+  mainMixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
   isPaused: 0
   onPauseMenu: 0
   isConfigOptions: 0
