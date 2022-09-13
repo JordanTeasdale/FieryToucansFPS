@@ -138,6 +138,6 @@ MonoBehaviour:
   bounciness: 0
   usesGravity: 0
   speed: 60
-  maxLifetime: 5
+  maxLifetime: 10
   explodeOnTouch: 0
   isOrdenance: 0
