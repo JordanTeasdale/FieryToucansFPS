@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using System;
 
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour {
     public Image playerHPBar;
     public GameObject lowHealthIndicator;
     public GameObject roomClearedFeedback;
-
+    public AudioMixer mainMixer;
 
     public bool isPaused = false;
     public bool onPauseMenu = true;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Awake() {
         instance = this;
+      
         if (GameObject.FindGameObjectWithTag("Player") != null) { 
             player = GameObject.FindGameObjectWithTag("Player");
             playerScript = player.GetComponent<PlayerController>();
@@ -53,9 +55,30 @@ public class GameManager : MonoBehaviour {
             playerScript.Respawn();
 
             bossDoor = GameObject.FindGameObjectWithTag("BossDoor");
+
         }
         else
-            gameObject.SetActive(false);
+            gameObject.SetActive(false);       
+    }
+
+    private void Start() {
+       
+        if (PlayerPrefs.HasKey("FOV")) {
+
+            if(PlayerPrefs.GetFloat("FOV") < 60)
+                PlayerPrefs.SetFloat("FOV", 60f);
+
+            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+        }
+
+        if (PlayerPrefs.HasKey("MasterVol"))
+            mainMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
+
+        if (PlayerPrefs.HasKey("MusicVol"))
+            mainMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
+
+        if (PlayerPrefs.HasKey("SFXVol"))
+            mainMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
     }
 
     // Update is called once per frame
@@ -65,7 +88,6 @@ public class GameManager : MonoBehaviour {
             isPaused = !isPaused;
 
             if (isPaused == false) {
-                Debug.Log("enter");
                 UnPause();
                 return;
             }
