@@ -77,14 +77,6 @@ public class ButtonFunctions : MonoBehaviour {
         SceneManager.LoadScene("Main Menu");
     }
     
-    public void OptionsMenuVisable() {
-        GameManager.instance.isConfigOptions = true;
-        GameManager.instance.previousMenu = GameManager.instance.menuCurrentlyOpen;
-        GameManager.instance.menuCurrentlyOpen = pauseFirstButton;
-        GameManager.instance.onPauseMenu = false;
-        GameManager.instance.menuCurrentlyOpen.SetActive(true); 
-    }
-
     public void MenuSoundTrigger() {
 
         menuAudio.PlayOneShot(menuAudioC, MainAudCVol);

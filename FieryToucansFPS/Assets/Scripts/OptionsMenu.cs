@@ -8,7 +8,9 @@ using TMPro;
 
 public class OptionsMenu : MonoBehaviour
 {
+    
     [SerializeField] AudioMixer mainMixer;
+    [SerializeField] GameObject optionsMenu;
 
     float FOV, masterVol, musicVol, SFXVol;
     [SerializeField] public TMP_Text FOVLable, masterVolLable, musicVolLable, SFXVolLable;
@@ -62,7 +64,7 @@ public class OptionsMenu : MonoBehaviour
 
         mainMixer.GetFloat("MasterVol", out value);
         masterVolSlider.value = value;
-        musicVolLable.text = Mathf.RoundToInt(((value + 80) / 80) * 100).ToString();
+        masterVolLable.text = Mathf.RoundToInt(((value + 80) / 80) * 100).ToString();
 
         mainMixer.GetFloat("MusicVol", out value);
         musicVolSlider.value = value;
@@ -75,5 +77,12 @@ public class OptionsMenu : MonoBehaviour
         FOVSlider.value = GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView;
         FOVLable.text = Mathf.RoundToInt(GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView).ToString();
 
+    }
+    public void OptionsMenuVisable() {
+        GameManager.instance.isConfigOptions = true;
+        GameManager.instance.previousMenu = GameManager.instance.menuCurrentlyOpen;
+        GameManager.instance.menuCurrentlyOpen = optionsMenu;
+        GameManager.instance.onPauseMenu = false;
+        GameManager.instance.menuCurrentlyOpen.SetActive(true);
     }
 }
