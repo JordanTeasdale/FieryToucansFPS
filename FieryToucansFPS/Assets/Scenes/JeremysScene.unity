@@ -21267,10 +21267,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 5228144933320548349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: mainMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
 --- !u!1001 &1347407232
