@@ -1037,6 +1037,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+  FOVLable: {fileID: 0}
+  masterVolLable: {fileID: 0}
+  musicVolLable: {fileID: 0}
+  SFXVolLable: {fileID: 0}
+  FOVSlider: {fileID: 0}
+  masterVolSlider: {fileID: 0}
+  musicVolSlider: {fileID: 0}
+  SFXVolSlider: {fileID: 0}
 --- !u!1 &538702704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5890,6 +5898,7 @@ MonoBehaviour:
   playerWinMenu: {fileID: 8492396446565290862}
   previousMenu: {fileID: 0}
   menuCurrentlyOpen: {fileID: 0}
+  optionsMenu: {fileID: 0}
   playerDamageFlash: {fileID: 5228144933088166523}
   ammoMagGUI: {fileID: 5228144931965335276}
   ammoStockGUI: {fileID: 5228144932991556635}
@@ -5898,6 +5907,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 5228144932068197759}
   lowHealthIndicator: {fileID: 5228144932418510419}
   roomClearedFeedback: {fileID: 6895326289500442547}
+  mainMixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
   isPaused: 0
   onPauseMenu: 0
   isConfigOptions: 0

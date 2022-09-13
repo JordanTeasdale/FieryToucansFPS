@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Bullet : MonoBehaviour {
     [Header("------ Assignables -----")]
@@ -10,7 +11,7 @@ public class Bullet : MonoBehaviour {
     public GameObject explosion;
     [SerializeField] public LayerMask target;
     [SerializeField] public int targetLayerValue;
-    [SerializeField] public LayerMask isKnockbackable;
+   
 
     [Header("------ Damage -----")]
     //Damage 
@@ -25,6 +26,7 @@ public class Bullet : MonoBehaviour {
 
     [Range(0, 1f)] [SerializeField] float bounciness;
     [Range(0, 35)] [SerializeField] float knockbackForce;
+    [Range(0, 5f)] [SerializeField] float knockbackForceInYDirection;
     [SerializeField] public bool usesGravity;
     public int speed;
     public int maxCollisions;
@@ -52,8 +54,7 @@ public class Bullet : MonoBehaviour {
             Explode();
         else {
 
-            if (collisions > maxCollisions)
-                Explode();
+            
 
             if (maxLifetime <= 0)
                 Explode();
@@ -81,7 +82,20 @@ public class Bullet : MonoBehaviour {
                 }
                     
             }
-                
+            //Possible Knockback Implementation 
+            /*
+            if(enemy.TryGetComponent<NavMeshAgent>(out NavMeshAgent agent) && _collision.gameObject.layer == targetLayerValue) {
+
+
+                if (enemy.TryGetComponent<Rigidbody>(out Rigidbody torso)){
+                    Vector3 direction = _collision.transform.position - transform.position;
+                    direction.y = knockbackForceInYDirection;
+
+                    torso.AddForce(direction.normalized * knockbackForce, ForceMode.Impulse); 
+                }
+
+            } 
+            */
         }
 
         Invoke("Delay", 0.05f);
@@ -96,12 +110,14 @@ public class Bullet : MonoBehaviour {
     private void OnCollisionEnter(Collision _collision) {
        
         collisions++;
-        
+        if (collisions > maxCollisions)
+            Explode(_collision);
+
         if (_collision.gameObject.layer == targetLayerValue)
             Explode(_collision);
 
         if (explodeOnTouch)
-            Explode();
+            Explode(_collision);
     }
 
     private void Setup() {
