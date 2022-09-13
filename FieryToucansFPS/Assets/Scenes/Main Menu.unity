@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh80206
+  m_Name: pb_Mesh130804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4847,6 +4847,7 @@ MonoBehaviour:
   lowHealthIndicator: {fileID: 0}
   roomClearedFeedback: {fileID: 0}
   isPaused: 0
+  isConfigOptions: 0
 --- !u!1001 &4825216383136131598
 PrefabInstance:
   m_ObjectHideFlags: 0
