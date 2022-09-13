@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222284050465236715}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 446, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &222284050465236719
 MonoBehaviour:
@@ -44,4 +44,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4a75be91810f24a9703979ad4ac28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: '"Fun With Guns"'
+    orignalFile: {fileID: 8300000, guid: bc07ad0fea46b9141b4f822e04bdd6e4, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 0
+    Volume: 0.783
+    isLooping: 1
+    sourceOfSound: {fileID: 0}
+  - name: '"Home Run"'
+    orignalFile: {fileID: 8300000, guid: 4dac75996ff5cd2489baba5752252557, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 0
+    Volume: 0.783
+    isLooping: 1
+    sourceOfSound: {fileID: 0}
+  - name: '"Risen"'
+    orignalFile: {fileID: 8300000, guid: bd31c71e07cd934469cb65d3198434d4, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 0
+    Volume: 0.783
+    isLooping: 1
+    sourceOfSound: {fileID: 0}
+  - name: '"Gun Click"'
+    orignalFile: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 0
+    Volume: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}

@@ -42,5 +42,25 @@ public class AudioManager : MonoBehaviour
         soundToPlay.sourceOfSound.Play();
     }
 
+    public void Stop(string _name) {
+
+        Sound soundToPlay = Array.Find<Sound>(sounds, sound => sound.name == _name);
+        if (soundToPlay == null)
+            return;
+
+        soundToPlay.sourceOfSound.Stop();
+       
+    }
+
+    public void PlayOneShot(string _name) {
+
+        Sound soundToPlay = Array.Find<Sound>(sounds, sound => sound.name == _name);
+        if (soundToPlay == null)
+            return;
+
+        soundToPlay.sourceOfSound.PlayOneShot(soundToPlay.sourceOfSound.clip);
+    }
+
+
 
 }

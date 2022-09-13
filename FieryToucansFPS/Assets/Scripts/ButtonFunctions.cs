@@ -9,10 +9,7 @@ using UnityEngine.EventSystems;
 public class ButtonFunctions : MonoBehaviour {
     LevelLoader levelLoader;
     public GameObject menuFirstButton, OptionsFirstButton, OptionsClosedButton, pauseFirstButton;
-
-    [SerializeField] AudioSource menuAudio;
-    [SerializeField] AudioClip menuAudioC;
-    [SerializeField] float MainAudCVol;
+    
     float timer;
 
     public void Start() {
@@ -79,6 +76,6 @@ public class ButtonFunctions : MonoBehaviour {
     
     public void MenuSoundTrigger() {
 
-        menuAudio.PlayOneShot(menuAudioC, MainAudCVol);
+        AudioManager.instance.PlayOneShot("Gun Click");
     }
 }

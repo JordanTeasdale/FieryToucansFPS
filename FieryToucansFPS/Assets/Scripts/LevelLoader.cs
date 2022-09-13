@@ -19,9 +19,7 @@ public class LevelLoader : MonoBehaviour
     public void CoRoutRun()
     {
         StartCoroutine(StartTransition());
-        mainAudioMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
-        mainAudioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
-        mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+        GameManager.instance.CurrentPlayerPrefValue();
        
     }
 
