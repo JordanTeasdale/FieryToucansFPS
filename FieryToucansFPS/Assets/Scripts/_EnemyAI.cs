@@ -43,7 +43,6 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     }
     private void Start()
     {
-        attackBox.GetComponent<Collider>().enabled = false;
         walkPoint = transform.position;
         Patrolling();
         StartCoroutine(FOVRoutine());
@@ -172,7 +171,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         anim.SetTrigger("Melee");
         yield return new WaitForSeconds(timeBetweenAttacks);
         alreadyAttacked = false;
-        HitBoxOff();
+        
     }
     private void HitBoxOn()
     {
