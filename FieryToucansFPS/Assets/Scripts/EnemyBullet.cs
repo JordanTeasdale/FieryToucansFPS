@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : EnemyBulletBase
 {
     [SerializeField] Rigidbody rb;
     public int damage;
@@ -20,6 +20,7 @@ public class EnemyBullet : MonoBehaviour
         if (other.GetComponent<IDamageable>() != null)
         {
             other.GetComponent<IDamageable>().TakeDamage(damage);
+            GameManager.instance.Create(shooter);
         }
 
         Destroy(gameObject);
