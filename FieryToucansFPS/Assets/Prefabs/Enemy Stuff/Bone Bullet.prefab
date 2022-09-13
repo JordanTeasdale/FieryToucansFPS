@@ -121,6 +121,8 @@ MonoBehaviour:
   damage: 1
   damageRange: 0.25
   bounciness: 0.376
+  knockbackForce: 0
+  knockbackForceInYDirection: 0
   usesGravity: 1
   speed: 35
   maxCollisions: 1

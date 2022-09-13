@@ -26,7 +26,7 @@ public class BossEnemyAI : MonoBehaviour
     [Header("-----Attack Stats-----")]
     public float timeBetweenAttacks;
     public int damage;
-    bool alreadyAttacked, isShooting;
+    bool isAttacking, isShooting;
     public int chaseSpeed;
     [SerializeField] GameObject meleeAttackBox, rangeAttackBox;
 
@@ -183,10 +183,10 @@ public class BossEnemyAI : MonoBehaviour
     { 
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-        alreadyAttacked = true;
+        isAttacking = true;
         anim.SetTrigger("Melee");
         yield return new WaitForSeconds(timeBetweenAttacks);
-        alreadyAttacked = false;
+        isAttacking = false;
         HitBoxOff();
     }
     IEnumerator RangeAttackPlayer()
@@ -212,7 +212,7 @@ public class BossEnemyAI : MonoBehaviour
     }
     private void ResetAttack()
     {
-        alreadyAttacked = false;
+        isAttacking = false;
     }
 
     public void TakeDamage(int dmg)
