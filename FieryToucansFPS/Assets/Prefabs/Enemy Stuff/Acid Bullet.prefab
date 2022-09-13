@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3045571163789138450}
-  - component: {fileID: 3488080782418412105}
+  - component: {fileID: 3943853749184203902}
   - component: {fileID: 3066778141097765165}
   - component: {fileID: 8629869526158090107}
   - component: {fileID: 2062182772172069810}
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3488080782418412105
+--- !u!114 &3943853749184203902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,22 +44,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5594914386056169330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9cdc679f2a781478bb8874921e7b8d, type: 3}
+  m_Script: {fileID: 11500000, guid: f6eb104167bc6bb4a8ea268b61ee523e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8629869526158090107}
-  explosion: {fileID: 0}
-  target:
-    serializedVersion: 2
-    m_Bits: 4096
   damage: 2
-  damageRange: 1.87
-  bounciness: 1.878
-  usesGravity: 1
-  speed: 3
-  maxCollisions: 5
-  maxLifetime: 19.56
-  explodeOnTouch: 1
+  speed: 20
+  destroyTime: 4
 --- !u!135 &3066778141097765165
 SphereCollider:
   m_ObjectHideFlags: 0
