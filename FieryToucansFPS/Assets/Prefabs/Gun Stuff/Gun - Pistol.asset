@@ -28,7 +28,7 @@ MonoBehaviour:
   CrosshairSecondary: {fileID: 0}
   maxAmmo: 80
   currentAmmo: 80
-  gun: {fileID: 1791116264455481102, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+  gun: {fileID: 3384528681172954456, guid: cc90b4a3e1d15724086bbc200c964ef8, type: 3}
   gunIndex: 0
   bulletPrimary: {fileID: 8632138228147884554, guid: 21c8ccfb1f6c7b848b674f978eb2fa5c, type: 3}
   bulletSecondary: {fileID: 8632138228147884554, guid: 21c8ccfb1f6c7b848b674f978eb2fa5c, type: 3}

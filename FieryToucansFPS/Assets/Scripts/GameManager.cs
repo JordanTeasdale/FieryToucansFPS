@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 using System;
 
 public class GameManager : MonoBehaviour {
+    [SerializeField] DamageIndicator indicatorPrefab;
+    [SerializeField] RectTransform holder;
+
     public static GameManager instance;
 
     public GameObject player;
@@ -158,6 +161,11 @@ public class GameManager : MonoBehaviour {
             CursorLockPause();
             gameOver = true;
         }
+    }
+
+    public void Create(Transform target) {
+        DamageIndicator newIndicator = Instantiate(indicatorPrefab, holder);
+        newIndicator.Register(target);
     }
 
     public void TransitionFromOptionstoPause() {
