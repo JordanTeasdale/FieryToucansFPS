@@ -73,7 +73,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
             }
 
 
-            if (playerInSightRange && !playerInAttackRange)
+            else if (playerInSightRange && !playerInAttackRange)
             {
                 ChasePlayer();
             }
@@ -183,10 +183,6 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     private void HitBoxOff()
     {
         attackBox.GetComponent<Collider>().enabled = false;
-    }
-    private void ResetAttack()
-    {
-        isAttacking = false;
     }
 
     public void TakeDamage(int dmg)
