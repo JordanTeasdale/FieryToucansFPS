@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
     public GameObject playerWinMenu;
+    public GameObject previousMenu = null;
     public GameObject menuCurrentlyOpen;
     public GameObject playerDamageFlash;
     public GameObject ammoMagGUI;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour {
 
 
     public bool isPaused = false;
+    public bool onPauseMenu = true;
     public bool isConfigOptions = false;
     bool gameOver = false;
 
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour {
             RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
             playerScript.Respawn();
 
-            bossDoor = GameObject.FindGameObjectWithTag("BossDoor"); 
+            bossDoor = GameObject.FindGameObjectWithTag("BossDoor");
         }
         else
             gameObject.SetActive(false);
@@ -59,14 +61,22 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetButtonDown("Cancel") && playerScript.HP > 0 && !gameOver) {
+
             isPaused = !isPaused;
 
-            if(!isConfigOptions)
-            menuCurrentlyOpen = pauseMenu;
+            if (isPaused == false) {
+                Debug.Log("enter");
+                UnPause();
+                return;
+            }
 
-            menuCurrentlyOpen.SetActive(isPaused);
+            if (!isConfigOptions) {
+                TransitionFromOptionstoPause();
+            }
 
-            if (isPaused)
+            menuCurrentlyOpen.SetActive(onPauseMenu || isConfigOptions);
+
+            if (onPauseMenu || isConfigOptions)
                 CursorLockPause();
             else
                 CursorUnlockUnpause();
@@ -125,7 +135,6 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         reticle.SetActive(true);
         Time.timeScale = 1;
-        menuCurrentlyOpen.SetActive(isPaused);
         playerScript.enabled = true;
     }
 
@@ -140,5 +149,26 @@ public class GameManager : MonoBehaviour {
             CursorLockPause();
             gameOver = true;
         }
+    }
+
+    public void TransitionFromOptionstoPause() {
+        onPauseMenu = true;
+        previousMenu = menuCurrentlyOpen;
+        menuCurrentlyOpen = pauseMenu;
+
+    }
+
+    public void UnPause() {
+
+        if (previousMenu != null)
+            previousMenu.SetActive(false);
+        menuCurrentlyOpen.SetActive(false);
+
+        isPaused = false;
+        onPauseMenu = false;
+        isConfigOptions = false;
+        previousMenu = null;
+        menuCurrentlyOpen = null;
+        CursorUnlockUnpause();
     }
 }

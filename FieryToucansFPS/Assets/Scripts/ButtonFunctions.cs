@@ -33,8 +33,7 @@ public class ButtonFunctions : MonoBehaviour {
     public void Resume() {
         if (GameManager.instance.isPaused) {
             MenuSoundTrigger();
-            GameManager.instance.isPaused = false;
-            GameManager.instance.CursorUnlockUnpause();
+            GameManager.instance.UnPause();
         }
     }
 
@@ -79,7 +78,12 @@ public class ButtonFunctions : MonoBehaviour {
     }
     
     public void OptionsMenuVisable() {
-       
+        GameManager.instance.isConfigOptions = true;
+        GameManager.instance.previousMenu = GameManager.instance.menuCurrentlyOpen;
+        GameManager.instance.menuCurrentlyOpen = pauseFirstButton;
+        GameManager.instance.onPauseMenu = false;
+        GameManager.instance.menuCurrentlyOpen.SetActive(true);
+        GameManager.instance.isConfigOptions = false;
     }
 
     public void MenuSoundTrigger() {
