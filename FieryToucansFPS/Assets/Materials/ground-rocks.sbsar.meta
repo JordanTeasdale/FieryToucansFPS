@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e4c6c5b93e05c5546b1d15b10404af73
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 99c15fd85233a784397e64adf5319883, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/ground-rocks.sbsar

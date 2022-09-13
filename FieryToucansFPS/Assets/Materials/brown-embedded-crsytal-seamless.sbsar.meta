@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 3e8368a908955ac4f88fbcab696ba2d3
-SubstanceImporter:
+guid: cf343142369066f4ebe7802c530d04b6
+ScriptedImporter:
+  internalIDToNameTable: []
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: f15a7f7ee3ef29a4fa388dc71b7936d4, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/brown-embedded-crsytal-seamless.sbsar

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e9146f5e8b0d2f648a156e8311b5db36
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 2ca422c57e420874786ca45a447bedda, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/old-concrete-pavement---01.sbsar
