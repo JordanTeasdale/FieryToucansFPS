@@ -33,6 +33,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Header("----- Audio -----")]
     [SerializeField] AudioSource enemyAud;
     public AudioClip soundExecute;
+    public AudioClip hurtSoundClip, deathSoundClip;
+    public AudioClip[] attackSoundClips;
     [Range(0,1)] [SerializeField] float soundExecuteVol;
 
     [Header("----- Effects -----")]
@@ -208,6 +210,20 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
             }
         }
+    }
+
+    private void PlayHurtSound()
+    {
+        enemyAud.PlayOneShot(hurtSoundClip, soundExecuteVol);
+    }
+
+    private void PlayAttackSound()
+    {
+        enemyAud.PlayOneShot(attackSoundClips[Random.Range(0, attackSoundClips.Length)], soundExecuteVol);
+    }
+    private void PlayDeathSound()
+    {
+        enemyAud.PlayOneShot(deathSoundClip, soundExecuteVol);
     }
     void OnTriggerEnter(Collider other)  {
 

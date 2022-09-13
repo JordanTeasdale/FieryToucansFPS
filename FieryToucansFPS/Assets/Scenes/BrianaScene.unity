@@ -557,6 +557,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1266945392910352997, guid: a709782658062904ca75f119e64ae383, type: 3}
+      propertyPath: ammoDrop
+      value: 
+      objectReference: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
+    - target: {fileID: 1266945392910352997, guid: a709782658062904ca75f119e64ae383, type: 3}
+      propertyPath: healthDrop
+      value: 
+      objectReference: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
     - target: {fileID: 1266945392910353016, guid: a709782658062904ca75f119e64ae383, type: 3}
       propertyPath: m_Name
       value: Spider enemy
