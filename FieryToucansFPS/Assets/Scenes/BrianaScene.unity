@@ -3822,7 +3822,7 @@ Animator:
   m_GameObject: {fileID: 4409459603875536720}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3fa06637f7751b44b8e63a9964b181a6, type: 3}
-  m_Controller: {fileID: 9100000, guid: bb262263f126e3b44842506f613c6ded, type: 2}
+  m_Controller: {fileID: 9100000, guid: 20701b03a6e42d14ab27d0a8861eee94, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3840,7 +3840,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4409459603875536720}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 50
@@ -3879,10 +3879,10 @@ MonoBehaviour:
     m_Bits: 0
   angle: 90
   sightRange: 20
-  attackRange: 2
+  attackRange: 1.5
   walkPointRange: 10
   patrolSpeed: 3
-  timeBetweenAttacks: 0
+  timeBetweenAttacks: 1
   damage: 2
   chaseSpeed: 5
   attackBox: {fileID: 4409459603875330452}

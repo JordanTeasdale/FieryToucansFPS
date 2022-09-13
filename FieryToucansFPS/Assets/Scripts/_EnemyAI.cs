@@ -172,6 +172,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         anim.SetTrigger("Melee");
         yield return new WaitForSeconds(timeBetweenAttacks);
         alreadyAttacked = false;
+        HitBoxOff();
     }
     private void HitBoxOn()
     {
@@ -230,13 +231,13 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
 
 }
