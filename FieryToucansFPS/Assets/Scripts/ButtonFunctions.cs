@@ -82,8 +82,7 @@ public class ButtonFunctions : MonoBehaviour {
         GameManager.instance.previousMenu = GameManager.instance.menuCurrentlyOpen;
         GameManager.instance.menuCurrentlyOpen = pauseFirstButton;
         GameManager.instance.onPauseMenu = false;
-        GameManager.instance.menuCurrentlyOpen.SetActive(true);
-        GameManager.instance.isConfigOptions = false;
+        GameManager.instance.menuCurrentlyOpen.SetActive(true); 
     }
 
     public void MenuSoundTrigger() {

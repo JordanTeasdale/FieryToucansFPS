@@ -91,7 +91,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
         playerSpeedOrignal = playerSpeed;
         HPOrig = HP;
         cameraController = cameraMain.GetComponent<CameraController>();
-        
+        //
+        cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+
 
         ResetHP();
         for (int i = 0; i < 6; ++i) {
