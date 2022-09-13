@@ -16,7 +16,7 @@ MonoBehaviour:
   shootRatePrimary: 0.5
   shootSpeedSecondary: 40
   shootRateSecondary: 0.5
-  secondaryCooldown: 5
+  secondaryAmmoConsumption: 0
   spreadFactor: 0
   gunAud: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
@@ -25,13 +25,10 @@ MonoBehaviour:
   shootVolSecondary: 0
   hitEffect: {fileID: 0}
   Crosshair: {fileID: 0}
+  CrosshairSecondary: {fileID: 0}
   maxAmmo: 15
   currentAmmo: 15
-  gun: {fileID: 9179815319806921901, guid: 89b355ff45e3c5741b6f5fe90a31aa8b, type: 3}
+  gun: {fileID: 2258225104679690212, guid: 1f57751aca75b3146b42bc2a1cb3bcd8, type: 3}
   gunIndex: 3
   bulletPrimary: {fileID: 8632138228147884554, guid: 05d8a9841b6b0da4cada191e9b5bf599, type: 3}
   bulletSecondary: {fileID: 8632138228147884554, guid: 8ab5851156fb2bc468e21c4d559fc105, type: 3}
-  secondaryFireActive: 0
-  experienceScaler: 0
-  experience: 0
-  currentLevel: 0
