@@ -26,7 +26,7 @@ public class BossEnemyAI : MonoBehaviour
     [Header("-----Attack Stats-----")]
     public float timeBetweenAttacks;
     public int damage;
-    bool alreadyAttacked, isShooting;
+    bool isAttacking, isShooting;
     public int chaseSpeed;
     [SerializeField] GameObject meleeAttackBox, rangeAttackBox;
 
@@ -50,7 +50,7 @@ public class BossEnemyAI : MonoBehaviour
     }
     private void Start()
     {
-        meleeAttackBox.GetComponent<Collider>().enabled = false;
+        
         walkPoint = transform.position;
         Patrolling();
         StartCoroutine(FOVRoutine());
@@ -72,19 +72,21 @@ public class BossEnemyAI : MonoBehaviour
 
             if (!playerInSightRange && !playerInRangeAttackRange)
             {
+                isAttacking = false;
+                isShooting = false;
                 Patrolling();
             }
 
 
             if (playerInSightRange && !playerInRangeAttackRange)
             {
+                isAttacking = false;
+                isShooting = false;
                 ChasePlayer();
             }
+            
         }
-        //if (playerInSightRange && playerInAttackRange && agent.remainingDistance == attackRange)
-        //{
-        //    StartCoroutine(AttackPlayer());
-        //}
+       
     }
 
     private IEnumerator FOVRoutine()
@@ -120,6 +122,7 @@ public class BossEnemyAI : MonoBehaviour
                             playerInRangeAttackRange = true;
                             agent.stoppingDistance = rangeAttackRange;
                             StartCoroutine(RangeAttackPlayer());
+                            
                         }
                         else
                         {
@@ -129,7 +132,7 @@ public class BossEnemyAI : MonoBehaviour
                         if(playerInSightRange && agent.remainingDistance <= meleeRange)
                         {
                             playerInMeleeAttackRange = true;
-                            agent.stoppingDistance = meleeRange;
+                            agent.stoppingDistance = 2.5f;
                             StartCoroutine(MeleeAttackPlayer());
                         }
                     }
@@ -180,26 +183,36 @@ public class BossEnemyAI : MonoBehaviour
     }
 
     IEnumerator MeleeAttackPlayer()
-    { 
+    {
         //Make sure enemy doesn't move
-        agent.SetDestination(transform.position);
-        alreadyAttacked = true;
-        anim.SetTrigger("Melee");
-        yield return new WaitForSeconds(timeBetweenAttacks);
-        alreadyAttacked = false;
-        HitBoxOff();
+        if (playerInMeleeAttackRange && agent.remainingDistance <= meleeRange)
+        {
+            isShooting = false;
+            isAttacking = true;
+            
+            agent.SetDestination(transform.position);
+
+            anim.SetTrigger("Melee");
+            yield return new WaitForSeconds(timeBetweenAttacks);
+            isAttacking = false;
+
+        }
     }
     IEnumerator RangeAttackPlayer()
     {
-        isShooting = true;
+        if (playerInRangeAttackRange && agent.remainingDistance > meleeRange && agent.remainingDistance <= rangeAttackRange)
+        {
+            isAttacking = false;
+            isShooting = true;
 
-        anim.SetTrigger("Shoot");
+            anim.SetTrigger("Shoot");
 
-        GameObject bulletClone = Instantiate(bullet, rangeAttackBox.transform.position, gameObject.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * RateOfFire;
-        yield return new WaitForSeconds(shootRate);
+            GameObject bulletClone = Instantiate(bullet, rangeAttackBox.transform.position, gameObject.transform.rotation);
+            bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * RateOfFire;
+            yield return new WaitForSeconds(shootRate);
 
-        isShooting = false;
+            isShooting = false;
+        }
     }
         private void HitBoxOn()
     {
@@ -212,7 +225,7 @@ public class BossEnemyAI : MonoBehaviour
     }
     private void ResetAttack()
     {
-        alreadyAttacked = false;
+        isAttacking = false;
     }
 
     public void TakeDamage(int dmg)

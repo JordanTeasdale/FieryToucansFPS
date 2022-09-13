@@ -30,6 +30,12 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     public int chaseSpeed;
     [SerializeField] GameObject attackBox;
 
+    [Header("----- Audio -----")]
+    [SerializeField] AudioSource enemyAud;
+    public AudioClip hurtSoundClip, deathSoundClip;
+    [Range(0, 1)] [SerializeField] float soundVol;
+    public AudioClip[] attackSoundClips;
+    [Range(0, 1)] [SerializeField] float soundVol2;
 
     [Header("-----States------")]
 
@@ -43,7 +49,6 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     }
     private void Start()
     {
-        attackBox.GetComponent<Collider>().enabled = false;
         walkPoint = transform.position;
         Patrolling();
         StartCoroutine(FOVRoutine());
@@ -54,9 +59,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        //Check for sight and attack range
-        //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        
         if (anim.GetBool("Dead") == false)
         {
             StartCoroutine(FOVRoutine());
@@ -74,10 +77,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
                 ChasePlayer();
             }
         }
-        //if (playerInSightRange && playerInAttackRange && agent.remainingDistance == attackRange)
-        //{
-        //    StartCoroutine(AttackPlayer());
-        //}
+        
     }
 
     private IEnumerator FOVRoutine()
@@ -125,7 +125,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
                     {
                         playerInSightRange = false;
                         playerInAttackRange = false;
-                    }   //Patrolling();
+                    }   
                 }
                 else
                 {
@@ -172,7 +172,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         anim.SetTrigger("Melee");
         yield return new WaitForSeconds(timeBetweenAttacks);
         alreadyAttacked = false;
-        HitBoxOff();
+        
     }
     private void HitBoxOn()
     {
@@ -222,6 +222,21 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         ChasePlayer();
         rend.material.color = Color.white;
     }
+
+    private void PlayHurtSound()
+    {
+        enemyAud.PlayOneShot(hurtSoundClip, soundVol);
+    }
+
+    private void PlayAttackSound()
+    {
+        enemyAud.PlayOneShot(attackSoundClips[Random.Range(0, attackSoundClips.Length)], soundVol2);
+    }
+    private void PlayDeathSound()
+    {
+        enemyAud.PlayOneShot(deathSoundClip, soundVol);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -231,13 +246,6 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-
-    //    }
-    //}
-
+    
 
 }
