@@ -203,6 +203,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
             }
             else
             {
+                GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
                 anim.SetBool("Dead", true);
                 agent.enabled = false;
                 Instantiate(itemDrop[Random.Range(0, itemDrop.Length)], gameObject.transform.position, gameObject.transform.rotation);
