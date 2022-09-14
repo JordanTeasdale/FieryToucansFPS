@@ -1550,10 +1550,12 @@ MonoBehaviour:
   bulletSpawnPos: {fileID: 296556089879653189}
   enemyAud: {fileID: 2246530930837742390}
   soundExecute: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
-  hurtSoundClip: {fileID: 0}
-  deathSoundClip: {fileID: 0}
-  attackSoundClips: []
-  soundExecuteVol: 0.143
+  hurtSoundClip: {fileID: 8300000, guid: 2d07eba8eab06cb45898cb11da4a54e2, type: 3}
+  deathSoundClip: {fileID: 8300000, guid: 2a0632631fb04405fa85f4a5a5d01a4d, type: 3}
+  attackSoundClips:
+  - {fileID: 8300000, guid: 0d3def65994b84d04b8791e02beb2391, type: 3}
+  - {fileID: 8300000, guid: 3a20c1f2fd4d44c4d9a6fabbec93be20, type: 3}
+  soundExecuteVol: 0.45
   executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
   inMeleeRange: 0
   isExecutable: 0

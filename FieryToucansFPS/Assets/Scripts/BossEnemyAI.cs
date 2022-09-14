@@ -36,7 +36,12 @@ public class BossEnemyAI : MonoBehaviour
     [Range(1, 10)] [SerializeField] int RateOfFire;
     [Range(1, 5)] [SerializeField] int bulletDestroyTime;
     [SerializeField] GameObject bullet;
-    
+
+    [Header("----- Audio -----")]
+    [SerializeField] AudioSource enemyAud;
+    public AudioClip attackSoundClip, deathSoundClip;
+    public AudioClip[] hurtSoundClips;
+    [Range(0, 1)] [SerializeField] float soundVol;
 
     [Header("-----States------")]
 
@@ -264,6 +269,20 @@ public class BossEnemyAI : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         ChasePlayer();
         rend.material.color = Color.white;
+    }
+
+    private void PlayHurtSound()
+    {
+        enemyAud.PlayOneShot(hurtSoundClips[Random.Range(0, hurtSoundClips.Length)], soundVol);
+    }
+
+    private void PlayAttackSound()
+    {
+        enemyAud.PlayOneShot(attackSoundClip, soundVol);
+    }
+    private void PlayDeathSound()
+    {
+        enemyAud.PlayOneShot(deathSoundClip, soundVol);
     }
     private void OnTriggerEnter(Collider other)
     {
