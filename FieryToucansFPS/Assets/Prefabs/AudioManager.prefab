@@ -90,3 +90,84 @@ MonoBehaviour:
     playOnAwake: 1
     isLooping: 0
     sourceOfSound: {fileID: 0}
+  - name: 'Boss Dragon Hurt '
+    orignalFile: {fileID: 8300000, guid: 96b4c081276c1764995e060132e60519, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Boss Dragon Death
+    orignalFile: {fileID: 8300000, guid: 18d316e88ad48754aa4a360cf90d4d15, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Dragon Hurt
+    orignalFile: {fileID: 8300000, guid: 14a7be615ec2de847af9a502286df00d, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Dragon Death
+    orignalFile: {fileID: 8300000, guid: 457d83bb6db5a584c9cad4fe2b3a3cb1, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Goblin Hurt
+    orignalFile: {fileID: 8300000, guid: f1ff3e33006a291449618f6fc613e928, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Goblin Death
+    orignalFile: {fileID: 8300000, guid: ebb96c703224744479e6294bd49515d9, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Melee Dragon Hurt
+    orignalFile: {fileID: 8300000, guid: 14a7be615ec2de847af9a502286df00d, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Melee Dragon Death
+    orignalFile: {fileID: 8300000, guid: 457d83bb6db5a584c9cad4fe2b3a3cb1, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}
+  - name: Plauge Doctor Hurt
+    orignalFile: {fileID: 8300000, guid: 457d83bb6db5a584c9cad4fe2b3a3cb1, type: 3}
+    mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    pitch: 1
+    Volume: 1
+    playOnAwake: 1
+    isLooping: 0
+    sourceOfSound: {fileID: 0}

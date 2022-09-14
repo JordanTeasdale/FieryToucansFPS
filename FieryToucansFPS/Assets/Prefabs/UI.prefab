@@ -390,7 +390,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2386,7 +2386,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2837,7 +2837,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3192,7 +3192,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4157,7 +4157,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4325,7 +4325,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4573,7 +4573,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4875,6 +4875,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 472211953}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: MenuSoundTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 472211953}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -4889,30 +4901,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1865678039}
-        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
-        m_MethodName: OptionsMenuVisable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1865678039}
-        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
-        m_MethodName: SetSliders
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5421,7 +5409,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5761,6 +5749,7 @@ GameObject:
   - component: {fileID: 162734974824969641}
   - component: {fileID: 162734974824969642}
   - component: {fileID: 162734974824969643}
+  - component: {fileID: 453468721}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -5865,6 +5854,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &453468721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162734974824969644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bccfd3d2fb7ab84dba0cfbae099dab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &162734974856775402
 GameObject:
   m_ObjectHideFlags: 0
@@ -6095,9 +6096,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &1012922098153698303
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,9 +7000,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &4879148472752674427
 GameObject:
   m_ObjectHideFlags: 0
@@ -7156,9 +7151,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &5228144931549964877
 GameObject:
   m_ObjectHideFlags: 0
@@ -7537,9 +7529,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 5228144931601957565}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &5228144931623928176
 GameObject:
   m_ObjectHideFlags: 0
@@ -7879,9 +7868,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &5228144931965335276
 GameObject:
   m_ObjectHideFlags: 0
@@ -8545,9 +8531,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &5228144932197967337
 GameObject:
   m_ObjectHideFlags: 0
@@ -10819,9 +10802,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &6009601553241437752
 GameObject:
   m_ObjectHideFlags: 0
@@ -11108,9 +11088,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 6087829696716003566}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!1 &6171901055412660778
 GameObject:
   m_ObjectHideFlags: 0
