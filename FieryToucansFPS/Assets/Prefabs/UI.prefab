@@ -5930,6 +5930,8 @@ MonoBehaviour:
   checkpointFeedback: {fileID: 2795073536921132730}
   pauseMenu: {fileID: 6859599631090898088}
   playerDeadMenu: {fileID: 5228144932208989734}
+  playerClearedLevel1: {fileID: 6704206300925499178}
+  playerClearedLevel2: {fileID: 2290969395527942124}
   playerWinMenu: {fileID: 8492396446565290862}
   previousMenu: {fileID: 0}
   menuCurrentlyOpen: {fileID: 0}
