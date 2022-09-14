@@ -13,13 +13,14 @@ public class Sound
     public AudioMixer mixer;
     public AudioMixerGroup mixerGroup;
 
-    [Range(-1f, 1f)] public float pitch;
+    [Range(1, 1.5f)] public float pitch;
     [Range(0, 1f)] public float Volume;
 
+    public bool playOnAwake;
     public bool isLooping;
 
 
-   [HideInInspector] public AudioSource sourceOfSound;
+   public AudioSource sourceOfSound;
 
 
    

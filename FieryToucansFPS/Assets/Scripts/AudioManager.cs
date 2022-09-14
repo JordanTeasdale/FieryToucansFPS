@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -20,7 +18,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        foreach(Sound sound in sounds) {
+        foreach (Sound sound in sounds) {
 
             sound.sourceOfSound = gameObject.AddComponent<AudioSource>();
             sound.sourceOfSound.clip = sound.orignalFile;
@@ -28,9 +26,12 @@ public class AudioManager : MonoBehaviour
             sound.sourceOfSound.volume = sound.Volume;
             sound.sourceOfSound.pitch = sound.pitch;
             sound.sourceOfSound.loop = sound.isLooping;
+            sound.sourceOfSound.playOnAwake = sound.playOnAwake;
             sound.sourceOfSound.outputAudioMixerGroup = sound.mixerGroup;
 
         }
+
+       
     }
 
     public void Play(string _name) {
@@ -38,7 +39,7 @@ public class AudioManager : MonoBehaviour
         Sound soundToPlay = Array.Find<Sound>(sounds, sound => sound.name == _name);
         if (soundToPlay == null)
             return;
-
+        Debug.Log(soundToPlay.sourceOfSound.ToString());
         soundToPlay.sourceOfSound.Play();
     }
 
@@ -53,11 +54,11 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayOneShot(string _name) {
-
+        
         Sound soundToPlay = Array.Find<Sound>(sounds, sound => sound.name == _name);
         if (soundToPlay == null)
             return;
-
+        
         soundToPlay.sourceOfSound.PlayOneShot(soundToPlay.sourceOfSound.clip);
     }
 
