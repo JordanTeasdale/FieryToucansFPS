@@ -59,15 +59,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeleton: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
+  skeletonMissile: {fileID: 296788235326708141, guid: 18bef927f0725064f9eafe44d5d88c48, type: 3}
   spider: {fileID: 1266945392910353016, guid: a709782658062904ca75f119e64ae383, type: 3}
+  goblin: {fileID: 2893078990682834866, guid: 82e74d247d1760047a9a63e35b0edc24, type: 3}
+  plagueDoctor: {fileID: 5639931300176650011, guid: fd3728971bb9326408dd7a11a4b13245, type: 3}
   dragonWelp: {fileID: 8784616573599632970, guid: cb89c931e3ecf674a821a80784d84f95, type: 3}
   dragonBoss: {fileID: 6562930143932835471, guid: 02ffbf420ec7a744898affcb77e08246, type: 3}
+  terrorBringer: {fileID: 8958090401371176767, guid: 4b32e8ef8ab957944b7ddfd24f3a7162, type: 3}
   doors:
   - {fileID: 0}
   skeletonLocations:
   - {x: 0, y: 0}
+  skeletonMissileLocations: []
   spiderLocations: []
+  GoblinLocations: []
+  plagueDoctorLocations: []
   dragonWelpLocations: []
   dragonBossLocations: []
+  terrorBringerLocations: []
   roomCleared: 0
   enemiesAlive: 0

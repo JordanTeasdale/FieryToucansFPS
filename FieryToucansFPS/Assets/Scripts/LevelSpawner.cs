@@ -5,9 +5,13 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour {
     [Header("----- GameObject Prefabs -----")]
     [SerializeField] GameObject skeleton;
+    [SerializeField] GameObject skeletonMissile;
     [SerializeField] GameObject spider;
+    [SerializeField] GameObject goblin;
+    [SerializeField] GameObject plagueDoctor;
     [SerializeField] GameObject dragonWelp;
     [SerializeField] GameObject dragonBoss;
+    [SerializeField] GameObject terrorBringer;
 
     [Header("----- Door Spawn Settings -----")]
     [SerializeField] GameObject[] doors;
@@ -15,14 +19,26 @@ public class LevelSpawner : MonoBehaviour {
     [Header("----- Skeleton Spawn Settings -----")]
     [SerializeField] Vector2[] skeletonLocations;
 
+    [Header("----- Skeleton Missile Spawn Settings -----")]
+    [SerializeField] Vector2[] skeletonMissileLocations;
+
     [Header("----- Spider Spawn Settings -----")]
     [SerializeField] Vector2[] spiderLocations;
+    
+    [Header("----- Goblin Spawn Settings -----")]
+    [SerializeField] Vector2[] GoblinLocations;
+
+    [Header("----- Plague Doctor Spawn Settings -----")]
+    [SerializeField] Vector2[] plagueDoctorLocations;
 
     [Header("----- DragonWelp Spawn Settings -----")]
     [SerializeField] Vector2[] dragonWelpLocations;
 
     [Header("----- DragonBoss Spawn Settings -----")]
     [SerializeField] Vector2[] dragonBossLocations;
+
+    [Header("----- Terror Bringer Spawn Settings -----")]
+    [SerializeField] Vector2[] terrorBringerLocations;
 
 
     bool roomEntered = false;
@@ -41,8 +57,20 @@ public class LevelSpawner : MonoBehaviour {
                 Instantiate(skeleton, new Vector3(transform.position.x + skeletonLocations[i].x, skeleton.transform.position.y, transform.position.z + skeletonLocations[i].y), skeleton.transform.rotation);
                 enemiesAlive++;
             }
+            for (int i = 0; i < skeletonLocations.Length; i++) {
+                Instantiate(skeletonMissile, new Vector3(transform.position.x + skeletonMissileLocations[i].x, skeletonMissile.transform.position.y, transform.position.z + skeletonMissileLocations[i].y), skeletonMissile.transform.rotation);
+                enemiesAlive++;
+            }
             for (int i = 0; i < spiderLocations.Length; i++) {
                 Instantiate(spider, new Vector3(transform.position.x + spiderLocations[i].x, spider.transform.position.y, transform.position.z + spiderLocations[i].y), spider.transform.rotation);
+                enemiesAlive++;
+            }
+            for (int i = 0; i < GoblinLocations.Length; i++) {
+                Instantiate(goblin, new Vector3(transform.position.x + GoblinLocations[i].x, goblin.transform.position.y, transform.position.z + GoblinLocations[i].y), goblin.transform.rotation);
+                enemiesAlive++;
+            }
+            for (int i = 0; i < plagueDoctorLocations.Length; i++) {
+                Instantiate(plagueDoctor, new Vector3(transform.position.x + plagueDoctorLocations[i].x, plagueDoctor.transform.position.y, transform.position.z + plagueDoctorLocations[i].y), plagueDoctor.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < dragonWelpLocations.Length; i++) {
@@ -51,6 +79,10 @@ public class LevelSpawner : MonoBehaviour {
             }
             for (int i = 0; i < dragonBossLocations.Length; i++) {
                 Instantiate(dragonBoss, new Vector3(transform.position.x + dragonBossLocations[i].x, dragonBoss.transform.position.y, transform.position.z + dragonBossLocations[i].y), dragonBoss.transform.rotation);
+                enemiesAlive++;
+            }
+            for (int i = 0; i < terrorBringerLocations.Length; i++) {
+                Instantiate(terrorBringer, new Vector3(transform.position.x + terrorBringerLocations[i].x, terrorBringer.transform.position.y, transform.position.z + terrorBringerLocations[i].y), terrorBringer.transform.rotation);
                 enemiesAlive++;
             }
 
