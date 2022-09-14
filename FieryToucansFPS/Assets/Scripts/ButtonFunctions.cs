@@ -77,5 +77,6 @@ public class ButtonFunctions : MonoBehaviour {
     public void MenuSoundTrigger() {
 
         AudioManager.instance.PlayOneShot("Gun Click");
+        FindObjectOfType<AudioManager>().PlayOneShot("Main Menu Transition");
     }
 }

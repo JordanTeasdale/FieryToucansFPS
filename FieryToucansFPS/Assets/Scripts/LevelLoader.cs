@@ -21,7 +21,9 @@ public class LevelLoader : MonoBehaviour
     public void CoRoutRun()
     {
         StartCoroutine(StartTransition());
-       
+        FindObjectOfType<AudioManager>().Stop("Home Run");
+        FindObjectOfType<AudioManager>().PlayOneShot("Main Menu Transition");
+
     }
 
     public IEnumerator StartTransition()
