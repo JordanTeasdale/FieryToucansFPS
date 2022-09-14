@@ -13,13 +13,14 @@ public class LevelLoader : MonoBehaviour
     private void Start() {
         if (GameObject.FindGameObjectWithTag("Player") != null)
             GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+
+
     }
 
 
     public void CoRoutRun()
     {
         StartCoroutine(StartTransition());
-        GameManager.instance.CurrentPlayerPrefValue();
        
     }
 

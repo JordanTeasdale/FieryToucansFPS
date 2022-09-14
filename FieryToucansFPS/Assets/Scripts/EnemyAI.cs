@@ -127,7 +127,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                     foreach (Collider col in GetComponents<Collider>())
                         col.enabled = false;
 
-                    GetComponent<Animator>().enabled = false;
+                    //GetComponent<Animator>().enabled = false;
                     GetComponent<EnemyAI>().enabled = false;
         
                 }
@@ -235,6 +235,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
     void OnTriggerExit(Collider other)  {
         if (other.CompareTag("Player"))
             playerInRange = false;
+
+        if (agent.isActiveAndEnabled)
         Roam();
     }
 }
