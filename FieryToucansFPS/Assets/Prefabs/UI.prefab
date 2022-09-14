@@ -5937,7 +5937,7 @@ MonoBehaviour:
   bossDoor: {fileID: 0}
   currentRoom: {fileID: 0}
   clearedRooms: 0
-  clearedRoomsRequired: 2
+  clearedRoomsRequired: 6
   RespawnPos: {fileID: 0}
   checkpointFeedback: {fileID: 2795073536921132730}
   pauseMenu: {fileID: 6859599631090898088}
