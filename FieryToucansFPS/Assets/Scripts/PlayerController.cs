@@ -260,14 +260,14 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void GunPickup(WeaponBase _stats) {
+        if (_stats.gunIndex == 4) {
+            MagicSMGSript smg = (MagicSMGSript)_stats;
+            smg.ClearList();
+        }
         _stats.currentAmmo = _stats.maxAmmo;
         gunsList[_stats.gunIndex] = _stats;
         weaponIndex = _stats.gunIndex;
         GunEquip(_stats);
-        if (_stats.gunIndex == 4) {
-            MagicSMGSript smg = (MagicSMGSript)gunsList[weaponIndex];
-            smg.ClearList();
-        }
     }
 
     public void GunEquip(WeaponBase _gun) {
