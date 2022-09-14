@@ -64,7 +64,9 @@ public class GameManager : MonoBehaviour {
 
         }
         else
-            gameObject.SetActive(false);       
+            gameObject.SetActive(false);
+
+        menuCurrentlyOpen = pauseMenu;
     }
 
     private void Start() {
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour {
                 return;
             }
 
-            if (!isConfigOptions) {
+            if (isConfigOptions == false) {
                 TransitionFromOptionstoPause();
             }
 

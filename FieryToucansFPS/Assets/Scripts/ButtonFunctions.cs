@@ -48,7 +48,7 @@ public class ButtonFunctions : MonoBehaviour {
         GameManager.instance.isPaused = false;
         GameManager.instance.CursorUnlockUnpause();
         GameManager.instance.menuCurrentlyOpen.SetActive(false);
-        GameManager.instance.menuCurrentlyOpen = GameManager.instance.pauseMenu;
+        
         Debug.Log("why?");
         //levelLoader.CoRoutRun();
 
