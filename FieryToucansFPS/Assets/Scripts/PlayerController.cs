@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     int timesDashed;
     public int HPOrig;
     int prevHP;
-    float healthSmoothTime = 0.5f;
+    float healthSmoothTime = 1f;
     float healthSmoothCount;
     float healthFillAmount;
     public int weaponIndex = -1;
