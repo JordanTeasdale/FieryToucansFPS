@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
+    public GameObject playerClearedLevel1;
+    public GameObject playerClearedLevel2;
     public GameObject playerWinMenu;
     public GameObject previousMenu = null;
     public GameObject menuCurrentlyOpen;
@@ -157,8 +159,22 @@ public class GameManager : MonoBehaviour {
             Destroy(bossDoor);
         if (clearedRooms == clearedRoomsRequired) {
             yield return new WaitForSeconds(1.5f);
-            playerWinMenu.SetActive(true);
-            menuCurrentlyOpen = playerWinMenu;
+            switch (SceneManager.GetActiveScene().name) {
+                case ("Level 1"):
+                    playerClearedLevel1.SetActive(true);
+                    menuCurrentlyOpen = playerClearedLevel1;
+                    break;
+                case ("Level 2"):
+                    playerClearedLevel2.SetActive(true);
+                    menuCurrentlyOpen = playerClearedLevel2;
+                    break;
+                case ("Level 3"):
+                    playerWinMenu.SetActive(true);
+                    menuCurrentlyOpen = playerWinMenu;
+                    break;
+            }
+                
+            
             CursorLockPause();
             gameOver = true;
         }
