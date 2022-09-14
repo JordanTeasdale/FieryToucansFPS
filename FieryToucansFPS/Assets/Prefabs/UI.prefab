@@ -5937,7 +5937,7 @@ MonoBehaviour:
   bossDoor: {fileID: 0}
   currentRoom: {fileID: 0}
   clearedRooms: 0
-  clearedRoomsRequired: 6
+  clearedRoomsRequired: 2
   RespawnPos: {fileID: 0}
   checkpointFeedback: {fileID: 2795073536921132730}
   pauseMenu: {fileID: 6859599631090898088}
@@ -7247,6 +7247,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: CoRoutRun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4861484269304464740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7524,6 +7536,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2768969683881680579}
         m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
         m_MethodName: LoadLevel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: CoRoutRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
