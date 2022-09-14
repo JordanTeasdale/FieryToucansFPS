@@ -42,10 +42,14 @@ public class ButtonFunctions : MonoBehaviour {
     }
 
     public void Respawn() {
+       
         GameManager.instance.playerScript.ResetHP();
         GameManager.instance.playerScript.Respawn();
         GameManager.instance.isPaused = false;
         GameManager.instance.CursorUnlockUnpause();
+        GameManager.instance.menuCurrentlyOpen.SetActive(false);
+        GameManager.instance.menuCurrentlyOpen = GameManager.instance.pauseMenu;
+        Debug.Log("why?");
         //levelLoader.CoRoutRun();
 
     }
@@ -91,4 +95,5 @@ public class ButtonFunctions : MonoBehaviour {
         AudioManager.instance.PlayOneShot("Gun Click");
         FindObjectOfType<AudioManager>().PlayOneShot("Main Menu Transition");
     }
+    
 }
