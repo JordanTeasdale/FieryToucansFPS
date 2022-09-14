@@ -62,6 +62,18 @@ public class ButtonFunctions : MonoBehaviour {
         SceneManager.LoadScene("Level 1");
     }
 
+    public void LoadLevel2() {
+        MenuSoundTrigger();
+        levelLoader.CoRoutRun();
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void LoadLevel3() {
+        MenuSoundTrigger();
+        levelLoader.CoRoutRun();
+        SceneManager.LoadScene("Level 3");
+    }
+
     public void QCreditScene() {
         MenuSoundTrigger();
         levelLoader.CoRoutRun();
@@ -73,7 +85,7 @@ public class ButtonFunctions : MonoBehaviour {
         levelLoader.CoRoutRun();
         SceneManager.LoadScene("Main Menu");
     }
-    
+
     public void MenuSoundTrigger() {
 
         AudioManager.instance.PlayOneShot("Gun Click");
