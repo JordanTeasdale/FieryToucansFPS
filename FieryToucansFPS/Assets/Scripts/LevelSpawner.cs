@@ -62,7 +62,6 @@ public class LevelSpawner : MonoBehaviour {
         if (enemiesAlive == 0) {
             roomCleared = true;
             StartCoroutine(GameManager.instance.ClearRoom());
-            doors = GameObject.FindGameObjectsWithTag("Door");
             foreach (GameObject door in doors) {
                 door.GetComponent<DoorScript>().isUnlocked = true;
                 door.GetComponent<DoorScript>().DoorUnlocking();
