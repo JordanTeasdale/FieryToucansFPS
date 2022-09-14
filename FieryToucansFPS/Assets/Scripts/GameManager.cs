@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour {
     public IEnumerator ClearRoom() {
         clearedRooms++;
         if (clearedRooms == clearedRoomsRequired - 1)
-            Destroy(bossDoor);
+            bossDoor.GetComponent<DoorScript>().isUnlocked = true;
         if (clearedRooms == clearedRoomsRequired) {
             yield return new WaitForSeconds(1.5f);
             switch (SceneManager.GetActiveScene().name) {
