@@ -57,7 +57,7 @@ public class LevelSpawner : MonoBehaviour {
                 Instantiate(skeleton, new Vector3(transform.position.x + skeletonLocations[i].x, skeleton.transform.position.y, transform.position.z + skeletonLocations[i].y), skeleton.transform.rotation);
                 enemiesAlive++;
             }
-            for (int i = 0; i < skeletonLocations.Length; i++) {
+            for (int i = 0; i < skeletonMissileLocations.Length; i++) {
                 Instantiate(skeletonMissile, new Vector3(transform.position.x + skeletonMissileLocations[i].x, skeletonMissile.transform.position.y, transform.position.z + skeletonMissileLocations[i].y), skeletonMissile.transform.rotation);
                 enemiesAlive++;
             }
