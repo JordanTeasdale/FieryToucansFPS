@@ -263,7 +263,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         weaponIndex = _stats.gunIndex;
         GunEquip(_stats);
         if (_stats.gunIndex == 4) {
-            MagicSMGSript smg = (MagicSMGSript)_stats;
+            MagicSMGSript smg = (MagicSMGSript)gunsList[weaponIndex];
             smg.ClearList();
         }
     }
