@@ -765,9 +765,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 0}
-  menuAudioC: {fileID: 0}
-  MainAudCVol: 0
 --- !u!114 &1736218346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,12 +1010,21 @@ MonoBehaviour:
     MagicSMG \nfrom Timothy Forest\n\nFull Sail Game Art Student\n\nHandCannon Model
     and Texture \nby Timothy Henry\r\n\nBow and Arrow Texturing \nby Timothy Henry\r\n\nMagicSMG
     Texturing \nby Timothy Henry\r\n\nShotgun Texturing \nby Timothy Henry\r\n\nFiery
-    Toucans Logo \nby Timothy Henry\n\nDownloaded Assets\n\nMAC Sci-Fi Sniper Rifle
-    by MAC from assetstore.unity.com\r\n\nCollection low poly bows by katyaharchuk
-    from cgtrader.com \r\n\nsci-fi gun low poly by amrousse from cgtrader.com\r\n\nGame
-    Ready Sci fi Rifle by blacknibolion from cgtrader.com\n\nMetal Door Close from
-    freesfx.co.uk\r\n\nOpen Interior Wood Door from freesfx.co.uk\n\nFirst-Aid Set
-    by GeeKay 3D from assetstore.unity.com\r\n\nAmmo by Himmelfar from assetstore.unity.com\r\n\n"
+    Toucans Logo \nby Timothy Henry\n\nMusic by John Sandoval\n\nDownloaded Assets\n\nMAC
+    Sci-Fi Sniper Rifle by MAC from assetstore.unity.com\r\n\nCollection low poly
+    bows by katyaharchuk from cgtrader.com \r\n\nsci-fi gun low poly by amrousse
+    from cgtrader.com\r\n\nGame Ready Sci fi Rifle by blacknibolion from cgtrader.com\n\nMetal
+    Door Close from freesfx.co.uk\r\n\nOpen Interior Wood Door from freesfx.co.uk\n\nFirst-Aid
+    Set by GeeKay 3D from assetstore.unity.com\r\n\nAmmo by Himmelfar from assetstore.unity.com\r\n\nDragon
+    for Boss Monster : PBR by \nDungeon Mason\r \nfrom assetstore.unity.com\n\nFantasy
+    Sfx by Little Robot SoundFactory\r \nfrom assetstore.unity.com\n\nAttack Jump
+    & Hit Damage Human Sounds by Rocklynn Productions\r\n from assetstore.unity.com\n\nGoblin
+    Ranger by Shunsuke Yamamoto\r \nfrom assetstore.unity.com\n\nLowpoly Medieval
+    Plague Doctor by Polytope Studio\r \nfrom assetstore.unity.com\n\nMonster SFX
+    - 111518 by GWriterStudio\n\r from assetstore.unity.com\n\nSkeleton Outlaw by
+    Kevin Iglesias\n\r from assetstore.unity.com\n\nSpider polygon by Dante anvil\r
+    \nfrom assetstore.unity.com\n\nStones and buried treasure by Comeback from assetstore.unity.com\n\nClean
+    Whooshes by Zekro Studio from assetstore.unity.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1107,7 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4120de9ce74b84baf5396ebd923d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 8
+  timer: 110
 --- !u!1 &2047658351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,9 +1171,6 @@ MonoBehaviour:
   OptionsFirstButton: {fileID: 0}
   OptionsClosedButton: {fileID: 0}
   pauseFirstButton: {fileID: 0}
-  menuAudio: {fileID: 508988257}
-  menuAudioC: {fileID: 8300000, guid: e4bc9b5f223d5d94d85b45a236616470, type: 3}
-  MainAudCVol: 50
 --- !u!114 &2047658354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1265,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047658351}
   m_CullTransparentMesh: 1
+--- !u!1001 &2081681488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 222284050465236715, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 446
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222284050465236717, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59fcf792418d3cb4fa6a5e01269481b7, type: 3}
 --- !u!1001 &2086657014
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class CreditsScroll : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        gameObject.transform.position += new Vector3(0, 0.5f, 0);
+        gameObject.transform.position += new Vector3(0, 0.75f, 0);
         if (timer <= 0) {
             levelLoader.CoRoutRun();
             SceneManager.LoadScene("Main Menu");
