@@ -88,6 +88,5 @@ public class OptionsMenu : MonoBehaviour
         GameManager.instance.previousMenu = GameManager.instance.menuCurrentlyOpen;
         GameManager.instance.menuCurrentlyOpen = optionsMenu;
         GameManager.instance.onPauseMenu = false;
-        GameManager.instance.menuCurrentlyOpen.SetActive(true);
     }
 }
