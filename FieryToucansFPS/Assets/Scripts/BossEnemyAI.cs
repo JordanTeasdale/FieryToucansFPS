@@ -209,6 +209,8 @@ public class BossEnemyAI : MonoBehaviour
 
             GameObject bulletClone = Instantiate(bullet, rangeAttackBox.transform.position, gameObject.transform.rotation);
             bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * RateOfFire;
+            if (bulletClone.TryGetComponent<EnemyBulletBase>(out EnemyBulletBase bulletBase))
+                bulletBase.SetShooter(gameObject.transform);
             yield return new WaitForSeconds(shootRate);
 
             isShooting = false;
