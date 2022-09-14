@@ -21895,6 +21895,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1773961030}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228144931601957564, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5228144933320548349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: playerClearedLevel1
       value: 
@@ -28940,6 +28968,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3812516580399810549, guid: 4737e431b3b76429eab7b443065c9441, type: 3}
   m_PrefabInstance: {fileID: 508557790}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773961030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5228144932208989734, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+  m_PrefabInstance: {fileID: 1346839079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1778459935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32717,18 +32750,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 82320173802793687, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: HP
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 82320173802793706, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7174589972155203629, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 587aedb20bbaf494eb496195f38a8ab6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6436e1c99554ded4bbf1ab062ca8e34b, type: 3}
 --- !u!1001 &2019306626

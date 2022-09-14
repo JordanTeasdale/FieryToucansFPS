@@ -356,7 +356,7 @@ MonoBehaviour:
   jumpHeight: 12
   gravityValue: 35
   maxJumps: 2
-  HP: 5
+  HP: 51
   invincibilityTimer: 0.5
   meleeHitbox: {fileID: 6627562012560487157}
   meleeDamage: 5
@@ -413,7 +413,7 @@ AudioSource:
   m_GameObject: {fileID: 82320173802793706}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 587aedb20bbaf494eb496195f38a8ab6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
