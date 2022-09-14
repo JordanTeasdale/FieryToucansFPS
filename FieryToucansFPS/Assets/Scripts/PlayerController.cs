@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     int timesDashed;
     public int HPOrig;
     int prevHP;
-    float healthSmoothTime = 1f;
+    float healthSmoothTime = 0.5f;
     float healthSmoothCount;
     float healthFillAmount;
     public int weaponIndex = -1;
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
             damageTimer -= Time.deltaTime;
         //debug code
         if (Input.GetKeyDown(KeyCode.K)) {
-            TakeDamage(1);
+            TakeDamage(50);
         }
 
         PlayerMovement();
@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         StartCoroutine(DashCooldown());
     }
 
+    
     void FixedUpdate() {
         healthSmoothCount = System.Math.Min(healthSmoothTime, healthSmoothCount + Time.fixedDeltaTime);
         if (healthFillAmount != HP) {
@@ -128,6 +129,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
             UpdateHP();
         }
     }
+    
 
     void PlayerMovement() {
 
@@ -324,6 +326,10 @@ public class PlayerController : MonoBehaviour, IDamageable {
     public void TakeDamage(int _dmg) {
         if (damageTimer <= 0) {
             damageTimer = invincibilityTimer;
+
+            if(_dmg > HP)
+                _dmg = HP;
+            
             if (healthFillAmount == HP) {
                 healthSmoothCount = 0;
                 prevHP = HP;
