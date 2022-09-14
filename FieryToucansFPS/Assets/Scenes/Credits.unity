@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh116286
+  m_Name: pb_Mesh114786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -960,6 +960,7 @@ GameObject:
   - component: {fileID: 1938211249}
   - component: {fileID: 1938211251}
   - component: {fileID: 1938211250}
+  - component: {fileID: 1938211252}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1007,9 +1008,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits
-
-    Post all credits here then transform'
+  m_text: "Credits\n\nDevelopment Team\n\nBrianna Buttone\nAdalberto Carrizosa\nConnor
+    Grimes\nLogan Krauss\nJeremy Torres\nJordan Teasdale\n\nAdditional Help with
+    MagicSMG \nfrom Timothy Forest\n\nFull Sail Game Art Student\n\nHandCannon Model
+    and Texture \nby Timothy Henry\r\n\nBow and Arrow Texturing \nby Timothy Henry\r\n\nMagicSMG
+    Texturing \nby Timothy Henry\r\n\nShotgun Texturing \nby Timothy Henry\r\n\nFiery
+    Toucans Logo \nby Timothy Henry\n\nDownloaded Assets\n\nMAC Sci-Fi Sniper Rifle
+    by MAC from assetstore.unity.com\r\n\nCollection low poly bows by katyaharchuk
+    from cgtrader.com \r\n\nsci-fi gun low poly by amrousse from cgtrader.com\r\n\nGame
+    Ready Sci fi Rifle by blacknibolion from cgtrader.com\n\nMetal Door Close from
+    freesfx.co.uk\r\n\nOpen Interior Wood Door from freesfx.co.uk\n\nFirst-Aid Set
+    by GeeKay 3D from assetstore.unity.com\r\n\nAmmo by Himmelfar from assetstore.unity.com\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1086,6 +1095,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938211248}
   m_CullTransparentMesh: 1
+--- !u!114 &1938211252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938211248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4120de9ce74b84baf5396ebd923d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 8
 --- !u!1 &2047658351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3132133208060466694, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8866380927012251413, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
       propertyPath: m_RootOrder

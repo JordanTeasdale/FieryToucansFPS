@@ -774,11 +774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: spiderLocations.Array.data[0].x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: skeletonLocations.Array.data[0].x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277194, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_RootOrder

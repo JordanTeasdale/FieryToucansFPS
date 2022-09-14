@@ -279,6 +279,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         UpdatedAmmoGUI();
         Destroy(GameObject.FindGameObjectWithTag("Gun Model"));
         Instantiate(_gun.gun, gunPostion.position,gunPostion.rotation, gunPostion);
+        GameManager.instance.reticle.GetComponent<Image>().enabled = true;
         GameManager.instance.reticle.GetComponent<Image>().sprite = _gun.Crosshair;
     }
 
@@ -363,6 +364,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
 
         if(Input.GetButton("Fire2") && !isShooting && gunsList.Count > 0 && currentAmmo > 0)
         {
+            GameManager.instance.reticle.GetComponent<Image>().sprite = gunsList[weaponIndex].CrosshairSecondary;
             gunsList[weaponIndex].SecondaryFireMode();
             if (Input.GetButton("Shoot"))
             {
@@ -378,10 +380,12 @@ public class PlayerController : MonoBehaviour, IDamageable {
             UpdatedAmmoGUI();
             gunPostion.GetChild(0).GetComponent<Animation>().Play();
         }
-        if (weaponIndex == 2 && Input.GetButtonUp("Fire2"))
-        {
-            RifileScript rifle = (RifileScript)gunsList[weaponIndex];
-            rifle.OnUnscoped();
+        if (Input.GetButtonUp("Fire2")) {
+            GameManager.instance.reticle.GetComponent<Image>().sprite = gunsList[weaponIndex].Crosshair;
+            if (weaponIndex == 2) {
+                RifileScript rifle = (RifileScript)gunsList[weaponIndex];
+                rifle.OnUnscoped();
+            }
         }
     }
 
