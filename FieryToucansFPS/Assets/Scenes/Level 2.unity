@@ -634,6 +634,34 @@ PrefabInstance:
       propertyPath: doorFaceNorthSouth.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[0].x
+      value: -35.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[0].y
+      value: -4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[1].x
+      value: -35.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[1].y
+      value: 24.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[2].x
+      value: -37.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[2].y
+      value: -35.74
+      objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277193, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_Size.x
       value: 21.326817
@@ -10550,17 +10578,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5635903296309842832, guid: a32e878db3d224e8cb028603b63d891a, type: 3}
   m_PrefabInstance: {fileID: 689465509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &689639887 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5747259287563719418, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-  m_PrefabInstance: {fileID: 1346839079}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c9e00a2e7e53e42bf1b6e09959982d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &689683644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16564,6 +16581,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: enemiesAlive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -16576,12 +16597,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1400847865}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: GoblinLocations.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: spiderLocations.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: skeletonLocations.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doorLocations.Array.data[0].x
@@ -16598,6 +16623,14 @@ PrefabInstance:
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doorLocations.Array.data[1].y
       value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: GoblinLocations.Array.data[0].x
+      value: -0.791
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: GoblinLocations.Array.data[0].y
+      value: -0.242
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: spiderLocations.Array.data[0].x
@@ -16638,6 +16671,26 @@ PrefabInstance:
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: skeletonLocations.Array.data[2].y
       value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonLocations.Array.data[3].x
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonLocations.Array.data[3].y
+      value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[0].x
+      value: -16.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[0].y
+      value: -16.76
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277193, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_Size.x
@@ -21813,34 +21866,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 689639887}
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: OptionsMenuVisable
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: OptionsMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2041074277, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 162734974824969640, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -27309,6 +27334,22 @@ PrefabInstance:
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: skeletonLocations.Array.data[2].y
       value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[0].x
+      value: -37.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[1].x
+      value: -17.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeletonMissileLocations.Array.data[1].y
+      value: -32.3
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277193, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_Size.x
@@ -33961,6 +34002,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: enemiesAlive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -33999,6 +34044,10 @@ PrefabInstance:
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doorLocations.Array.data[1].y
       value: -39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: spiderLocations.Array.data[0].x
@@ -34047,6 +34096,30 @@ PrefabInstance:
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: skeletonLocations.Array.data[2].y
       value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.data[0].x
+      value: -16.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.data[0].y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.data[1].x
+      value: -8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.data[1].y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.data[2].x
+      value: -13.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelpLocations.Array.data[2].y
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277193, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_Size.x

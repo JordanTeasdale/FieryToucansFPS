@@ -4899,33 +4899,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1859651409}
     - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1859651409}
-    - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: CoRoutRun
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LevelLoader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207594653445592371, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5228144933320548349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: bossDoor
       value: 
