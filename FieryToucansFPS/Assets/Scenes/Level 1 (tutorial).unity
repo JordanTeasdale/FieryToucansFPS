@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 661cf5801ee829247b3acefaf3e57d4b, type: 2}
 --- !u!43 &18752040
 Mesh:
   m_ObjectHideFlags: 0
@@ -4677,6 +4677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5228144933320548349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: bossDoor
+      value: 
+      objectReference: {fileID: 1203619140}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
 --- !u!1 &867665153
@@ -5833,7 +5837,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6584496530254199921, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Minion Door
       objectReference: {fileID: 0}
     - target: {fileID: 6584496530254199926, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
       propertyPath: m_RootOrder
@@ -7241,7 +7245,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1387559875
 MeshCollider:
@@ -7923,6 +7927,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1471264616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6584496530254199921, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
+  m_PrefabInstance: {fileID: 1185636817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1471264620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6584496530254199926, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
@@ -11342,7 +11351,15 @@ PrefabInstance:
       value: RoomSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: doors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[0]
+      value: 
+      objectReference: {fileID: 1471264616}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: doors.Array.data[1]
       value: 
       objectReference: {fileID: 1203619140}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
