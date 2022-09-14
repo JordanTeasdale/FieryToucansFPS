@@ -54,35 +54,35 @@ public class LevelSpawner : MonoBehaviour {
                 door.GetComponent<DoorScript>().DoorLocking();
             }
             for (int i = 0; i < skeletonLocations.Length; i++) {
-                Instantiate(skeleton, new Vector3(transform.position.x + skeletonLocations[i].x, 0, transform.position.z + skeletonLocations[i].y), skeleton.transform.rotation);
+                Instantiate(skeleton, new Vector3(transform.position.x + skeletonLocations[i].x, skeleton.transform.position.y, transform.position.z + skeletonLocations[i].y), skeleton.transform.rotation);
                 enemiesAlive++;
             }
-            for (int i = 0; i < skeletonLocations.Length; i++) {
-                Instantiate(skeletonMissile, new Vector3(transform.position.x + skeletonMissileLocations[i].x, 0, transform.position.z + skeletonMissileLocations[i].y), skeletonMissile.transform.rotation);
+            for (int i = 0; i < skeletonMissileLocations.Length; i++) {
+                Instantiate(skeletonMissile, new Vector3(transform.position.x + skeletonMissileLocations[i].x, skeletonMissile.transform.position.y, transform.position.z + skeletonMissileLocations[i].y), skeletonMissile.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < spiderLocations.Length; i++) {
-                Instantiate(spider, new Vector3(transform.position.x + spiderLocations[i].x, 0, transform.position.z + spiderLocations[i].y), spider.transform.rotation);
+                Instantiate(spider, new Vector3(transform.position.x + spiderLocations[i].x, spider.transform.position.y, transform.position.z + spiderLocations[i].y), spider.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < GoblinLocations.Length; i++) {
-                Instantiate(goblin, new Vector3(transform.position.x + GoblinLocations[i].x, 0, transform.position.z + GoblinLocations[i].y), goblin.transform.rotation);
+                Instantiate(goblin, new Vector3(transform.position.x + GoblinLocations[i].x, goblin.transform.position.y, transform.position.z + GoblinLocations[i].y), goblin.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < plagueDoctorLocations.Length; i++) {
-                Instantiate(plagueDoctor, new Vector3(transform.position.x + plagueDoctorLocations[i].x, 0, transform.position.z + plagueDoctorLocations[i].y), plagueDoctor.transform.rotation);
+                Instantiate(plagueDoctor, new Vector3(transform.position.x + plagueDoctorLocations[i].x, plagueDoctor.transform.position.y, transform.position.z + plagueDoctorLocations[i].y), plagueDoctor.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < dragonWelpLocations.Length; i++) {
-                Instantiate(dragonWelp, new Vector3(transform.position.x + dragonWelpLocations[i].x, 0, transform.position.z + dragonWelpLocations[i].y), dragonWelp.transform.rotation);
+                Instantiate(dragonWelp, new Vector3(transform.position.x + dragonWelpLocations[i].x, dragonBoss.transform.position.y, transform.position.z + dragonWelpLocations[i].y), dragonWelp.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < dragonBossLocations.Length; i++) {
-                Instantiate(dragonBoss, new Vector3(transform.position.x + dragonBossLocations[i].x, 0, transform.position.z + dragonBossLocations[i].y), dragonBoss.transform.rotation);
+                Instantiate(dragonBoss, new Vector3(transform.position.x + dragonBossLocations[i].x, dragonBoss.transform.position.y, transform.position.z + dragonBossLocations[i].y), dragonBoss.transform.rotation);
                 enemiesAlive++;
             }
             for (int i = 0; i < terrorBringerLocations.Length; i++) {
-                Instantiate(terrorBringer, new Vector3(transform.position.x + terrorBringerLocations[i].x, 0, transform.position.z + terrorBringerLocations[i].y), terrorBringer.transform.rotation);
+                Instantiate(terrorBringer, new Vector3(transform.position.x + terrorBringerLocations[i].x, terrorBringer.transform.position.y, transform.position.z + terrorBringerLocations[i].y), terrorBringer.transform.rotation);
                 enemiesAlive++;
             }
 

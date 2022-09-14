@@ -22,6 +22,9 @@ public class LevelLoader : MonoBehaviour
     {
         StartCoroutine(StartTransition());
         FindObjectOfType<AudioManager>().Stop("Home Run");
+        FindObjectOfType<AudioManager>().Stop("Fun With Guns");
+        FindObjectOfType<AudioManager>().Stop("Risen");
+        FindObjectOfType<AudioManager>().Stop("In The Abyss");
         FindObjectOfType<AudioManager>().PlayOneShot("Main Menu Transition");
 
     }
