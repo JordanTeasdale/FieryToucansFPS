@@ -65,7 +65,7 @@ MonoBehaviour:
   plagueDoctor: {fileID: 5639931300176650011, guid: fd3728971bb9326408dd7a11a4b13245, type: 3}
   dragonWelp: {fileID: 8784616573599632970, guid: cb89c931e3ecf674a821a80784d84f95, type: 3}
   dragonBoss: {fileID: 6562930143932835471, guid: 02ffbf420ec7a744898affcb77e08246, type: 3}
-  terrorBringer: {fileID: 8958090401371176767, guid: 4b32e8ef8ab957944b7ddfd24f3a7162, type: 3}
+  terrorBringer: {fileID: 6562930143932835471, guid: 02ffbf420ec7a744898affcb77e08246, type: 3}
   doors:
   - {fileID: 0}
   skeletonLocations:

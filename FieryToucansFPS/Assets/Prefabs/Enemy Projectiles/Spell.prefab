@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eb104167bc6bb4a8ea268b61ee523e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
   rb: {fileID: 6784732379758538857}
   damage: 2
   speed: 12
@@ -188,7 +189,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -620,7 +621,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0

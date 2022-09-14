@@ -124,7 +124,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
                         col.enabled = false;
 
                     //GetComponent<Animator>().enabled = false;
-                    GetComponent<EnemyAI>().enabled = false;
+                    //GetComponent<EnemyAI>().enabled = false;
 
                 }
             }

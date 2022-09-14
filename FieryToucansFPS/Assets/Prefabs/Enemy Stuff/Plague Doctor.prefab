@@ -1170,7 +1170,7 @@ MonoBehaviour:
   chaseSpeed: 6
   meleeAttackBox: {fileID: 5720460143747373868}
   rangeAttackBox: {fileID: 7413379075473157789}
-  shootRate: 2
+  shootRate: 5
   shootDamage: 2
   RateOfFire: 2
   bulletDestroyTime: 3

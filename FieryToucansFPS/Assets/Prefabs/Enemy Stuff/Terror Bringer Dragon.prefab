@@ -1473,7 +1473,7 @@ Transform:
   m_GameObject: {fileID: 8958090401371176767}
   m_LocalRotation: {x: 0, y: -0.053494874, z: 0, w: 0.9985682}
   m_LocalPosition: {x: -11.500985, y: 0, z: 13.228577}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8958090401371515857}
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   agent: {fileID: 8958090401361900648}
   anim: {fileID: 8958090401361900649}
   rend: {fileID: 8958090401366096075}
-  HP: 10
+  HP: 100
   player: {fileID: 0}
   itemDrop:
   - {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
@@ -1509,12 +1509,12 @@ MonoBehaviour:
     m_Bits: 0
   angle: 90
   sightRange: 20
-  attackRange: 1.5
+  attackRange: 8
   walkPointRange: 10
-  patrolSpeed: 3
-  timeBetweenAttacks: 1
-  damage: 2
-  chaseSpeed: 5
+  patrolSpeed: 2
+  timeBetweenAttacks: 0.5
+  damage: 10
+  chaseSpeed: 10
   attackBox: {fileID: 8958090401371347451}
   enemyAud: {fileID: 1160397804}
   hurtSoundClip: {fileID: 8300000, guid: 119a78ae6bd6e3043b1b1cec83b5f90d, type: 3}

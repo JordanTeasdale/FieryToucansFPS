@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class _EnemyAI : MonoBehaviour, IDamageable
-{
+public class _EnemyAI : MonoBehaviour, IDamageable {
     [Header("-----Components-----")]
     public NavMeshAgent agent;
     public Animator anim;
@@ -22,7 +21,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     Vector3 walkPoint;
     public float walkPointRange;
     public int patrolSpeed;
-    
+
 
     [Header("-----Attack Stats-----")]
     public float timeBetweenAttacks;
@@ -34,22 +33,20 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     [Header("----- Audio -----")]
     [SerializeField] AudioSource enemyAud;
     public AudioClip hurtSoundClip, deathSoundClip;
-    [Range(0, 1)] [SerializeField] float soundVol;
+    [Range(0, 1)][SerializeField] float soundVol;
     public AudioClip[] attackSoundClips;
-    [Range(0, 1)] [SerializeField] float soundVol2;
+    [Range(0, 1)][SerializeField] float soundVol2;
 
     [Header("-----States------")]
 
     public bool playerInSightRange, playerInAttackRange;
 
-    private void Awake()
-    {
+    private void Awake() {
 
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
-    private void Start()
-    {
+    private void Start() {
         walkPoint = transform.position;
         Patrolling();
         StartCoroutine(FOVRoutine());
@@ -58,90 +55,66 @@ public class _EnemyAI : MonoBehaviour, IDamageable
 
     }
 
-    private void Update()
-    {
-        
-        if (anim.GetBool("Dead") == false)
-        {
+    private void Update() {
+
+        if (anim.GetBool("Dead") == false) {
             StartCoroutine(FOVRoutine());
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
 
 
-            if (!playerInSightRange && !playerInAttackRange)
-            {
+            if (!playerInSightRange && !playerInAttackRange) {
                 Patrolling();
-            }
-
-
-            else if (playerInSightRange && !playerInAttackRange)
-            {
+            } else if (playerInSightRange && !playerInAttackRange) {
                 ChasePlayer();
             }
         }
-        
+
     }
 
-    private IEnumerator FOVRoutine()
-    {
+    private IEnumerator FOVRoutine() {
         WaitForSeconds wait = new WaitForSeconds(1f);
-        while (true)
-        {
+        while (true) {
             yield return wait;
             FieldOfViewCheck();
         }
     }
 
-    private void FieldOfViewCheck()
-    {
-        if (anim.GetBool("Dead") == false)
-        {
+    private void FieldOfViewCheck() {
+        if (anim.GetBool("Dead") == false) {
             Collider[] rangeChecks = Physics.OverlapSphere(transform.position, sightRange, playerMask);
 
-            if (rangeChecks.Length != 0)
-            {
+            if (rangeChecks.Length != 0) {
                 Transform target = rangeChecks[0].transform;
                 Vector3 playerDir = (target.position - transform.position).normalized;
 
-                if (Vector3.Angle(transform.forward, playerDir) < angle / 2)
-                {
+                if (Vector3.Angle(transform.forward, playerDir) < angle / 2) {
                     float playerDist = Vector3.Distance(transform.position, target.position);
 
-                    if (!Physics.Raycast(transform.position, playerDir, playerDist, obstuctionMask))
-                    {
+                    if (!Physics.Raycast(transform.position, playerDir, playerDist, obstuctionMask)) {
                         playerInSightRange = true;
-                        if (playerInSightRange && agent.remainingDistance <= attackRange)
-                        {
+                        if (playerInSightRange && agent.remainingDistance <= attackRange) {
                             playerInAttackRange = true;
                             agent.stoppingDistance = attackRange;
                             StartCoroutine(AttackPlayer());
-                        }
-                        else
-                        {
+                        } else {
                             playerInAttackRange = false;
                             //Patrolling();
                         }
-                    }
-                    else
-                    {
+                    } else {
                         playerInSightRange = false;
                         playerInAttackRange = false;
-                    }   
-                }
-                else
-                {
+                    }
+                } else {
                     playerInSightRange = false;
                     playerInAttackRange = false;
                 }
-            }
-            else if (playerInSightRange)
-            {
+            } else if (playerInSightRange) {
                 playerInSightRange = false;
                 playerInAttackRange = false;
             }
         }
     }
-    private void Patrolling()
-    {
+    private void Patrolling() {
 
         agent.speed = patrolSpeed;
         agent.stoppingDistance = 0;
@@ -152,53 +125,47 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         NavMesh.SamplePosition(randomDir, out hit, walkPointRange, NavMesh.AllAreas);
         NavMeshPath path = new NavMeshPath();
 
-        agent.CalculatePath(hit.position, path);
-        if (agent.remainingDistance < 0.1f)
-            agent.SetPath(path);
+        if (hit.hit) {
+            agent.CalculatePath(hit.position, path);
+
+            if (agent.remainingDistance < 0.1f)
+                agent.SetPath(path);
+        }
     }
 
 
-    private void ChasePlayer()
-    {
+    private void ChasePlayer() {
         agent.speed = chaseSpeed;
         agent.stoppingDistance = attackRange;
         agent.SetDestination(GameManager.instance.player.transform.position);
     }
 
-    IEnumerator AttackPlayer()
-    {
+    IEnumerator AttackPlayer() {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
         isAttacking = true;
         anim.SetTrigger("Melee");
         yield return new WaitForSeconds(timeBetweenAttacks);
         isAttacking = false;
-        
+
     }
-    private void HitBoxOn()
-    {
+    private void HitBoxOn() {
         attackBox.GetComponent<Collider>().enabled = true;
     }
 
-    private void HitBoxOff()
-    {
+    private void HitBoxOff() {
         attackBox.GetComponent<Collider>().enabled = false;
     }
 
-    public void TakeDamage(int dmg)
-    {
+    public void TakeDamage(int dmg) {
 
-        if (anim.GetBool("Dead") == false)
-        {
+        if (anim.GetBool("Dead") == false) {
             HP -= dmg;
 
-            if (HP > 0)
-            {
+            if (HP > 0) {
                 anim.SetTrigger("Damage");
                 StartCoroutine(flashColor());
-            }
-            else
-            {
+            } else {
                 GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
                 anim.SetBool("Dead", true);
                 agent.enabled = false;
@@ -212,8 +179,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
 
 
     }
-    IEnumerator flashColor()
-    {
+    IEnumerator flashColor() {
 
         rend.material.color = Color.red;
         agent.speed = 0;
@@ -222,29 +188,24 @@ public class _EnemyAI : MonoBehaviour, IDamageable
         rend.material.color = Color.white;
     }
 
-    private void PlayHurtSound()
-    {
+    private void PlayHurtSound() {
         enemyAud.PlayOneShot(hurtSoundClip, soundVol);
     }
 
-    private void PlayAttackSound()
-    {
+    private void PlayAttackSound() {
         enemyAud.PlayOneShot(attackSoundClips[Random.Range(0, attackSoundClips.Length)], soundVol2);
     }
-    private void PlayDeathSound()
-    {
+    private void PlayDeathSound() {
         enemyAud.PlayOneShot(deathSoundClip, soundVol);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
             other.GetComponent<IDamageable>().TakeDamage(damage);
 
         }
     }
 
-    
+
 
 }
