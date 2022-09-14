@@ -61,7 +61,6 @@ public class GameManager : MonoBehaviour {
             RespawnPos = GameObject.FindGameObjectWithTag("Respawn Pos");
             playerScript.Respawn();
 
-            bossDoor = GameObject.FindGameObjectWithTag("BossDoor");
 
         }
         else
