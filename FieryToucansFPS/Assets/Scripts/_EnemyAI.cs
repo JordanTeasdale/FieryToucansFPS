@@ -113,7 +113,6 @@ public class _EnemyAI : MonoBehaviour, IDamageable
                         {
                             playerInAttackRange = true;
                             agent.stoppingDistance = attackRange;
-                            attackBox.GetComponent<Collider>().enabled = true;
                             StartCoroutine(AttackPlayer());
                         }
                         else
@@ -162,6 +161,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable
     private void ChasePlayer()
     {
         agent.speed = chaseSpeed;
+        agent.stoppingDistance = attackRange;
         agent.SetDestination(GameManager.instance.player.transform.position);
     }
 
