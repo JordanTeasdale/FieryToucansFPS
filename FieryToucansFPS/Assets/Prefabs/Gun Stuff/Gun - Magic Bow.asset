@@ -19,15 +19,15 @@ MonoBehaviour:
   secondaryAmmoConsumption: 0
   spreadFactor: 0
   gunAud: {fileID: 0}
-  shootSound: {fileID: 8300000, guid: 2dc35d77cfe164a2eab57d08500740e2, type: 3}
+  shootSound: {fileID: 8300000, guid: 1718858d8661d1946a2f0f05f1a79494, type: 3}
   shootVol: 0.51
-  shootSoundSecondary: {fileID: 0}
-  shootVolSecondary: 0
+  shootSoundSecondary: {fileID: 8300000, guid: 1718858d8661d1946a2f0f05f1a79494, type: 3}
+  shootVolSecondary: 0.514
   hitEffect: {fileID: 0}
   Crosshair: {fileID: 21300000, guid: ac231197431561240a26b8154fb122ac, type: 3}
   CrosshairSecondary: {fileID: 21300000, guid: a677b05560374b54dbc43d2fcbfb32a7, type: 3}
   maxAmmo: 40
-  currentAmmo: 39
+  currentAmmo: 36
   gun: {fileID: 2258225104679690212, guid: 1f57751aca75b3146b42bc2a1cb3bcd8, type: 3}
   gunIndex: 3
   bulletPrimary: {fileID: 8632138228147884554, guid: 05d8a9841b6b0da4cada191e9b5bf599, type: 3}

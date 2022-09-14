@@ -20,7 +20,7 @@ public class Sound
     public bool isLooping;
 
 
-   public AudioSource sourceOfSound;
+   [HideInInspector] public AudioSource sourceOfSound;
 
 
    
