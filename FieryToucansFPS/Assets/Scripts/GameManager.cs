@@ -53,13 +53,13 @@ public class GameManager : MonoBehaviour {
         instance = this;
         switch (SceneManager.GetActiveScene().name) {
             case ("Level 1"):
-                clearedRooms = 2;
+                clearedRoomsRequired = 2;
                 break;
             case ("Level 2"):
-                clearedRooms = 6;
+                clearedRoomsRequired = 6;
                 break;
             case ("Level 3"):
-                clearedRooms = 4;
+                clearedRoomsRequired = 4;
                 break;
         }
         if (GameObject.FindGameObjectWithTag("Player") != null) { 
