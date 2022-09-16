@@ -10,14 +10,6 @@ public class LevelLoader : MonoBehaviour
     private AudioMixer mainAudioMixer; 
     public float transitionTime = 1f;
 
-    private void Start() {
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-            GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
-
-
-    }
-
-
     public void CoRoutRun()
     {
         StartCoroutine(StartTransition());
