@@ -2,7 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour, IDamageable {
+public class EnemyAI : MonoBehaviour, IDamageable
+{
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer rend;
@@ -12,20 +13,20 @@ public class EnemyAI : MonoBehaviour, IDamageable {
 
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] public int HP;
-    [Range(0, 10)][SerializeField] int playerFaceSpeed;
-    [Range(1, 180)][SerializeField] int fieldOfView;
+    [Range(0, 10)] [SerializeField] int playerFaceSpeed;
+    [Range(1, 180)] [SerializeField] int fieldOfView;
     [Range(1, 180)][SerializeField] int fieldOfViewMelee;
-    [Range(1, 180)][SerializeField] int fieldOfViewShoot;
-    [Range(1, 180)][SerializeField] int roamRadius;
-    [Range(1, 20)][SerializeField] float speedRoam;
-    [Range(1, 20)][SerializeField] float speedChase;
+    [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
+    [Range(1, 180)] [SerializeField] int roamRadius;
+    [Range(1, 20)] [SerializeField] float speedRoam;
+    [Range(1, 20)] [SerializeField] float speedChase;
 
 
     [Header("----- Weapons Stats -----")]
-    [Range(0.1f, 5)][SerializeField] float shootRate;
-    [Range(1, 10)][SerializeField] int damage;
-    [Range(1, 10)][SerializeField] int RateOfFire;
-    [Range(1, 5)][SerializeField] int bulletDestroyTime;
+    [Range(0.1f, 5)] [SerializeField] float shootRate;
+    [Range(1, 10)] [SerializeField] int damage;
+    [Range(1, 10)] [SerializeField] int RateOfFire;
+    [Range(1, 5)] [SerializeField] int bulletDestroyTime;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletSpawnPos;
 
@@ -34,7 +35,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
     public AudioClip soundExecute;
     public AudioClip hurtSoundClip, deathSoundClip;
     public AudioClip[] attackSoundClips;
-    [Range(0, 1)][SerializeField] float soundExecuteVol;
+    [Range(0,1)] [SerializeField] float soundExecuteVol;
 
     [Header("----- Effects -----")]
     [SerializeField] GameObject executeEffect;
@@ -45,7 +46,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
     public bool inMeleeRange = false;
     public bool isExecutable = false;
     private int HPOrig;
-
+    
 
     float stoppingDistanceOrig;
 
@@ -58,7 +59,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
         stoppingDistanceOrig = agent.stoppingDistance;
         startingPos = transform.position;
         HPOrig = HP;
-        //Roam();
+       
     }
 
     // Update is called once per frame
@@ -74,7 +75,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
             if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
             //Debug.Log(agent.remainingDistance);
-        }
+        }     
     }
 
     void Roam() {
@@ -105,18 +106,21 @@ public class EnemyAI : MonoBehaviour, IDamageable {
 
     public void TakeDamage(int damage) {
 
-        if (anim.GetBool("Dead") == false) {
-            if (isExecutable && GameManager.instance.playerScript.isMeleeing == true) {
+        if (anim.GetBool("Dead") == false)  {
+            if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
+            {
                 Execute();
-            } else {
+            }
+            else
+            {
                 HP -= damage;
-                if (HP > 0) {
+                if (HP > 0)  {
                     anim.SetTrigger("Damage");
                     StartCoroutine(FlashColor());
                     StartCoroutine(Executable());
-                } else {
-                    if (GameManager.instance.currentRoom && !GameManager.instance.currentRoom.GetComponent<LevelSpawner>().roomCleared)
-                        GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+                }
+                else  {
+                    GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
                     anim.SetBool("Dead", true);
                     agent.enabled = false;
 
@@ -124,29 +128,32 @@ public class EnemyAI : MonoBehaviour, IDamageable {
                         col.enabled = false;
 
                     //GetComponent<Animator>().enabled = false;
-                    //GetComponent<EnemyAI>().enabled = false;
-
+                    GetComponent<EnemyAI>().enabled = false;
+        
                 }
             }
         }
     }
 
-    private void Execute() {
+    private void Execute()
+    {
         //add code for health and amo drops
         Instantiate(executeEffect, gameObject.transform.position, gameObject.transform.rotation);
         Instantiate(healthDrop, gameObject.transform.position, gameObject.transform.rotation);
         Instantiate(ammoDrop, gameObject.transform.position, gameObject.transform.rotation);
         enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
-        //Destroy(gameObject);
+        Destroy(gameObject);
         GetComponent<Animator>().enabled = false;
         GetComponent<EnemyAI>().enabled = false;
-
+        
 
 
     }
 
-    IEnumerator Executable() {
-        while (HP <= HPOrig / 4) {
+    IEnumerator Executable()
+    {
+        while(HP <= HPOrig/4)
+        {
             isExecutable = true;
             rend.material.color = Color.yellow;
             yield return new WaitForSeconds(1);
@@ -161,8 +168,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
         agent.speed = 0;
         yield return new WaitForSeconds(0.1f);
         agent.speed = speedChase;
-        //agent.SetDestination(GameManager.instance.player.transform.position);
-        //agent.SetDestination(GameManager.instance.player.transform.position);
+        agent.SetDestination(GameManager.instance.player.transform.position);
         agent.stoppingDistance = 0;
         rend.material.color = Color.white;
     }
@@ -170,13 +176,13 @@ public class EnemyAI : MonoBehaviour, IDamageable {
         isShooting = true;
 
         anim.SetTrigger("Shoot");
-
+        
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, gameObject.transform.rotation);
         bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * RateOfFire;
         if (bulletClone.TryGetComponent<EnemyBulletBase>(out EnemyBulletBase bulletBase))
             bulletBase.SetShooter(gameObject.transform);
         yield return new WaitForSeconds(shootRate);
-
+        
         isShooting = false;
     }
 
@@ -187,16 +193,17 @@ public class EnemyAI : MonoBehaviour, IDamageable {
         //Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(raycastPos, playerDir, out hit)) {
+        if (Physics.Raycast(raycastPos, playerDir, out hit))  {
             Debug.DrawRay(raycastPos, playerDir);
 
-            if (hit.collider.CompareTag("Player") && angle <= fieldOfView) {
+            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)   {
                 agent.SetDestination(GameManager.instance.player.transform.position);
                 agent.stoppingDistance = stoppingDistanceOrig;
                 agent.speed = speedChase;
                 FacePlayer();
 
-                if (!isShooting && angle <= fieldOfViewShoot) {
+                if (!isShooting && angle <= fieldOfViewShoot)
+                {
                     StartCoroutine(Shoot());
                 }
 
@@ -204,28 +211,31 @@ public class EnemyAI : MonoBehaviour, IDamageable {
         }
     }
 
-    private void PlayHurtSound() {
+    private void PlayHurtSound()
+    {
         enemyAud.PlayOneShot(hurtSoundClip, soundExecuteVol);
     }
 
-    private void PlayAttackSound() {
+    private void PlayAttackSound()
+    {
         enemyAud.PlayOneShot(attackSoundClips[Random.Range(0, attackSoundClips.Length)], soundExecuteVol);
     }
-    private void PlayDeathSound() {
+    private void PlayDeathSound()
+    {
         enemyAud.PlayOneShot(deathSoundClip, soundExecuteVol);
     }
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)  {
 
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag("Player"))  {
             playerInRange = true;
         }
     }
 
-    void OnTriggerExit(Collider other) {
+    void OnTriggerExit(Collider other)  {
         if (other.CompareTag("Player"))
             playerInRange = false;
 
         if (agent.isActiveAndEnabled)
-            Roam();
+        Roam();
     }
 }
