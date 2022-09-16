@@ -6,6 +6,9 @@ public class TutorialMusic : MonoBehaviour
 {
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Fun With Guns");
+        if(FindObjectOfType<AudioManager>().percentOfListComplete == 1f) {
+            FindObjectOfType<AudioManager>().Play("Fun With Guns");
+        }
+       
     }
 }

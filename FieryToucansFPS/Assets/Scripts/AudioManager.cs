@@ -6,6 +6,9 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    public float percentOfListComplete;
+    public float numSoundsInstansiated;
+
 
     public static AudioManager instance;
 
@@ -20,17 +23,24 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        foreach (Sound sound in sounds) {
+        numSoundsInstansiated = 0;
 
-            sound.sourceOfSound = gameObject.AddComponent<AudioSource>();
-            sound.sourceOfSound.clip = sound.orignalFile;
+        while (percentOfListComplete != 1) {
+            percentOfListComplete = numSoundsInstansiated / sounds.Length;
+            foreach (Sound sound in sounds) {
 
-            sound.sourceOfSound.volume = sound.Volume;
-            sound.sourceOfSound.pitch = sound.pitch;
-            sound.sourceOfSound.loop = sound.isLooping;
-            sound.sourceOfSound.playOnAwake = sound.playOnAwake;
-            sound.sourceOfSound.outputAudioMixerGroup = sound.mixerGroup;
+                sound.sourceOfSound = gameObject.AddComponent<AudioSource>();
+                sound.sourceOfSound.clip = sound.orignalFile;
 
+                sound.sourceOfSound.volume = sound.Volume;
+                sound.sourceOfSound.pitch = sound.pitch;
+                sound.sourceOfSound.loop = sound.isLooping;
+                sound.sourceOfSound.playOnAwake = sound.playOnAwake;
+                sound.sourceOfSound.outputAudioMixerGroup = sound.mixerGroup;
+
+                numSoundsInstansiated++;
+
+            } 
         }
 
        
@@ -41,7 +51,8 @@ public class AudioManager : MonoBehaviour
         Sound soundToPlay = Array.Find<Sound>(sounds, sound => sound.name == _name);
         if (soundToPlay == null)
             return;
-        Debug.Log(soundToPlay.sourceOfSound.ToString());
+        string track = soundToPlay.sourceOfSound.ToString();
+        Debug.Log(track);
         soundToPlay.sourceOfSound.Play();
     }
 
