@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8866380927012251413}
   - component: {fileID: 768186728431748279}
+  - component: {fileID: 2082732357}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 1003069139492901824}
   transitionTime: 2
+--- !u!114 &2082732357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132133208060466694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b580d41e3a4c548a8d0465a52999ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainAudioMixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
 --- !u!1 &5460287996451861730
 GameObject:
   m_ObjectHideFlags: 0

@@ -5149,6 +5149,8 @@ MonoBehaviour:
   checkpointFeedback: {fileID: 0}
   pauseMenu: {fileID: 6172273429898058525}
   playerDeadMenu: {fileID: 0}
+  playerClearedLevel1: {fileID: 0}
+  playerClearedLevel2: {fileID: 0}
   playerWinMenu: {fileID: 9169731180917251291}
   previousMenu: {fileID: 0}
   menuCurrentlyOpen: {fileID: 0}
