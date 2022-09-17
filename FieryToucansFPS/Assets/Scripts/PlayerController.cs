@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         for (int i = 0; i < 6; ++i) {
             gunsList.Add(empty);
         }
+        GameManager.instance.CursorUnlockUnpause();
     }
 
     // Update is called once per frame
@@ -106,9 +107,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
         if (damageTimer > 0)
             damageTimer -= Time.deltaTime;
         //debug code
-        if (Input.GetKeyDown(KeyCode.K)) {
-            TakeDamage(50);
-        }
 
         PlayerMovement();
         //Sprint();
