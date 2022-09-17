@@ -81,4 +81,8 @@ public abstract class WeaponBase : ScriptableObject
         yield return new WaitForSeconds(shootRateSecondary);
         GameManager.instance.playerScript.isShooting = false;
     }
+
+    public virtual void ClearList() {
+
+    }
 }

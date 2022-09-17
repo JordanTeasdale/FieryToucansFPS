@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 
 public class MagicSMGSript : WeaponBase {
-    List<GameObject> clones;
+    List<GameObject> clones = new List<GameObject>();
 
     public override IEnumerator ShootPrimary() {
         GameManager.instance.playerScript.isShooting = true;
@@ -39,7 +39,8 @@ public class MagicSMGSript : WeaponBase {
         }
     }
 
-    public void ClearList() {
-        clones.Clear();
+    public override void ClearList() {
+        if (clones.Count > 0)
+            clones.Clear();
     }
 }
