@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         StartCoroutine(DashCooldown());
     }
 
-    
+
     void FixedUpdate() {
         healthSmoothCount = System.Math.Min(healthSmoothTime, healthSmoothCount + Time.fixedDeltaTime);
         if (healthFillAmount != HP) {
@@ -127,11 +127,11 @@ public class PlayerController : MonoBehaviour, IDamageable {
             UpdateHP();
         }
     }
-    
+
 
     void PlayerMovement() {
 
-        if(!isDashing) //disables player movement during a dash
+        if (!isDashing) //disables player movement during a dash
         {
             //Player is currently on the ground and is not jumping
             if (controller.isGrounded && playerVelocity.y < 0) {
@@ -157,25 +157,20 @@ public class PlayerController : MonoBehaviour, IDamageable {
         }
     }
 
-    IEnumerator Dash()
-    {
-        if(Input.GetButtonDown("Dash") && timesDashed < maxDashes)
-        {
+    IEnumerator Dash() {
+        if (Input.GetButtonDown("Dash") && timesDashed < maxDashes) {
             float startTime = Time.time;
             timesDashed++;
-            while(Time.time < startTime + dashDuration)
-            {
+            while (Time.time < startTime + dashDuration) {
                 isDashing = true;
                 if (move.x == 0 && move.z == 0) //checking to see if the player is curently moving
                 {
                     //move.x = 1;
-                    move = GameManager.instance.player.transform.forward; 
+                    move = GameManager.instance.player.transform.forward;
                     move.y = 0f;
                     //move.z = 0; //setting all but the forward player movement direction to 0
                     controller.Move(move * dashSpeed * Time.deltaTime);
-                }
-                else
-                {
+                } else {
                     move.y = 0f; //makes it so the player doesn't move vertically during a dash
                     controller.Move(move * dashSpeed * Time.deltaTime);
                 }
@@ -185,10 +180,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
         }
     }
 
-    IEnumerator DashCooldown()
-    {
-        if (timesDashed > 0 && isDashCDing == false)
-        {
+    IEnumerator DashCooldown() {
+        if (timesDashed > 0 && isDashCDing == false) {
             isDashCDing = true;
             yield return new WaitForSeconds(dashCooldown);
             timesDashed--;
@@ -277,13 +270,13 @@ public class PlayerController : MonoBehaviour, IDamageable {
         currentAmmo = _gun.currentAmmo;
         UpdatedAmmoGUI();
         Destroy(GameObject.FindGameObjectWithTag("Gun Model"));
-        Instantiate(_gun.gun, gunPostion.position,gunPostion.rotation, gunPostion);
+        Instantiate(_gun.gun, gunPostion.position, gunPostion.rotation, gunPostion);
         GameManager.instance.reticle.GetComponent<Image>().enabled = true;
         GameManager.instance.reticle.GetComponent<Image>().sprite = _gun.Crosshair;
     }
 
     IEnumerator WeaponCycle() {
-        if (gunsList.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0 && !isSwitching) {
+        if (gunsList.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0 && !isSwitching && weaponIndex != -1) {
             isSwitching = true;
             if (Input.GetAxis("Mouse ScrollWheel") > 0) {
                 RotateUp();
@@ -324,9 +317,9 @@ public class PlayerController : MonoBehaviour, IDamageable {
         if (damageTimer <= 0) {
             damageTimer = invincibilityTimer;
 
-            if(_dmg > HP)
+            if (_dmg > HP)
                 _dmg = HP;
-            
+
             if (healthFillAmount == HP) {
                 healthSmoothCount = 0;
                 prevHP = HP;
@@ -365,18 +358,16 @@ public class PlayerController : MonoBehaviour, IDamageable {
     void Shoot() {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
-        if(Input.GetButton("Fire2") && !isShooting && gunsList.Count > 0 && currentAmmo > 0)
-        {
+        if (Input.GetButton("Fire2") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             GameManager.instance.reticle.GetComponent<Image>().sprite = gunsList[weaponIndex].CrosshairSecondary;
             gunsList[weaponIndex].SecondaryFireMode();
-            if (Input.GetButton("Shoot"))
-            {
+            if (Input.GetButton("Shoot")) {
                 aud.PlayOneShot(soundShootSecondary, soundShootSecondaryVol);
                 StartCoroutine(gunsList[weaponIndex].ShootSecondary());
                 UpdatedAmmoGUI();
             }
 
-        }        
+        }
         if (Input.GetButton("Shoot") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
             aud.PlayOneShot(soundShoot, soundShootVol);
             StartCoroutine(gunsList[weaponIndex].ShootPrimary());
