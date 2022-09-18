@@ -162,12 +162,14 @@ MonoBehaviour:
     playOnAwake: 1
     isLooping: 0
     sourceOfSound: {fileID: 0}
-  - name: Plauge Doctor Hurt
-    orignalFile: {fileID: 8300000, guid: 457d83bb6db5a584c9cad4fe2b3a3cb1, type: 3}
+  - name: In The Abyss
+    orignalFile: {fileID: 8300000, guid: 41d9165f056cdf4479cfad5c4f6d0bf0, type: 3}
     mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
-    mixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+    mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     pitch: 1
     Volume: 1
-    playOnAwake: 1
-    isLooping: 0
+    playOnAwake: 0
+    isLooping: 1
     sourceOfSound: {fileID: 0}
+  percentOfListComplete: 0
+  numSoundsInstansiated: 0
