@@ -206,7 +206,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy 1
+  m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -249,7 +249,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Shoot
     m_StateMachine: {fileID: -3755717147084473554}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: ac32d1221e7fa6d44b6eb0722091de33, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -354,16 +354,8 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b0e43036f902b74409059ee1b33b99f6, type: 2}
-    m_Threshold: 3.5
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Speed
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0c1116ef11ca49949ae2cf13c23b64db, type: 3}
-    m_Threshold: 7
+    m_Motion: {fileID: 7400000, guid: 5205469afb3f11b41ac72cfbc969fd2b, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -372,7 +364,7 @@ BlendTree:
   m_BlendParameter: Speed
   m_BlendParameterY: Blend
   m_MinThreshold: 0
-  m_MaxThreshold: 7
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
