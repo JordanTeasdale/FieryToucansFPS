@@ -32,7 +32,7 @@ public class DamageIndicator : MonoBehaviour {
     public void Register(Transform target) {
         SetTarget(target);
         StartCoroutine(RotateToTheTarget());
-        timer = 8;
+        timer = 3;
 
     }
 
