@@ -171,7 +171,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     {
         
 
-            GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+            //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
             anim.SetBool(("Dead"), true);
             agent.enabled = false;
         GetComponent<EnemyAI>().enabled = false;

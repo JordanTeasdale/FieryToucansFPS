@@ -12,38 +12,43 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     [SerializeField] Animator anim;
     [SerializeField] GameObject healthDrop;
     [SerializeField] GameObject ammoDrop;
-
+    
 
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] public int HP;
     [Range(0, 10)] [SerializeField] int playerFaceSpeed;
     [Range(1, 180)] [SerializeField] int fieldOfView;
-    [Range(1, 180)] [SerializeField] int fieldOfViewMelee;
+    [Range(1, 180)][SerializeField] int fieldOfViewMelee;
+    [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
     [Range(1, 180)] [SerializeField] int roamRadius;
     [Range(1, 20)] [SerializeField] float speedRoam;
     [Range(1, 20)] [SerializeField] float speedChase;
 
-    [Header("-----Melee Stats-----")]
-    [Range(0, 10)] [SerializeField] int damage;
+
+    [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)] [SerializeField] float meleeRate;
-    [Range(0, 10)] [SerializeField] int speed;
-    [Range(0, 10)] [SerializeField] int meleeDestroyTime;
-    [SerializeField] GameObject invisHit;
-    [SerializeField] GameObject hitSpawnPos;
+    [Range(1, 10)] [SerializeField] int damage;
+    [Range(1, 10)] [SerializeField] int RateOfmelee;
+    [SerializeField] public GameObject[] attackBoxes;
+    
 
     [Header("----- Audio -----")]
     [SerializeField] AudioSource enemyAud;
     public AudioClip soundExecute;
-    [Range(0, 1)] [SerializeField] float soundExecuteVol;
+    public AudioClip hurtSoundClip, deathSoundClip, gunSoundClip;
+    public AudioClip[] attackSoundClips;
+    [Range(0,1)] [SerializeField] float soundExecuteVol;
 
     [Header("----- Effects -----")]
     [SerializeField] GameObject executeEffect;
 
     Vector3 playerDir;
-    bool isMelee = false;
-    bool isInSight = false;
+    bool isAttacking = false;
+    bool playerInRange = false;
     public bool inMeleeRange = false;
+    public bool isExecutable = false;
     private int HPOrig;
+    
 
     float stoppingDistanceOrig;
 
@@ -52,35 +57,36 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         stoppingDistanceOrig = agent.stoppingDistance;
         startingPos = transform.position;
         HPOrig = HP;
+        anim.SetTrigger("Roar");
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         raycastPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        if (agent.isActiveAndEnabled && !anim.GetBool("Dead"))
-        {
-            anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
+        if (agent.isActiveAndEnabled && !anim.GetBool("Dead")) {
+            if(agent.speed > 0 && agent.speed < speedChase)
+            anim.SetFloat("Speed", speedRoam, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            else if(agent.speed > speedRoam)
+                anim.SetFloat("Speed", speedChase, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            else if(agent.speed == 0 && !isAttacking)
+                anim.SetFloat("Speed", 0, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            
             playerDir = GameManager.instance.player.transform.position - raycastPos;
 
-            if (isInSight)
-            {
+            if (playerInRange) {
                 CanSeePlayer();
-
             }
             if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
             //Debug.Log(agent.remainingDistance);
-        }
+        }     
     }
 
-    void Roam()
-    {
+    void Roam() {
         agent.stoppingDistance = 0;
         agent.speed = speedRoam;
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;
@@ -88,8 +94,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDir, out hit, roamRadius, 1);
-        if (hit.hit)
-        {
+        if (hit.hit) {
             NavMeshPath path = new NavMeshPath();
 
             agent.SetDestination(hit.position);
@@ -99,114 +104,194 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    void FacePlayer()
-    {
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
+    void FacePlayer() {
+        if (agent.remainingDistance <= agent.stoppingDistance) {
             playerDir.y = 0;
             Quaternion rotation = Quaternion.LookRotation(playerDir);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * playerFaceSpeed);
         }
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
 
-        if (anim.GetBool("Dead") == false)
+        if (!anim.GetBool("Dead") && agent.isActiveAndEnabled)
         {
             HP -= damage;
+
             if (HP > 0)
             {
                 anim.SetTrigger("Damage");
                 StartCoroutine(FlashColor());
+
+                StartCoroutine(Executable());
+             if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
+        {
+            
+            Execute();
+        }
             }
-            else if (HP <= 0)
+             else if (HP <= 0)
             {
-                //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
-                anim.SetBool("Dead", true);
-                agent.enabled = false;
-
-
-                foreach (Collider col in GetComponents<Collider>())
-                    col.enabled = false;
-                ItemDrop();
+                Die();
+                
             }
         }
+
+
+
     }
 
-    private void ItemDrop()
+    private void Execute()
     {
         //add code for health and amo drops
-        //Instantiate(executeEffect, gameObject.transform.position, gameObject.transform.rotation);
+        Instantiate(executeEffect, gameObject.transform.position, gameObject.transform.rotation);
         Instantiate(healthDrop, gameObject.transform.position, gameObject.transform.rotation);
         Instantiate(ammoDrop, gameObject.transform.position, gameObject.transform.rotation);
-        //enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
-        //Destroy(gameObject);
+        enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
+        Destroy(gameObject);
+        GetComponent<Animator>().enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
+        
+
+
     }
 
-    IEnumerator FlashColor()
+    IEnumerator Executable()
     {
-        rend.material.color = Color.red;
-        agent.speed = 0;
-        yield return new WaitForSeconds(0.1f);
-        agent.speed = speedChase;
-        agent.SetDestination(GameManager.instance.player.transform.position);
-        agent.stoppingDistance = 0;
+        if (HP <= HPOrig / 4 && HP > 0)
+        {
+            isExecutable = true;
+            rend.material.color = Color.yellow;
+            yield return new WaitForSeconds(1);
+            rend.material.color = Color.cyan;
+            yield return new WaitForSeconds(1);
+        }
+        isExecutable = false;
         rend.material.color = Color.white;
     }
-    IEnumerator Melee()
+    public void Die()
     {
-        isMelee = true;
+        
 
-        anim.SetTrigger("Melee");
+            //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+            anim.SetBool(("Dead"), true);
+            agent.enabled = false;
+        agent.enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
 
-        GameObject meleeClone = Instantiate(invisHit, hitSpawnPos.transform.position, invisHit.transform.rotation);
-        meleeClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * speed;
-        yield return new WaitForSeconds(meleeRate);
-
-        isMelee = false;
+            foreach (Collider col in GetComponents<Collider>())
+                col.enabled = false;
+           
+        
+        //GetComponent<Animator>().enabled = false;
     }
 
-    void CanSeePlayer()
-    {
+    IEnumerator FlashColor() {
+        rend.material.color = Color.red;
+        agent.speed = 0;
+        yield return new WaitForSeconds(0.5f);
+        agent.speed = speedChase;
+        agent.SetDestination(GameManager.instance.player.transform.position);
+        rend.material.color = Color.white;
+    }
+    IEnumerator Melee() {
+        int choice = 0;
+        choice = Random.Range(1, 100);
+        isAttacking = true;
+        if (agent.remainingDistance == agent.stoppingDistance)
+            agent.speed = 0;
+
+        if (choice <= 50)
+            anim.SetTrigger("Melee");
+        if (choice >= 50)
+            anim.SetTrigger("Bite");
+        yield return new WaitForSeconds(meleeRate);
+        isAttacking = false;
+       
+    }
+
+    void CanSeePlayer() {
 
 
         float angle = Vector3.Angle(new Vector3(playerDir.x, 0, playerDir.z), new Vector3(transform.forward.x, 0, transform.forward.z));
         //Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(raycastPos, playerDir, out hit))
-        {
+        if (Physics.Raycast(raycastPos, playerDir, out hit))  {
             Debug.DrawRay(raycastPos, playerDir);
 
-            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)
-            {
+            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)   {
                 agent.SetDestination(GameManager.instance.player.transform.position);
                 agent.stoppingDistance = stoppingDistanceOrig;
                 agent.speed = speedChase;
                 FacePlayer();
-                if (!isMelee && angle <= fieldOfViewMelee && Vector3.Distance(GameManager.instance.player.transform.position, agent.transform.position) <= agent.stoppingDistance)
+
+                if (!isAttacking && angle <= fieldOfViewMelee && agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    //inMeleeRange = true;
                     StartCoroutine(Melee());
                 }
-            }   
+
+            }
+        }
+    }
+    
+
+    private void PlayHurtSound()
+    {
+        enemyAud.PlayOneShot(hurtSoundClip, soundExecuteVol);
+    }
+
+    private void PlayAttackSound()
+    {
+        enemyAud.PlayOneShot(attackSoundClips[Random.Range(0, attackSoundClips.Length)], soundExecuteVol);
+    }
+    private void PlayDeathSound()
+    {
+        enemyAud.PlayOneShot(deathSoundClip, soundExecuteVol);
+    }
+    private void PlayWeaponSound()
+    {
+        enemyAud.PlayOneShot(gunSoundClip, soundExecuteVol);
+    }
+    private void WingsHitBoxOn()
+    {
+        attackBoxes[1].GetComponent<Collider>().enabled = true;
+        //attackBoxes[2].GetComponent<Collider>().enabled = true;
+    }
+
+    private void WingsHitBoxOff()
+    {
+        attackBoxes[1].GetComponent<Collider>().enabled = false;
+        //attackBoxes[2].GetComponent<Collider>().enabled = false;
+    }
+
+    private void BiteHitBoxOn()
+    {
+        attackBoxes[0].GetComponent<Collider>().enabled = true;
+    }
+    private void BiteHitBoxOff()
+    {
+        attackBoxes[0].GetComponent<Collider>().enabled = false;
+    }
+
+
+
+    void OnTriggerEnter(Collider other)  {
+
+        if (other.CompareTag("Player") && !anim.GetBool("Dead"))  {
             
-        }
-    }
-    void OnTriggerEnter(Collider other)
-    {
+            playerInRange = true;
+            //PlayAttackSound();
 
-        if (other.CompareTag("Player"))
-        {
-            isInSight = true;
         }
+        
     }
 
-    void OnTriggerExit(Collider other)
-    {
+    void OnTriggerExit(Collider other)  {
         if (other.CompareTag("Player"))
-            isInSight = false;
+            playerInRange = false;
+
+        if (agent.isActiveAndEnabled)
         Roam();
     }
 
