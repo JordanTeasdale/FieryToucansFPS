@@ -172,7 +172,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(1);
         }
         isExecutable = false;
-        //rend.material.color = Color.white;
+        rend.material.color = Color.white;
     }
     public void Die()
     {
