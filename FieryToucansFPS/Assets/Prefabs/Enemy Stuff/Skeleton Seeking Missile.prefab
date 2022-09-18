@@ -1540,8 +1540,8 @@ MonoBehaviour:
   fieldOfViewMelee: 0
   fieldOfViewShoot: 32
   roamRadius: 10
-  speedRoam: 2
-  speedChase: 4
+  speedRoam: 2.5
+  speedChase: 7
   shootRate: 2
   damage: 1
   RateOfFire: 0
@@ -1552,6 +1552,7 @@ MonoBehaviour:
   soundExecute: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
   hurtSoundClip: {fileID: 8300000, guid: 2d07eba8eab06cb45898cb11da4a54e2, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 2a0632631fb04405fa85f4a5a5d01a4d, type: 3}
+  gunSoundClip: {fileID: 8300000, guid: 53a1a8c18087346d18a02d8a4e0c59ca, type: 3}
   attackSoundClips:
   - {fileID: 8300000, guid: 0d3def65994b84d04b8791e02beb2391, type: 3}
   - {fileID: 8300000, guid: 3a20c1f2fd4d44c4d9a6fabbec93be20, type: 3}
@@ -1590,9 +1591,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 4
-  m_Acceleration: 20
+  m_Acceleration: 48
   avoidancePriority: 50
-  m_AngularSpeed: 600
+  m_AngularSpeed: 720
   m_StoppingDistance: 7
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0

@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Header("----- Audio -----")]
     [SerializeField] AudioSource enemyAud;
     public AudioClip soundExecute;
-    public AudioClip hurtSoundClip, deathSoundClip;
+    public AudioClip hurtSoundClip, deathSoundClip, gunSoundClip;
     public AudioClip[] attackSoundClips;
     [Range(0,1)] [SerializeField] float soundExecuteVol;
 
@@ -66,7 +66,13 @@ public class EnemyAI : MonoBehaviour, IDamageable
     void Update() {
         raycastPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         if (agent.isActiveAndEnabled && !anim.GetBool("Dead")) {
-            anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), agent.velocity.normalized.magnitude, Time.deltaTime * 5));
+            if(agent.speed > 0 && agent.speed < speedChase)
+            anim.SetFloat("Speed", speedRoam, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            else if(agent.speed > speedRoam)
+                anim.SetFloat("Speed", speedChase, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            else if(agent.speed == 0 && !isShooting)
+                anim.SetFloat("Speed", 0, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            
             playerDir = GameManager.instance.player.transform.position - raycastPos;
 
             if (playerInRange) {
@@ -106,33 +112,31 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage) {
 
-        if (anim.GetBool("Dead") == false)  {
-            if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
+        if (!anim.GetBool("Dead") && agent.isActiveAndEnabled)
+        {
+            HP -= damage;
+
+            if (HP > 0)
             {
-                Execute();
+                anim.SetTrigger("Damage");
+                StartCoroutine(FlashColor());
+
+                StartCoroutine(Executable());
+             if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
+        {
+            
+            Execute();
+        }
             }
-            else
+             else if (HP <= 0)
             {
-                HP -= damage;
-                if (HP > 0)  {
-                    anim.SetTrigger("Damage");
-                    StartCoroutine(FlashColor());
-                    StartCoroutine(Executable());
-                }
-                else  {
-                    GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
-                    anim.SetBool("Dead", true);
-                    agent.enabled = false;
-
-                    foreach (Collider col in GetComponents<Collider>())
-                        col.enabled = false;
-
-                    //GetComponent<Animator>().enabled = false;
-                    GetComponent<EnemyAI>().enabled = false;
-        
-                }
+                Die();
+                
             }
         }
+
+
+
     }
 
     private void Execute()
@@ -152,7 +156,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     IEnumerator Executable()
     {
-        while(HP <= HPOrig/4)
+        if (HP <= HPOrig / 4 && HP > 0)
         {
             isExecutable = true;
             rend.material.color = Color.yellow;
@@ -161,12 +165,28 @@ public class EnemyAI : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(1);
         }
         isExecutable = false;
+        //rend.material.color = Color.white;
+    }
+    public void Die()
+    {
+        
+
+            //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+            anim.SetBool(("Dead"), true);
+            agent.enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
+
+            foreach (Collider col in GetComponents<Collider>())
+                col.enabled = false;
+           
+        
+        //GetComponent<Animator>().enabled = false;
     }
 
     IEnumerator FlashColor() {
         rend.material.color = Color.red;
         agent.speed = 0;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         agent.speed = speedChase;
         agent.SetDestination(GameManager.instance.player.transform.position);
         agent.stoppingDistance = 0;
@@ -202,7 +222,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 agent.speed = speedChase;
                 FacePlayer();
 
-                if (!isShooting && angle <= fieldOfViewShoot)
+                if (!isShooting && angle <= fieldOfViewShoot && agent.remainingDistance <= agent.stoppingDistance)
                 {
                     StartCoroutine(Shoot());
                 }
@@ -210,6 +230,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
             }
         }
     }
+    
 
     private void PlayHurtSound()
     {
@@ -224,11 +245,18 @@ public class EnemyAI : MonoBehaviour, IDamageable
     {
         enemyAud.PlayOneShot(deathSoundClip, soundExecuteVol);
     }
+    private void PlayWeaponSound()
+    {
+        enemyAud.PlayOneShot(gunSoundClip, soundExecuteVol);
+    }
     void OnTriggerEnter(Collider other)  {
 
-        if (other.CompareTag("Player"))  {
+        if (other.CompareTag("Player") && !anim.GetBool("Dead"))  {
             playerInRange = true;
+            PlayAttackSound();
+
         }
+        
     }
 
     void OnTriggerExit(Collider other)  {
