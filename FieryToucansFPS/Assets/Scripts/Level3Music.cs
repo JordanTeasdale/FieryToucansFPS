@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Level3Music : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    bool isPlaying;
+    
+    void Update()
     {
-        FindObjectOfType<AudioManager>().Play("In The Abyss");
+        if (FindObjectOfType<AudioManager>().percentOfListComplete == 1f && isPlaying == false) {
+            FindObjectOfType<AudioManager>().Play("In The Abyss");
+            isPlaying = true;
+        }
+
     }
 
 }

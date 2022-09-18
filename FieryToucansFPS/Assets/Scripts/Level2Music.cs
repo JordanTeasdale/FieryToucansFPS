@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Level2Music : MonoBehaviour {
-    // Start is called before the first frame update
-    void Start() {
-        FindObjectOfType<AudioManager>().Play("Risen");
+    bool isPlaying;
+    
+    void Update()
+    {
+        if (FindObjectOfType<AudioManager>().percentOfListComplete == 1f && isPlaying == false) {
+            FindObjectOfType<AudioManager>().Play("Risen");
+            isPlaying = true;
+        }
+            
     }
 
 }
