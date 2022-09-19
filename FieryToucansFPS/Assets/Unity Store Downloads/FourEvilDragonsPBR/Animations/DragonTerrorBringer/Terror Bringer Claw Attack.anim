@@ -96145,15 +96145,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.6666667
-    functionName: WingsHitBoxOff
+  - time: 0.93333334
+    functionName: PlayHitSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.93333334
-    functionName: PlayHitSound
+  - time: 1.2333333
+    functionName: WingsHitBoxOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

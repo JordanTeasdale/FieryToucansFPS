@@ -12,13 +12,13 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     [SerializeField] Animator anim;
     [SerializeField] GameObject healthDrop;
     [SerializeField] GameObject ammoDrop;
-    
+
 
     [Header("----- Enemy Stats -----")]
     [Range(0, 100)] public int HP;
     [Range(0, 10)] [SerializeField] int playerFaceSpeed;
     [Range(1, 180)] [SerializeField] int fieldOfView;
-    [Range(1, 180)][SerializeField] int fieldOfViewMelee;
+    [Range(1, 180)] [SerializeField] int fieldOfViewMelee;
     [Range(1, 180)] [SerializeField] int fieldOfViewShoot;
     [Range(1, 180)] [SerializeField] int roamRadius;
     [Range(1, 20)] [SerializeField] float speedRoam;
@@ -30,14 +30,15 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     [Range(1, 10)] [SerializeField] int damage;
     [Range(1, 10)] [SerializeField] int RateOfmelee;
     [SerializeField] public GameObject[] attackBoxes;
-    
+
 
     [Header("----- Audio -----")]
     [SerializeField] AudioSource enemyAud;
     public AudioClip soundExecute;
-    public AudioClip hurtSoundClip, deathSoundClip, gunSoundClip;
-    public AudioClip[] attackSoundClips;
-    [Range(0,1)] [SerializeField] float soundExecuteVol;
+    public AudioClip hurtSoundClip, deathSoundClip;
+    public AudioClip[] attackSoundClips; 
+    public AudioClip[]gunSoundClips;
+    [Range(0, 1)] [SerializeField] float soundExecuteVol;
 
     [Header("----- Effects -----")]
     [SerializeField] GameObject executeEffect;
@@ -48,7 +49,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     public bool inMeleeRange = false;
     public bool isExecutable = false;
     private int HPOrig;
-    
+
 
     float stoppingDistanceOrig;
 
@@ -57,7 +58,8 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         stoppingDistanceOrig = agent.stoppingDistance;
         startingPos = transform.position;
         HPOrig = HP;
@@ -65,28 +67,32 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         raycastPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        if (agent.isActiveAndEnabled && !anim.GetBool("Dead")) {
-            if(agent.speed > 0 && agent.speed < speedChase)
-            anim.SetFloat("Speed", speedRoam, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
-            else if(agent.speed > speedRoam)
+        if (agent.isActiveAndEnabled && !anim.GetBool("Dead"))
+        {
+            if (agent.speed > 0 && agent.speed < speedChase)
+                anim.SetFloat("Speed", speedRoam, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
+            else if (agent.speed > speedRoam)
                 anim.SetFloat("Speed", speedChase, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
-            else if(agent.speed == 0 && !isAttacking)
+            else if (agent.speed == 0 && !isAttacking)
                 anim.SetFloat("Speed", 0, agent.velocity.normalized.magnitude, Time.deltaTime * 5);
-            
+
             playerDir = GameManager.instance.player.transform.position - raycastPos;
 
-            if (playerInRange) {
+            if (playerInRange)
+            {
                 CanSeePlayer();
             }
             if (!agent.pathPending && agent.remainingDistance == 0)
                 Roam();
             //Debug.Log(agent.remainingDistance);
-        }     
+        }
     }
 
-    void Roam() {
+    void Roam()
+    {
         agent.stoppingDistance = 0;
         agent.speed = speedRoam;
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;
@@ -94,7 +100,8 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDir, out hit, roamRadius, 1);
-        if (hit.hit) {
+        if (hit.hit)
+        {
             NavMeshPath path = new NavMeshPath();
 
             agent.SetDestination(hit.position);
@@ -104,15 +111,18 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
         }
     }
 
-    void FacePlayer() {
-        if (agent.remainingDistance <= agent.stoppingDistance) {
+    void FacePlayer()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
             playerDir.y = 0;
             Quaternion rotation = Quaternion.LookRotation(playerDir);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * playerFaceSpeed);
         }
     }
 
-    public void TakeDamage(int damage) {
+    public void TakeDamage(int damage)
+    {
 
         if (!anim.GetBool("Dead") && agent.isActiveAndEnabled)
         {
@@ -124,16 +134,16 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
                 StartCoroutine(FlashColor());
 
                 StartCoroutine(Executable());
-             if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
-        {
-            
-            Execute();
-        }
+                if (isExecutable && GameManager.instance.playerScript.isMeleeing == true)
+                {
+
+                    Execute();
+                }
             }
-             else if (HP <= 0)
+            else if (HP <= 0)
             {
                 Die();
-                
+
             }
         }
 
@@ -151,7 +161,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
         Destroy(gameObject);
         GetComponent<Animator>().enabled = false;
         GetComponent<EnemyAI>().enabled = false;
-        
+
 
 
     }
@@ -171,22 +181,22 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     }
     public void Die()
     {
-        
 
-            //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
-            anim.SetBool(("Dead"), true);
-            agent.enabled = false;
+
+        //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+        anim.SetBool(("Dead"), true);
         agent.enabled = false;
         GetComponent<EnemyAI>().enabled = false;
 
-            foreach (Collider col in GetComponents<Collider>())
-                col.enabled = false;
-           
-        
+        foreach (Collider col in GetComponents<Collider>())
+            col.enabled = false;
+
+
         //GetComponent<Animator>().enabled = false;
     }
 
-    IEnumerator FlashColor() {
+    IEnumerator FlashColor()
+    {
         rend.material.color = Color.red;
         agent.speed = 0;
         yield return new WaitForSeconds(0.5f);
@@ -194,33 +204,40 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
         agent.SetDestination(GameManager.instance.player.transform.position);
         rend.material.color = Color.white;
     }
-    IEnumerator Melee() {
+    IEnumerator Melee()
+    {
         int choice = 0;
         choice = Random.Range(1, 100);
-        isAttacking = true;
-        if (agent.remainingDistance == agent.stoppingDistance)
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
             agent.speed = 0;
+            isAttacking = true;
 
-        if (choice <= 50)
-            anim.SetTrigger("Melee");
-        if (choice >= 50)
-            anim.SetTrigger("Bite");
-        yield return new WaitForSeconds(meleeRate);
+
+            if (choice <= 50)
+                anim.SetTrigger("Melee");
+            if (choice >= 50)
+                anim.SetTrigger("Bite");
+            yield return new WaitForSeconds(meleeRate);
+        }
         isAttacking = false;
-       
+
     }
 
-    void CanSeePlayer() {
+    void CanSeePlayer()
+    {
 
 
         float angle = Vector3.Angle(new Vector3(playerDir.x, 0, playerDir.z), new Vector3(transform.forward.x, 0, transform.forward.z));
         //Debug.Log(angle);
 
         RaycastHit hit;
-        if (Physics.Raycast(raycastPos, playerDir, out hit))  {
+        if (Physics.Raycast(raycastPos, playerDir, out hit))
+        {
             Debug.DrawRay(raycastPos, playerDir);
 
-            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)   {
+            if (hit.collider.CompareTag("Player") && angle <= fieldOfView)
+            {
                 agent.SetDestination(GameManager.instance.player.transform.position);
                 agent.stoppingDistance = stoppingDistanceOrig;
                 agent.speed = speedChase;
@@ -234,7 +251,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
             }
         }
     }
-    
+
 
     private void PlayHurtSound()
     {
@@ -251,7 +268,13 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     }
     private void PlayWeaponSound()
     {
-        enemyAud.PlayOneShot(gunSoundClip, soundExecuteVol);
+        enemyAud.PlayOneShot(gunSoundClips[0], soundExecuteVol);
+       
+    }
+    private void PlayWeaponSound2()
+    {
+        enemyAud.PlayOneShot(gunSoundClips[1], soundExecuteVol);
+
     }
     private void WingsHitBoxOn()
     {
@@ -276,23 +299,26 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
 
 
-    void OnTriggerEnter(Collider other)  {
+    void OnTriggerEnter(Collider other)
+    {
 
-        if (other.CompareTag("Player") && !anim.GetBool("Dead"))  {
-            
+        if (other.CompareTag("Player") && !anim.GetBool("Dead"))
+        {
+
             playerInRange = true;
             //PlayAttackSound();
 
         }
-        
+
     }
 
-    void OnTriggerExit(Collider other)  {
+    void OnTriggerExit(Collider other)
+    {
         if (other.CompareTag("Player"))
             playerInRange = false;
 
         if (agent.isActiveAndEnabled)
-        Roam();
+            Roam();
     }
 
 }

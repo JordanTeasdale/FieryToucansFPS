@@ -330,14 +330,14 @@ MonoBehaviour:
   anim: {fileID: 2113439257943142667}
   healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
-  HP: 10
-  playerFaceSpeed: 3
+  HP: 100
+  playerFaceSpeed: 4
   fieldOfView: 180
   fieldOfViewMelee: 0
   fieldOfViewShoot: 45
   roamRadius: 5
   speedRoam: 3
-  speedChase: 5
+  speedChase: 7
   shootRate: 1
   damage: 2
   RateOfFire: 0
@@ -345,14 +345,15 @@ MonoBehaviour:
   bullet: {fileID: 5594914386056169330, guid: dd4126444289d064eada9ab9bef8ecde, type: 3}
   bulletSpawnPos: {fileID: 4522384897265381877}
   enemyAud: {fileID: 274286388}
-  soundExecute: {fileID: 0}
-  hurtSoundClip: {fileID: 8300000, guid: a624bcb07d968db4ca3b4ea98c11ed26, type: 3}
+  soundExecute: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
+  hurtSoundClip: {fileID: 8300000, guid: 75136bc105728d441b90a4247ac3ae71, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 70857a4bad8d14b49ad276d9c611a12b, type: 3}
+  gunSoundClip: {fileID: 0}
   attackSoundClips:
-  - {fileID: 8300000, guid: e8b6eabdbaacefc4d94a781dbae09fa1, type: 3}
+  - {fileID: 8300000, guid: 1a5d616dfd36eac4e9039da2e762f3d0, type: 3}
   - {fileID: 8300000, guid: 461c75de4bf167a4688657a9c4bd432f, type: 3}
   soundExecuteVol: 0.76
-  executeEffect: {fileID: 0}
+  executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
   inMeleeRange: 0
   isExecutable: 0
 --- !u!195 &1266945392910352998
@@ -365,10 +366,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 20
+  m_Speed: 7
+  m_Acceleration: 48
   avoidancePriority: 50
-  m_AngularSpeed: 600
+  m_AngularSpeed: 720
   m_StoppingDistance: 6
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
@@ -376,7 +377,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!65 &1266945392910352999
 BoxCollider:
   m_ObjectHideFlags: 0
