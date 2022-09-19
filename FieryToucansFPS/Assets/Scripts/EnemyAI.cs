@@ -157,8 +157,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         enemyAud.PlayOneShot(soundExecute, soundExecuteVol);
         Die();
         Destroy(gameObject);
-        GetComponent<Animator>().enabled = false;
-        GetComponent<EnemyAI>().enabled = false;
+        //GetComponent<Animator>().enabled = false;
+        //GetComponent<EnemyAI>().enabled = false;
     }
 
     IEnumerator Executable()
@@ -196,7 +196,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         agent.speed = 0;
         yield return new WaitForSeconds(0.5f);
         agent.speed = speedChase;
-        agent.SetDestination(GameManager.instance.player.transform.position);
+        if(HP>0)
+            agent.SetDestination(GameManager.instance.player.transform.position);
         agent.stoppingDistance = 0;
         rend.material.color = Color.white;
     }
