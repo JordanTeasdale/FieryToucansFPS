@@ -585,6 +585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8784616573599948806}
+  - component: {fileID: 1544475926351822956}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -614,6 +615,19 @@ Transform:
   m_Father: {fileID: 8784616573599898000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 34.942947, y: -89.61862, z: 0.28478813}
+--- !u!135 &1544475926351822956
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784616573599606784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 46.37
+  m_Center: {x: -6.2, y: -3.86, z: 0}
 --- !u!1 &8784616573599606876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1657,6 @@ GameObject:
   - component: {fileID: 8784616573609061038}
   - component: {fileID: 8784616573599942435}
   - component: {fileID: 8784616573599942434}
-  - component: {fileID: 8784616573599942433}
   - component: {fileID: 8784616573599942432}
   - component: {fileID: 8784616573599942447}
   - component: {fileID: 812320447}
@@ -1688,28 +1701,27 @@ MonoBehaviour:
   anim: {fileID: 8784616573609061038}
   healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
-  HP: 5
-  playerFaceSpeed: 3
+  HP: 100
+  playerFaceSpeed: 5
   fieldOfView: 180
   fieldOfViewMelee: 0
   fieldOfViewShoot: 45
-  roamRadius: 5
-  speedRoam: 2.5
-  speedChase: 5
-  shootRate: 0.5
-  damage: 1
-  RateOfFire: 0
+  roamRadius: 13
+  speedRoam: 3.5
+  speedChase: 7
+  shootRate: 1.5
+  damage: 2
+  RateOfFire: 2
   bulletDestroyTime: 3
   bullet: {fileID: 1754623834730887423, guid: 07bfc7a1ff021be4b8329269d79bedcd, type: 3}
   bulletSpawnPos: {fileID: 8784616573599664422}
   enemyAud: {fileID: 812320447}
-  soundExecute: {fileID: 0}
+  soundExecute: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
   hurtSoundClip: {fileID: 8300000, guid: 14a7be615ec2de847af9a502286df00d, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 457d83bb6db5a584c9cad4fe2b3a3cb1, type: 3}
+  gunSoundClip: {fileID: 0}
   attackSoundClips:
   - {fileID: 8300000, guid: de3785e61ac8c074e8f9470933e7f9ae, type: 3}
-  - {fileID: 8300000, guid: d1f8d4165dfa79a4fa92289d2d83d58f, type: 3}
-  - {fileID: 8300000, guid: 32fafbc6fa7104a4eb3879eab5c38e45, type: 3}
   soundExecuteVol: 0.66
   executeEffect: {fileID: 0}
   inMeleeRange: 0
@@ -1745,10 +1757,10 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 20
+  m_Acceleration: 48
   avoidancePriority: 50
-  m_AngularSpeed: 600
-  m_StoppingDistance: 5
+  m_AngularSpeed: 720
+  m_StoppingDistance: 7
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -1769,19 +1781,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 1.75, z: 13.37}
   m_Center: {x: 0, y: 1.89, z: 0}
---- !u!135 &8784616573599942433
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8784616573599632970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 1.87, z: 5.48}
 --- !u!135 &8784616573599942432
 SphereCollider:
   m_ObjectHideFlags: 0

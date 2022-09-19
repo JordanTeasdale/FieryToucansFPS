@@ -1151,7 +1151,7 @@ MonoBehaviour:
   agent: {fileID: 5639931300176806712}
   anim: {fileID: 5639931300169362587}
   rend: {fileID: 5639931300173468251}
-  HP: 15
+  HP: 100
   player: {fileID: 0}
   playerMask:
     serializedVersion: 2
@@ -1162,11 +1162,11 @@ MonoBehaviour:
   angle: 90
   sightRange: 20
   meleeRange: 2
-  rangeAttackRange: 8
-  walkPointRange: 10
+  rangeAttackRange: 10
+  walkPointRange: 15
   patrolSpeed: 2
   timeBetweenAttacks: 2.5
-  damage: 1
+  damage: 4
   chaseSpeed: 6
   meleeAttackBox: {fileID: 5720460143747373868}
   rangeAttackBox: {fileID: 7413379075473157789}
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   shootDamage: 2
   RateOfFire: 2
   bulletDestroyTime: 3
-  bullet: {fileID: 6784732379758538861, guid: 80dd827890f72a14592a044bc5788314, type: 3}
+  bullet: {fileID: 6512959243080671258, guid: 4f59f81a71fb9824a8907b6d8e7ab553, type: 3}
   enemyAud: {fileID: 1092131497}
   attackSoundClip: {fileID: 8300000, guid: a2ae90e42daaf4723a539c25867d37fd, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 0a14b81c9eeb97d42861fbdd686e65da, type: 3}
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e5afb3612f411224887c2576b4f8a2db, type: 3}
   soundVol: 0.57
   playerInSightRange: 0
-  playerInMeleeAttackRange: 1
+  playerInMeleeAttackRange: 0
   playerInRangeAttackRange: 0
 --- !u!195 &5639931300176806712
 NavMeshAgent:
@@ -1196,11 +1196,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 50
   avoidancePriority: 50
-  m_AngularSpeed: 600
-  m_StoppingDistance: 0
+  m_AngularSpeed: 720
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
