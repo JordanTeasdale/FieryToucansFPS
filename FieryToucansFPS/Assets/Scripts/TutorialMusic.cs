@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class TutorialMusic : MonoBehaviour
 {
-    void Start()
+    bool isPlaying = false;
+    void Update()
     {
-        if(FindObjectOfType<AudioManager>().percentOfListComplete == 1f) {
+        if(FindObjectOfType<AudioManager>().percentOfListComplete == 1f && isPlaying == false) {
+            Debug.Log("entered");
             FindObjectOfType<AudioManager>().Play("Fun With Guns");
+            isPlaying = true;
         }
+           
        
     }
 }

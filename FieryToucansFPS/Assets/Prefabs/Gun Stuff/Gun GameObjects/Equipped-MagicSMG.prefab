@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3452057079196791473}
   - component: {fileID: -2447089717890847344}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Equipped-MagicSMG
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -102,6 +102,18 @@ PrefabInstance:
     - target: {fileID: 5712381537406874127, guid: ba5b99e8aff8485408caf64568b1ecad, type: 3}
       propertyPath: m_Name
       value: MagicSMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712381537406874127, guid: ba5b99e8aff8485408caf64568b1ecad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228088340831676499, guid: ba5b99e8aff8485408caf64568b1ecad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606221823128021663, guid: ba5b99e8aff8485408caf64568b1ecad, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5b99e8aff8485408caf64568b1ecad, type: 3}
