@@ -29,7 +29,7 @@ public class OptionsMenu : MonoBehaviour
     public void SetVolMaster(float _volume) {
         masterVol = _volume;
         mainMixer.SetFloat("MasterVol", _volume);
-        masterVolLable.text = Mathf.RoundToInt(((masterVol + 80) / 80) * 100).ToString();
+        masterVolLable.text = Mathf.RoundToInt(((masterVol + 41) / 41) * 100).ToString();
         
 
 
@@ -37,14 +37,14 @@ public class OptionsMenu : MonoBehaviour
     public void SetVolMusic(float _volume) {
         musicVol = _volume;
         mainMixer.SetFloat("MusicVol", _volume);
-        musicVolLable.text = Mathf.RoundToInt(((musicVol + 80) / 80) * 100).ToString();
+        musicVolLable.text = Mathf.RoundToInt(((musicVol + 41) / 41) * 100).ToString();
        
 
     }
     public void SetVolSFX(float _volume) {
         SFXVol = _volume;
         mainMixer.SetFloat("SFXVol", _volume);
-        SFXVolLable.text = Mathf.RoundToInt(((SFXVol + 80) / 80) * 100).ToString();
+        SFXVolLable.text = Mathf.RoundToInt(((SFXVol + 41) / 41) * 100).ToString();
         
 
     }
