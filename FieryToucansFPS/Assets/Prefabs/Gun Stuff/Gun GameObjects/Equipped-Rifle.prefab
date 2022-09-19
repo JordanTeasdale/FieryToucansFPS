@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408186301753862075}
   - component: {fileID: 8208308490428973022}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Equipped-Rifle
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -55,6 +55,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408186301753862075}
     m_Modifications:
+    - target: {fileID: 2004368610822878909, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5892858534221547832, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -138,6 +142,14 @@ PrefabInstance:
     - target: {fileID: 7779174790924642571, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}
       propertyPath: m_Name
       value: Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779174790924642571, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058918053003000550, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13824b23ca5bdd54596211a8916b30d9, type: 3}

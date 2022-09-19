@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1454536756959787616}
   - component: {fileID: 8091721860264935011}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Equipped-Shotgun
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -56,6 +56,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1454536756959787616}
     m_Modifications:
+    - target: {fileID: 446910575228842611, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914307280995139012, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052631296320375384, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5165544833390662712, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,6 +115,18 @@ PrefabInstance:
     - target: {fileID: 5540662314617441922, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
       propertyPath: m_Name
       value: ShotGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540662314617441922, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564859328626010693, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273826906644003105, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab6d2902ca84c546991bcfac0de53bf, type: 3}

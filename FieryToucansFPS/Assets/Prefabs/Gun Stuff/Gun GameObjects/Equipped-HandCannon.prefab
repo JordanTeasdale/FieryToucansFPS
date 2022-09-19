@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3696075015098850175}
   - component: {fileID: 4836711036498066237}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Equipped-HandCannon
   m_TagString: Gun Model
   m_Icon: {fileID: 0}
@@ -56,6 +56,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3696075015098850175}
     m_Modifications:
+    - target: {fileID: 147585260878109883, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 327805766390021857, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328186535215654372, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4558771528152947342, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9659258
@@ -71,6 +83,10 @@ PrefabInstance:
     - target: {fileID: 4558771528152947342, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847228517448206294, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4854023000576203706, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
       propertyPath: m_RootOrder
@@ -132,6 +148,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HC
       objectReference: {fileID: 0}
+    - target: {fileID: 5194660960821559552, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142150654613723996, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7459912539154967991, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9848078
@@ -143,6 +167,10 @@ PrefabInstance:
     - target: {fileID: 7459912539154967991, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655312879134897835, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6349338583690d4a9748a0c7f7424e8, type: 3}
