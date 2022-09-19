@@ -50,7 +50,7 @@ MonoBehaviour:
     mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     pitch: 1
-    Volume: 1
+    Volume: 0.5
     playOnAwake: 0
     isLooping: 1
     sourceOfSound: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
     mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     pitch: 1
-    Volume: 1
+    Volume: 0.5
     playOnAwake: 0
     isLooping: 1
     sourceOfSound: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
     mixer: {fileID: 24100000, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     mixerGroup: {fileID: -8455035384234367600, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
     pitch: 1
-    Volume: 1
+    Volume: 0.5
     playOnAwake: 0
     isLooping: 1
     sourceOfSound: {fileID: 0}
