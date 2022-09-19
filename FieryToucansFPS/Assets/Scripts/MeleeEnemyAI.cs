@@ -183,7 +183,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     {
 
 
-        //GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
+        GameManager.instance.currentRoom.GetComponent<LevelSpawner>().EnemyKilled();
         anim.SetBool(("Dead"), true);
         agent.enabled = false;
         GetComponent<EnemyAI>().enabled = false;
@@ -279,13 +279,13 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     private void WingsHitBoxOn()
     {
         attackBoxes[1].GetComponent<Collider>().enabled = true;
-        //attackBoxes[2].GetComponent<Collider>().enabled = true;
+       
     }
 
     private void WingsHitBoxOff()
     {
         attackBoxes[1].GetComponent<Collider>().enabled = false;
-        //attackBoxes[2].GetComponent<Collider>().enabled = false;
+        
     }
 
     private void BiteHitBoxOn()

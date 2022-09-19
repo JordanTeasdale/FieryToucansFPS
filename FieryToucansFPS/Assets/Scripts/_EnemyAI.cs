@@ -98,7 +98,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable {
                             StartCoroutine(AttackPlayer());
                         } else {
                             playerInAttackRange = false;
-                            //Patrolling();
+                           
                         }
                     } else {
                         playerInSightRange = false;
@@ -149,6 +149,7 @@ public class _EnemyAI : MonoBehaviour, IDamageable {
         isAttacking = false;
 
     }
+
     private void HitBoxOn() {
         attackBox.GetComponent<Collider>().enabled = true;
     }
