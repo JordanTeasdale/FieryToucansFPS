@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject ammoDrop;
 
     [Header("----- Enemy Stats -----")]
-    [Range(0, 100)] public int HP;
+    [Range(0, 500)] public int HP;
     [Range(0, 10)][SerializeField] int playerFaceSpeed;
     [Range(1, 180)][SerializeField] int fieldOfView;
     [Range(1, 180)][SerializeField] int fieldOfViewMelee;

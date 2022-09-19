@@ -1723,7 +1723,7 @@ MonoBehaviour:
   attackSoundClips:
   - {fileID: 8300000, guid: de3785e61ac8c074e8f9470933e7f9ae, type: 3}
   soundExecuteVol: 0.66
-  executeEffect: {fileID: 0}
+  executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
   inMeleeRange: 0
   isExecutable: 0
 --- !u!95 &8784616573609061038
