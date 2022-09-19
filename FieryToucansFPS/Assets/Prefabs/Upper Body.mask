@@ -8,4 +8,52 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: Upper Body
   m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: mesh
+    m_Weight: 1
+  - m_Path: Root
+    m_Weight: 1
+  - m_Path: Root/BN_Hips
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_LeftUpLeg
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_LeftUpLeg/BN_LeftLeg
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_LeftUpLeg/BN_LeftLeg/BN_LeftFoot
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_LeftUpLeg/BN_LeftLeg/BN_LeftFoot/BN_LeftToeBase
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_RightUpLeg
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_RightUpLeg/BN_RightLeg
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_RightUpLeg/BN_RightLeg/BN_RightFoot
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_RightUpLeg/BN_RightLeg/BN_RightFoot/BN_RightToeBase
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_LeftShoulder
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_LeftShoulder/BN_LeftArm
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_LeftShoulder/BN_LeftArm/BN_LeftForeArm
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_LeftShoulder/BN_LeftArm/BN_LeftForeArm/BN_LeftHand
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_Neck
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_Neck/BN_Head
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_RightShoulder
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_RightShoulder/BN_RightArm
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_RightShoulder/BN_RightArm/BN_RightForeArm
+    m_Weight: 1
+  - m_Path: Root/BN_Hips/BN_Spine/BN_Spine1/BN_RightShoulder/BN_RightArm/BN_RightForeArm/BN_RightHand
+    m_Weight: 1
