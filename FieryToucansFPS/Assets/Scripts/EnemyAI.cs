@@ -82,7 +82,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
             {
                 CanSeePlayer();
             }
-            if (!agent.pathPending && agent.remainingDistance == 0)
+            if (!agent.pathPending && agent.remainingDistance == 0 && !anim.GetBool("Dead"))
                 Roam();
             //Debug.Log(agent.remainingDistance);
         }
