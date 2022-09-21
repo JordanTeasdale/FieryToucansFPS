@@ -1544,7 +1544,7 @@ MonoBehaviour:
   speedChase: 7
   shootRate: 1
   damage: 1
-  RateOfFire: 0
+  speed: 25
   bulletDestroyTime: 3
   bullet: {fileID: 7469385733591944243, guid: 51918aa8844acf64e86938eaf35b0138, type: 3}
   bulletSpawnPos: {fileID: 296556089879653189}
@@ -1594,7 +1594,7 @@ NavMeshAgent:
   m_Acceleration: 48
   avoidancePriority: 50
   m_AngularSpeed: 720
-  m_StoppingDistance: 3
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1

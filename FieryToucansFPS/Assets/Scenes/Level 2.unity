@@ -563,6 +563,10 @@ PrefabInstance:
       value: RoomSpawner Library
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[0]
       value: 
       objectReference: {fileID: 609726674}
@@ -16575,6 +16579,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: enemiesAlive
       value: 0
       objectReference: {fileID: 0}
@@ -20905,6 +20913,10 @@ PrefabInstance:
       value: RoomSpawner Boss
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[0]
       value: 
       objectReference: {fileID: 1784044392}
@@ -21022,7 +21034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277194, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.17843
+      value: 15.95
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277194, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26951,6 +26963,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -27104,7 +27120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277194, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.50843
+      value: 15.958
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277194, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27352,6 +27368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomSpawner Armory
       objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[0]
       value: 
@@ -34051,6 +34071,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: enemiesAlive
       value: 0

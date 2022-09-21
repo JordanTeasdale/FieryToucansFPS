@@ -1713,7 +1713,7 @@ MonoBehaviour:
   damage: 2
   RateOfFire: 2
   bulletDestroyTime: 3
-  bullet: {fileID: 1754623834730887423, guid: 07bfc7a1ff021be4b8329269d79bedcd, type: 3}
+  bullet: {fileID: 1754623834730887423, guid: 363311759a2f1024db0f3a6f3a3f0d8a, type: 3}
   bulletSpawnPos: {fileID: 8784616573599664422}
   enemyAud: {fileID: 812320447}
   soundExecute: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}

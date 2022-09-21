@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     [Header("----- Weapons Stats -----")]
     [Range(0.1f, 5)][SerializeField] float shootRate;
     [Range(1, 10)][SerializeField] int damage;
-    [Range(1, 10)][SerializeField] int RateOfFire;
+    [Range(1, 100)][SerializeField] int speed;
     [Range(1, 5)][SerializeField] int bulletDestroyTime;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject bulletSpawnPos;
@@ -208,10 +208,12 @@ public class EnemyAI : MonoBehaviour, IDamageable
         anim.SetTrigger("Shoot");
 
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, gameObject.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.player.transform.position - transform.position).normalized * RateOfFire;
-        if (bulletClone.TryGetComponent<EnemyBulletBase>(out EnemyBulletBase bulletBase))
-            bulletBase.SetShooter(gameObject.transform);
-        yield return new WaitForSeconds(shootRate);
+        Rigidbody rig = bulletClone.GetComponent<Rigidbody>();
+        rig.AddForce(transform.forward * speed, ForceMode.VelocityChange);
+        bulletClone.GetComponent<SimpleEnemyProjectile>().damage = damage;
+        bulletClone.GetComponent<SimpleEnemyProjectile>().speed = speed;
+        bulletClone.GetComponent<SimpleEnemyProjectile>().destroyTime = bulletDestroyTime;
+    yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
     }
