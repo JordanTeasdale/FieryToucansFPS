@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] GameObject hitEffect;
 
     [Header("------Audio------")]
-    [SerializeField] AudioSource aud;
+    public AudioSource aud;
     [SerializeField] AudioClip[] soundDamage;
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         HPOrig = HP;
         cameraController = cameraMain.GetComponent<CameraController>();
         //
-        cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+        cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV", 60);
 
 
         ResetHP();
