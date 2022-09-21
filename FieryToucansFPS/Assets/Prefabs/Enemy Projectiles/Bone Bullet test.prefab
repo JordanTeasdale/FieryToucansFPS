@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7468530972427390439}
   - component: {fileID: 7483875900292965635}
   - component: {fileID: -323491119332858537}
-  - component: {fileID: -4623387096729408036}
   - component: {fileID: 7493437192989003317}
   - component: {fileID: 7493437192989003316}
   - component: {fileID: 7493437192989003314}
@@ -56,22 +55,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162d34b04d1bb4b4a85a0e0a3c87a744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 7493437192989003314}
-  damage: 1
-  speed: 20
-  destroyTime: 3
---- !u!114 &-4623387096729408036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469385733591944243}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb104167bc6bb4a8ea268b61ee523e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
