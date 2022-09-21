@@ -218,11 +218,10 @@ public class GameManager : MonoBehaviour {
     }
 
     public void CurrentPlayerPrefValue() {
+    
+        if (PlayerPrefs.GetFloat("FOV") < 60f && !isMainOptionsMenu) {
 
-        if (PlayerPrefs.HasKey("FOV") && !isMainOptionsMenu) {
-
-            if (PlayerPrefs.GetFloat("FOV") < 60)
-                PlayerPrefs.SetFloat("FOV", 60f);
+            PlayerPrefs.SetFloat("FOV", 60f);
 
             GameManager.instance.playerScript.cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
         }
