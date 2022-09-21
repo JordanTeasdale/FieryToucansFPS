@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] GameObject hitEffect;
 
     [Header("------Audio------")]
-    [SerializeField] AudioSource aud;
+    public AudioSource aud;
     [SerializeField] AudioClip[] soundDamage;
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;

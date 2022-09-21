@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleEnemyProjectile : MonoBehaviour
+public class SimpleEnemyProjectile : EnemyBullet
 {
         [SerializeField] Rigidbody rb;
         public int damage;

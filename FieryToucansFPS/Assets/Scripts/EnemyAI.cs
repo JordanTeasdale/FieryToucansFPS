@@ -213,6 +213,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         bulletClone.GetComponent<SimpleEnemyProjectile>().damage = damage;
         bulletClone.GetComponent<SimpleEnemyProjectile>().speed = speed;
         bulletClone.GetComponent<SimpleEnemyProjectile>().destroyTime = bulletDestroyTime;
+        bulletClone.GetComponent<SimpleEnemyProjectile>().SetShooter(gameObject.transform);
     yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
