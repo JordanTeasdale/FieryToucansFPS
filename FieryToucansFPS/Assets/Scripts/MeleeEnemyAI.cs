@@ -94,8 +94,8 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
     void Roam()
     {
-        SightOff();
-        SightOn();
+        //SightOff();
+        //SightOn();
         agent.stoppingDistance = 0;
         agent.speed = speedRoam;
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;

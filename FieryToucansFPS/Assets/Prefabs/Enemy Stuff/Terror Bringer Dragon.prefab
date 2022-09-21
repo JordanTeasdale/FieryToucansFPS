@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 2920443767127316861}
   - component: {fileID: 2920443767127316860}
   - component: {fileID: 2920443767127316859}
-  - component: {fileID: 6113082204007065015}
+  - component: {fileID: 3997916996180785147}
   - component: {fileID: 6113082204007065012}
   m_Layer: 6
   m_Name: Terror Bringer Dragon
@@ -1777,6 +1777,7 @@ MonoBehaviour:
   anim: {fileID: 6113082203997597438}
   healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
+  sightCol: {fileID: 6113082204007065012}
   HP: 100
   playerFaceSpeed: 4
   fieldOfView: 180
@@ -1796,9 +1797,9 @@ MonoBehaviour:
   soundExecute: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
   hurtSoundClip: {fileID: 8300000, guid: 5dc4296dc6479cf439c6b7a0303436dd, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 4ff2cd7e27d300840967aabc540e9213, type: 3}
-  gunSoundClip: {fileID: 0}
   attackSoundClips:
   - {fileID: 8300000, guid: dd2127069b3f07943a6b39c3036403a0, type: 3}
+  gunSoundClips: []
   soundExecuteVol: 0.5
   executeEffect: {fileID: 6221651516144037186, guid: a16eea0f131fcd34181a9c387eaf5208, type: 3}
   inMeleeRange: 0
@@ -1883,7 +1884,7 @@ AudioSource:
   m_GameObject: {fileID: 6113082204007065000}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1970,7 +1971,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6113082204007065015
+--- !u!114 &3997916996180785147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1979,16 +1980,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6113082204007065000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1ec67b16e458743bba5e931c16f292, type: 3}
+  m_Script: {fileID: 11500000, guid: 910ed001accff8c479b1617273b6c188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAud: {fileID: 2920443767127316859}
-  bites:
-  - {fileID: 8300000, guid: a188769fbc58a0448959bc2882339344, type: 3}
-  - {fileID: 8300000, guid: e1113df30ed74324e8eff9291461a824, type: 3}
-  meleeAttack: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
-  flames: {fileID: 0}
-  soundVol: 0.5
+  stabSound: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
+  biteSound: {fileID: 8300000, guid: a188769fbc58a0448959bc2882339344, type: 3}
 --- !u!135 &6113082204007065012
 SphereCollider:
   m_ObjectHideFlags: 0
