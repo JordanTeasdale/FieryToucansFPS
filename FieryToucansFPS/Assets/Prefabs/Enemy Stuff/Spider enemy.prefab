@@ -338,11 +338,11 @@ MonoBehaviour:
   roamRadius: 5
   speedRoam: 3
   speedChase: 7
-  shootRate: 1
-  damage: 2
-  RateOfFire: 0
-  bulletDestroyTime: 2
-  bullet: {fileID: 5594914386056169330, guid: dd4126444289d064eada9ab9bef8ecde, type: 3}
+  shootRate: 0.95
+  damage: 4
+  speed: 15
+  bulletDestroyTime: 4
+  bullet: {fileID: 5594914386056169330, guid: 0d7edb5700ba68440a4f69054266a1f9, type: 3}
   bulletSpawnPos: {fileID: 4522384897265381877}
   enemyAud: {fileID: 274286388}
   soundExecute: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
@@ -442,7 +442,7 @@ AudioSource:
   m_GameObject: {fileID: 1266945392910353016}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -383331070330001558, guid: 66b1063a07eaee64ca2ad7f9eafa964b, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

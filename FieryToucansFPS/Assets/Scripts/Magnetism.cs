@@ -12,7 +12,7 @@ public class Magnetism : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            transform.position = Vector3.Lerp(transform.position, other.transform.position, Time.deltaTime * 2.5f);
+            transform.position = Vector3.MoveTowards(transform.position, other.transform.position, Time.deltaTime * magnetSpeed);
         }
 
     }
