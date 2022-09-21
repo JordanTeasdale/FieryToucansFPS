@@ -5,21 +5,21 @@ using UnityEngine;
 [CreateAssetMenu]
 
 public class BowScript : WeaponBase {
-    float power = 5;
+    float power = 0.1f;
     public override IEnumerator ShootPrimary() {
         currentAmmo--;
         GameManager.instance.playerScript.isShooting = true;
         while (Input.GetMouseButton(0)) {
-            if (power < 205)
-                power += 1;
+            if (power < 1.5f)
+                power += Time.deltaTime;
             yield return null;
         }
         Debug.Log(power);
         GameObject bulletClone = Instantiate(bulletPrimary, GameManager.instance.gunPosition.transform.position, GameManager.instance.playerScript.cameraMain.transform.rotation);
-        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.playerScript.cameraMain.transform.forward).normalized * (shootSpeedPrimary * (power / 250));
-        bulletPrimary.GetComponent<Bullet>().damage = (int)(bulletPrimary.GetComponent<Bullet>().damage * (power / 250));
+        bulletClone.GetComponent<Rigidbody>().velocity = (GameManager.instance.playerScript.cameraMain.transform.forward).normalized * (shootSpeedPrimary * (power / 1.5f));
+        bulletClone.GetComponent<Bullet>().damage = (int)(bulletPrimary.GetComponent<Bullet>().damage * (power / 1.5f));
         yield return new WaitForSeconds(shootRatePrimary);
-        power = 5;
+        power = 0.1f;
         GameManager.instance.playerScript.isShooting = false;
     }
 
