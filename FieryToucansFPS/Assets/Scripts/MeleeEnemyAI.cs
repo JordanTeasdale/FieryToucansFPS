@@ -12,6 +12,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     [SerializeField] Animator anim;
     [SerializeField] GameObject healthDrop;
     [SerializeField] GameObject ammoDrop;
+    [SerializeField] Collider sightCol;
 
 
     [Header("----- Enemy Stats -----")]
@@ -93,6 +94,8 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
 
     void Roam()
     {
+        SightOff();
+        SightOn();
         agent.stoppingDistance = 0;
         agent.speed = speedRoam;
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;
@@ -295,6 +298,15 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     private void BiteHitBoxOff()
     {
         attackBoxes[0].GetComponent<Collider>().enabled = false;
+    }
+    private void SightOn()
+    {
+        sightCol.enabled = true;
+        
+    }
+    private void SightOff()
+    {
+        sightCol.enabled = false;
     }
 
 
