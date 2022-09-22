@@ -209,12 +209,17 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, gameObject.transform.rotation);
         Rigidbody rig = bulletClone.GetComponent<Rigidbody>();
+
+        //bulletClone.GetComponent<SimpleEnemyProjectile>().damage = damage;
+        //bulletClone.GetComponent<SimpleEnemyProjectile>().speed = speed;
+        //bulletClone.GetComponent<SimpleEnemyProjectile>().destroyTime = bulletDestroyTime;
+        // bulletClone.GetComponent<SimpleEnemyProjectile>().SetShooter(gameObject.transform);
+        rig.velocity = (GameManager.instance.player.transform.position - transform.position).normalized * speed;
         rig.AddForce(transform.forward * speed, ForceMode.VelocityChange);
-        bulletClone.GetComponent<SimpleEnemyProjectile>().damage = damage;
-        bulletClone.GetComponent<SimpleEnemyProjectile>().speed = speed;
-        bulletClone.GetComponent<SimpleEnemyProjectile>().destroyTime = bulletDestroyTime;
-        bulletClone.GetComponent<SimpleEnemyProjectile>().SetShooter(gameObject.transform);
-    yield return new WaitForSeconds(shootRate);
+
+        if (bulletClone.TryGetComponent<EnemyBulletBase>(out EnemyBulletBase bulletBase))
+            bulletBase.SetShooter(gameObject.transform);
+        yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
     }
