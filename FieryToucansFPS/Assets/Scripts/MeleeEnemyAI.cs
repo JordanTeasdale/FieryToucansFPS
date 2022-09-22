@@ -224,6 +224,8 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(meleeRate);
         }
         isAttacking = false;
+        SightOff();
+        SightOn();
 
     }
 
