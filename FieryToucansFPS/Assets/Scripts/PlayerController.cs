@@ -247,7 +247,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
                 }
             }
         }
-        GunEquip(gunsList[weaponIndex]);
+        UpdatedAmmoGUI();
     }
 
     public void GunPickup(WeaponBase _stats) {
