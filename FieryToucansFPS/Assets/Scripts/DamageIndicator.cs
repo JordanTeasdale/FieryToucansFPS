@@ -15,7 +15,7 @@ public class DamageIndicator : MonoBehaviour {
 
     private void Update() {
         timer -= Time.deltaTime;
-        if (timer <= 0)
+        if (timer <= 0 || targetPos == null)
             Destroy(gameObject);
     }
 
