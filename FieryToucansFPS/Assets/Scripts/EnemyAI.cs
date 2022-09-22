@@ -204,6 +204,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     IEnumerator Shoot()
     {
         isShooting = true;
+        agent.isStopped = true;
 
         anim.SetTrigger("Shoot");
 
@@ -222,6 +223,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
+        if (!isShooting)
+            agent.isStopped = false;
     }
 
     void CanSeePlayer()

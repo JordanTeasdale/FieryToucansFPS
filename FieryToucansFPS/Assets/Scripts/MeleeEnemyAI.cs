@@ -64,7 +64,11 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
         stoppingDistanceOrig = agent.stoppingDistance;
         startingPos = transform.position;
         HPOrig = HP;
+
         anim.SetTrigger("Roar");
+       
+        
+        
     }
 
     // Update is called once per frame
@@ -213,9 +217,9 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
         choice = Random.Range(1, 100);
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            agent.speed = 0;
+            
             isAttacking = true;
-
+            agent.isStopped = true;
 
             if (choice <= 50)
                 anim.SetTrigger("Melee");
@@ -224,6 +228,7 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(meleeRate);
         }
         isAttacking = false;
+        agent.isStopped = false;
         SightOff();
         SightOn();
 
@@ -316,9 +321,9 @@ public class MeleeEnemyAI : MonoBehaviour, IDamageable
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player") && !anim.GetBool("Dead"))
+         if(other.CompareTag("Player") && !anim.GetBool("Dead"))
         {
-
+            
             playerInRange = true;
             //PlayAttackSound();
 
