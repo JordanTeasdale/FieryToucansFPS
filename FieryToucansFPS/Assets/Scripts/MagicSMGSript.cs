@@ -43,4 +43,14 @@ public class MagicSMGSript : WeaponBase {
         if (clones.Count > 0)
             clones.Clear();
     }
+
+    public override void SecondaryFireMode() {
+        Debug.Log("Inside secondary Fire");
+
+        if (currentAmmo == 0) {
+            Debug.Log("inside secondary Fire if statement");
+
+            currentAmmo++;
+        }
+    }
 }

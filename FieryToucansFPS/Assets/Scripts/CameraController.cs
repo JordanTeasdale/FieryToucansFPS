@@ -66,6 +66,8 @@ public class CameraController : MonoBehaviour {
             yield return null;
         }
         isShaking = false;
+
+        
     }
 
 

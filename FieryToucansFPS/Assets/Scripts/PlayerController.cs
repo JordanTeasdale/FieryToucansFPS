@@ -358,10 +358,11 @@ public class PlayerController : MonoBehaviour, IDamageable {
     void Shoot() {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDistance, Color.red, 0.000001f); //makes a visible line to visualize the shoot ray
 
-        if (Input.GetButton("Fire2") && !isShooting && gunsList.Count > 0 && currentAmmo > 0) {
+        if (Input.GetButton("Fire2") && !isShooting && gunsList.Count > 0) {
             GameManager.instance.reticle.GetComponent<Image>().sprite = gunsList[weaponIndex].CrosshairSecondary;
             gunsList[weaponIndex].SecondaryFireMode();
-            if (Input.GetButton("Shoot")) {
+            Debug.Log("After secondary Fire");
+            if (Input.GetButton("Shoot") && currentAmmo > 0) {
                 aud.PlayOneShot(soundShootSecondary, soundShootSecondaryVol);
                 StartCoroutine(gunsList[weaponIndex].ShootSecondary());
                 UpdatedAmmoGUI();
