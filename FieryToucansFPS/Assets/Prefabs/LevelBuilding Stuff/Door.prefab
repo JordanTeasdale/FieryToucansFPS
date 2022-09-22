@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 743302110}
   - component: {fileID: 743302109}
   - component: {fileID: 743302108}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: DoorPort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 1192899126}
   - component: {fileID: 1192899125}
   - component: {fileID: 1192899124}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: DoorStarboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6584496529633395750}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: DoorPort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6584496529719975070}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: DoorStarboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 6584496530254199927}
   - component: {fileID: 6584496530254199920}
   - component: {fileID: -3561828667399405817}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Door
   m_TagString: Door
   m_Icon: {fileID: 0}
