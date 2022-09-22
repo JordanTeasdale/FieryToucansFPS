@@ -2659,7 +2659,7 @@ MonoBehaviour:
   speedChase: 7
   shootRate: 0.95
   damage: 2
-  speed: 6
+  speed: 28
   bulletDestroyTime: 5
   bullet: {fileID: 1754623834730887423, guid: 363311759a2f1024db0f3a6f3a3f0d8a, type: 3}
   bulletSpawnPos: {fileID: 6402605658100143995}

@@ -107,7 +107,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1860781604366143156}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.24
   m_Height: 1.61
   m_Direction: 1
@@ -361,6 +361,7 @@ MonoBehaviour:
   anim: {fileID: 3512724360870551948}
   healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
+  sightCol: {fileID: 3512724360870551950}
   HP: 100
   playerFaceSpeed: 5
   fieldOfView: 180
