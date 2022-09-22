@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
                 clearedRoomsRequired = 4;
                 break;
         }
-        if (GameObject.FindGameObjectWithTag("Player") != null) { 
+        if (GameObject.FindGameObjectWithTag("Player") != null) {
             player = GameObject.FindGameObjectWithTag("Player");
             playerScript = player.GetComponent<PlayerController>();
 
@@ -72,11 +72,10 @@ public class GameManager : MonoBehaviour {
             playerScript.Respawn();
 
 
-        }
-        else
+        } else
             gameObject.SetActive(false);
 
-        menuCurrentlyOpen = pauseMenu;
+        //menuCurrentlyOpen = pauseMenu;
     }
 
     private void Start() {
@@ -107,17 +106,19 @@ public class GameManager : MonoBehaviour {
             else
                 CursorUnlockUnpause();
         }
-        if (Time.timeScale > 0 && Input.GetButton("Open Radial")) {
+        if (Time.timeScale > 0 && Input.GetButton("Open Radial") && menuCurrentlyOpen != pauseMenu) {
             radialMenu.SetActive(true);
             CursorLockSlowed();
         }
-        if (Input.GetButtonUp("Open Radial")) {
+        if (Input.GetButtonUp("Open Radial") || menuCurrentlyOpen == pauseMenu) {
             if (playerScript.gunsList[radialMenu.GetComponent<RadialMenuScript>().selection].name != "Gun - Empty") {
                 playerScript.weaponIndex = radialMenu.GetComponent<RadialMenuScript>().selection;
                 playerScript.GunEquip(playerScript.gunsList[playerScript.weaponIndex]);
             }
             radialMenu.SetActive(false);
             CursorUnlockUnslowed();
+            if (menuCurrentlyOpen == pauseMenu)
+                CursorLockPause();
         }
         if (playerScript.HP <= playerScript.HPOrig * 0.25)
             lowHealthIndicator.SetActive(true);
@@ -127,10 +128,8 @@ public class GameManager : MonoBehaviour {
         AccessShowcase();
     }
 
-    private void AccessShowcase()
-    {
-        if (Input.GetButton("AccessShow"))
-        {
+    private void AccessShowcase() {
+        if (Input.GetButton("AccessShow")) {
             SceneManager.LoadScene("Showcase Level");
         }
     }
@@ -184,8 +183,8 @@ public class GameManager : MonoBehaviour {
                     menuCurrentlyOpen = playerWinMenu;
                     break;
             }
-                
-            
+
+
             CursorLockPause();
             gameOver = true;
         }
@@ -218,7 +217,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void CurrentPlayerPrefValue() {
-    
+
         if (PlayerPrefs.GetFloat("FOV") < 60f && !isMainOptionsMenu) {
 
             PlayerPrefs.SetFloat("FOV", 60f);
