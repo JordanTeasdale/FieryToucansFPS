@@ -228,7 +228,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 16375
+    m_Bits: 32759
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   gravityValue: 35
   maxJumps: 2
   HP: 51
+  isDead: 0
   invincibilityTimer: 0.5
   meleeHitbox: {fileID: 6627562012560487157}
   meleeDamage: 5

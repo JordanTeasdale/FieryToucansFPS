@@ -331,6 +331,10 @@ PrefabInstance:
       value: BossRoomSpnwr
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -5415,6 +5419,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6814652050488694999, guid: 66ba444acd60e0f44a4209fd1389f69e, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ba444acd60e0f44a4209fd1389f69e, type: 3}
 --- !u!1 &1016893395
@@ -6107,6 +6115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 867665154}
     m_Modifications:
+    - target: {fileID: -3561828667399405817, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6584496530254199921, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
       propertyPath: m_Name
       value: Minion Door
@@ -9365,6 +9377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 867665154}
     m_Modifications:
+    - target: {fileID: -3561828667399405817, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6584496530254199921, guid: a2d89258574eea24bb0ae9417d414099, type: 3}
       propertyPath: m_Name
       value: Door
@@ -11700,6 +11716,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinionRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: skeleton
+      value: 
+      objectReference: {fileID: 296788235326708141, guid: 302404cde2ab7c74db815be69a2eb900, type: 3}
+    - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
+      propertyPath: dragonWelp
+      value: 
+      objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.size
       value: 1

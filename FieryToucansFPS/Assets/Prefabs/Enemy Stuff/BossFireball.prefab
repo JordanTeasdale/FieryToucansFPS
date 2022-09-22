@@ -4862,6 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162d34b04d1bb4b4a85a0e0a3c87a744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
   rb: {fileID: 2467965402040738038}
   damage: 5
   speed: 2

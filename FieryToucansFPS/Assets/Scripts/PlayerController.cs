@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] float gravityValue;
     [SerializeField] int maxJumps;
     [Range(1, 100)] public int HP;
+    public bool isDead;
     [SerializeField] float invincibilityTimer;
     [SerializeField] GameObject meleeHitbox;
     [SerializeField] int meleeDamage;
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     [SerializeField] GameObject hitEffect;
 
     [Header("------Audio------")]
-    [SerializeField] AudioSource aud;
+    public AudioSource aud;
     [SerializeField] AudioClip[] soundDamage;
     [Range(0, 1)][SerializeField] float soundDamageVol;
     [SerializeField] AudioClip soundShoot;
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
         HPOrig = HP;
         cameraController = cameraMain.GetComponent<CameraController>();
         //
-        cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV");
+        cameraMain.GetComponent<Camera>().fieldOfView = PlayerPrefs.GetFloat("FOV", 60);
 
 
         ResetHP();
@@ -107,8 +108,8 @@ public class PlayerController : MonoBehaviour, IDamageable {
         if (damageTimer > 0)
             damageTimer -= Time.deltaTime;
         //debug code
-
-        PlayerMovement();
+        if (!isDead)
+            PlayerMovement();
         //Sprint();
         Shoot();
 
@@ -247,7 +248,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
                 }
             }
         }
-        GunEquip(gunsList[weaponIndex]);
+        UpdatedAmmoGUI();
     }
 
     public void GunPickup(WeaponBase _stats) {
@@ -392,6 +393,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public void Respawn() {
+        isDead = false;
         healthSmoothCount = 0;
         controller.enabled = false;
         transform.position = GameManager.instance.RespawnPos.transform.position;
@@ -406,6 +408,7 @@ public class PlayerController : MonoBehaviour, IDamageable {
     }
 
     public IEnumerator Death() {
+        isDead = true;
         cameraMain.GetComponent<Animator>().enabled = true;
         cameraMain.GetComponent<Animator>().SetTrigger("isDead");
         yield return new WaitForSeconds(1.728f);

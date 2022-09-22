@@ -204,18 +204,27 @@ public class EnemyAI : MonoBehaviour, IDamageable
     IEnumerator Shoot()
     {
         isShooting = true;
+        agent.isStopped = true;
 
         anim.SetTrigger("Shoot");
 
         GameObject bulletClone = Instantiate(bullet, bulletSpawnPos.transform.position, gameObject.transform.rotation);
         Rigidbody rig = bulletClone.GetComponent<Rigidbody>();
+
+        //bulletClone.GetComponent<SimpleEnemyProjectile>().damage = damage;
+        //bulletClone.GetComponent<SimpleEnemyProjectile>().speed = speed;
+        //bulletClone.GetComponent<SimpleEnemyProjectile>().destroyTime = bulletDestroyTime;
+        // bulletClone.GetComponent<SimpleEnemyProjectile>().SetShooter(gameObject.transform);
+        rig.velocity = (GameManager.instance.player.transform.position - transform.position).normalized * speed;
         rig.AddForce(transform.forward * speed, ForceMode.VelocityChange);
-        bulletClone.GetComponent<SimpleEnemyProjectile>().damage = damage;
-        bulletClone.GetComponent<SimpleEnemyProjectile>().speed = speed;
-        bulletClone.GetComponent<SimpleEnemyProjectile>().destroyTime = bulletDestroyTime;
-    yield return new WaitForSeconds(shootRate);
+
+        if (bulletClone.TryGetComponent<EnemyBulletBase>(out EnemyBulletBase bulletBase))
+            bulletBase.SetShooter(gameObject.transform);
+        yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
+        if (!isShooting)
+            agent.isStopped = false;
     }
 
     void CanSeePlayer()

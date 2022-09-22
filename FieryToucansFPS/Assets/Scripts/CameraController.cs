@@ -30,24 +30,26 @@ public class CameraController : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate() {
 
-        //get the input
-        mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensHori;
-        mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensVert;
-        if (!isShaking) {
-            //if false its normal, if true the sens would be inverted
-            if (invert)
-                xRotation += mouseY;
-            else
-                xRotation -= mouseY;
+        if (!GameManager.instance.playerScript.isDead) {
+            //get the input
+            mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensHori;
+            mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensVert;
+            if (!isShaking) {
+                //if false its normal, if true the sens would be inverted
+                if (invert)
+                    xRotation += mouseY;
+                else
+                    xRotation -= mouseY;
 
-            //Clamp the rotation
-            xRotation = Mathf.Clamp(xRotation, lockVertMin, lockVertMax);
+                //Clamp the rotation
+                xRotation = Mathf.Clamp(xRotation, lockVertMin, lockVertMax);
 
-            //Rotate the camera on the x-axis
-            transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+                //Rotate the camera on the x-axis
+                transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            }
+            //rotate the player     by putting the child camera with the parent
+            transform.parent.Rotate(Vector3.up * mouseX); 
         }
-        //rotate the player     by putting the child camera with the parent
-        transform.parent.Rotate(Vector3.up * mouseX);
     }
 
 
