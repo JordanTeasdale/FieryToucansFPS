@@ -2663,7 +2663,7 @@ MonoBehaviour:
   bulletDestroyTime: 5
   bullet: {fileID: 1754623834730887423, guid: 363311759a2f1024db0f3a6f3a3f0d8a, type: 3}
   bulletSpawnPos: {fileID: 6402605658100143995}
-  enemyAud: {fileID: 812320447, guid: cb89c931e3ecf674a821a80784d84f95, type: 3}
+  enemyAud: {fileID: 6402605658090763506}
   soundExecute: {fileID: 8300000, guid: 84a3be8547a26ed48875b90de32e2bd6, type: 3}
   hurtSoundClip: {fileID: 8300000, guid: 14a7be615ec2de847af9a502286df00d, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 457d83bb6db5a584c9cad4fe2b3a3cb1, type: 3}
