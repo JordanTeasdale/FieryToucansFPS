@@ -737,7 +737,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 295045313}
-  - component: {fileID: 1346839081}
+  - component: {fileID: 1555234981}
+  - component: {fileID: 1290086}
   m_Layer: 0
   m_Name: LevelMusic
   m_TagString: Untagged
@@ -760,7 +761,7 @@ Transform:
   m_Father: {fileID: 162734974824969640}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1346839081
+--- !u!114 &1555234981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -769,7 +770,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 295045312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2cbd39ff6caa1d41bf323194b0f6f20, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bccfd3d2fb7ab84dba0cfbae099dab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1290086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295045312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f013f9afbcb82c49981d41e0c379583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &302122073
@@ -6381,7 +6394,7 @@ MonoBehaviour:
   bossDoor: {fileID: 0}
   currentRoom: {fileID: 0}
   clearedRooms: 0
-  clearedRoomsRequired: 6
+  clearedRoomsRequired: 4
   RespawnPos: {fileID: 0}
   checkpointFeedback: {fileID: 2795073536921132730}
   pauseMenu: {fileID: 6859599631090898088}
@@ -6530,7 +6543,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8317245036587620578}
         m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: ReturnToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8520,7 +8533,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
+  m_text: 'Return to Main Menu
 
 '
   m_isRightToLeft: 0
@@ -8549,8 +8562,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9868,7 +9881,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5228144931831691384}
         m_TargetAssemblyTypeName: ButtonFunctions, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: ReturnToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11798,7 +11811,7 @@ GameObject:
   - component: {fileID: 5228144933056319916}
   - component: {fileID: 5228144933056319917}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Return to Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11852,9 +11865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
-
-'
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11881,8 +11892,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
