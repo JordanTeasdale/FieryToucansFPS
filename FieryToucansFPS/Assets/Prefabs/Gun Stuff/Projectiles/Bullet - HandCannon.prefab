@@ -98,7 +98,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.63
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8632138228147884557
 MonoBehaviour:
@@ -125,7 +125,7 @@ MonoBehaviour:
   knockbackForce: 9.6
   knockbackForceInYDirection: 0
   usesGravity: 0
-  speed: 50
+  speed: 80
   maxCollisions: 0
   maxLifetime: 5
   explodeOnTouch: 1
