@@ -119,14 +119,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   targetLayerValue: 6
-  damage: 20
+  damage: 10
   damageRange: 1.04
-  bounciness: 0.699
+  bounciness: 0
   knockbackForce: 9.6
   knockbackForceInYDirection: 0
   usesGravity: 0
   speed: 50
-  maxCollisions: 5
+  maxCollisions: 0
   maxLifetime: 5
   explodeOnTouch: 1
   isOrdenance: 0

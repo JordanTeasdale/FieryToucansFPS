@@ -131,7 +131,7 @@ MonoBehaviour:
   pickUp: {fileID: 6885192584979482336}
   ammo: -1
   ammoIndex: -1
-  health: 5
+  health: 10
 --- !u!54 &6885192584979482342
 Rigidbody:
   m_ObjectHideFlags: 0

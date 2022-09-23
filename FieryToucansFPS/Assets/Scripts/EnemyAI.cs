@@ -229,7 +229,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
-        if (!isShooting && HP < 0)
+        if (!isShooting && HP > 0)
             agent.isStopped = false;
     }
 
