@@ -128,7 +128,7 @@ MonoBehaviour:
   speed: 80
   maxCollisions: 0
   maxLifetime: 5
-  explodeOnTouch: 1
+  explodeOnTouch: 0
   isOrdenance: 0
 --- !u!54 &8632138228147884556
 Rigidbody:
