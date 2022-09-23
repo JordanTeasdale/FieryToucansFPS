@@ -112,13 +112,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9cdc679f2a781478bb8874921e7b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
   rb: {fileID: 8632138228147884556}
   explosion: {fileID: 103990, guid: 1217dbe974e5c354fb4cd2495c6602fa, type: 3}
   target:
     serializedVersion: 2
     m_Bits: 64
   targetLayerValue: 6
-  damage: 15
+  damage: 20
   damageRange: 1.04
   bounciness: 0.699
   knockbackForce: 9.6

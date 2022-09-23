@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de32e4d403a4e114680a4287542a6550, type: 3}
   m_Name: Gun - Magic SMG Sript
   m_EditorClassIdentifier: 
-  shootSpeedPrimary: 60
+  shootSpeedPrimary: 40
   shootRatePrimary: 0.1
   shootSpeedSecondary: 0
   shootRateSecondary: 0

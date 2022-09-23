@@ -1,4 +1,7 @@
+using JetBrains.Annotations;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -46,6 +49,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     public bool inMeleeRange = false;
     public bool isExecutable = false;
     private int HPOrig;
+
 
 
     float stoppingDistanceOrig;
@@ -186,6 +190,8 @@ public class EnemyAI : MonoBehaviour, IDamageable
         foreach (Collider col in GetComponents<Collider>())
             col.enabled = false;
 
+        foreach (Collider child in GetComponentsInChildren<Collider>())
+            child.enabled = false;
 
         //GetComponent<Animator>().enabled = false;
     }
@@ -223,7 +229,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(shootRate);
 
         isShooting = false;
-        if (!isShooting)
+        if (!isShooting && HP < 0)
             agent.isStopped = false;
     }
 

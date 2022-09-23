@@ -75,6 +75,8 @@ public abstract class WeaponBase : ScriptableObject
     {
         GameManager.instance.playerScript.isShooting = true;
         currentAmmo -= secondaryAmmoConsumption;
+        if (currentAmmo < 0)
+            currentAmmo = 0;
 
         GameObject bulletClone = Instantiate(bulletSecondary, GameManager.instance.gunPosition.transform.position, GameManager.instance.playerScript.cameraMain.transform.rotation);
         bulletClone.GetComponent<Rigidbody>().velocity = BulletSpread().normalized * shootSpeedSecondary;

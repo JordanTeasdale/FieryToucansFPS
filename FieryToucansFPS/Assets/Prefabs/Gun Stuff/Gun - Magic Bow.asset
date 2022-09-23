@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootSpeedPrimary: 100
   shootRatePrimary: 0.5
-  shootSpeedSecondary: 40
+  shootSpeedSecondary: 100
   shootRateSecondary: 0.5
   secondaryAmmoConsumption: 0
   spreadFactor: 0

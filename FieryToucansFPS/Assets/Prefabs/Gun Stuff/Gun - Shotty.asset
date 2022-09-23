@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe2a18cef455df4490496923909edbe, type: 3}
   m_Name: Gun - Shotty
   m_EditorClassIdentifier: 
-  shootSpeedPrimary: 25
+  shootSpeedPrimary: 30
   shootRatePrimary: 1
-  shootSpeedSecondary: 25
+  shootSpeedSecondary: 30
   shootRateSecondary: 1
   secondaryAmmoConsumption: 1
   spreadFactor: 0.242
@@ -27,7 +27,7 @@ MonoBehaviour:
   Crosshair: {fileID: 21300000, guid: 8e9b3c2ee0f833c44af4777de6a75765, type: 3}
   CrosshairSecondary: {fileID: 21300000, guid: 8e9b3c2ee0f833c44af4777de6a75765, type: 3}
   maxAmmo: 80
-  currentAmmo: 76
+  currentAmmo: 80
   gun: {fileID: 7872863773419200039, guid: 5bd156de82561f84886498aa02827842, type: 3}
   gunIndex: 1
   bulletPrimary: {fileID: 8632138228147884554, guid: 370e5ff1ad43be448aeef69e488c6962, type: 3}
