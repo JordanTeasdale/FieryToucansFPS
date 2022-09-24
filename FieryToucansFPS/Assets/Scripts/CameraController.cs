@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour {
 
         float elapsed = 0.0f;
         isShaking = true;
-        while (elapsed < duration) {
+        while (elapsed < duration && GameManager.instance.menuCurrentlyOpen != GameManager.instance.pauseMenu) {
             float z = Random.Range(-2f, 2f) * magnitude;
             float x = Random.Range(-1f, 1f) * magnitude;
             //Debug.Log("hello");

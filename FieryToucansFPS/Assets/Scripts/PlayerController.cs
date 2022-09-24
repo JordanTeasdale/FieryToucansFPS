@@ -388,7 +388,6 @@ public class PlayerController : MonoBehaviour, IDamageable {
     private void UpdatedAmmoGUI() {
         maxAmmo = gunsList[weaponIndex].maxAmmo;
         currentAmmo = gunsList[weaponIndex].currentAmmo;
-        GameManager.instance.ammoStockGUI.GetComponent<TMPro.TMP_Text>().text = maxAmmo.ToString();
         GameManager.instance.ammoMagGUI.GetComponent<TMPro.TMP_Text>().text = currentAmmo.ToString();
     }
 
