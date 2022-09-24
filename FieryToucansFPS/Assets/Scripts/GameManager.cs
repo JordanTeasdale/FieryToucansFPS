@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour {
     public GameObject optionsMenu;
     public GameObject playerDamageFlash;
     public GameObject ammoMagGUI;
-    public GameObject ammoStockGUI;
     public GameObject reticle;
     public GameObject radialMenu;
     public Image playerHPBar;
@@ -120,9 +119,9 @@ public class GameManager : MonoBehaviour {
             if (menuCurrentlyOpen == pauseMenu)
                 CursorLockPause();
         }
-        if (playerScript.HP <= playerScript.HPOrig * 0.25)
+        if (playerScript.HP <= playerScript.HPOrig * 0.25 && menuCurrentlyOpen != pauseMenu)
             lowHealthIndicator.SetActive(true);
-        else if (playerScript.HP > playerScript.HPOrig * 0.25)
+        else if (playerScript.HP > playerScript.HPOrig * 0.25 || menuCurrentlyOpen == pauseMenu)
             lowHealthIndicator.SetActive(false);
 
         AccessShowcase();
