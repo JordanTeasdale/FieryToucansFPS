@@ -1216,10 +1216,10 @@ MonoBehaviour:
   fieldOfViewShoot: 85
   roamRadius: 6
   speedRoam: 3
-  speedChase: 14
+  speedChase: 10.5
   shootRate: 0.95
-  damage: 5
-  speed: 5
+  damage: 7
+  speed: 18
   bulletDestroyTime: 5
   bullet: {fileID: 1754623834730887423, guid: 8df79727167a56444bb7fd97b096241c, type: 3}
   bulletSpawnPos: {fileID: 6562930143932799991}

@@ -65,10 +65,10 @@ public class LevelSpawner : MonoBehaviour {
                 Instantiate(spider, new Vector3(transform.position.x + spiderLocations[i].x, transform.position.y, transform.position.z + spiderLocations[i].y), spider.transform.rotation);
                 enemiesAlive++;
             }
-          //  for (int i = 0; i < GoblinLocations.Length; i++) {
-            //    Instantiate(goblin, new Vector3(transform.position.x + GoblinLocations[i].x, transform.position.y, transform.position.z + GoblinLocations[i].y), goblin.transform.rotation);
-              //  enemiesAlive++;
-          //  }
+            for (int i = 0; i < GoblinLocations.Length; i++) {
+                Instantiate(goblin, new Vector3(transform.position.x + GoblinLocations[i].x, transform.position.y, transform.position.z + GoblinLocations[i].y), goblin.transform.rotation);
+                enemiesAlive++;
+            }
             for (int i = 0; i < plagueDoctorLocations.Length; i++) {
                 Instantiate(plagueDoctor, new Vector3(transform.position.x + plagueDoctorLocations[i].x, transform.position.y, transform.position.z + plagueDoctorLocations[i].y), plagueDoctor.transform.rotation);
                 enemiesAlive++;

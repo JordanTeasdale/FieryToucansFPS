@@ -1779,16 +1779,16 @@ MonoBehaviour:
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
   sightCol: {fileID: 6113082204007065012}
   HP: 500
-  playerFaceSpeed: 4
+  playerFaceSpeed: 5
   fieldOfView: 180
   fieldOfViewMelee: 45
   fieldOfViewShoot: 0
   roamRadius: 21
   speedRoam: 4
-  speedChase: 11
-  meleeRate: 3
-  damage: 7
-  RateOfmelee: 3
+  speedChase: 13.2
+  meleeRate: 1.05
+  damage: 8
+  RateOfmelee: 1
   attackBoxes:
   - {fileID: 1417271789601266406}
   - {fileID: 1417271790001464532}
