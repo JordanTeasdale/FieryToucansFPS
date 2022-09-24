@@ -1778,7 +1778,7 @@ MonoBehaviour:
   healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
   sightCol: {fileID: 6113082204007065012}
-  HP: 500
+  HP: 100
   playerFaceSpeed: 4
   fieldOfView: 180
   fieldOfViewMelee: 45
@@ -1786,9 +1786,9 @@ MonoBehaviour:
   roamRadius: 21
   speedRoam: 4
   speedChase: 11
-  meleeRate: 3
-  damage: 7
-  RateOfmelee: 3
+  meleeRate: 1
+  damage: 5
+  RateOfmelee: 1
   attackBoxes:
   - {fileID: 1417271789601266406}
   - {fileID: 1417271790001464532}
