@@ -4862,14 +4862,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1859651409}
-    - target: {fileID: 5228144933056319917, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_fontSize
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5228144933056319917, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 5228144933320548349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
       propertyPath: bossDoor
       value: 
@@ -4878,10 +4870,6 @@ PrefabInstance:
       propertyPath: RespawnPos
       value: 
       objectReference: {fileID: 29112280}
-    - target: {fileID: 8358241919200979349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToMainMenu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
 --- !u!1 &867665153
