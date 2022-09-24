@@ -1209,17 +1209,17 @@ MonoBehaviour:
   anim: {fileID: 6562930143923346221}
   healthDrop: {fileID: 7948290826112566856, guid: f705085b2141ccf4e95280ecd095a3d4, type: 3}
   ammoDrop: {fileID: 4292582013943497926, guid: f51257852780dea428c92f4745b653be, type: 3}
-  HP: 100
+  HP: 500
   playerFaceSpeed: 7
   fieldOfView: 180
   fieldOfViewMelee: 0
   fieldOfViewShoot: 85
   roamRadius: 6
   speedRoam: 3
-  speedChase: 10
+  speedChase: 10.5
   shootRate: 0.95
-  damage: 5
-  speed: 5
+  damage: 7
+  speed: 18
   bulletDestroyTime: 5
   bullet: {fileID: 1754623834730887423, guid: 8df79727167a56444bb7fd97b096241c, type: 3}
   bulletSpawnPos: {fileID: 6562930143932799991}
