@@ -173,7 +173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 50}
+  m_AnchoredPosition: {x: 465, y: 82.01245}
   m_SizeDelta: {x: 400, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536110548
@@ -608,7 +608,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh475628
+  m_Name: pb_Mesh173214
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1084,7 +1084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: -90}
+  m_AnchoredPosition: {x: 465, y: -97.49115}
   m_SizeDelta: {x: 400, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014804667
@@ -1235,7 +1235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: -160}
+  m_AnchoredPosition: {x: 465, y: -189.99298}
   m_SizeDelta: {x: 400, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150297783
@@ -1678,7 +1678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: -20}
+  m_AnchoredPosition: {x: 465, y: -8.98938}
   m_SizeDelta: {x: 400, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781984289
@@ -5483,7 +5483,6 @@ MonoBehaviour:
   optionsMenu: {fileID: 572398038}
   playerDamageFlash: {fileID: 0}
   ammoMagGUI: {fileID: 0}
-  ammoStockGUI: {fileID: 0}
   reticle: {fileID: 0}
   radialMenu: {fileID: 0}
   playerHPBar: {fileID: 0}
