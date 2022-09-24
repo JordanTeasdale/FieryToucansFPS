@@ -22317,6 +22317,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5228144933320548349, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
+      propertyPath: bossDoor
+      value: 
+      objectReference: {fileID: 1784044392}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868cba31816d7794398d72e39ed6ce73, type: 3}
 --- !u!1001 &1347407232
@@ -27366,7 +27370,7 @@ PrefabInstance:
       objectReference: {fileID: 6402605658100174871, guid: 45c3ef854979280408926013452f8ecb, type: 3}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[0]
@@ -27375,11 +27379,11 @@ PrefabInstance:
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[1]
       value: 
-      objectReference: {fileID: 1784044392}
+      objectReference: {fileID: 1372386645}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[2]
       value: 
-      objectReference: {fileID: 1372386645}
+      objectReference: {fileID: 609726674}
     - target: {fileID: 7800019132084277192, guid: 1bc693c1622cf134cb056a75c5fe727b, type: 3}
       propertyPath: doors.Array.data[3]
       value: 
