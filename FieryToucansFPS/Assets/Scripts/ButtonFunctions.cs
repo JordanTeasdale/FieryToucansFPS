@@ -86,8 +86,8 @@ public class ButtonFunctions : MonoBehaviour {
 
     public void ReturnToMainMenu() {
         MenuSoundTrigger();
-        levelLoader.CoRoutRun();
         SceneManager.LoadScene("Main Menu");
+        levelLoader.CoRoutRun();
     }
 
     public void MenuSoundTrigger() {

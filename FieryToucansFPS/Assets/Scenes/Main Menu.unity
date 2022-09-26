@@ -608,7 +608,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh173214
+  m_Name: pb_Mesh49246
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5503,10 +5503,6 @@ PrefabInstance:
     - target: {fileID: 3132133208060466694, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
       propertyPath: m_Name
       value: LevelLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132133208060466694, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8866380927012251413, guid: a6d7fee989854fe48a90bfbd260587f6, type: 3}
       propertyPath: m_RootOrder

@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    public Animator transition;
-    private AudioMixer mainAudioMixer; 
-    public float transitionTime = 1f;
+    [SerializeField] GameObject crossfade;
+    public float transitionRate;
+    private void Start() {
+        Time.timeScale = 1;
+    }
+
+    private void FixedUpdate() {
+        Debug.Log("yo");
+        if (crossfade.GetComponent<CanvasGroup>().alpha > 0) {
+            Debug.Log(crossfade.GetComponent<CanvasGroup>().alpha);
+            crossfade.GetComponent<CanvasGroup>().alpha -= transitionRate;
+        }
+    }
 
     public void CoRoutRun()
     {
-        StartCoroutine(StartTransition());
+        //StartCoroutine(StartTransition());
         FindObjectOfType<AudioManager>().Stop("Home Run");
         FindObjectOfType<AudioManager>().Stop("Fun With Guns");
         FindObjectOfType<AudioManager>().Stop("Risen");
@@ -21,9 +32,10 @@ public class LevelLoader : MonoBehaviour
 
     }
 
-    public IEnumerator StartTransition()
+    /*public IEnumerator StartTransition()
     {
-        transition.SetTrigger("Start");
+        gameObject.GetComponentInChildren<Animator>().SetTrigger("Start");
+        //transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-    }
+    }*/
 }

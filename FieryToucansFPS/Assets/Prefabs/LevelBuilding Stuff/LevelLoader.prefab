@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50e4f080f7f7b5449290973a085bc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 1003069139492901824}
-  transitionTime: 2
+  crossfade: {fileID: 8797597576189955946}
+  transitionRate: 0.01
 --- !u!114 &2082732357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5460287996451861730}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 31cb7889307e2774b98cf5d8abd9877f, type: 2}
   m_CullingMode: 0
