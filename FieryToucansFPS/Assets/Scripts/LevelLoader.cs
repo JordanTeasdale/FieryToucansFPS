@@ -14,9 +14,7 @@ public class LevelLoader : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Debug.Log("yo");
         if (crossfade.GetComponent<CanvasGroup>().alpha > 0) {
-            Debug.Log(crossfade.GetComponent<CanvasGroup>().alpha);
             crossfade.GetComponent<CanvasGroup>().alpha -= transitionRate;
         }
     }

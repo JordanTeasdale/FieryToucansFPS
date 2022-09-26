@@ -8,7 +8,6 @@ public class TutorialMusic : MonoBehaviour
     void Update()
     {
         if(FindObjectOfType<AudioManager>().percentOfListComplete == 1f && isPlaying == false) {
-            Debug.Log("entered");
             FindObjectOfType<AudioManager>().Play("Fun With Guns");
             isPlaying = true;
         }

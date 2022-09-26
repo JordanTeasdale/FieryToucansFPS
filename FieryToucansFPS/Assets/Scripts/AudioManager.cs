@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour
         if (soundToPlay == null)
             return;
         string track = soundToPlay.sourceOfSound.ToString();
-        Debug.Log(track);
+        //Debug.Log(track);
         soundToPlay.sourceOfSound.Play();
     }
 
